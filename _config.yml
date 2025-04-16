@@ -38,12 +38,13 @@ social:
   #email: example@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
+    #- https://twitter.com/username # change to your Twitter homepage
+    - https://github.com/diggydigsdata # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username    comments:
-      provider: # [disqus | utterances | giscus]
+    # - https://www.linkedin.com/in/username
+comments:
+  - provider: # [disqus | utterances | giscus]
 
 # Site Verification Settings
 webmaster_verifications:
@@ -225,3 +226,14 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+# Sidebar settings
+sidebar:
+  # Enable sidebar globally
+  enabled: true
+  # Enable TOC in the sidebar
+  toc: true
+# TOC settings
+#toc:
+  #min_level: 2 # Minimum heading level to include (e.g., H2)
+ # max_level: 6 # Maximum heading level to include (e.g., H6)

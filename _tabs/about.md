@@ -1,53 +1,87 @@
 ---
 # the default layout is 'page'
+layout: page
+title: "Bio"
 icon: fas fa-info-circle
+toc: true
+comments: false
 order: 4
+permalink: /resume/
 ---
-## About Me
+
 MSc Data Science student (part-time). Expected completion in 2027. Background in ecommerce copywriting, teaching & special needs care.
 
-## Resume
+<details>
+<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">Education</summary>
 
-### Education
-- **Degree**: BA History and Sociology with Year Abroad
-- **University**: The University of Warwick
-- **Year**: 2012
+<div markdown="1">
+- **Degree**: BA History and Sociology with Year Abroad  
+- **University**: The University of Warwick  
+- **Year**: 2012  
 - **Grade**: Upper Second-Class Honours (2:1)
+</div>
 
-### Experience
-- Taught English, ukulele and football @ PORG Základni Škola (August 2024 – January 2025)
+</details>
 
-- Product Copywriter/Editor – Technical @ Infosys (July 2022 – August 2024)
-  - Wrote about gadgets, gizmos and games for Currys’ website.
-  -	Chased suppliers and investigated wrong information, particularly in technical areas like computing and smart tech. A go-to copywriter for technical product categories.
-  -	Edited and validated (quality-controlled) co-workers’ copy and specification inputs.
-  -	Trained colleagues in India and received an Infosys ‘Best Language Checker’ award.
+<details>
+<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">Experience</summary>
 
-- High School English Lit. and Lang. Teacher @ American Academy (Temporary: April – June 2024)
+<div markdown="1">
+- **English, ukulele and football teacher** @ PORG Základní Škola *(Aug 2024 – Jan 2025)*
 
-- English Teacher @ ILC International House Brno (September 2018 – June 2022)
-  -	Taught Pre-school (3+) up to C1 Teens/Adults. PET, FCE and CAE exam preparation.
-  -	Creative writing & materials creation (Erasmus+ City Stories Project).
-  -	Conference presentation: 'SurvivYL' (26 March 2022).
+- **Product Copywriter/Editor – Technical** @ Infosys *(Jul 2022 – Aug 2024)*  
+  - Wrote about gadgets, gizmos and games for Currys’ website.  
+  - Investigated and corrected supplier info, especially in technical categories.  
+  - Go-to copywriter for computing and smart tech.  
+  - Edited co-workers’ copy/specs and trained new hires.  
+  - Received Infosys ‘Best Language Checker’ award.
+</div>
 
--	Key worker for children with disabilities on MENCAP schemes (August 2014, 2015 & July 2019)
+</details>
 
--	Paraprofessional @ CRCC, USA (February 2016 – November 2017)
-  -	Provided personal care as well as educational and recreational support for children and young people with disabilities. Collaborated with teachers, therapists and nurses.
+<details>
+<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">Skills</summary>
 
+<div markdown="1">
+- **Programming**: Python, SQL, basic HTML  
+- **Tools**: Excel, Git, GitHub, VS Code  
+- **Languages**: English (native), French (B2 working proficiency)
+</div>
 
-### Skills
-- **Programming Languages**: Python, SQL, Basic HTML 
-- **Tools**: Excel, Git, GitHub, VSCode
-- **Other**: English (native speaker), French (working proficiency: B2)
+</details>
 
-### Continuous Learning
-[Learn Python 3 Skill Path (Codecademy)](assets/files/LearnPython3_CodecademySkillPath.pdf)
+<details>
+<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">Continuous Learning</summary>
 
-### Volunteering
--	Creative writing workshops @ Fighting Words (2015-18)
--	Contributed [articles](https://sharedfuture.news/author/eoindignan/) to NI Foundation
--	Charity shop supervisor @ Oxfam (2012-15)
--	English tutor @ NI Community of Refugees and Asylum Seekers (2012-2014)
--	Assisted special needs schemes @ Fleming Fulton (2011-15)
--	2012 Paralympics
+<div markdown="1">
+- 📄 [Learn Python 3 Skill Path (Codecademy)](assets/files/LearnPython3_CodecademySkillPath.pdf)
+</div>
+
+</details>
+
+<details>
+<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">Volunteering</summary>
+
+<div markdown="1">
+- Creative writing workshops @ *Fighting Words* (2015–18)  
+- Contributor to [Shared Future News](https://sharedfuture.news/author/eoindignan/)  
+- Charity shop supervisor @ *Oxfam* (2012–15)  
+- English tutor @ *NI Community of Refugees and Asylum Seekers* (2012–14)  
+- Assisted special needs schemes @ *Fleming Fulton* (2011–15)  
+- Volunteer @ *2012 Paralympics*
+</div>
+
+</details>
+
+<details>
+<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">Hobbies</summary>
+
+<div markdown="1">
+- Playing the ukulele  
+- Writing creative fiction  
+- Exploring data visualization techniques  
+- Hiking and outdoor adventures  
+- Playing board games with friends
+</div>
+
+</details>
