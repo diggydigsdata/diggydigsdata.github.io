@@ -16,7 +16,9 @@ timezone: Europe/Prague
 
 title: DiggyDigsData # the main title
 
-tagline: Data analytics portfolio site # it will display as the subtitle
+tagline:
+  Playing with data projects and learning new skills along the way. Ya dig?
+# it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
@@ -237,3 +239,18 @@ sidebar:
 #toc:
   #min_level: 2 # Minimum heading level to include (e.g., H2)
  # max_level: 6 # Maximum heading level to include (e.g., H6)
+
+jekyll_compose:
+  default_front_matter:
+    drafts:
+      description:
+      image:
+      category:
+      tags:
+    posts:
+      description:
+      image:
+      category:
+      tags:
+      published: false
+      sitemap: false
