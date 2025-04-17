@@ -1,12 +1,7 @@
 ---
 # the default layout is 'page'
-layout: page
-title: "Bio"
 icon: fas fa-info-circle
-toc: true
-comments: false
 order: 4
-permalink: /resume/
 ---
 
 MSc Data Science student (part-time). Expected completion in 2027. Background in ecommerce copywriting, teaching & special needs care.

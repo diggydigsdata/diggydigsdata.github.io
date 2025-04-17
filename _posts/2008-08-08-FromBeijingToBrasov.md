@@ -1,6 +1,6 @@
 ---
 title: From Beijing to (FC) Brasov
-date: 2008-08-01 2008:08:08 +0100
+date: 2008-08-08 +0100
 description: Teenage me writing about watching football in Romania
 categories: [football, sports, ancient]
 tags: [football sports ancient]     # TAG names should always be lowercase
