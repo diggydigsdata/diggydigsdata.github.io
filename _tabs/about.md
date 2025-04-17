@@ -49,7 +49,7 @@ MSc Data Science student (part-time). Expected completion in 2027. Background in
 <summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">Continuous Learning</summary>
 
 <div markdown="1">
-- 📄 [Learn Python 3 Skill Path (Codecademy)](assets/files/LearnPython3_CodecademySkillPath.pdf)
+- 📄 [Learn Python 3 Skill Path (Codecademy)](/assets/files/LearnPython3_CodecademySkillPath.pdf)
 </div>
 
 </details>
