@@ -7,7 +7,7 @@ image:
 category: [Marketing, Student Cinema Promos]
 tags: [mini movie reviews, ancient, marketing, promos, university]
 ---
-*300-word limit. Written as marketing material for <a href = "https://warwick.film/filminfo?id=2852">Warwick Student Cinema</a>.*
+*300-word limit. Written as marketing material for <a href="https://warwick.film/filminfo?id=2852">Warwick Student Cinema</a>.*
 
 ***Year**: 1984  
 **Running Time**: 180 minutes   
