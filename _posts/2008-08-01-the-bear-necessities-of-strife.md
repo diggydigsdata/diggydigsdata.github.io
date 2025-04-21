@@ -4,7 +4,7 @@ title: The Bear Necessities of Strife
 date: 2008-08-01 09:40 +0200
 description: Exploring bear population culls in Romania. Originally published in the Brasov Visitor (now-defunct).
 image: 
-category: [Published, Journalism]
+category: [Journalism, Brasov Visitor]
 tags: [ancient, journalism, Romania, sustainability]
 ---
 

@@ -8,14 +8,13 @@ My name is Eoin, but throughout high school I was known exclusively as Diggy. I'
 
 This site serves a few functions.
 
-- First, it is a place to host projects and my resume. My objective is to work in data analytics, data journalism or
-technical writing.
+- First, it is a place to host projects and my resume. My objective is to work in data analytics, data journalism or technical writing.
 - Second, it motivates me to flesh out data projects and practise Excel, SQL, Python and Tableau.
 - Finally, it lets me experiment in the real world. I'll be building and embedding data visualisations, employing
 VS Code, GitHub and Docker workflows, using markdown and HTML, and uncovering lots more things I need to know but haven't yet discovered. Every page and project is a learning experience.
 
-In terms of the content this hosts, I have populated the site with a fair chunk of *ancient* content from my university
-days and the like. The purpose of adding this content is primarily to give me practise material as I structure the site and learn more sophisticated formatting in markdown and html. There are some bits and pieces which I am proud of, and lots more where I think the writing style is very undergrad and pretentious. Still, I have sentimental attachments there. In any case, all of this stuff is tagged under <a href="/tags/ancient/">ancient</a>.
+This site hosts a fair chunk of *ancient* content from my university
+days and the like. The purpose of adding this content is primarily to give me practise material as I structure the site and learn more sophisticated formatting in markdown and html. There are some bits and pieces which I am proud of, and lots more where I think the writing style is very undergrad and pretentious. Still, I have sentimental attachments there. All that stuff is tagged under <a href="/tags/ancient/">ancient</a>.
 
 <a id="resume"></a>
 <h2 style="font-size: 1.5em; font-weight: bold; margin-top: 20px;">Resume</h2>
