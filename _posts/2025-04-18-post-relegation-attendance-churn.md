@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Post-Relegation Attendance Churn"
+title: "DRAFT: Post-Relegation Attendance Churn"
 date: 2025-04-18 19:02 +0000
 description:
 image:
