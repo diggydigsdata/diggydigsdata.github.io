@@ -1,2 +1,12 @@
 # Install Python dependencies for Jupyter Notebooks
-pip install notebook jupyterlab pandas numpy matplotlib seaborn scikit-learn scipy ipywidgets jupyter_contrib_nbextensions nbconvert
+notebook
+jupyterlab
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+scipy
+ipywidgets
+jupyter_contrib_nbextensions
+nbconvert
