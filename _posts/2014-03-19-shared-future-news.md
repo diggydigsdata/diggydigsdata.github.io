@@ -5,7 +5,7 @@ date: 2014-03-19 15:22 +0200
 description: 
 image: 
 category: [Published, Journalism]
-tags: [published, Northern Ireland, ancient, community, reconciliation, sports]
+tags: [published, northern ireland, ancient, community, reconciliation, sports]
 ---
 
 # [Reconciliation Lessons: Verne Harris on South Africa](https://sharedfuture.news/reconciliation-lessons-verne-harris-on-south-africa/)

@@ -5,7 +5,7 @@ date: 2010-05-01 15:22 +0200
 description: Updating analysis presented by Richard Breen in the 1996 Report on Social Attitudes in Northern Ireland.
 image: 
 category: [Northern Ireland, Sociology]
-tags: [Northern Ireland, ancient, community, reconciliation, sports]
+tags: [northern ireland, ancient, community, reconciliation, sports]
 ---
 
 ## Introduction
