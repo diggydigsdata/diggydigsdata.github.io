@@ -3,7 +3,7 @@ title: From Beijing to (FC) Brasov
 date: 2008-08-08 +0100
 description: Teenage me writing about watching football in Romania
 categories: [Travelogues, Europe]
-tags: [football, sports, ancient]     # TAG names should always be lowercase
+tags: [football, soccer, sports, ancient, romania]     # TAG names should always be lowercase
 ---
 
 *Originally Published by the **Brasov Visitor** - I'm not sure that still exists anymore :(*
