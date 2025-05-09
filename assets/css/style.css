@@ -1,0 +1,18 @@
+.table-wrapper {
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
+  word-wrap: break-word; /* Ensures long text wraps */
+  white-space: normal; /* Prevents text from staying on one line */
+  margin: 20px 0;
+}
+
+table {
+  width: 100%; /* Ensures the table takes up available space */
+  border-collapse: collapse; /* Optional: Makes the table cleaner */
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd; /* Optional: Adds borders to cells */
+  text-align: left; /* Aligns text to the left */
+  word-wrap: break-word; /* Ensures long text wraps within cells */
+}
