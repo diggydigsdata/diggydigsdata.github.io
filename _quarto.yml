@@ -1,0 +1,52 @@
+project:
+  type: website
+
+website:
+  title: "Diggy Digs Data"
+  favicon: assets\img\favicons\favicon.ico
+  page-navigation: true
+  site-url: https://diggydigsdata.github.io
+
+  repo-url: https://github.com/diggydigsdata
+  repo-actions: [source]
+
+  open-graph: true
+
+  navbar:
+    background: "#A7D5E8"
+    logo: assets\img\brand.png
+    align: center
+    title: Diggy Digs Data
+    collapse-below: lg
+
+    right:
+      - text: Analytics
+      - text: Tutorials
+      - text: Reviews
+      - text: Upcomings
+      - text: About
+        href: about.qmd
+      - icon: github
+        href: https://github.com/diggydigsdata
+      - icon: linkedin
+  
+  page-footer:
+    left: "This page is built with [Quarto](https://quarto.org/)."
+    background: "#A7D5E8"
+    right:
+    - text: "License"
+      href: LICENSE.md
+
+format:
+  html:
+    theme:
+      light: [flatly, styles.scss]
+      dark: [darkly, styles-dark.scss]
+    highlight-style: a11y-dark
+    code-copy: true
+    code-overflow: wrap
+
+editor: visual
+
+
+

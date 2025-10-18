@@ -1,0 +1,40 @@
+/*-- scss:defaults --*/
+$claret-border-color: #AA4A44; // Define your color as a variable
+$gold-text-color: #bfb008;
+$white-text-color: #f6f6f2;
+
+/*-- scss:rules --*/
+
+.navbar {
+  border-bottom: 2pt solid $claret-border-color; ;
+}
+
+.footer {
+  border-top: 2pt solid $claret-border-color;
+}
+
+.navbar-brand {
+  color: #000000 !important;
+}
+
+.nav-link {
+  color: #000000 !important; 
+}
+
+.nav-link.active, .nav-link:hover {
+  background-color: $gold-text-color !important;
+  /*--Text Color/*/
+  color: #000000 !important;
+  
+  /* 3. Border/Shape: Optional to clean up the look */
+  border-radius: 5px !important; 
+}
+
+.navbar-brand.active span, .navbar-brand:hover span {
+  background-color: $gold-text-color !important;
+  /*--Text Color/*/
+  color: #000000 !important;
+  padding: 0 5px !important;
+  /* 3. Border/Shape: Optional to clean up the look */
+  border-radius: 5px !important; 
+}

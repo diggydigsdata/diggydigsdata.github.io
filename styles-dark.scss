@@ -1,0 +1,52 @@
+/*-- scss:defaults --*/
+$primary: #2c2c2c;
+$black-icon-color: #000000;
+$gold-text-color: #bfb008;
+
+$navbar-bg: #A7D5E8; // Forces light blue background in dark mode
+$navbar-dark-color: $black-icon-color; // Forces dark text/icons in dark mode
+
+/*-- scss:rules --*/
+
+.navbar-brand {
+    color: #000000 !important;
+}
+
+/* New Rule: Target the Navbar brand hover state on the text block itself */
+.navbar-brand.active, .navbar-brand:hover {
+    background-color: $gold-text-color !important;
+    color: #000000 !important; /* Text remains black */
+    border-radius: 5px !important; 
+    padding: 3px 6px !important; 
+}
+
+.nav-link {
+  color: #000000 !important; 
+}
+
+.nav-link.active, .nav-link:hover {
+  background-color: $gold-text-color !important;
+  /*--Text Color/*/
+  color: #000000 !important;
+  
+  /* 3. Border/Shape: Optional to clean up the look */
+  border-radius: 5px !important; 
+}
+
+// A. Standard Nav Icons (GitHub, etc.) - Force Black
+.navbar-nav .nav-item .nav-link svg {
+    fill: #000000 !important;
+    color: #000000 !important;
+}
+
+// B. Search Icon/Container - Force Black
+.search-form i, .search-form svg {
+    color: #000000 !important;
+    fill: #000000 !important;
+}
+
+// C. Theme Toggle Switch (The small circle/toggle) - Force Black
+.form-switch .form-check-input {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23000000'/%3e%3c/svg%3e") !important;
+    border-color: #000000 !important;
+}
