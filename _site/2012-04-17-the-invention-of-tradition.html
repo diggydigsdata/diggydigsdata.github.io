@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.28">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2012-04-17">
+
+<title>The Invention of Tradition – Diggy Digs Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./assets/img/favicons/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1e0d785306329dd87d93ab7c32bdc37a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-f6530c4cab28cdaa8f4f88d19fa58afb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-1e0d785306329dd87d93ab7c32bdc37a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="The Invention of Tradition – Diggy Digs Data">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Diggy Digs Data">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    window.setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      window.setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    window.hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(darkModeDefault) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const darkModeDefault = false;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !window.hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (window.hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets\img\brand.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Diggy Digs Data</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">Analytics</span>
+    </span>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">Tutorials</span>
+    </span>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">Reviews</span>
+    </span>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">Upcomings</span>
+    </span>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/diggydigsdata"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The Invention of Tradition</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">History</div>
+    <div class="quarto-category">India</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 17, 2012</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The concept of ‘invention of tradition’ was introduced in a 1983 book of the same name edited by Eric Hobsbawm and Terence Ranger. They argued that neo-traditions (such as monarchy) were shaped in Europe during a period of rapid socio-economic change to induce membership of imagined communities bounded by ‘romantic nationalism’<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and engrained through mass ritual practice. These legitimized the authority of state institutions while investing them with meaningful symbolic power e.g.&nbsp;titles. Finally, neo-traditions normalized behavioural patterns consistent with broader objectification of societal roles, formulating class consciousness<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Neo-traditions constructed frameworks for social cohesion within emergent industrial nation-states. In imperial settings, such inventions were reproduced and implanted to manage and hierarchically classify diverse societies. The concept thereby proposes the reification of pre-colonial flux and fluidity<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Bernard Cohn sees this process dovetailing with the representation of colonial authority through co-opting, monopolizing and re-structuring the meaning of status symbols<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. For imperialists, potency derived from the assumption that ‘traditions symbolise continuity, cultural identity and orderly existence’<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Subtle re-formulations maintain this continuity while fundamentally re-shaping societal composition to favour the now-mythicized imperial centre.</p>
+<p>This essay will examine the formulation of colonial authority and prejudicial neo-traditions in Kenya and India. This was achieved by appropriating historical knowledge and rigidly defining identity and social hierarchy within the colonial idiom, such that caste was ‘constituted as the very condition of the Indian social’[^6]. By privileging the indigenous representation of neo-traditional knowledge social differentiation was expanded. Ranger acknowledges the inadequacies of the original concept in expressing the interaction between colonist and cultural collaborator. Therefore I will explore revised concepts which stress the indigenous manipulation and contestation of the ‘shifting symbols’[^7] of cultural knowledge within prejudicial spheres of discourse. These will be explored in detail through the exemplars of Kikuyu customary law and caste consciousness in India. Both the land-allocating tribal unit and the rigidly all-encompassing caste identity were embedded by the indigenous population in exigent response to these privileged idioms. The ‘invention of tradition’, I will conclude, served to institute hegemonic interpretations of history which formed the basis for class struggle and identity formulation. For this reason, their divisive legacy persists to the present day.</p>
+<p>Centralizing Authority</p>
+<p>Between 1803-1858 Britain, as ‘protector’ of the Mughal Emperor, ruled India through mediated legitimacy, unable to assert authority through locally-appreciable status symbols. Following the Indian Rebellion (1857-1858), this need was reflected in increased concern for formulation of ‘racial identities and the balancing of religious identities in the interest of British rule’[^8], popularizing sociological, scientific and anthropological classification. Lord Lytton remarked that ‘“India would never be held by ‘good government’ alone”’[^9], and Britain re-oriented symbolic representations of social differentiation to transform ‘a system of authority based upon the incorporation of subordinates to the person of the emperor…[into]…an expression of linear hierarchic order’[^10]. Exerting control over the ‘fountain of honour’[^11], symbolism reflected contractual subjugation rather than alliance and normalized the inequities of imperial capitalism. African colonialism emerged later, reflecting ‘the effects rather than the causes of European invented tradition.’[^12] Natural disasters in the 1890s dispersed the Kikuyu, enabling colonials to institute widespread land alienation. Lack of pre-existing centralized ‘fountains of honour’ coupled with populous white settler communities necessitated increased mythicizing of ‘Imperial Monarchy’ and starker racial distinctions as legitimization of master-slave relations, exemplified by the kipande, the compulsory male symbol of servility[^13].</p>
+<p>Historical Revision and Metaphors of Legitimization &nbsp;</p>
+<p>Consistent with Western nationalist conceptualization, Mill’s Oriental Despotism and Marx’s Asiatic mode of production, British ‘invention’ was legitimated by the assertion that India was a-historical, unchanging, oppressive, inherently spiritual and economically restrictive[^14]. She was susceptible to symbolic manipulation, consistently unable to self-govern and so diverse only an Imperial centre emanating a singular, objectified hierarchy could assure cohesion. The Imperial Assemblages represented colonial superiority by contrasting between the chaotic ‘other’ with the exaggerated, ordered gentility of settlers[^15]. As in 18th century India[^16], the Kikuyu were presented as ignorant of both individual land ownership and structured social organization. Despite refutation in 1912 by the Kiambu District Officer Mervyn W.H. Beech, colonials felt ‘recognition of a coherent system of land tenure among Africans would jeopardize the colonial project’[^17].</p>
+<p>Hanlon reveals pre-existing social hierarchies[^18] and Bujra asserts the Mughal Empire was sustained by Indian entrepreneurialism; consequently a ‘high level of material culture and social organization had in fact to be destroyed’[^19]. Pre-colonial Kikuyu land allocation principles were multitudinous and diverse. Land was typically allocated through the mbari (kin collective) according to use. Uncultivated land belonged to the mbari and generally could not be individualised. Land accumulation depended on usage, as food surpluses funded labour. In this subsistence economy women were responsible for food crops. While land allocation operated on a patrilineal basis, females wielded significant influence. In Kenya, as in India, female oppression (clitoridectomy, caste) fulfilled a legitimizing function. Yet legal guarantees for women and migratory opportunities for young men ensured pre-colonial social differentiation was limited.[^20]</p>
+<p>Metaphors of Betterment (and subsequently Empowerment) were implemented in Kenya to service imperial capitalism. Betterment enforced the replacement of the staple food crop, millet, rich in protein and vital for pregnant women, with a uniform variety of maize. This cash crop produced higher yields of inferior nutritional value and was ill-adapted to the local environment. Maize contributed to social differentiation in four ways. Soil erosion destabilised those (predominantly women) reliant on on-farm income. Only the wealthy could afford to fallow. Secondly, from 1938 seed farms were monopolized by Local Native Councils, consisting of elders and wealthy males. Thirdly, wealth was generated through off-farm income inaccessible to women. Fourthly, prospective female opportunities from monetized maize economy encouraged emphasis on patriarchal control.[^21]</p>
+<p>‘Invention’ was operationalized in three ways. Firstly, by promulgating and legally codifying &nbsp;historical re-representations. Liddle and Rai present a Foucauldian understanding stressing that ‘the possession of greater power generally invests the knowledges of the more powerful with a greater authority than those of the powerless…’[^22] Secondly, the objectification of society rigidly defined a ’”totalizing classificatory grid” of […] “paternalistic authoritarianism’”[^23], within which social and legal discourses were institutionally bound, thus reinforcing false histories. These components converged most decisively in the third element, cultural collaboration.</p>
+<p>Cultural Collaboration</p>
+<p>‘All claims about community are claims about privilege, participation, and exclusion.’[^24]</p>
+<p>To circumvent military intervention Britain delegated mediation of centralized symbolic hierarchies to cultural collaborators. In India the feudal ‘native aristocracy’ (Zamindars) who had demonstrated loyalty during the Indian Rebellion were increasingly peripheral, serving as revenue collectors and symbolic reminders of indigenous ruling inadequacies. Post-1860, management of diversity was achieved through codification of caste hierarchies. The Brahman elite were incentivized and privileged in upholding this construction. Kenyan patriarchal structures were upheld by chiefs, headmen and elders. However, Kikuyu customary law constitutes a decisive break from the essentialism of the original conceptualization, a ‘historical period in which […] traditions were peculiarly frequently invented rather than customs continuing to evolve.’[^25] Both Spear[^26] and Shadle[^27] argue that colonists retained law as deliberately adaptive and unwritten so that power within such an apparently dislocated and rapidly-changing society was exercised on a case-by-case basis, depicting a sub-state sphere managed through alliance with Loyalist ‘cultural brokers’. A more interactive understanding of ‘invention’ is therefore necessary.</p>
+<p>Terence Ranger’s 1993 self-critique, The Invention of Tradition Revisited, correspondingly acknowledges the concept’s earlier connotations as ‘too one-sided a happening’[^28]. He concludes ‘invention’ is an inferior term to ‘imagining’, proposed by Benedict Anderson. ‘Imagining’ stresses the intellectual agency of the colonized. Invention was rare; neo-traditions were imagined and subjected to repeated re-imaginings dictated by the interests of cultural mediators. Lentz introduces a richer understanding: ‘cultural brokers motivated by their own interests’[^29]. Chanock relates an over-arching understanding to Marxist conflict, stressing the divisiveness of economic disorder as a catalyst for strengthened collectivities, here predicated on fictitious histories and self-interest[^30]. While compelled to ‘imagine’ within neo-traditional discourses patronized by the colonists, collaborators occupied privileged positions in defining the resultant collectivities. Customary law and caste highlight more interactive and contested processes.</p>
+<p>Caste Consciousness</p>
+<p>Post-1860, orientalist assertions of intrinsic Indian spirituality became entrenched in society and nationalist thought. Scholars like Max Muller posited an inaccurate historical lineage distinguishing Aryan caste Hindus and non-Aryan peoples consisting of Muslims and low castes[^31]. Historical codification necessitated indigenous re-imagining. As in the Bengal Renaissance, natives seized upon positive depictions[^32] and incorporated them into national identity[^33]. This facilitated the simultaneous construction of caste as the definitive social identity buttressed by an all-encompassing Hinduism[^34]. Two-nation theory deemed Hindus and Muslims fundamentally incompatible and was exacerbated by nationalism expressed through Aryan Hinduism and Pristine Islam. Hinduism, and by extension India, was now defined racially.</p>
+<p>The racializing of caste established Brahmans as purer Aryans, an elite middle-class with closer affinity to the colonists. Bujra believes caste classification racially and religiously legitimized inequality[^35]. As Brahmans constituted the priestly classes they were in a position to collaborate in defining theological representations. Caste reformists, often focussed on combatting gendered inequalities, ‘managed simultaneously to invoke ‘modern eugenics’ […] and the key principles of Brahamanical varna theory…’[^36] Census enumeration codified perceived associations between caste, race, occupation, ritual and social status, when the reality was diverse and dynamic. The census relied heavily on native volunteers (at least half a million) and codifications were highly interpretative; these native collaborators were the ‘literate and educated.’[^37] In 1901, these caste classifications became an ordinal structure of social precedence. Census administrators replaced the ‘absence of a uniform system of classification […with…] an all-India system of classification of castes.[^38]’ As the concept of Four Varnas became law and caste identities became legal identities, H.H. Risley rendered social precedence inseparable from ritual; diverse and disparate communities became legally bound to the fulfilment of uniform ritual practises.[^39] Sankritization, or Brahman ritual emulation, was the primary route for social mobility.[^40] Refutation of Brahmans’ objectified superiority did not transcend the colonial discourse. Rather, Thapar demonstrates that orientalist-inspired arguments were merely re-interpreted, with Brahmans depicted as earlier colonists.[^41]</p>
+<p>Carroll argues that caste-cluster consciousness was an unanticipated evolution emerging from increased orientalist conceptualization of caste. Since caste became intrinsically linked with government patronage, employment, access to education and political positions, communities were compelled to assert false histories to scale the hierarchies ‘imagined’ by the colonists.[^42] Ritually, historically and economically embedded, these became the backbone of social identity. Arising through social necessity caste organizations were arranged in response to new legal identities and British demands of uniformity. Organizations often began by denying the scheme’s validity, but concluded with broad assertion of status on any proposed classification. To appeal their caste classifications, claimants drew heavily on Western historical records.[^43] Thus, caste and status were re-negotiated within the fixed and privileged parameters of colonial idiom and historical revisionism. Classificatory schemes provided intellectual elites opportunity to define, consolidate and expand pre-existing status differentials.[^44]</p>
+<p>Customary Law</p>
+<p>Customary law was established as a forum distinct from settler courts through which Kikuyu could resolve, and thereby de-politicize, land grievance. In 1910 colonial administrators decreed that ‘elders were to become the interpreters of “tradition” which, having “lost its significance”, was to be “built up” with “government support”[^45]. Over two days in 1920, discussions took place with prominent local elders, exclusively male. Colonists derided land law ambiguity, exclusively acknowledging allocative rights and by the inquiries of 1929 and 1932-34, the Kikuyu had re-imagined ‘tradition’ within colonial legal parameters. Kikuyu identity now synthesized with Mbari territoriality[^46]. In reality, both were ‘imagined into existence’[^47]. Tribal heterogeneity, and ‘the “porosity” or permeability in customary law, was muffled at a time when corporate control was increasingly under threat’[^48]. Within these boundaries Mbari land allocation was privileged to the total exclusion of land use, effectively denying the rights of women and young males. Moreover, as women worked the land, men were free to engage in more lucrative off-farm activities. Customary roles were retained while legal rights were re-formulated. Female claims to customary law were rejected by elders[^49] and the pre-colonial ‘legal fiction’[^50] by which females were excluded from patrilineal land ownership became consolidated.</p>
+<p>The motives of ‘re-imagining’ are evidenced by the 1944 Local Native Council decree that all past land sales exceeding ten goats were now deemed irredeemable, facilitating both future accumulation and reclamation of land worked by other, usually young, farmers. Thus, the ‘shifting symbols’ of un-codified custom were systematically prejudiced by an ‘alliance of colonial and African patriarchy to produce a ‘customary law’ which firmly put women and juniors in their subordinate place.’[^51] Evidence of widespread corruption highlights the extent to which wealth influenced the composition of ’tradition. Indeed, political parties such as KANU, the post-independence ruling party fronted by Kenyatta originally formed as wealthy land-acquiring blocs[^52].</p>
+<p>As with caste classification, ‘reverse discourses’[^53] were constructed to contest social differentiation within ever-tightening colonial parameters. Appeals courts were widely used to delay eviction and patrimony could be contested within the Supreme Court. But such efforts were increasingly stifled. As culture was commodified, so too were social relations. Recourse was pursued through such practises as female husbands, where women acted as surrogate male kin for those past childbearing age. Restrictions could be circumvented through inventive understandings of the law, or on occasion by operating outside it. Women toiled to raise millet for local sale, or travelled huge distances to sell small surpluses on the emerging black market.</p>
+<p>Social differentiation pre-existed colonialism, Berman shows[^54], yet was expanded and consolidated through the privileged exploitation of traditional discourse within the parameters of reified hierarchy; ‘the mbari…was recreated as a means of individual accumulation, and to mask class struggle.’[^55] In the prejudiced contestation of power over these decisive re-imaginings, the subtext of class conflict and collective negotiation finds its richest sociological understanding in Gramsci’s theory of hegemony. Here, culture constitutes a ‘battleground where social values and relations are shaped, represented and contested’[^56]. Colonial hegemony was not absolute, but distributed across local collaborators by privileging authority over contestable meaning within discourses over which it could not dictate the evolutionary endpoints[^57]. Even where power over ‘imagining’ is institutionally privileged and idiomatically bounded there are avenues of negotiation. And often there was no choice but to pursue them.</p>
+<p>Post-Colonial Pathways</p>
+<p>The narrative of Kikuyu land alienation and the ‘re-imaginings’ of land relations by ‘cultural brokers’ defines the Kenyan transition to independence. The seminal moment in Kenyan nationalism is the Mau Mau rebellion (1952-1960), now viewed as an intra-Kikuyu class war between the Loyalist petty bourgeoisie opportunism and the exploited landless[^58]. Despite the invented colonial parameters of tribal affiliation, ‘the significance of being ‘Ndebele’ or ‘Kikuyu’ was bound to be a matter of internal struggle. Its imagination could not be left to the patriarchs.’[^59] Loyalists would dominate Kenyan politics post-independence, erasing Mau Mau from the nationalist memory: ‘leaving its legacy to the imaginings of ‘the poor, the landless, and the opponents of the capitalist development path followed by successive post-colonial regimes…’[^60] Land grievances arose immediately. KANU won an ethnically-charged election and Kenyatta recovered 40% of settler land for his dispossessed Kikuyus, 20 per cent of the population[^61]. He retained colonial bureaucratic structures, together with its individualist capitalism, albeit under the populist imagining of African Socialism. His decision belied an economic strategy replacing the settler-colonist relationship with a bourgeois-proletariat one[^62]. The ensuing one-party era was dogged by land misappropriation, often linked to ethnic identity, and a factor in the 2007 violence against Kikuyu hegemony[^63]. The inequalities consolidated by customary law continue to subjugate women.[^64]</p>
+<p>India provides a striking contrast, superficially. Gandhi’s First Non-Cooperation Movement, advocating absolute rejection of British representations of authority and a refusal to participate in its incentivizing structures[^65], was the catalyst for independence. However, nationalism defined itself in response to the colonists, sustaining the orientalist spirituality that upheld fictitious and damaging aspects of the Varna caste structure. Gandhi’s Indian National Congress, as successful contestant of the independence struggle, has ruled for long periods as a one-party state within a broader political landscape haunted by the ‘spectre’ of caste &nbsp;(Dirks pg. 17). Within 30 years, communal politics brought the secession of Pakistan and Bangladesh along the ethno-religious conflict lines legitimized by British historicity. Caste consciousness survived independent colonial classification and patronage. But since the 1990 Mandal Commission Report, the discourse has been inverted. Today, Backward Castes are privileged. In response, Aryan castes argue caste identity should be subjugated to a broader, Hindu one.[^66]</p>
+<p>Conclusion</p>
+<p>‘Invention’ is an illuminating starting point, but the concept is partial and incomplete. It benefits from more interactive theoretical appreciations of colonial structure and indigenous agency. Colonials regulated the discourses within which power was ‘imagined’, consolidated and contested (engaging ‘reverse discourses’) by indigenous actors. In Kenya customary law was legally compelled to adapt to colonial structures of patriarchal individualism. In India, a synthesis of social, religious and economic existence embedded a newly-objectified hierarchy within idioms of race, religion and nation. Pre-colonial classificatory schemes already existed, particularly in India, and colonials distorted historical knowledge to regulate privileged access to essentialist frameworks; legal, historical and mode of production. ‘Cultural brokers’ served as privileged interpreters of tradition, sustaining bounded identities by ‘creating fictional collectivities in the pursuit of individual rights.’[^67] These were consolidated through ritual, race and status. Contestation re-enforces these new manifestations of identity. Valid conceptualizations must acknowledge the integral role of intellectual agency in embedding these structures. Such an understanding reconciles Dirks and Washbrook by demonstrating that colonial knowledge discourses were a platform for indigenous capitalism[^68]. They would not have proven so enduringly divisive otherwise. Applied with reference to discourse theory and Gramscian hegemony the concept represents a valuable post-Marxist analytical tool. Consistent with Laclau and Mouffe’s analysis[^69], where neo-traditional knowledge discourses were patriarchal, hegemonic and privileged, classes were not a rigid cause of hegemony but could themselves be the invention. Colonists drew the fault lines within which indigenous ‘re-imaginings’ consolidated class struggle and formulated identity. ‘Tradition’ articulated, or upheld, through privileged actors legitimized, reproduced and divisively embedded these commodified knowledges in the socio-economic landscapes of Kenya and India.</p>
+<p>Bibliography &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Barkan, J (1994), ‘Divergence and Convergence in Kenya and Tanzania: Pressures for Reform’, in Joel D. Barkan(ed), Beyond Capitalism vs.&nbsp;Socialism in Kenya &amp; Tanzania, Colorado and London, pp.&nbsp;1-46.</p>
+<p>Berman, B (1991), ‘Ethnicity and Modernity: The Paradox of Mau Mau’, Canadian Journal of African Studies, Vol. 25, No.&nbsp;2, pp.&nbsp;181-206</p>
+<p>Branch, D (2009), Defeating Mau Mau, Creating Kenya: Counterinsurgency, Civil War, and Decolonization, Cambridge University Press.</p>
+<p>Bujra J (2000) ‘Diversity in pre-capitalist societies’, in T. Allen and A. Thomas (eds), Poverty and Development into the 21st Century, Oxford University Press, Oxford, pp.&nbsp;219-240.</p>
+<p>Carroll, L (1978): `Colonial Perceptions of Indian Society and the Emergence of Caste(s) Associations’, Journal of Asian Studies, Vol. XXXVII, No.&nbsp;2, Feb.&nbsp;1978, pp.&nbsp;233-250.</p>
+<p>Cohn, B (1983): ‘Representing Authority in Victorian India’, in E.J. Hobsbawm and T. Ranger (eds). The Invention of Tradition, Cambridge University Press, pp.&nbsp;165-210.</p>
+<p>Cohn, B (1990): ’Census, Social Structure and Objectification in South Asia’in B. Cohn, An Anthropologist among Historians and other Essays, Delhi, Oxford: OUP, pp.&nbsp;224-254.</p>
+<p>Dirks, N (2001), Castes of Mind: Colonialism and the Making of Modern India, Princeton.</p>
+<p>Federation of Women’s Lawyers Kenya and the International Women’s Human Right’s Clinic (2008), ‘Kenyan Laws and Harmful Customs Curtail Women’s Equal Enjoyment of ICESCR Rights’, Committee on Economic, Social and Cultural Rights, pp.&nbsp;1-34.</p>
+<p>Fiona, A and Mackenzie, D (1996), ‘Conflicting Claims to Custom: Land Law in Central Province, Kenya, 1912-52’, Journal of African Law, Vol. 40, No.&nbsp;1, pp.&nbsp;62-77.</p>
+<p>Fiona, A and Mackenzie D (1999), ‘Betterment and the Gendered Politics of Maize Production, Murang’a District, Central Province, Kenya, 1880-1952’, Canadian Journal of African Studies, Vol.33, No.1, pp.&nbsp;64-97.</p>
+<p>Ghai, Y (1965), ‘Kenya’s Socialism: African Socialism and Its Application to Planning in Kenya. Review by: Yash Ghai’, Transition, No.20, pp.&nbsp;20-23.</p>
+<p>Guha, S (2003), ‘The Politics of Identity and Enumeration in India c.&nbsp;1600-1990’, Comparative Studies in Society and History, Vol. 45, No.&nbsp;2.</p>
+<p>Lentz, C (1995), ‘‘Tribalism’ and ethnicity in Africa: A review of four decades of anglophone research’, Cahiers des sciences humaines, Vol. 31, No.&nbsp;2.</p>
+<p>Liddle, L and Rai, S (1998): ‘Feminism, Imperialism and Orientalism: the Challenge of the “Indian Woman”’, Women’s History Review, Vol. 7, No.&nbsp;4.</p>
+<p>Ranger, T (1983): `The Invention of Tradition’ in E.J. Hobsbawm and T. Ranger (eds). The Invention of Tradition, Cambridge University Press.</p>
+<p>Ranger, T (1993): `The Invention of Tradition Revisited: the Case of Colonial Africa,’ in Ranger (ed), Legitimacy and the State in Twentieth-Century Africa, Palgrave, Basingstoke, pp.&nbsp;62-111.</p>
+<p>Rowe, David (2004), ‘Gramsci: Sport, Hegemony and the National-Popular’, in Richard Giulianotti (ed.), Sport and Modern Social Theorists, London, pp.&nbsp;97-100.</p>
+<p>Shadle, B (1999) ‘Changing Traditions to Meet Current Altering Conditions’: Customary Law, African Courts and the Rejection of Codification in Kenya, 1930-60, The Journal of African History, Vol. 40, No.&nbsp;3, pp.&nbsp;411-431.</p>
+<p>Spear, T (2003), ‘Neo-Traditionalism and the Limits of Invention in British Colonial Africa’, The Journal of African History, Vol. 44, No.&nbsp;1 , pp.&nbsp;3-27</p>
+<p>Sutherland, C (2005), ‘Nation-building through discourse theory’, Nations and Nationalism, Vol. 11, No.&nbsp;2.</p>
+<p>Thapar, R (1972), The Past and Prejudice (Lecture one), National Book Trust, India.</p>
+<p>Wrong, M (2008), ‘Who are the Kikuyu?’, Slate, 8 February. Available online: &nbsp;http://www.slate.com/articles/news_and_politics/dispatches/2008/02/who_are_the_kikuyu.html</p>
+<p>[6]: Nicholas B. Dirks, Castes of Mind: Colonialism and the Making of Modern India (Princeton, 2001), pg. 8</p>
+<p>[7]: J. Glazier cited in Fiona and Mackenzie, ‘Conflicting Claims to Custom: Land Law in Central Province, Kenya, 1912-52’, Journal of African Law, Vol. 40, No.&nbsp;1 (1996), pg. 73.</p>
+<p>[8]: Sumit Guha, ‘The Politics of Identity and Enumeration in India c.&nbsp;1600-1990’, Comparative Studies in Society and History, Vol. 45, No.&nbsp;2 (2003), pg. 158.</p>
+<p>[9]: Cohn, ‘Representing Authority in Victorian India’, pg. 188.</p>
+<p>[12]: Ranger, ‘The invention of tradition in colonial Africa’, pg. 211.</p>
+<p>[14]: Romila Thapar: The Past and Prejudice (Lecture one), (National Book Trust, India 1972).</p>
+<p>[15]: Cohn, ‘Representing Authority in Victorian India’, pp.&nbsp;165-210.</p>
+<p>[19]: Janet Bujra ‘Diversity in pre-capitalist societies’; in T. Allen and A. Thomas (eds), Poverty and Development into the 21st Century (Oxford, 2000), pg. 220.</p>
+<p>[20]: A. Fiona and D. Mackenzie, ‘Betterment and the Gendered Politics of Maize Production, Murang’a District, Central Province, Kenya, 1880-1952’, Canadian Journal of African Studies, Vol.33, No.1 (1999), pp.&nbsp;68-69.</p>
+<p>[22]: L. Liddle and S. Rai, ‘Feminism, Imperialism and Orientalism: the Challenge of the “Indian Woman”’, Women’s History Review, Vol. 7, No.&nbsp;4 (1998), pg. 497.</p>
+<p>[26]: Thomas Spear, ‘Neo-Traditionalism and the Limits of Invention in British Colonial Africa’, The Journal of African History, Vol. 44, No.&nbsp;1 (2003), pp.&nbsp;3-27.</p>
+<p>[27]: Brett L. Shadle ‘Changing Traditions to Meet Current Altering Conditions’: Customary Law, African Courts and the Rejection of Codification in Kenya, 1930-60, The Journal of African History, Vol. 40, No.&nbsp;3 (1999), pg. 430.</p>
+<p>[29]: Carola Lentz, ‘‘Tribalism’ and ethnicity in Africa: A review of four decades of anglophone research’, Cahiers des sciences humaines, Vol. 31, No.&nbsp;2 (1995), pg. 318.</p>
+<p>[31]: Thapar, The Past and Prejudice (Lecture one), pg. 6-10.</p>
+<p>[33]: Thapar, The Past and Prejudice (Lecture One), pg. 13.</p>
+<p>[36]: Susan Bayly, Caste, Society and Politics in India from the Eighteenth Century to the Modern Age (Cambridge 2001), pg. 159.</p>
+<p>[39]: Lucy Carroll, ‘Colonial Perceptions of Indian Society and the Emergence of Caste(s) Associations’, The Journal of Asian Studies, Vol. 37, No.&nbsp;2 (1978), pp.&nbsp;233-250.</p>
+<p>[41]: Thapar, The Past and Prejudice (Lecture one), pg. 16.</p>
+<p>[54]: Bruce J. Berman, ‘Ethnicity and Modernity: The Paradox of Mau Mau’, Canadian Journal of African Studies, Vol. 25, No.&nbsp;2 (1991), pg. 196.</p>
+<p>[56]: David Rowe, ‘Gramsci: Sport, Hegemony and the National-Popular’, in Richard Giulianotti(ed.), Sport and Modern Social Theorists (London, 2004), pg. 104.</p>
+<p>[60]: Daniel Branch, Defeating Mau Mau, Creating Kenya: Counterinsurgency, Civil War, and Decolonization (Cambridge, 2009), pg. xi.</p>
+<p>[61]: Joel D. Barkan, ‘Divergence and Convergence in Kenya and Tanzania: Pressures for Reform’, in Joel D. Barkan(ed), Beyond Capitalism vs.&nbsp;Socialism in Kenya &amp; Tanzania (Colorado and London, 1994), pp.&nbsp;10-13.</p>
+<p>[62]: Yash Ghai, ‘Kenya’s Socialism: African Socialism and Its Application to Planning in Kenya. Review by: Yash Ghai’, Transition, No.20 (1965), pp.&nbsp;20-23.</p>
+<p>[65]: Cohn, ‘Representing Authority in Victorian India’, pg. 209.</p>
+<p>[69]: Claire Sutherland, ‘Nation-building through discourse theory’, Nations and Nationalism, Vol. 11, No.&nbsp;2 (2005), pg. 90-91.</p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Terence Ranger, ‘The invention of tradition revisited: the case of Africa’, in Terence Ranger and Olufemi Vaughan (eds.), <em>Legitimacy and the State in Twentieth Century Africa</em> (London, 1993), pg. 63.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Terence Ranger, ‘The invention of tradition in colonial Africa’, in E. J. Hobsbawm and T. O. Ranger (eds.), <em>The Invention of Tradition</em> (Cambridge, 1983), pg. 9.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Ranger, ‘The invention of tradition revisited: the case of Africa’, pg. 81.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Bernard Cohn, ‘Representing Authority in Victorian India’, in E. J. Hobsbawm and T. O. Ranger (eds.), <em>The Invention of Tradition</em> (Cambridge, 1983), pp.&nbsp;165-210.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>M. Chanock cited in Ranger, ‘The invention of tradition revisited: the case of Africa’, pg. 68.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    window.setColorSchemeToggle(window.hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/diggydigsdata\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/2012-04-17-the-invention-of-tradition.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./LICENSE.md">
+<p>License</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

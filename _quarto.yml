@@ -1,6 +1,9 @@
 project:
   type: website
 
+execute:
+  engine: jupyter
+
 website:
   title: "Diggy Digs Data"
   favicon: assets\img\favicons\favicon.ico
@@ -29,6 +32,7 @@ website:
       - icon: github
         href: https://github.com/diggydigsdata
       - icon: linkedin
+        href: https://www.linkedin.com/in/eoindignan1989/
   
   page-footer:
     left: "This page is built with [Quarto](https://quarto.org/)."

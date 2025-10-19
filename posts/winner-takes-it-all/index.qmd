@@ -3,7 +3,7 @@ title: "Winner Takes It All"
 author: "Diggy"
 date: "YYYY-MM-DD"
 description: "Description placeholder for this post."
-image: "featured.jpg"
+image: "featured.png"
 image-alt: "Image description"
 categories: [Journalism]
 ---

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-09-30">
 
-<title>Eoin Dignan – Diggy Digs Data</title>
+<title>DRAFT(but updated with python plots): No Fear At That Age – Diggy Digs Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -73,10 +75,11 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Eoin Dignan – Diggy Digs Data">
+<meta property="og:title" content="DRAFT(but updated with python plots): No Fear At That Age – Diggy Digs Data">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://diggydigsdata.github.io/profile.jpg">
+<meta property="og:image" content="https://diggydigsdata.github.io/{{ '/assets/files/NoFearCode_files/figure-commonmark/fig-penalties-per-match-output-1.png' | relative_url }}">
 <meta property="og:site_name" content="Diggy Digs Data">
+<meta property="og:image:alt" content="Average penalties per match over time, by league (with global trend)">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -280,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
     </span>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -302,182 +305,616 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="profile.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Eoin Dignan</h1>
-</div>
-<div class="quarto-title-meta">
+<h1 class="title">DRAFT(but updated with python plots): No Fear At That Age</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">football</div>
+    <div class="quarto-category">analysis</div>
   </div>
-</header><main class="content" id="quarto-document-content">
-
-<p>My name is Eoin, but throughout high school I was known exclusively as Diggy. I’m an MSc Data Science student (part-time) with an expected completion in 2027. My background is in ecommerce copywriting, teaching &amp; special needs care. You can find my <a href="#resume">resume</a> below.</p>
-<p>This site serves a few functions.</p>
-<ul>
-<li>First, it is a place to host projects and my resume. My objective is to work in data analytics, data journalism or technical writing. <strong><em>I’ve hosted my projects here prematurely. They are all in a draft phase. I just want prospective employers to see some things I am working on.</em></strong></li>
-<li>Second, it motivates me to flesh out data projects and practise Excel, SQL, Python and Tableau.</li>
-<li>Finally, it lets me experiment in the real world. I’ll be building and embedding data visualisations, employing VS Code, GitHub and Docker workflows, using markdown and HTML, and uncovering lots more things I need to know but haven’t yet discovered. Every page and project is a learning experience.</li>
-</ul>
-<p>This site hosts a fair chunk of <em>ancient</em> content from my university days and the like. The purpose of adding this content is primarily to give me practise material as I structure the site and learn more sophisticated formatting in markdown and html. There are some bits and pieces which I am proud of, and lots more where I think the writing style is very undergrad and pretentious. Still, I have sentimental attachments there. All that stuff is tagged under <a href="./tags/ancient/">ancient</a>.</p>
-<p><a id="resume"></a></p>
-<h2 style="font-size: 1.5em; font-weight: bold; margin-top: 20px;">
-<p>Resume</p>
-</h2>
-<button id="expand-all" style="margin-right: 10px;">
-<p>Expand All</p>
-</button>
-<button id="collapse-all">
-<p>Collapse All</p>
-</button>
-<details>
-<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">
-<p>Education</p>
-</summary>
-<div data-markdown="1">
-<ul>
-<li><strong>Degree</strong>: BA History and Sociology with Year Abroad<br>
-</li>
-<li><strong>University</strong>: The University of Warwick<br>
-</li>
-<li><strong>Year</strong>: 2012<br>
-</li>
-<li><strong>Grade</strong>: Upper Second-Class Honours (2:1)</li>
-</ul>
-</div>
-</details>
-<details>
-<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">
-<p>Experience</p>
-</summary>
-<div data-markdown="1">
-<ul>
-<li><p><strong>English, ukulele and football teacher @ PORG Základní Škola</strong> <em>(Aug 2024 – Jan 2025)</em></p></li>
-<li><p><strong>Product Copywriter/Editor – Technical @ Infosys</strong> <em>(Jul 2022 – Aug 2024)</em></p>
-<ul>
-<li>Wrote about gadgets, gizmos and games for Currys’ website.</li>
-<li>Investigated and corrected supplier info, especially in technical categories.<br>
-</li>
-<li>Go-to copywriter for computing and smart tech.<br>
-</li>
-<li>Edited co-workers’ copy/specs and trained new hires.<br>
-</li>
-<li>Received Infosys ‘Best Language Checker’ award.</li>
-</ul></li>
-<li><p><strong>High School English Lit. and Lang. Teacher @ American Academy</strong> <em>(Temporary: April – June 2024)</em></p></li>
-<li><p><strong>English Teacher @ ILC International House Brno</strong> <em>(September 2018 – June 2022)</em></p>
-<ul>
-<li>Taught Pre-school (3+) up to C1 Teens/Adults. PET, FCE and CAE exam preparation</li>
-<li>Creative writing &amp; materials creation (Erasmus+ City Stories Project).</li>
-<li>Conference presentation: ‘SurvivYL’ (26 March 2022).</li>
-</ul></li>
-<li><p><strong>Key worker for children with disabilities on MENCAP schemes</strong> <em>(August 2014, 2015 &amp; July 2019)</em></p></li>
-<li><p><strong>Paraprofessional @ CRCC, USA</strong> <em>(February 2016 – November 2017)</em></p>
-<ul>
-<li>Provided personal care as well as educational and recreational support for children and young people with disabilities. Collaborated with teachers, therapists and nurses.</li>
-</ul></li>
-</ul>
-</div>
-</details>
-<details>
-<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">
-<p>Skills &amp; Professional Development</p>
-</summary>
-<div data-markdown="1">
-<ul>
-<li><p><strong>Programming</strong>: Python, SQL</p></li>
-<li><p><strong>Tools</strong>: Excel, GitHub, VS Code, Markdown, HTML</p></li>
-<li><p><strong>Languages</strong>: English (native), French (B2 working proficiency)</p></li>
-<li><p><strong>Certificates</strong></p>
-<ul>
-<li><u>Coding</u>:
-<ul>
-<li>📄 <a href=".\assets/files/LearnPython3_CodecademySkillPath.pdf">Learn Python 3 Skill Path (Codecademy)</a></li>
-<li>📄 <a href=".\assets/files/DataCamp_Python_certificates.pdf">DataCamp Python Certificates</a></li>
-<li>📄 <a href=".\assets/files/DataCamp_R_certificates.pdf">DataCamp R Certificates</a></li>
-<li>📄 <a href=".\assets/files/DataCampSQLcertificates.pdf">DataCamp SQL Certificates</a></li>
-</ul></li>
-<li><u>Business Intelligence</u>:
-<ul>
-<li>📄 <a href=".\assets/files/DataCamp_Power_BI_and_Excel_certificates.pdf">DataCamp Power BI &amp; Excel Certificates</a></li>
-</ul></li>
-<li><u>SEO &amp; Marketing</u>:
-<ul>
-<li><a href="https://skillshop.credential.net/31bf1a39-29ee-49dc-b7dd-a7fbd4e670f2#acc.iMpVTfh1">Get Started Using Google Analytics (GA4)</a></li>
-<li><a href="https://static.semrush.com/academy/certificates/49d01032e9/eoin-dignan_10.pdf">Semrush Academy SEO Principles: An Essential Guide for Beginners</a></li>
-</ul></li>
-<li><u>Teaching</u>:
-<ul>
-<li>📄 <a href=".\assets/files/IHCYLT_EnglishTeaching_Certificate.pdf">International House Certificate in Teaching Young Learners and Teenagers (IHCYLT)</a></li>
-<li>📄 <a href=".\assets/files/CELTA_EnglishTeaching_Certificate.pdf">Certificate in Teaching English to Speakers of Other Languages</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</div>
-</details>
-<details>
-<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">
-<p>Volunteering</p>
-</summary>
-<div data-markdown="1">
-<ul>
-<li>Creative writing workshops @ <em>Fighting Words</em> (2015–18)<br>
-</li>
-<li>Contributor to <a href="https://sharedfuture.news/author/eoindignan/">Shared Future News</a><br>
-</li>
-<li>Charity shop supervisor @ <em>Oxfam</em> (2012–15)<br>
-</li>
-<li>English tutor @ <em>NI Community of Refugees and Asylum Seekers</em> (2012–14)<br>
-</li>
-<li>Assisted special needs schemes @ <em>Fleming Fulton</em> (2011–15)<br>
-</li>
-<li>Volunteer @ <em>2012 Paralympics</em></li>
-</ul>
-</div>
-</details>
-<details>
-<summary style="font-size: 1.3em; font-weight: normal; margin-bottom: 10px; font-family: inherit;">
-<p>Hobbies</p>
-</summary>
-<div data-markdown="1">
-<ul>
-<li>Wife &amp; Baby</li>
-<li>French &amp; Czech</li>
-<li>Running, Football, Cycling</li>
-<li>Pool</li>
-<li>Ukulele</li>
-<li>Learning</li>
-</ul>
-</div>
-<script>
-  document.getElementById('expand-all').addEventListener('click', function () {
-    document.querySelectorAll('details').forEach(detail => {
-      detail.setAttribute('open', '');
-    });
-  });
-  document.getElementById('collapse-all').addEventListener('click', function () {
-    document.querySelectorAll('details').forEach(detail => {
-      detail.removeAttribute('open');
-    });
-  });
-</script>
+  </div>
 
 
-</details></main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://www.linkedin.com/in/eoindignan1989/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/diggydigsdata" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 30, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>‘There’s no fear at that age’ is a familiar refrain from pundits. The idea goes that young players are naive, innocent; they take risks, they express themselves, and in an ‘ignorance is bliss way’ they don’t show nerves the way older players do - or something.</p>
+<p>I guess the fearlessness theory rests on the presumption that young players think they have all the time in the world so a few blunders early on in their career won’t be the end of it. Or, there is so little pressure applied on them relative to senior players that they play with freedom and can ‘express themselves’. I can understand that to a certain extent, although young players could easily go in the other, overawed direction. 18 year old me would definitely have fallen into the shitting myself camp. But then, it could be argued that I don’t have the mentality of an elite athlete.</p>
+<p>In any case, I’ve always been skeptical. They are young adults, not toddlers. And loads of promising young careers go up in smoke; the consequences for these players’ lives are devastating. Look at Jose Baxter, for example. I would imagine most young players have seen enough academy cohort colleagues fall by the wayside that they are acutely aware of their vulnerability. So I wanted to dig into this throwaway comment from pundits and find some way to interrogate it statistically.</p>
+<section id="how-to-measure-fear" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-measure-fear">How to measure fear?</h2>
+<p>To put fearlessness to the statistical test, I’ve turned to the penalty. That’s because another fairly common idea is that every elite player <em>should</em> be able to tuck away a penalty. And that, 12 yards from goal, it is nerves rather than technique which undoes the pro player.</p>
+<p>While the best way to explore fear would be penalty shootout data - where every single kick is critical - I haven’t got that and will make do with normal-time penalties. These don’t have quite the same almighty importance but they still tell us something about the effects of nerves.</p>
+<p>This is part of a series of analyses I’m doing where I fixate on penalties. It just drives me crazy how prevalent they are. It increasingly like every final is decided on penalties and every match a penalty is awarded. And it’s not just because of VAR. Penalties per match have been increasing for some time. See <a href="#fig-penalties-per-match" class="quarto-xref">Figure&nbsp;1</a>. Or the interactive version <a href="#fig-penalties-per-match-plotly" class="quarto-xref">Figure&nbsp;2</a> (more league data will be added). If you’d like to see a world where Penaldo doesn’t exist, this is my main project. It assess hat would happen if players who won the penalties were the only ones who got to take them, and it re-evaluates historical data to use non-penalty goals while crediting players who won penalties instead of the takers. I also throw in some assist analyses for good measure. [Read more here]({{ “/football/npg+pkwon/” | relative_url }})</p>
+<div id="fig-penalties-per-match" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-penalties-per-match-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="{{ '/assets/files/NoFearCode_files/figure-commonmark/fig-penalties-per-match-output-1.png' | relative_url }}" alt="Average penalties per match over time, by league (with global trend)" class="figure-img">
+<figcaption>
+Figure 1: Average penalties per match over time, by league (with global trend)
+</figcaption>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-penalties-per-match-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
 </div>
- <!-- /main -->
+<div id="fig-penalties-per-match-plotly" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-penalties-per-match-plotly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p>&lt;iframe src=“{{”/assets/plots/penalties_over_time.html” | relative_url }}” width=“100%” height=“600” frameborder=“0” loading=“lazy”&gt;</p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-penalties-per-match-plotly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<section id="penalty-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="penalty-sampling">Penalty sampling</h2>
+<p>I have whipped up the following (courtesy of Stathead / FBref):</p>
+<ul>
+<li>Every normal time penalty taken in the Premier League - in other words, since the 1992/1993 season</li>
+<li>Every normal time penalty taken in the Champions League since the 1999/2000 season</li>
+<li>Every normal time penalty taken in La Liga since the 1999/2000 season</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>League</strong></th>
+<th><strong>Total Penalties</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Premier League</td>
+<td>2892</td>
+</tr>
+<tr class="even">
+<td>La Liga</td>
+<td>2956</td>
+</tr>
+<tr class="odd">
+<td>Champions League</td>
+<td>925</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td><strong>6773</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="age-bands" class="level2">
+<h2 class="anchored" data-anchor-id="age-bands">Age bands</h2>
+<p>Finally, I have constructed some age groupings. See . This is in order to prevent small samples for different ages giving unreliable values. For example, there is a 20% difference in the success rate for La Liga 19 year-olds compared 20 year-olds. However, given these age groups have relatively few attempts it’s easy for the data to get a little wild.</p>
+<p>I think the groups I have created are fairly logical. At the top and bottom end we’ve got open intervals - we can have players from 0 to 20; though the youngest penalty taker in this data is 17. And our 33+ group can go to infinity. Though the oldest penalty taker is .. This group are called No Fear At That Age? Because it’s the age when expectations are minimal, you are at your most naive, innocent, etc. And the elder statesmen are called Cherry on Top. I would theorise that they also have a bit less pressure, because they have already had a good career, and nobody is looking at their performance as a measure of their potential. They are a known quantity by this point.</p>
+<p>They sandwich 3-year age bands. 21-23 could be the most pressurised age. That’s the point at which many wonderkid careers have gone awry - think Bojan Krkic. It’s the moment when you need to step up, mature, realise your potential and be consistent. Otherwise, a journeyman career in the lower leagues could await you. Then 24-26 could constitute the beginning of a player’s peak years. 27-29 would often be considered, depending a little on position, the absolute peak years of the average player. 30-32 has proven very fruitful for many players too. However, the perspective on these players definitely shifts. At this point, pressure amplifies because pundits and fans are often questioning whether you are ‘past it’, whether you should get a multi-year contract renewal or not. Just look at Mo Salah. In 2024/2025 he has having a career year but, at the age of 32, Liverpool have spent all season agonising about whether to give him a commensurate contract because of his age.</p>
+<section id="caveat" class="level3">
+<h3 class="anchored" data-anchor-id="caveat">Caveat</h3>
+<p>One enormous <strong>caveat</strong>, however, is that the ages provided by Stathead simply use the player’s age at the commencement of the season, not their age at the time of taking a penalty. Consequently, the oldest penalty taker in the dataset is Teddy Sheringham. He appears as 39 in my dataset, but he had recently turned 40 when he missed a final-day penalty for West Ham against Tottenham in the 2005/06 season. Jorge Molina also appears as 39 in my dataset, but he was 40 when he missed against Espanyol on the final day of the 2021/22 season, effectively relegating Granada from La Liga.</p>
+<p>Similarly, the dataset indicates a 17 year-old - Bojan Krkic. But he was 18 by the time he took his penalty for Barcelona against Manchester United in the Champions League. This is all rather annoying, but it would be more trouble than it’s worth to separate out every single penalty from each player’s season statistics and dial in the taker’s age on a specific date. It just means there is a +/- of 9 months (i.e.&nbsp;the length of a season) for each player’s age.</p>
+</section>
+</section>
+<section id="averages" class="level2">
+<h2 class="anchored" data-anchor-id="averages">Averages</h2>
+<p>In this analysis I calculate <strong>conversion rates</strong> in two different ways, which reflect slightly different questions:</p>
+<ul>
+<li><p><strong>Weighted (overall) mean</strong>: This is the percentage of all penalties scored divided by the total penalties attempted within a group (e.g.&nbsp;a competition). Every penalty counts equally, so players who take more penalties have more influence. This measure tells us the <em>true success rate of the group as a whole</em>.</p></li>
+<li><p><strong>Unweighted (player) mean</strong>: This is the simple average of individual players’ conversion rates. Each player counts equally, no matter how many penalties they have taken. This measure answers the question: <em>what does the “average player” in this group look like?</em></p></li>
+</ul>
+<p>In the charts shown here, the main benchmark (red dashed line) is the <strong>weighted overall mean</strong>, because it reflects the actual outcome of all penalties taken across the dataset.</p>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<p>First off, when it comes to conversion rates across the leagues, there are no differences whatsoever. Which is boring but convenient that we don’t need to worry too much about league effects.</p>
+<p><img src="assets\files\NoFearCode_files\figure-commonmark\cell-9-output-1.png" class="img-fluid"></p>
+<pre><code>         PKatt    PK  PKm  conversion_rate
+Comp                                      
+CL         925   714  211        77.189189
+EPL       2892  2280  612        78.838174
+La Liga   2956  2288  668        77.401894</code></pre>
+<p>Or do we? Any differences when we break the leagues down by age group?</p>
+<p>There’s <em>maybe</em> a trend towards improved penalty conversion as you accumulate experience. The ‘no fear’ players are <em>slightly</em> more clinical than the players aged 21-23 who may be coming under pressure to make the next step as more mature and consistent players.</p>
+<section id="age-group-penalty-data-champions-league" class="level3">
+<h3 class="anchored" data-anchor-id="age-group-penalty-data-champions-league">Age Group Penalty Data (Champions League)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age Group</th>
+<th>Penalty Attempts</th>
+<th>Penalty Conversions</th>
+<th>Conversion Rate (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;=20: No Fear At That Age?</td>
+<td>41</td>
+<td>30</td>
+<td>73.17</td>
+</tr>
+<tr class="even">
+<td>21-23: Not A Kid Anymore</td>
+<td>139</td>
+<td>99</td>
+<td>71.22</td>
+</tr>
+<tr class="odd">
+<td>24-26: Early Peak</td>
+<td>238</td>
+<td>184</td>
+<td>77.31</td>
+</tr>
+<tr class="even">
+<td>27-29: Peak Peak</td>
+<td>272</td>
+<td>217</td>
+<td>79.78</td>
+</tr>
+<tr class="odd">
+<td>30-32: Over The Hill?</td>
+<td>158</td>
+<td>122</td>
+<td>77.22</td>
+</tr>
+<tr class="even">
+<td>33+: Cherry On Top</td>
+<td>77</td>
+<td>62</td>
+<td>80.52</td>
+</tr>
+<tr class="odd">
+<td><strong>Grand Total</strong></td>
+<td><strong>925</strong></td>
+<td><strong>714</strong></td>
+<td><strong>77.19</strong></td>
+</tr>
+</tbody>
+</table>
+<p>There’s a clear trend towards improved penalty conversion as you accumulate experience. The ‘no fear’ players are <em>slightly</em> more clinical than the players aged 21-23 who may be coming under pressure to make the next step as more mature and consistent players.</p>
+<p>But this is the smallest dataset - only 925 penalties.</p>
+<p><img src="assets\files\NoFearCode_files/figure-commonmark/cell-10-output-1.png" class="img-fluid"></p>
+<p><img src="assets\files\NoFearCode_files/figure-commonmark/cell-11-output-1.png" class="img-fluid"></p>
+</section>
+<section id="age-group-penalty-data-premier-league" class="level3">
+<h3 class="anchored" data-anchor-id="age-group-penalty-data-premier-league">Age Group Penalty Data (Premier League)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age Group</th>
+<th>Penalty Attempts</th>
+<th>Penalty Conversions</th>
+<th>Conversion Rate (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;=20: No Fear At That Age?</td>
+<td>80</td>
+<td>60</td>
+<td>75.00</td>
+</tr>
+<tr class="even">
+<td>21-23: Not A Kid Anymore</td>
+<td>503</td>
+<td>398</td>
+<td>79.13</td>
+</tr>
+<tr class="odd">
+<td>24-26: Early Peak</td>
+<td>834</td>
+<td>654</td>
+<td>78.42</td>
+</tr>
+<tr class="even">
+<td>27-29: Peak Peak</td>
+<td>793</td>
+<td>624</td>
+<td>78.69</td>
+</tr>
+<tr class="odd">
+<td>30-32: Over The Hill?</td>
+<td>495</td>
+<td>387</td>
+<td>78.18</td>
+</tr>
+<tr class="even">
+<td>33+: Cherry On Top</td>
+<td>187</td>
+<td>157</td>
+<td>83.96</td>
+</tr>
+<tr class="odd">
+<td><strong>Grand Total</strong></td>
+<td><strong>2892</strong></td>
+<td><strong>2280</strong></td>
+<td><strong>78.84</strong></td>
+</tr>
+</tbody>
+</table>
+<p>In the Premier League, things level out a bit more, although there still seems to be a mild advantage for experience.</p>
+</section>
+<section id="age-group-penalty-data-la-liga" class="level3">
+<h3 class="anchored" data-anchor-id="age-group-penalty-data-la-liga">Age Group Penalty Data (La Liga)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age Group</th>
+<th>Penalty Attempts</th>
+<th>Penalty Conversions</th>
+<th>Conversion Rate (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;=20: No Fear At That Age?</td>
+<td>81</td>
+<td>63</td>
+<td>77.78</td>
+</tr>
+<tr class="even">
+<td>21-23: Not A Kid Anymore</td>
+<td>405</td>
+<td>307</td>
+<td>75.80</td>
+</tr>
+<tr class="odd">
+<td>24-26: Early Peak</td>
+<td>829</td>
+<td>653</td>
+<td>78.77</td>
+</tr>
+<tr class="even">
+<td>27-29: Peak Peak</td>
+<td>833</td>
+<td>644</td>
+<td>77.31</td>
+</tr>
+<tr class="odd">
+<td>30-32: Over The Hill?</td>
+<td>511</td>
+<td>400</td>
+<td>78.28</td>
+</tr>
+<tr class="even">
+<td>33+: Cherry On Top</td>
+<td>297</td>
+<td>221</td>
+<td>74.41</td>
+</tr>
+<tr class="odd">
+<td><strong>Grand Total</strong></td>
+<td><strong>2956</strong></td>
+<td><strong>2288</strong></td>
+<td><strong>77.40</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Things get flipped on their head a little bit in La Liga. For the first time, the Cherry on Top vets aren’t the most effective penalty takers. In fact, in La Liga they are the worst. Meanwhile, the 20s and under are right up there near the top. And if we drill down into that age group, we can really appreciate how precocious those La Liga teens are.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age Group</th>
+<th>Penalty Attempts</th>
+<th>Penalty Conversions</th>
+<th>Conversion Rate (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;=20: No Fear At That Age?</td>
+<td>81</td>
+<td>63</td>
+<td>77.78</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>10</td>
+<td>8</td>
+<td>80.00</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>27</td>
+<td>24</td>
+<td>88.89</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>44</td>
+<td>31</td>
+<td>70.45</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s remove the 20 year olds. Now, La Liga teens have a success rate of 86%! Of course, there’s a caveat… That’s a population size of just 37. Ezequiel Garay - one of history’s great centre-back penalty takers and a stalwart of my FC Atlas team in Football Manager - accounts for 22% of the entire La Liga teenage penalty taking population. And Jose Antonio Reyes accounts for another 19%. All together, those two players - and their combined 92% success rate - represent 41% of the whole group.</p>
+<p>So let’s bundle everything together and see what we get…</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age Group</th>
+<th>Penalty Attempts</th>
+<th>Penalty Conversions</th>
+<th>Conversion Rate (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;=20: No Fear At That Age</td>
+<td>202</td>
+<td>153</td>
+<td>75.74</td>
+</tr>
+<tr class="even">
+<td>21-23: Not A Kid Anymore</td>
+<td>1047</td>
+<td>804</td>
+<td>76.79</td>
+</tr>
+<tr class="odd">
+<td>24-26: Early Peak</td>
+<td>1901</td>
+<td>1491</td>
+<td>78.43</td>
+</tr>
+<tr class="even">
+<td>27-29: Peak Peak</td>
+<td>1898</td>
+<td>1485</td>
+<td>78.24</td>
+</tr>
+<tr class="odd">
+<td>30-32: Over The Hill?</td>
+<td>1164</td>
+<td>909</td>
+<td>78.09</td>
+</tr>
+<tr class="even">
+<td>33+: Cherry On Top</td>
+<td>561</td>
+<td>440</td>
+<td>78.43</td>
+</tr>
+<tr class="odd">
+<td><strong>Grand Total</strong></td>
+<td><strong>6773</strong></td>
+<td><strong>5282</strong></td>
+<td><strong>77.99</strong></td>
+</tr>
+</tbody>
+</table>
+<p>There is a <em>very</em> mild indication that more experienced players do better than younger players. Considering the lowest success rates are 20 and under, and 21-23 are 2nd-lowest, there is some indication that young players are not totally fearless. I think this could be particularly noteworthy because, players who are designated penalty takers at such a young are rare and they are, in all likelihood, technically gifted. Therefore, is it a psychological vulnerability that causes their penalty-taking to dip a little compared to their older peers? And that maybe they aren’t so impervious to fear as pundits may casually claim?</p>
+<p>Let’s see if this stands up to statistical scrutiny.</p>
+<p>Data assembled from: <a href="https://stathead.com/fbref/">Stathead</a></p>
+</section>
+<section id="logistic-regression" class="level3">
+<h3 class="anchored" data-anchor-id="logistic-regression">Logistic Regression</h3>
+<section id="method" class="level4">
+<h4 class="anchored" data-anchor-id="method">Method</h4>
+<p>Each penalty in the dataset is tied to a player, season, and league. Since some players take penalties in multiple seasons (or even in multiple leagues), the raw data contained repeated rows for the same player. To avoid overweighting those players, we collapsed the dataset to one row per <strong>player × age group × league</strong>, summing up penalties scored and attempted within each cell. This way, every player contributes fairly to the analysis.</p>
+<p>I used a <strong>logistic regression model</strong> because the outcome of interest—scoring or missing a penalty—is binary. Logistic regression lets us model the probability of success while accounting for the number of attempts in each cell. We tested age group, league, and their interaction to see if any of them had an effect on conversion rates. Confidence intervals were estimated around the predicted probabilities to judge how much overlap there was between groups.</p>
+</section>
+<section id="results" class="level4">
+<h4 class="anchored" data-anchor-id="results">Results</h4>
+<p>To test whether penalty conversion varies by age or by league, I fit a logistic regression with both predictors and their interaction. The likelihood-ratio tests showed no evidence that either factor—or their combination—improves model fit (all p &gt; .4). In other words, neither age group nor league explains variation in conversion odds.</p>
+<p>Predicted probabilities were remarkably consistent across groups, generally hovering between <strong>73% and 84%</strong>. For instance:</p>
+<ul>
+<li><strong>≤20 years</strong>: 73–78% across leagues<br>
+</li>
+<li><strong>21–23 years</strong>: 71–79%<br>
+</li>
+<li><strong>27–29 years (peak)</strong>: 77–79%<br>
+</li>
+<li><strong>33+ years</strong>: 74–84%</li>
+</ul>
+<p>Confidence intervals overlapped substantially, indicating no systematic age or league effect.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 10%">
+<col style="width: 27%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age Group</th>
+<th>League</th>
+<th>Predicted Conversion Rate</th>
+<th>95% CI (Low)</th>
+<th>95% CI (High)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>33+: Cherry On Top</td>
+<td>EPL</td>
+<td>84.0%</td>
+<td>77.9%</td>
+<td>88.6%</td>
+</tr>
+<tr class="even">
+<td>33+: Cherry On Top</td>
+<td>CL</td>
+<td>80.5%</td>
+<td>70.2%</td>
+<td>87.9%</td>
+</tr>
+<tr class="odd">
+<td>27-29: Peak Peak</td>
+<td>CL</td>
+<td>79.8%</td>
+<td>74.6%</td>
+<td>84.1%</td>
+</tr>
+<tr class="even">
+<td>21-23: Not A Kid Anymore</td>
+<td>EPL</td>
+<td>79.1%</td>
+<td>75.4%</td>
+<td>82.5%</td>
+</tr>
+<tr class="odd">
+<td>24-26: Early Peak</td>
+<td>CL</td>
+<td>77.3%</td>
+<td>71.6%</td>
+<td>82.2%</td>
+</tr>
+<tr class="even">
+<td>27-29: Peak Peak</td>
+<td>EPL</td>
+<td>78.7%</td>
+<td>75.7%</td>
+<td>81.4%</td>
+</tr>
+<tr class="odd">
+<td>24-26: Early Peak</td>
+<td>La Liga</td>
+<td>78.8%</td>
+<td>75.9%</td>
+<td>81.4%</td>
+</tr>
+<tr class="even">
+<td>30-32: Over The Hill?</td>
+<td>CL</td>
+<td>77.2%</td>
+<td>70.0%</td>
+<td>83.1%</td>
+</tr>
+<tr class="odd">
+<td>27-29: Peak Peak</td>
+<td>La Liga</td>
+<td>77.3%</td>
+<td>74.3%</td>
+<td>80.0%</td>
+</tr>
+<tr class="even">
+<td>24-26: Early Peak</td>
+<td>EPL</td>
+<td>78.4%</td>
+<td>75.5%</td>
+<td>81.1%</td>
+</tr>
+<tr class="odd">
+<td>30-32: Over The Hill?</td>
+<td>La Liga</td>
+<td>78.3%</td>
+<td>74.5%</td>
+<td>81.6%</td>
+</tr>
+<tr class="even">
+<td>30-32: Over The Hill?</td>
+<td>EPL</td>
+<td>78.2%</td>
+<td>74.3%</td>
+<td>81.6%</td>
+</tr>
+<tr class="odd">
+<td>≤20: No Fear At That Age?</td>
+<td>La Liga</td>
+<td>77.8%</td>
+<td>67.5%</td>
+<td>85.5%</td>
+</tr>
+<tr class="even">
+<td>≤20: No Fear At That Age?</td>
+<td>EPL</td>
+<td>75.0%</td>
+<td>64.4%</td>
+<td>83.3%</td>
+</tr>
+<tr class="odd">
+<td>21-23: Not A Kid Anymore</td>
+<td>La Liga</td>
+<td>75.8%</td>
+<td>71.4%</td>
+<td>79.7%</td>
+</tr>
+<tr class="even">
+<td>≤20: No Fear At That Age?</td>
+<td>CL</td>
+<td>73.2%</td>
+<td>57.7%</td>
+<td>84.5%</td>
+</tr>
+<tr class="odd">
+<td>33+: Cherry On Top</td>
+<td>La Liga</td>
+<td>74.4%</td>
+<td>69.1%</td>
+<td>79.1%</td>
+</tr>
+<tr class="even">
+<td>21-23: Not A Kid Anymore</td>
+<td>CL</td>
+<td>71.2%</td>
+<td>63.2%</td>
+<td>78.1%</td>
+</tr>
+</tbody>
+</table>
+<p><em>Conversion rates by age group and league, sorted by predicted conversion rate (highest to lowest), with 95% confidence intervals.</em></p>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -493,6 +930,13 @@ ul.task-list li input[type="checkbox"] {
       window.document.body.appendChild(a);
     }
     window.setColorSchemeToggle(window.hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -891,7 +1335,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/2025-09-30-no-fear-at-that-age.md" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

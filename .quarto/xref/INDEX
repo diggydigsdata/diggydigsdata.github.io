@@ -10,5 +10,92 @@
   },
   "posts/welcome/index.qmd": {
     "index.html": "2484ae40"
+  },
+  "2008-08-08-from-beijing-to-brasov.md": {
+    "2008-08-08-from-beijing-to-brasov.html": "b0cae13d"
+  },
+  "2010-05-01-determinants-of-national-identity-in-northern-ireland.md": {
+    "2010-05-01-determinants-of-national-identity-in-northern-ireland.html": "97ec812d"
+  },
+  "2011-06-17-bridging-bonding-and-linking-assessing-a-running-club-s-contribution-to-social-capital-and-community-participation.md": {
+    "2011-06-17-bridging-bonding-and-linking-assessing-a-running-club-s-contribution-to-social-capital-and-community-participation.html": "4321c028"
+  },
+  "2012-04-17-the-invention-of-tradition.md": {
+    "2012-04-17-the-invention-of-tradition.html": "5b30154c"
+  },
+  "2012-04-17-transitional-justice.md": {
+    "2012-04-17-transitional-justice.html": "dbb4a90d"
+  },
+  "2012-05-01-sport-and-national-dentity-dissertation.md": {
+    "2012-05-01-sport-and-national-dentity-dissertation.html": "32d0ee62"
+  },
+  "2014-03-19-shared-future-news.md": {
+    "2014-03-19-shared-future-news.html": "678becb9"
+  },
+  "2025-04-17-currys.md": {
+    "2025-04-17-currys.html": "e549005e"
+  },
+  "2025-04-18-post-relegation-attendance-churn.md": {
+    "2025-04-18-post-relegation-attendance-churn.html": "c2824c54"
+  },
+  "2025-04-18-what-if-players-only-took-penalties-they-won.md": {
+    "2025-04-18-what-if-players-only-took-penalties-they-won.html": "9b94f7d8"
+  },
+  "2025-04-24-technical-writing-quarto-oxygen.md": {
+    "2025-04-24-technical-writing-quarto-oxygen.html": "d8421b76"
+  },
+  "2025-04-26-draft-scraping-fbref-with-scraperfc-in-python.md": {
+    "2025-04-26-draft-scraping-fbref-with-scraperfc-in-python.html": "8e39e682"
+  },
+  "2025-09-30-no-fear-at-that-age.md": {
+    "2025-09-30-no-fear-at-that-age.html": "00e24230"
+  },
+  "2025-09-30-pipeline-projects.md": {
+    "2025-09-30-pipeline-projects.html": "76a2e1a5"
+  },
+  "posts/bridging-bonding-and-linking/index.qmd": {
+    "index.html": "00eeffee"
+  },
+  "posts/currys/index.qmd": {
+    "index.html": "4754f400"
+  },
+  "posts/determinants-of-national-identity/index.qmd": {
+    "index.html": "c802c0c1"
+  },
+  "posts/from-beijing-to-brasov/index.qmd": {
+    "index.html": "566e2de9"
+  },
+  "posts/invention-of-tradition/index.qmd": {
+    "index.html": "9b515303"
+  },
+  "posts/no-fear-at-that-age/index.qmd": {
+    "index.html": "7c9c78c1"
+  },
+  "posts/pipeline/index.qmd": {
+    "index.html": "ab53d80c"
+  },
+  "posts/post-relegation-attendance/index.qmd": {
+    "index.html": "84efd169"
+  },
+  "posts/quarto-set-up/index.qmd": {
+    "index.html": "f059da84"
+  },
+  "posts/scraping-fbref/index.qmd": {
+    "index.html": "58d65c95"
+  },
+  "posts/shared-future-news/index.qmd": {
+    "index.html": "f52dfd5f"
+  },
+  "posts/sport-and-national-identity/index.qmd": {
+    "index.html": "e58233f1"
+  },
+  "posts/the-bear-necessities-of-strife/index.qmd": {
+    "index.html": "aec8f42c"
+  },
+  "posts/transitional-justice/index.qmd": {
+    "index.html": "d9811f73"
+  },
+  "posts/winner-takes-it-all/index.qmd": {
+    "index.html": "f70313d8"
   }
 }
