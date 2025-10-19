@@ -41,7 +41,7 @@ format:
   html:
     theme:
       light: [flatly, styles.scss]
-      dark: [darkly, styles-dark.scss]
+      dark: [flatly, styles-dark.scss]
     highlight-style: a11y-dark
     code-copy: true
     code-overflow: wrap
