@@ -1,9 +1,9 @@
 ---
 title: "Winner Takes It All"
 author: "Diggy"
-date: "YYYY-MM-DD"
+date: "2025-10-19"
 description: "Description placeholder for this post."
 image: "featured.png"
-image-alt: "Image description"
+image-alt: "Gacaca court."
 categories: [Journalism]
 ---
