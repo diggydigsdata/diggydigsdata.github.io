@@ -1044,6 +1044,9 @@ $gold-text-color: #bfb008;
 $white-text-color: #f6f6f2;
 $body-bg: #222222;              // Forces a dark background for the main section
 $body-color: #F0F0F0;
+$link-clicked-color: #d43484;
+$link-hover-color: #00FF85;
+$translucent-grid-hover: rgba(#444444, 0.7);
 
 
 // Heading font size customization
@@ -12992,7 +12995,7 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
   color: #000000 !important; 
 }
 
-.nav-link.active, .nav-link:hover {
+.navbar .nav-item.active, .navbar .nav-link:hover {
   background-color: $claret-border-color !important;
   /*--Text Color/*/
   color: $white-text-color !important;
@@ -13028,6 +13031,44 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
 
 .listing-category {
   color: rgb(150, 150, 150);
+}
+
+/* --- Body Link Styles --- */
+a:not(.navbar-brand) {
+  color: #58A6FF;
+  text-decoration: none;
+}
+
+a:not(.navbar-brand):visited {
+  color: #AD85E3; 
+}
+
+a:not(.navbar-brand):hover {
+  text-decoration: underline;
+}
+
+.quarto-grid-item:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.02);
+  transition: transform 0.2s;
+  background-color: $translucent-grid-hover;
+  color: #FAFAFA !important;
+  text-decoration: none;
+}
+
+.quarto-grid-item:hover .nav-link a {
+  text-decoration: none !important;
+}
+
+.listing-card:hover .listing-categories,
+.listing-card:hover .listing-author,
+.listing-card:hover .listing-date,
+.listing-card:hover .quarto-category:hover {
+  color: #C4C4C4 !important;
+}
+
+.listing-categories, .listing-author, .listing-date, .quarto-category {
+  color: #A3A3A3 !important;
 }
 
 // quarto-scss-analysis-annotation { "origin": null }

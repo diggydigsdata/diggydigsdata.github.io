@@ -1,9 +1,10 @@
 /*-- scss:defaults --*/
-$claret-border-color: #6c1d45; // Define your color as a variable
-$gold-text-color: #bfb008;
+$claret-border-color: #6c1d45;
+$grid-hover-color: #FFFEEA;
 $white-text-color: #f6f6f2;
 $body-bg: #FFFFFC;
 $dark-green-color: #145A32;
+$translucent-grid-hover: rgba($grid-hover-color, 0.7);
 
 /*-- scss:rules --*/
 
@@ -23,54 +24,73 @@ $dark-green-color: #145A32;
   color: #000000 !important; 
 }
 
-.nav-link.active, .nav-link:hover {
+.navbar .nav-item.active, .navbar .nav-link:hover {
   background-color: $claret-border-color !important;
-  /*--Text Color/*/
   color: $white-text-color !important;
-  /* 3. Border/Shape: Optional to clean up the look */
-  border-radius: 5px !important; 
-}
-
-.toc-action:hover, .nav-footer-left a:hover {
-    background-color: $claret-border-color !important;
-  /*--Text Color/*/
-  color: $white-text-color !important;
-  padding: 2px 5px;
-  /* 3. Border/Shape: Optional to clean up the look */
   border-radius: 5px !important; 
 }
 
 .navbar-brand:hover span {
-  /*--Text Color/*/
   color: #300C1D !important;
   text-decoration: underline !important;
   text-decoration-color: #300C1D !important;
   text-underline-offset: 5px;
   text-decoration-thickness: 2px;
-  /* 3. Border/Shape: Optional to clean up the look */
   border-radius: 5px !important; 
 }
 
 .quarto-title-banner {
   margin-bottom: 1em;
+  color: $body-color !important;
   background-color: $body-bg;
 }
 .quarto-title-block {
   margin-bottom: 1em;
+  color: $body-color !important;
   background-color: $body-bg;
 }
 
-/* --- Body Link Styles --- */
-a:not(.navbar-brand) {
-  color: $dark-green-color;
-  text-decoration: none; /* Optional: removes default underline */
+/* This defines the color and underlining of links in the
+main text section and the about section. It excludes
+the navbar. */
+.quarto-content a:not(.navbar-brand) {
+  color: #0000FF;
+  text-decoration: none;
 }
 
-a:not(.navbar-brand):visited {
-  color: $claret-border-color; /* Uses your claret for visited links */
+.quarto-content a:visited {
+  color: #551A8B;
 }
 
-a:not(.navbar-brand):hover {
-  color: darken($dark-green-color, 10%);
+#quarto-document-content a:hover {
   text-decoration: underline;
+  color: #0000FF
+}
+
+#listing-listing a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.quarto-grid-item:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.02);
+  transition: transform 0.2s;
+  background-color: $translucent-grid-hover;
+  text-decoration: none;
+}
+
+.quarto-grid-item:hover .nav-link a {
+  text-decoration: none !important;
+}
+
+.listing-card:hover .listing-categories,
+.listing-card:hover .listing-author,
+.listing-card:hover .listing-date,
+.listing-card:hover .quarto-category:hover{
+  color: #202020 !important;
+}
+
+.listing-categories, .listing-author, .listing-date, .quarto-category {
+  color: #626262 !important;
 }

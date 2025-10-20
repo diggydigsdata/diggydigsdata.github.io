@@ -9,7 +9,6 @@ website:
   favicon: assets\img\favicons\favicon.ico
   page-navigation: true
   site-url: https://diggydigsdata.github.io
-
   repo-url: https://github.com/diggydigsdata
   repo-actions: [source]
 

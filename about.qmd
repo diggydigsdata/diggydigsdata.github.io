@@ -1,6 +1,6 @@
 ---
 title: "Eoin Dignan"
-image: profile.jpg
+image: "assets/img/mourne_mountains_profile.jpg"
 about:
   template: jolla
   links:
