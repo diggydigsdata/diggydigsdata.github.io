@@ -2,12 +2,15 @@
 $claret-border-color: #6c1d45;
 $grid-hover-color: #FFFEEA;
 $white-text-color: #f6f6f2;
+$link-clicked-color: #551A8B;
 $body-bg: #FFFFFC;
-$dark-green-color: #145A32;
 $translucent-grid-hover: rgba($grid-hover-color, 0.7);
 
 /*-- scss:rules --*/
 
+/* all navbar and footer rules are identical in dark & light modes */
+
+/*borders for navbar and footer*/
 .navbar {
   border-bottom: 2pt solid $claret-border-color;
 }
@@ -16,20 +19,26 @@ $translucent-grid-hover: rgba($grid-hover-color, 0.7);
   border-top: 2pt solid $claret-border-color;
 }
 
+/* ensuring text is jet black in navbar */
 .navbar-brand {
   color: #000000 !important;
 }
 
+/* even the links in the navbar are black */
 .nav-link {
   color: #000000 !important; 
 }
 
+/* but everything will change upon hovering. the background
+will become the same as the border and the text will turn white.
+and they will stay that way as long as you are on that tab (active)*/
 .navbar .nav-item.active, .navbar .nav-link:hover {
   background-color: $claret-border-color !important;
   color: $white-text-color !important;
   border-radius: 5px !important; 
 }
-
+/* hovering over the brand name in the navbar also changes
+its color to a very dark claret and underlines it*/
 .navbar-brand:hover span {
   color: #300C1D !important;
   text-decoration: underline !important;
@@ -39,34 +48,68 @@ $translucent-grid-hover: rgba($grid-hover-color, 0.7);
   border-radius: 5px !important; 
 }
 
+/* FROM HERE THERE ARE DIFFERENCES BETWEEN DARK AND LIGHT MODES */
+/* This makes the post content and the title and author/date blocks
+all have the same dark background and light text */
 .quarto-title-banner {
   margin-bottom: 1em;
-  color: $body-color !important;
+  color: #000000 !important;
   background-color: $body-bg;
 }
 .quarto-title-block {
   margin-bottom: 1em;
-  color: $body-color !important;
+  color: #000000 !important;
   background-color: $body-bg;
 }
 
-/* This defines the color and underlining of links in the
-main text section and the about section. It excludes
-the navbar. */
-.quarto-content a:not(.navbar-brand) {
-  color: #0000FF;
-  text-decoration: none;
+/* Footer links */
+.nav-footer p a,
+.footer .toc-actions a,
+.footer .nav-link p {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.nav-footer p a:visited,
+.footer .toc-actions a:visited,
+.footer .nav-link p:visited {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.nav-footer p a:hover,
+.footer .toc-actions a:hover,
+.footer .nav-link p:hover {
+  text-decoration: underline;
+  color: $claret-border-color;
 }
 
 .quarto-content a:visited {
-  color: #551A8B;
+  color: $link-clicked-color;
+}
+
+#quarto-document-content a {
+  color: #0000FF;
 }
 
 #quarto-document-content a:hover {
   text-decoration: underline;
-  color: #0000FF
+  color: #0056b3;
+}
+a:not(.navbar-brand) {
+  color:#0000FF;
 }
 
+a:not(.navbar-brand):visited {
+  color: $link-clicked-color;
+}
+
+a:not(.navbar-brand):hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* stops the grid listing cards from being underlined on hover */
 #listing-listing a:hover {
   text-decoration: none;
   color: inherit;
@@ -80,8 +123,9 @@ the navbar. */
   text-decoration: none;
 }
 
-.quarto-grid-item:hover .nav-link a {
-  text-decoration: none !important;
+.quarto-grid-item:hover .listing-title {
+  color: $claret-border-color !important;
+  font-weight: bold;
 }
 
 .listing-card:hover .listing-categories,

@@ -1039,11 +1039,12 @@ $theme-name: null !default;
 
 // quarto-scss-analysis-annotation { "origin": "Defaults from user-defined SCSS" }
 
-$claret-border-color: #6c1d45; // Define your color as a variable
-$gold-text-color: #bfb008;
+$claret-border-color: #6c1d45;
 $white-text-color: #f6f6f2;
-$body-bg: #222222;              // Forces a dark background for the main section
+$body-bg: #222222;
+/* necessary to override default dark text color */
 $body-color: #F0F0F0;
+$link-color: #0000FF;
 $link-clicked-color: #d43484;
 $link-hover-color: #00FF85;
 $translucent-grid-hover: rgba(#444444, 0.7);
@@ -12980,7 +12981,7 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
 
 
 .navbar {
-  border-bottom: 2pt solid $claret-border-color; ;
+  border-bottom: 2pt solid $claret-border-color;
 }
 
 .footer {
@@ -12997,20 +12998,16 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
 
 .navbar .nav-item.active, .navbar .nav-link:hover {
   background-color: $claret-border-color !important;
-  /*--Text Color/*/
   color: $white-text-color !important;
-  /* 3. Border/Shape: Optional to clean up the look */
   border-radius: 5px !important; 
 }
 
 .navbar-brand:hover span {
-  /*--Text Color/*/
   color: #300C1D !important;
   text-decoration: underline !important;
   text-decoration-color: #300C1D !important;
   text-underline-offset: 5px;
   text-decoration-thickness: 2px;
-  /* 3. Border/Shape: Optional to clean up the look */
   border-radius: 5px !important; 
 }
 
@@ -13033,14 +13030,25 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
   color: rgb(150, 150, 150);
 }
 
-/* --- Body Link Styles --- */
-a:not(.navbar-brand) {
+/* This defines the color and underlining of links in the
+main text section and the about section. It excludes
+the navbar. */
+.quarto-content a:not(.navbar-brand) {
   color: #58A6FF;
   text-decoration: none;
 }
 
-a:not(.navbar-brand):visited {
+.quarto-content a:visited {
   color: #AD85E3; 
+}
+
+#quarto-document-content a:hover {
+  text-decoration: underline;
+  color: #0000FF;
+}
+
+a:not(.navbar-brand):visited {
+  $link-clicked-color;
 }
 
 a:not(.navbar-brand):hover {
@@ -13054,10 +13062,6 @@ a:not(.navbar-brand):hover {
   background-color: $translucent-grid-hover;
   color: #FAFAFA !important;
   text-decoration: none;
-}
-
-.quarto-grid-item:hover .nav-link a {
-  text-decoration: none !important;
 }
 
 .listing-card:hover .listing-categories,
