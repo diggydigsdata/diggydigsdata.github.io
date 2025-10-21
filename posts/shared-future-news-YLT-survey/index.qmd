@@ -8,4 +8,4 @@ image-alt: "Cropped screenshot of the article"
 categories: [Published, Northern Ireland, Ancient, Community, Reconciliation, Sports, Shared Future News]
 ---
 
-# [Sports CRED schemes popular: Young Life and Times survey 2012](https://sharedfuture.news/sports-cred-schemes-popular-young-life-and-times-survey-2012/)
+[Sports CRED schemes popular: Young Life and Times survey 2012](https://sharedfuture.news/sports-cred-schemes-popular-young-life-and-times-survey-2012/)

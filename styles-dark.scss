@@ -1,12 +1,15 @@
 /*-- scss:defaults --*/
 $claret-border-color: #6c1d45;
+$lightened-border-color: #4A4A4A;
 $white-text-color: #f6f6f2;
 $body-bg: #222222;
-$body-color: #F0F0F0;
+$body-color: #B3B3B3;
 /* necessary to override default dark text color */
-$text-color-dark-mode: #F0F0F0;
-$link-color: #58A6FF;
+$text-color-dark-mode: #B3B3B3;
+$link-color: #80D4FF;
 $link-clicked-color: #AD85E3;
+$grid-color: rgba(#333333, 0.7);
+$grid-hover-color: #444444;
 $translucent-grid-hover: rgba(#444444, 0.7);
 
 /*-- scss:rules --*/
@@ -109,13 +112,25 @@ all have the same dark background and light text */
   color: #80bfff;
 }
 
+.about-links {
+  color: $body-color;
+  text-decoration: none;
+}
+
+.about-link:hover {
+  text-decoration: underline;
+  background-color: #58A6FF !important;
+  color: $white-text-color !important;
+  border-radius: 5px !important; 
+}
+
 /* stops the grid listing cards from being underlined on hover */
 #listing-listing a:hover {
   text-decoration: none;
   color: inherit;
 }
 
-a:not(.navbar-brand) {
+a:not(.navbar-brand), .about-links {
   color: #58A6FF;
   text-decoration: none;
 }
@@ -129,17 +144,24 @@ a:not(.navbar-brand):hover {
   text-decoration: underline;
 }
 
+.quarto-grid-item {
+  background-color: $grid-color !important;
+  text-decoration: none;
+  border: 1pt solid $lightened-border-color;
+}
+
 .quarto-grid-item:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transform: scale(1.02);
   transition: transform 0.2s;
-  background-color: $translucent-grid-hover;
-  color: #FAFAFA !important;
+  background-color: $grid-hover-color;
+  color: #E5E5DC !important;
   text-decoration: none;
+  border: 2pt solid $lightened-border-color;
 }
 
 .quarto-grid-item:hover .listing-title {
-  color: #87CEEB !important;
+  color: #f0f0f0 !important;
 }
 
 .listing-card:hover .listing-categories,

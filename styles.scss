@@ -1,5 +1,7 @@
 /*-- scss:defaults --*/
 $claret-border-color: #6c1d45;
+$grid-border-color: hsl(44, 5%, 90%);
+$grid-color: #FFFEF5;
 $grid-hover-color: #FFFEEA;
 $white-text-color: #f6f6f2;
 $link-clicked-color: #551A8B;
@@ -37,6 +39,7 @@ and they will stay that way as long as you are on that tab (active)*/
   color: $white-text-color !important;
   border-radius: 5px !important; 
 }
+
 /* hovering over the brand name in the navbar also changes
 its color to a very dark claret and underlines it*/
 .navbar-brand:hover span {
@@ -96,8 +99,23 @@ all have the same dark background and light text */
   text-decoration: underline;
   color: #0056b3;
 }
-a:not(.navbar-brand) {
+
+.about-links {
+  color: $body-color;
+  text-decoration: none;
+}
+
+.about-link:hover {
+  text-decoration: underline;
+  background-color: #0000FF !important;
+  color: $white-text-color !important;
+  border-radius: 5px !important; 
+}
+
+/*makes links blue and not underlined in body content - posts and about section*/
+a:not(.navbar-brand), {
   color:#0000FF;
+  text-decoration: none;
 }
 
 a:not(.navbar-brand):visited {
@@ -115,17 +133,19 @@ a:not(.navbar-brand):hover {
   color: inherit;
 }
 
+.quarto-grid-item {
+  background-color: $grid-color !important;
+  text-decoration: none;
+  border: 1pt solid $grid-border-color;
+}
+
 .quarto-grid-item:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transform: scale(1.02);
   transition: transform 0.2s;
-  background-color: $translucent-grid-hover;
+  background-color: $grid-hover-color;
   text-decoration: none;
-}
-
-.quarto-grid-item:hover .listing-title {
-  color: $claret-border-color !important;
-  font-weight: bold;
+  border: 2pt solid $grid-border-color;
 }
 
 .listing-card:hover .listing-categories,
