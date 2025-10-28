@@ -1,9 +1,9 @@
 ---
-title: "Shared Future News: Young Life & Times Survey 2012"
+title: "Sports CRED schemes popular: Young Life and Times survey 2012"
 author: "Diggy"
 date: "2013-05-23"
 description: "Article published in Shared Future News discusing YLT survey results in relation to CRED: community relations, equality and diversity education."
-image: "featured.jpg"
+image: "featured.png"
 image-alt: "Cropped screenshot of the article"
 categories: [Published, Northern Ireland, Ancient, Community, Reconciliation, Sports, Shared Future News]
 ---

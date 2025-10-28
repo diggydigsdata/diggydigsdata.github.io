@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Diggy">
-<meta name="description" content="Description placeholder for this post.">
+<meta name="dcterms.date" content="2025-09-29">
+<meta name="description" content="Testing if there’s merit to the claim that young players are fearless.">
 
 <title>No Fear At That Age – Diggy Digs Data</title>
 <style>
@@ -25,7 +26,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -44,9 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0acb7149eddf1781ce459f3f1eb43dbe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-b3cbaaec85291cde0434b7067d4b1b99.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-0acb7149eddf1781ce459f3f1eb43dbe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-ea6dcb636b98e4259611748ef6731b59.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-dd122c0da25c9fd53758c928d9b42162.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-ea6dcb636b98e4259611748ef6731b59.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,13 +75,34 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-2.35.2.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+
 
 
 <meta property="og:title" content="No Fear At That Age – Diggy Digs Data">
-<meta property="og:description" content="Description placeholder for this post.">
-<meta property="og:image" content="https://diggydigsdata.github.io/posts/no-fear-at-that-age/featured.jpg">
+<meta property="og:description" content="Testing if there’s merit to the claim that young players are fearless.">
+<meta property="og:image" content="https://diggydigsdata.github.io/posts/no-fear-at-that-age/featured.png">
 <meta property="og:site_name" content="Diggy Digs Data">
-<meta property="og:image:alt" content="Image description">
+<meta property="og:image:height" content="578">
+<meta property="og:image:width" content="575">
+<meta property="og:image:alt" content="Lamine Yamal at a press conference.">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -293,6 +315,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
+    <a class="nav-link" href="mailto:diggydigsdata@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com/in/eoindignan1989/"> <i class="bi bi-linkedin" role="img">
 </i> 
 <span class="menu-text"></span></a>
@@ -312,11 +339,14 @@ ul.task-list li input[type="checkbox"] {
       <h1 class="title">No Fear At That Age</h1>
                   <div>
         <div class="description">
-          Description placeholder for this post.
+          Testing if there’s merit to the claim that young players are fearless.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Journalism</div>
+                <div class="quarto-category">Football</div>
+                <div class="quarto-category">Analytics</div>
+                <div class="quarto-category">Python</div>
+                <div class="quarto-category">Plotly</div>
               </div>
                   </div>
   </div>
@@ -334,7 +364,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Invalid Date</p>
+        <p class="date">September 29, 2025</p>
       </div>
     </div>
     
@@ -354,8 +384,603 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>‘There’s no fear at that age’ is a familiar refrain from pundits. The idea goes that young players are naive, innocent; they take risks, they express themselves, and in an ‘ignorance is bliss way’ they don’t show nerves the way older players do - or something.</p>
+<p>I guess the fearlessness theory rests on the presumption that young players think they have all the time in the world so a few blunders early on in their career won’t be the end of it. Or, there is so little pressure applied on them relative to senior players that they play with freedom and can ‘express themselves’. I can understand that to a certain extent, although young players could easily go in the other, overawed direction. 18 year old me would definitely have fallen into the shitting myself camp. But then, it could be argued that I don’t have the mentality of an elite athlete.</p>
+<p>Nevertheless, I’ve always been skeptical. They are young adults, not toddlers. And loads of promising young careers go up in smoke; the consequences for these players’ lives are devastating. Look at Jose Baxter, for example. I would imagine most young players have seen enough academy cohort colleagues fall by the wayside that they are acutely aware of their vulnerability. So I wanted to dig into this throwaway comment from pundits and find some way to interrogate it statistically.</p>
+<p>The metric that is the easiest to isolate as a corollary for fear is the penalty. That’s because another fairly common idea is that every elite player <em>should</em> be able to tuck away a penalty. And that, 12 yards from goal, it is nerves rather than technique which undoes the pro player. While the best way to explore fear would be penalty shootout data - where every single kick is critical - I haven’t got that and will normal-time penalties as a proxy. Of course, these don’t have quite the same almighty importance but they still tell us something about the effects of nerves.</p>
+<p>This is part of a series of analyses I’m doing where I fixate on penalties. It just drives me crazy how prevalent they are. It increasingly like every final is decided on penalties and every match a penalty is awarded. And it’s not just because of VAR. These increases have been ongoing for some time. See <a href="#fig-penalties-per-match" class="quarto-xref">Figure&nbsp;1</a>. Or the interactive version <a href="#fig-penalties-per-match-plotly" class="quarto-xref">Figure&nbsp;2</a>, though I haven’t added many leagues so there’s not much to play around with. At time of writing, Harry Kane is having the season of his life - so the story goes - with 14 goals in 7 games. Astonishing, yes, but 6 of those have been penalties… Without penalties he’s at 8 in 7, which is still very good but well short of his current Dixie Dean trajectory. Anyway, I digress. If you’re interested, my main project is this one:</p>
+<ol type="1">
+<li>What would happen if players who won the penalties were the only ones who got to take them? https://eoind.github.io/analytics/football/penalty_takers/</li>
+<li>And now for… are young players really fearless? What does the penalty data say? (read on to find out!)</li>
+</ol>
+<div id="cell-fig-penalties-per-match" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:23:59.926437Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:23:59.684944Z&quot;}}" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div id="fig-penalties-per-match" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-penalties-per-match-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-penalties-per-match-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-penalties-per-match-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Average penalties per match over time, by league (with global trend)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-fig-penalties-per-match-plotly" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.009191Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:23:59.967651Z&quot;}}" data-execution_count="5">
+<div id="fig-penalties-per-match-plotly" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-penalties-per-match-plotly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>                            <div id="7876ddbe-ca59-4c39-a169-5587d70bbab4" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("7876ddbe-ca59-4c39-a169-5587d70bbab4")) {                    Plotly.newPlot(                        "7876ddbe-ca59-4c39-a169-5587d70bbab4",                        [{"hovertemplate":"Season start: %{x}\u003cbr\u003eAvg\u002fMatch: %{y:.3f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"CL","mode":"markers","name":"CL","x":[1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],"y":[0.2484076433121019,0.25477707006369427,0.18471337579617833,0.1337579617834395,0.136,0.24,0.2,0.112,0.144,0.152,0.144,0.24,0.288,0.224,0.368,0.328,0.272,0.432,0.28,0.344,0.3949579831932773,0.472,0.36,0.392,0.312],"type":"scatter"},{"hoverinfo":"skip","legendgroup":"CL","mode":"lines","name":"CL trend","showlegend":false,"x":[1999,2023],"y":[0.14237592480204242,0.39015319792983405],"type":"scatter"},{"hovertemplate":"Season start: %{x}\u003cbr\u003eAvg\u002fMatch: %{y:.3f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"EPL","mode":"markers","name":"EPL","x":[1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],"y":[0.1471861471861472,0.17532467532467533,0.17532467532467533,0.16842105263157894,0.25,0.18947368421052632,0.1868421052631579,0.2236842105263158,0.17894736842105263,0.1763157894736842,0.23421052631578948,0.22631578947368422,0.21578947368421053,0.19473684210526315,0.2789473684210526,0.22105263157894736,0.2236842105263158,0.28421052631578947,0.2710526315789474,0.25263157894736843,0.22631578947368422,0.22894736842105262,0.21578947368421053,0.2394736842105263,0.2789473684210526,0.21052631578947367,0.2710526315789474,0.24210526315789474,0.32894736842105265,0.2710526315789474,0.26052631578947366,0.28157894736842104],"type":"scatter"},{"hoverinfo":"skip","legendgroup":"EPL","mode":"lines","name":"EPL trend","showlegend":false,"x":[1992,2023],"y":[0.17740516062884382,0.2806832421963996],"type":"scatter"},{"hovertemplate":"Season start: %{x}\u003cbr\u003eAvg\u002fMatch: %{y:.3f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"La Liga","mode":"markers","name":"La Liga","x":[1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],"y":[0.28157894736842104,0.29736842105263156,0.3,0.3631578947368421,0.30526315789473685,0.22631578947368422,0.2578947368421053,0.3,0.28157894736842104,0.33421052631578946,0.20789473684210527,0.3026315789473684,0.2578947368421053,0.2894736842105263,0.3026315789473684,0.2894736842105263,0.25526315789473686,0.3157894736842105,0.29736842105263156,0.34210526315789475,0.39210526315789473,0.37105263157894736,0.3473684210526316,0.3026315789473684,0.28157894736842104],"type":"scatter"},{"hoverinfo":"skip","legendgroup":"La Liga","mode":"lines","name":"La Liga trend","showlegend":false,"x":[1999,2023],"y":[0.2783157894736812,0.32189473684210457],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"black","dash":"dash","width":3},"mode":"lines","name":"Global regression","x":[1992,2023],"y":[0.17156563944244851,0.33064489694217514],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"margin":{"l":60,"r":30,"t":60,"b":60},"title":{"text":"Average penalties per match over time (interactive)"},"xaxis":{"title":{"text":"Season start year"},"dtick":2},"yaxis":{"title":{"text":"Average penalties per match"}},"legend":{"title":{"text":""}},"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('7876ddbe-ca59-4c39-a169-5587d70bbab4');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-penalties-per-match-plotly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<section id="penalty-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="penalty-sampling">Penalty sampling</h2>
+<p>I have whipped up the following (courtesy of Stathead / FBref):</p>
+<ul>
+<li>Every normal time penalty taken in the Premier League - in other words, since the 1992/1993 season</li>
+<li>Every normal time penalty taken in the Champions League since the 1999/2000 season</li>
+<li>Every normal time penalty taken in La Liga since the 1999/2000 season</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>League</strong></th>
+<th><strong>Total Penalties</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Premier League</td>
+<td>2892</td>
+</tr>
+<tr class="even">
+<td>La Liga</td>
+<td>2956</td>
+</tr>
+<tr class="odd">
+<td>Champions League</td>
+<td>925</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td><strong>6773</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="age-bands" class="level2">
+<h2 class="anchored" data-anchor-id="age-bands">Age bands</h2>
+<p>Finally, I have constructed some age groupings. See . This is in order to prevent small samples for different ages giving unreliable values. For example, there is a 20% difference in the success rate for La Liga 19 year-olds compared 20 year-olds. However, given these age groups have relatively few attempts it’s easy for the data to get a little wild.</p>
+<p>I think the groups I have created are fairly logical. At the top and bottom end we’ve got open intervals - we can have players from 0 to 20; though the youngest penalty taker in this data is 17. And our 33+ group can go to infinity. Though the oldest penalty taker is .. This group are called No Fear At That Age? Because it’s the age when expectations are minimal, you are at your most naive, innocent, etc. And the elder statesmen are called Cherry on Top. I would theorise that they also have a bit less pressure, because they have already had a good career, and nobody is looking at their performance as a measure of their potential. They are a known quantity by this point.</p>
+<p>They sandwich 3-year age bands. 21-23 could be the most pressurised age. That’s the point at which many wonderkid careers have gone awry - think Bojan Krkic. It’s the moment when you need to step up, mature, realise your potential and be consistent. Otherwise, a journeyman career in the lower leagues could await you. Then 24-26 could constitute the beginning of a player’s peak years. 27-29 would often be considered, depending a little on position, the absolute peak years of the average player. 30-32 has proven very fruitful for many players too. However, the perspective on these players definitely shifts. At this point, pressure amplifies because pundits and fans are often questioning whether you are ‘past it’, whether you should get a multi-year contract renewal or not. Just look at Mo Salah. In 2024/2025 he has having a career year but, at the age of 32, Liverpool have spent all season agonising about whether to give him a commensurate contract because of his age.</p>
+<section id="caveat" class="level3">
+<h3 class="anchored" data-anchor-id="caveat">Caveat</h3>
+<p>One enormous <strong>caveat</strong>, however, is that the ages provided by Stathead simply use the player’s age at the commencement of the season, not their age at the time of taking a penalty. Consequently, the oldest penalty taker in the dataset is Teddy Sheringham. He appears as 39 in my dataset, but he had recently turned 40 when he missed a final-day penalty for West Ham against Tottenham in the 2005/06 season. Jorge Molina also appears as 39 in my dataset, but he was 40 when he missed against Espanyol on the final day of the 2021/22 season, effectively relegating Granada from La Liga.</p>
+<p>Similarly, the dataset indicates a 17 year-old - Bojan Krkic. But he was 18 by the time he took his penalty for Barcelona against Manchester United in the Champions League. This is all rather annoying, but it would be more trouble than it’s worth to separate out every single penalty from each player’s season statistics and dial in the taker’s age on a specific date. It just means there is a +/- of 9 months (i.e.&nbsp;the length of a season) for each player’s age.</p>
+</section>
+</section>
+<section id="averages" class="level2">
+<h2 class="anchored" data-anchor-id="averages">Averages</h2>
+<p>In this analysis I calculate <strong>conversion rates</strong> in two different ways, which reflect slightly different questions:</p>
+<ul>
+<li><p><strong>Weighted (overall) mean</strong>: This is the percentage of all penalties scored divided by the total penalties attempted within a group (e.g.&nbsp;a competition). Every penalty counts equally, so players who take more penalties have more influence. This measure tells us the <em>true success rate of the group as a whole</em>.</p></li>
+<li><p><strong>Unweighted (player) mean</strong>: This is the simple average of individual players’ conversion rates. Each player counts equally, no matter how many penalties they have taken. This measure answers the question: <em>what does the “average player” in this group look like?</em></p></li>
+</ul>
+<p>In the charts shown here, the main benchmark (red dashed line) is the <strong>weighted overall mean</strong>, because it reflects the actual outcome of all penalties taken across the dataset.</p>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<p>First off, when it comes to conversion rates across the leagues, there are no differences whatsoever. Which is boring but convenient that we don’t need to worry too much about league effects.</p>
+<div id="59e4738d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.202570Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:24:00.101427Z&quot;}}" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         PKatt    PK  PKm  conversion_rate
+Comp                                      
+CL         925   714  211        77.189189
+EPL       2892  2280  612        78.838174
+La Liga   2956  2288  668        77.401894</code></pre>
+</div>
+</div>
+<p>Or do we? Any differences when we break the leagues down by age group?</p>
+<p>There’s <em>maybe</em> a trend towards improved penalty conversion as you accumulate experience. The ‘no fear’ players are <em>slightly</em> more clinical than the players aged 21-23 who may be coming under pressure to make the next step as more mature and consistent players.</p>
+<p>But this is the smallest dataset - only 925 penalties.</p>
+<div id="d1a700f2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.578939Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:24:00.223231Z&quot;}}" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="d8207a56" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.758755Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:24:00.596706Z&quot;}}" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="age-group-penalty-data-premier-league" class="level3">
+<h3 class="anchored" data-anchor-id="age-group-penalty-data-premier-league">Age Group Penalty Data (Premier League)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age Group</th>
+<th>Penalty Attempts</th>
+<th>Penalty Conversions</th>
+<th>Conversion Rate (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;=20: No Fear At That Age?</td>
+<td>80</td>
+<td>60</td>
+<td>75.00</td>
+</tr>
+<tr class="even">
+<td>21-23: Not A Kid Anymore</td>
+<td>503</td>
+<td>398</td>
+<td>79.13</td>
+</tr>
+<tr class="odd">
+<td>24-26: Early Peak</td>
+<td>834</td>
+<td>654</td>
+<td>78.42</td>
+</tr>
+<tr class="even">
+<td>27-29: Peak Peak</td>
+<td>793</td>
+<td>624</td>
+<td>78.69</td>
+</tr>
+<tr class="odd">
+<td>30-32: Over The Hill?</td>
+<td>495</td>
+<td>387</td>
+<td>78.18</td>
+</tr>
+<tr class="even">
+<td>33+: Cherry On Top</td>
+<td>187</td>
+<td>157</td>
+<td>83.96</td>
+</tr>
+<tr class="odd">
+<td><strong>Grand Total</strong></td>
+<td><strong>2892</strong></td>
+<td><strong>2280</strong></td>
+<td><strong>78.84</strong></td>
+</tr>
+</tbody>
+</table>
+<p>In the Premier League, things level out a bit more, although there still seems to be a mild advantage for experience.</p>
+</section>
+<section id="age-group-penalty-data-la-liga" class="level3">
+<h3 class="anchored" data-anchor-id="age-group-penalty-data-la-liga">Age Group Penalty Data (La Liga)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age Group</th>
+<th>Penalty Attempts</th>
+<th>Penalty Conversions</th>
+<th>Conversion Rate (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;=20: No Fear At That Age?</td>
+<td>81</td>
+<td>63</td>
+<td>77.78</td>
+</tr>
+<tr class="even">
+<td>21-23: Not A Kid Anymore</td>
+<td>405</td>
+<td>307</td>
+<td>75.80</td>
+</tr>
+<tr class="odd">
+<td>24-26: Early Peak</td>
+<td>829</td>
+<td>653</td>
+<td>78.77</td>
+</tr>
+<tr class="even">
+<td>27-29: Peak Peak</td>
+<td>833</td>
+<td>644</td>
+<td>77.31</td>
+</tr>
+<tr class="odd">
+<td>30-32: Over The Hill?</td>
+<td>511</td>
+<td>400</td>
+<td>78.28</td>
+</tr>
+<tr class="even">
+<td>33+: Cherry On Top</td>
+<td>297</td>
+<td>221</td>
+<td>74.41</td>
+</tr>
+<tr class="odd">
+<td><strong>Grand Total</strong></td>
+<td><strong>2956</strong></td>
+<td><strong>2288</strong></td>
+<td><strong>77.40</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Things get flipped on their head a little bit in La Liga. For the first time, the Cherry on Top vets aren’t the most effective penalty takers. In fact, in La Liga they are the worst. Meanwhile, the 20s and under are right up there near the top. And if we drill down into that age group, we can really appreciate how precocious those La Liga teens are.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age Group</th>
+<th>Penalty Attempts</th>
+<th>Penalty Conversions</th>
+<th>Conversion Rate (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;=20: No Fear At That Age?</td>
+<td>81</td>
+<td>63</td>
+<td>77.78</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>10</td>
+<td>8</td>
+<td>80.00</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>27</td>
+<td>24</td>
+<td>88.89</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>44</td>
+<td>31</td>
+<td>70.45</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s remove the 20 year olds. Now, La Liga teens have a success rate of 86%! Of course, there’s a caveat… That’s a population size of just 37. Ezequiel Garay - one of history’s great centre-back penalty takers and a stalwart of my FC Atlas team in Football Manager - accounts for 22% of the entire La Liga teenage penalty taking population. And Jose Antonio Reyes accounts for another 19%. All together, those two players - and their combined 92% success rate - represent 41% of the whole group.</p>
+<p>So let’s bundle everything together and see what we get…</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 20%">
+<col style="width: 24%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age Group</th>
+<th>Penalty Attempts</th>
+<th>Penalty Conversions</th>
+<th>Conversion Rate (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;=20: No Fear At That Age</td>
+<td>202</td>
+<td>153</td>
+<td>75.74</td>
+</tr>
+<tr class="even">
+<td>21-23: Not A Kid Anymore</td>
+<td>1047</td>
+<td>804</td>
+<td>76.79</td>
+</tr>
+<tr class="odd">
+<td>24-26: Early Peak</td>
+<td>1901</td>
+<td>1491</td>
+<td>78.43</td>
+</tr>
+<tr class="even">
+<td>27-29: Peak Peak</td>
+<td>1898</td>
+<td>1485</td>
+<td>78.24</td>
+</tr>
+<tr class="odd">
+<td>30-32: Over The Hill?</td>
+<td>1164</td>
+<td>909</td>
+<td>78.09</td>
+</tr>
+<tr class="even">
+<td>33+: Cherry On Top</td>
+<td>561</td>
+<td>440</td>
+<td>78.43</td>
+</tr>
+<tr class="odd">
+<td><strong>Grand Total</strong></td>
+<td><strong>6773</strong></td>
+<td><strong>5282</strong></td>
+<td><strong>77.99</strong></td>
+</tr>
+</tbody>
+</table>
+<p>There is a <em>very</em> mild indication that more experienced players do better than younger players. Considering the lowest success rates are 20 and under, and 21-23 are 2nd-lowest, there is some indication that young players are not totally fearless. I think this could be particularly noteworthy because, players who are designated penalty takers at such a young are rare and they are, in all likelihood, technically gifted. Therefore, is it a psychological vulnerability that causes their penalty-taking to dip a little compared to their older peers? And that maybe they aren’t so impervious to fear as pundits may casually claim?</p>
+<p>Let’s see if this stands up to statistical scrutiny.</p>
+</section>
+<section id="logistic-regression" class="level3">
+<h3 class="anchored" data-anchor-id="logistic-regression">Logistic Regression</h3>
+<section id="method" class="level4">
+<h4 class="anchored" data-anchor-id="method">Method</h4>
+<p>Each penalty in the dataset is tied to a player, season, and league. Since some players take penalties in multiple seasons (or even in multiple leagues), the raw data contained repeated rows for the same player. To avoid overweighting those players, we collapsed the dataset to one row per <strong>player × age group × league</strong>, summing up penalties scored and attempted within each cell. This way, every player contributes fairly to the analysis.</p>
+<p>I used a <strong>logistic regression model</strong> because the outcome of interest—scoring or missing a penalty—is binary. Logistic regression lets us model the probability of success while accounting for the number of attempts in each cell. We tested age group, league, and their interaction to see if any of them had an effect on conversion rates. Confidence intervals were estimated around the predicted probabilities to judge how much overlap there was between groups.</p>
+</section>
+<section id="results" class="level4">
+<h4 class="anchored" data-anchor-id="results">Results</h4>
+<p>To test whether penalty conversion varies by age or by league, I fit a logistic regression with both predictors and their interaction. The likelihood-ratio tests showed no evidence that either factor—or their combination—improves model fit (all p &gt; .4). In other words, neither age group nor league explains variation in conversion odds.</p>
+<p>Predicted probabilities were remarkably consistent across groups, generally hovering between <strong>73% and 84%</strong>. For instance:</p>
+<ul>
+<li><strong>≤20 years</strong>: 73–78% across leagues<br>
+</li>
+<li><strong>21–23 years</strong>: 71–79%<br>
+</li>
+<li><strong>27–29 years (peak)</strong>: 77–79%<br>
+</li>
+<li><strong>33+ years</strong>: 74–84%</li>
+</ul>
+<p>Confidence intervals overlapped substantially, indicating no systematic age or league effect.</p>
+<p><em>Note: Bars show predicted conversion probabilities with 95% confidence intervals. The dashed line indicates the overall average (~78%).</em></p>
+<div class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:01.130759Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:24:01.124329Z&quot;}}" data-tbl-cap="conversion by age" data-execution_count="12">
+<div id="logistic-regression" class="cell-output cell-output-display" data-execution_count="24">
+<div>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<caption>conversion by age</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">age_group</th>
+<th data-quarto-table-cell-role="th">Comp</th>
+<th data-quarto-table-cell-role="th">pred_prob</th>
+<th data-quarto-table-cell-role="th">ci_low</th>
+<th data-quarto-table-cell-role="th">ci_high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">720</td>
+<td>&lt;=20: No Fear At That Age?</td>
+<td>CL</td>
+<td>0.731707</td>
+<td>0.577484</td>
+<td>0.844769</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">721</td>
+<td>&lt;=20: No Fear At That Age?</td>
+<td>EPL</td>
+<td>0.750000</td>
+<td>0.643950</td>
+<td>0.832670</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">452</td>
+<td>&lt;=20: No Fear At That Age?</td>
+<td>La Liga</td>
+<td>0.777778</td>
+<td>0.674573</td>
+<td>0.855275</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">309</td>
+<td>21-23: Not A Kid Anymore</td>
+<td>CL</td>
+<td>0.712230</td>
+<td>0.631588</td>
+<td>0.781332</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">94</td>
+<td>21-23: Not A Kid Anymore</td>
+<td>EPL</td>
+<td>0.791252</td>
+<td>0.753518</td>
+<td>0.824555</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">41</td>
+<td>21-23: Not A Kid Anymore</td>
+<td>La Liga</td>
+<td>0.758025</td>
+<td>0.713916</td>
+<td>0.797264</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">258</td>
+<td>24-26: Early Peak</td>
+<td>CL</td>
+<td>0.773109</td>
+<td>0.715574</td>
+<td>0.821903</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>24-26: Early Peak</td>
+<td>EPL</td>
+<td>0.784173</td>
+<td>0.754948</td>
+<td>0.810785</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">26</td>
+<td>24-26: Early Peak</td>
+<td>La Liga</td>
+<td>0.787696</td>
+<td>0.758529</td>
+<td>0.814203</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">333</td>
+<td>27-29: Peak Peak</td>
+<td>CL</td>
+<td>0.797794</td>
+<td>0.745865</td>
+<td>0.841369</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>27-29: Peak Peak</td>
+<td>EPL</td>
+<td>0.786885</td>
+<td>0.756998</td>
+<td>0.814000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">83</td>
+<td>27-29: Peak Peak</td>
+<td>La Liga</td>
+<td>0.773109</td>
+<td>0.743418</td>
+<td>0.800288</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">498</td>
+<td>30-32: Over The Hill?</td>
+<td>CL</td>
+<td>0.772152</td>
+<td>0.700306</td>
+<td>0.830932</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">517</td>
+<td>30-32: Over The Hill?</td>
+<td>EPL</td>
+<td>0.781818</td>
+<td>0.743263</td>
+<td>0.816017</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">68</td>
+<td>30-32: Over The Hill?</td>
+<td>La Liga</td>
+<td>0.782779</td>
+<td>0.744914</td>
+<td>0.816408</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">807</td>
+<td>33+: Cherry On Top</td>
+<td>CL</td>
+<td>0.805195</td>
+<td>0.701640</td>
+<td>0.879006</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">520</td>
+<td>33+: Cherry On Top</td>
+<td>EPL</td>
+<td>0.839572</td>
+<td>0.779802</td>
+<td>0.885500</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">773</td>
+<td>33+: Cherry On Top</td>
+<td>La Liga</td>
+<td>0.744108</td>
+<td>0.691427</td>
+<td>0.790519</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sources" class="level3">
+<h3 class="anchored" data-anchor-id="sources">Sources</h3>
+<ul>
+<li>Image: 中国新闻社, CC BY 3.0 <a href="https://creativecommons.org/licenses/by/3.0" class="uri">https://creativecommons.org/licenses/by/3.0</a>, via Wikimedia Commons<br>
+</li>
+<li>Data assembled from: <a href="https://stathead.com/fbref/">Stathead</a></li>
+</ul>
+
+
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

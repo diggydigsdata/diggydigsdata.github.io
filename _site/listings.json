@@ -2,20 +2,19 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/currys/index.html",
-      "/posts/determinants-of-national-identity/index.html",
-      "/posts/from-beijing-to-brasov/index.html",
-      "/posts/invention-of-tradition/index.html",
-      "/posts/no-fear-at-that-age/index.html",
-      "/posts/pipeline/index.html",
-      "/posts/post-relegation-attendance/index.html",
       "/posts/quarto-set-up/index.html",
+      "/posts/post-relegation-attendance/index.html",
       "/posts/scraping-fbref/index.html",
+      "/posts/winner-takes-it-all/index.html",
+      "/posts/no-fear-at-that-age/index.html",
+      "/posts/currys/index.html",
       "/posts/shared-future-news-reconciliation/index.html",
       "/posts/shared-future-news-YLT-survey/index.html",
-      "/posts/sport-and-national-identity/index.html",
-      "/posts/winner-takes-it-all/index.html",
       "/posts/transitional-justice/index.html",
+      "/posts/invention-of-tradition/index.html",
+      "/posts/determinants-of-national-identity/index.html",
+      "/posts/from-beijing-to-brasov/index.html",
+      "/posts/sport-and-national-identity/index.html",
       "/posts/the-bear-necessities-of-strife/index.html"
     ]
   }

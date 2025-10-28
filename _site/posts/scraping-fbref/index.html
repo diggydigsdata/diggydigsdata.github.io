@@ -44,9 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1e0d785306329dd87d93ab7c32bdc37a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-f6530c4cab28cdaa8f4f88d19fa58afb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-1e0d785306329dd87d93ab7c32bdc37a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-ea6dcb636b98e4259611748ef6731b59.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-dd122c0da25c9fd53758c928d9b42162.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-ea6dcb636b98e4259611748ef6731b59.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -292,6 +292,16 @@ ul.task-list li input[type="checkbox"] {
 </i> 
 <span class="menu-text"></span></a>
   </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:diggydigsdata@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/eoindignan1989/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -349,8 +359,115 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="scraping-fbref-with-python" class="level2">
+<h2 class="anchored" data-anchor-id="scraping-fbref-with-python">Scraping FBref with Python</h2>
+<p><strong>FBref</strong> is a free football statistics site run by Sports Reference LLC, offering detailed player and team data — including some unique stats like penalties won, not available elsewhere. In addition, I have found FBref to be significantly more accurate and comprehensive than competitors such as Transfermarkt, particularly on penalty data.</p>
+<p>This project shows you an easy-peasy and adaptable way to <strong>scrape</strong> football data from FBref using Python and the ScraperFC package. It is particulary suitable for beginner programmers.</p>
+<p><strong>Scraping</strong> is a method of extracting data from websites. You write a programming script that requests HTML content from a website. It’s just like you were browsing the site, except your program can race through countless pages and copy the data. The program then parses (filters and converts) this data so you just get the information you want delivered as a file to a location you want. It is infinitely more efficient than manual data collection and is the best option when APIs or downloadable files are not provided by the site.</p>
+<p>By the end, you’ll be able to: - set up a JupyterLab environment using Anaconda Navigator - extract customised football data for players and teams from FBref - clean and merge datasets for easier analysis across leagues and seasons</p>
+<p>We will go from this:<img src="../..\assets/img/fbref_table.png" title="FBref data table" class="img-fluid" alt="screenshot of fbref data table"> to this:<img src="../..\assets/img/cleaned_table.png" title="Cleaned data table" class="img-fluid" alt="screenshot of cleaned data table"></p>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<ul>
+<li><p>Internet connection</p></li>
+<li><p>3-4 GB of disk space</p></li>
+<li><p>Ability to install programs (admin rights if needed)</p></li>
+<li><p>Always check a website’s robots.txt and terms of service before scraping <a href="#robots-txt">*</a></p></li>
+</ul>
+<p><strong>No coding skills required.</strong><br>
+I am not a programmer. I need this data for personal projects that are helping me learn coding skills. Therefore, scraping this data was more challenging for me than most people and I made very avoidable errors. Often, documentation assumes a basic level of familiarity with environments and terminology which I do not possess. Therefore, I will explain all steps without assuming any knowledge whatsoever.</p>
+<p><strong>All tools will be installed during the guide</strong><br>
+We will set up the environment in <a href="#setting-up-your-jupyter-environment">Step 1: Setting Up Your Environment</a>.</p>
+<blockquote class="blockquote">
+<p>*See <a id="robots-txt"></a><a href="https://fbref.com/robots.txt">FBref’s robots.txt</a> and <a href="https://www.sports-reference.com/about/terms.html">terms of service</a>. FBref allows scraping, but it is important to be respectful and avoid overloading their servers. This will be discussed in the <a href="#scraping-fbref">Step 2: Scraping FBref</a> section.</p>
+</blockquote>
+</section>
+<section id="why-fbref" class="level3">
+<h3 class="anchored" data-anchor-id="why-fbref">Why FBref?</h3>
+<p><strong>FBref</strong> and <strong>Stathead</strong> both host Penalty Kicks Won data and are run by the same company. Which should I choose? When I began this project, I did not understand that Stathead and FBref were 2 different things. Both are run by Sports Reference LLC, and both host the same array of Opta data for football (soccer). But there are several crucial differences and we are left with only one option:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 61%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stathead</th>
+<th>FBref</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sophisticated stat-search function</td>
+<td>No search function - just lots of stats everywhere</td>
+</tr>
+<tr class="even">
+<td>Excellent for exploration</td>
+<td>Awkward for exploration</td>
+</tr>
+<tr class="odd">
+<td>Paid (approx $8/month as of April 27, 2025)</td>
+<td>Free</td>
+</tr>
+<tr class="even">
+<td>No ads</td>
+<td>Ads</td>
+</tr>
+<tr class="odd">
+<td>Data can be gathered by ‘copy and paste’ or by download (Excel &amp; CSV)</td>
+<td>Data can be gathered by ‘copy and paste’</td>
+</tr>
+<tr class="even">
+<td>Data is paginated and max. 200 records can be downloaded at once</td>
+<td>Data is not paginated</td>
+</tr>
+<tr class="odd">
+<td>Data <strong>CANNOT</strong> be scraped - not possible <em>and</em> against terms of service</td>
+<td>Data <strong>CAN</strong> be scraped</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="scope-of-instruction" class="level3">
+<h3 class="anchored" data-anchor-id="scope-of-instruction">Scope Of Instruction</h3>
+<p>My project focuses on scraping the Big 5 European leagues — Premier League, La Liga, Bundesliga, Serie A, and Ligue 1 — across the 2016/17 to 2023/24 seasons. I adapted the ScraperFC package to get the data I want: its ‘standard’ and ‘miscellaneous’ FBref tables. However, this guide makes it very possible for you to extract as much or as little data as you want from FBref.</p>
+<p>Instructions are also included for cleaning the scraped datasets and merging them. I am using my own project as an example, but advice on adapting my code will be provided.</p>
+</section>
+</section>
+<section id="step-1-setting-up-your-jupyter-environment" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-setting-up-your-jupyter-environment">Step 1: Setting Up Your Jupyter Environment</h2>
+<p>In this section, you will set up a <strong>JupyterLab</strong> environment using <strong>Anaconda Navigator</strong>, allowing you to write, run, and organize Python scripts within <strong>Jupyter Notebooks</strong> and scrape FBref data.</p>
+<p>To use Jupyter Notebooks, you can use JupyterLab or VS Code. I prefer VS Code for general coding and I like the CoPilot integration. However, for data projects, I much prefer JupyterLab, which is accessed via the Anaconda Navigator. You <em>can</em> use VS Code and install Jupyter extensions. These combine to emulate JupyterLab. But I will not cover VS Code in this guide. Directory organisation, overall layout and previews are very intuitive within JupyterLab. Most importantly, VS Code is often very fussy about my Python packages and versions, etc. But JupyterLab just works.</p>
+<ol type="1">
+<li><p>Go here: <a href="https://www.anaconda.com/download">https://www.anaconda.com/download</a> and enter your email address.</p></li>
+<li><p>Select your Operating System and install Anaconda. It is free.</p></li>
+<li><p>Choose all the default settings during installation. Anaconda installs Python and many core Python packages such as NumPy and pandas, which we need for this project.</p>
+<blockquote class="blockquote">
+<p><i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Advanced users may prefer installing <strong>Miniconda</strong> instead of <strong>Anaconda</strong>. Miniconda is a lightweight version that only includes Python and the conda package manager. It saves disk space and gives you more control over which packages you install. However, it requires manually installing everything you need (including JupyterLab, pandas, and other libraries).</p>
+</blockquote></li>
+<li><p>Open Anaconda Navigator from your start menu or desktop.</p></li>
+<li><p>Launch JupyterLab from Anaconda Navigator</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\assets/img/anaconda_navigator.png" title="Launching JupyterLab from Anaconda Navigator" class="img-fluid figure-img"></p>
+<figcaption>Screenshot showing JupyterLab launch button in Anaconda Navigator</figcaption>
+</figure>
+</div>
+<p>JupyterLab will open <strong>in your browser</strong>. This may be unexpected but it is normal.</p></li>
+<li><p>Open a ‘New Notebook’</p>
+<p><img src="../..\assets/img/open_notebook.png" title="Opening a notebook" class="img-fluid"></p></li>
+<li><p>Select kernel in the top-right. Verify that it is using Python3. If not, select Python3. Select the checkbox to save this preference.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../..\assets/img/select_kernel.png" title="Selecting a kernel" class="img-fluid figure-img"></p>
+<figcaption>Select a Python3 kernel and make it the default by checking the checkbox</figcaption>
+</figure>
+</div></li>
+</ol>
+<p>You now have Python installed as well as many essential packages and a graphical user interface (GUI) where you can write scripts, explore data, manage your file structure and install additional packages.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

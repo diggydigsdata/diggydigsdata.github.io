@@ -30,6 +30,8 @@ website:
         href: about.qmd
       - icon: github
         href: https://github.com/diggydigsdata
+      - icon: envelope
+        href: mailto:diggydigsdata@gmail.com
       - icon: linkedin
         href: https://www.linkedin.com/in/eoindignan1989/
   

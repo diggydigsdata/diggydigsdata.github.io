@@ -113,7 +113,7 @@ all have the same dark background and light text */
 }
 
 /*makes links blue and not underlined in body content - posts and about section*/
-a:not(.navbar-brand), {
+a:not(.navbar-brand) {
   color:#0000FF;
   text-decoration: none;
 }

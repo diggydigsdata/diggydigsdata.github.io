@@ -5,7 +5,7 @@ date: "2008-08-01"
 description: "Exploring bear population culls in Romania. Originally published in the Brasov Visitor (now-defunct)."
 image: "featured.jpg"
 image-alt: "A brown bear in the wild"
-categories: [Journalism, Brasov-Visitor, Romania, Sustainability]
+categories: [Journalism, Brasov Visitor, Romania, Sustainability]
 ---
 
 **Originally published in the Brasov Visitor (now-defunct).**

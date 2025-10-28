@@ -1,5 +1,5 @@
 ---
-title: "Shared Future News: Young Life & Times Survey 2012"
+title: "Reconciliation Lessons: Verne Harris on South Africa"
 author: "Diggy"
 date: "2014-03-19"
 description: "Article published in Shared Future News about Verne Harris' talk on reconciliation."
@@ -11,15 +11,3 @@ categories: [Published, South Africa, Ancient, Community, Reconciliation, Shared
 [Reconciliation Lessons: Verne Harris on South Africa](https://sharedfuture.news/reconciliation-lessons-verne-harris-on-south-africa/)
 
 [Republished by Incore: Ulster University's International Conflict Research Institute](https://accounts.ulster.ac.uk/accounts/blog/archiving/reconciliation-lessons-verne-harris-on-south-africa/)
-
-# Hello there
-
-##  Hello there
-
-###  Hello there
-
-####  Hello there
-
-#####  Hello there
-
-######  Hello there

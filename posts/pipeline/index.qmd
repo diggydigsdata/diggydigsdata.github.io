@@ -1,9 +1,0 @@
----
-title: "Pipeline"
-author: "Diggy"
-date: "YYYY-MM-DD"
-description: "Description placeholder for this post."
-image: "featured.jpg"
-image-alt: "Image description"
-categories: [Journalism]
----

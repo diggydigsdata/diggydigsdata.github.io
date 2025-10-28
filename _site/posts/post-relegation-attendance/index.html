@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Diggy">
-<meta name="description" content="Description placeholder for this post.">
+<meta name="dcterms.date" content="2025-11-01">
+<meta name="description" content="How loyal are football fans when their team drops out of the PL?">
 
 <title>Post Relegation Attendance – Diggy Digs Data</title>
 <style>
@@ -44,9 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2a0eb31e34e86e7352f76ea098890d01.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-460990cac39294bcd6fc56320dc95df2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-2a0eb31e34e86e7352f76ea098890d01.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-ea6dcb636b98e4259611748ef6731b59.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-dd122c0da25c9fd53758c928d9b42162.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-ea6dcb636b98e4259611748ef6731b59.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,10 +78,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Post Relegation Attendance – Diggy Digs Data">
-<meta property="og:description" content="Description placeholder for this post.">
-<meta property="og:image" content="https://diggydigsdata.github.io/posts/post-relegation-attendance/featured.jpg">
+<meta property="og:description" content="How loyal are football fans when their team drops out of the PL?">
 <meta property="og:site_name" content="Diggy Digs Data">
-<meta property="og:image:alt" content="Image description">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -293,6 +292,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
+    <a class="nav-link" href="mailto:diggydigsdata@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com/in/eoindignan1989/"> <i class="bi bi-linkedin" role="img">
 </i> 
 <span class="menu-text"></span></a>
@@ -312,11 +316,13 @@ ul.task-list li input[type="checkbox"] {
       <h1 class="title">Post Relegation Attendance</h1>
                   <div>
         <div class="description">
-          Description placeholder for this post.
+          How loyal are football fans when their team drops out of the PL?
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Journalism</div>
+                <div class="quarto-category">Football</div>
+                <div class="quarto-category">Analytics</div>
+                <div class="quarto-category">Tableau</div>
               </div>
                   </div>
   </div>
@@ -334,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Invalid Date</p>
+        <p class="date">November 1, 2025</p>
       </div>
     </div>
     
@@ -354,8 +360,506 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p>I’m a Burnley fan. And in honour of our impending promotion to the Premier League and consolidation as a yoyo club par excellence, I thought it would be a good time to assess the impact of relegation from the Premier League on attendance figures. Because it’s never too early to plan ahead.</p>
+<section id="yoyo-club-rankings" class="level3">
+<h3 class="anchored" data-anchor-id="yoyo-club-rankings">Yoyo Club Rankings</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 19%">
+<col style="width: 31%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Club</th>
+<th>PL Relegations</th>
+<th>Championship Promotions</th>
+<th>Current League</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Norwich City</td>
+<td>6</td>
+<td>5</td>
+<td>Championship</td>
+</tr>
+<tr class="even">
+<td>West Bromwich Albion</td>
+<td>5</td>
+<td>5</td>
+<td>Championship</td>
+</tr>
+<tr class="odd">
+<td>Burnley</td>
+<td>4</td>
+<td>5</td>
+<td>Premier League</td>
+</tr>
+<tr class="even">
+<td>Leicester City</td>
+<td>5</td>
+<td>5</td>
+<td>Championship</td>
+</tr>
+<tr class="odd">
+<td>Crystal Palace</td>
+<td>4</td>
+<td>4</td>
+<td>Premier League</td>
+</tr>
+<tr class="even">
+<td>Middlesbrough</td>
+<td>4</td>
+<td>4</td>
+<td>Championship/TBD</td>
+</tr>
+<tr class="odd">
+<td>Sunderland</td>
+<td>4</td>
+<td>4</td>
+<td>Championship/TBD</td>
+</tr>
+<tr class="even">
+<td>Watford</td>
+<td>4</td>
+<td>4</td>
+<td>Championship</td>
+</tr>
+<tr class="odd">
+<td>Sheffield United</td>
+<td>4</td>
+<td>3</td>
+<td>Championship/TBD</td>
+</tr>
+<tr class="even">
+<td>Southampton</td>
+<td>3</td>
+<td>2</td>
+<td>Championship</td>
+</tr>
+</tbody>
+</table>
+<p>Incidentally, Leicester’s recent relegation not only brings them into second place on the Premier League relegation rankings but pulls them clear of Birmingham atop the Top-Flight relegations table with 13.</p>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<p>For this project, I gathered attendance data for every relegated club in the season they were relegated, and in the 2 seasons following their relegation. I also checked what league they were in for their 2nd year post-relegation. Had they been promoted at the first attempt? Spent another season in the Championship, or plummeted into League 1. I gathered all of this data from <a href="https://www.european-football-statistics.co.uk/index1.htm">European-Football-Statistics.co.uk</a>.</p>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<section id="increased-attendance-after-relegation" class="level3">
+<h3 class="anchored" data-anchor-id="increased-attendance-after-relegation">Increased attendance after relegation?</h3>
+<p>Let’s start on a positive note. On 10 occasions, teams managed to increase their average attendance following relegation.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 8%">
+<col style="width: 14%">
+<col style="width: 23%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Relegated Team (Season)</th>
+<th>Attd.</th>
+<th>Year After</th>
+<th>Attd. year after</th>
+<th>Loss/Gain %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sunderland (96/97)</td>
+<td>20,865</td>
+<td>1997-98</td>
+<td>33,492</td>
+<td>60.5%</td>
+</tr>
+<tr class="even">
+<td>Leicester City (01/02)</td>
+<td>19,835</td>
+<td>2002-03</td>
+<td>29,231</td>
+<td>47.4%</td>
+</tr>
+<tr class="odd">
+<td>Nottingham Forest (92/93)</td>
+<td>21,910</td>
+<td>1993-94</td>
+<td>23,051</td>
+<td>5.2%</td>
+</tr>
+<tr class="even">
+<td>Ipswich Town (01/02)</td>
+<td>24,426</td>
+<td>2002-03</td>
+<td>25,455</td>
+<td>4.2%</td>
+</tr>
+<tr class="odd">
+<td><strong>Burnley</strong> (21/22)</td>
+<td>19,399</td>
+<td>2022-23</td>
+<td>19,953</td>
+<td>2.9%</td>
+</tr>
+<tr class="even">
+<td>Newcastle United (15/16)</td>
+<td>49,754</td>
+<td>2016-17</td>
+<td>51,106</td>
+<td>2.7%</td>
+</tr>
+<tr class="odd">
+<td>Norwich City (04/05)</td>
+<td>24,350</td>
+<td>2005-06</td>
+<td>24,952</td>
+<td>2.5%</td>
+</tr>
+<tr class="even">
+<td>Crystal Palace (94/95)</td>
+<td>14,992</td>
+<td>1995-96</td>
+<td>15,248</td>
+<td>1.7%</td>
+</tr>
+<tr class="odd">
+<td>Luton Town (23/24)</td>
+<td>11,244</td>
+<td>2024-25</td>
+<td>11,420</td>
+<td>1.6%</td>
+</tr>
+<tr class="even">
+<td>Middlesbrough (96/97)</td>
+<td>29,848</td>
+<td>1997-98</td>
+<td>29,994</td>
+<td>0.5%</td>
+</tr>
+</tbody>
+</table>
+<p>And I have to give a shoutout to Burnley and, indeed, to Vincent Kompany because he certainly galvanised the supporters that season.</p>
+<p>A couple teams really jump out. Both Sunderland and Leicester City moved into new stadia the year after their relegation, and this gave them a considerable bump. They must have been absolutely packing out their stadia the season prior and had supporters banging down the doors to get in. Sunderland even managed to add over 5,000 supporters to their tally the season after relegation, despite the fact that they were still stuck in the Championship. Leicester also increased attendances in 2003-04, by 1,600 to 30,983. But they spent that season in the Premier League, so it’s less startling to see an increase.</p>
+<p>Newcastle also catch the eye. 51,106 fans during the 2016-17 is quite extraordinary. Newcastle’s fanbase has a reputation for diehard loyalty. It’s why many neutrals were happy to see them bought by the Saudis, despite misgivings about sportwashing. Indeed, Newcastle also have the second-highest post-relegation attendance - 43,388 during the 2009-2010 season. That particular season did see an 11% drop on the previous year’s PL average. And the contrast between 2016-17 and 2009-10 is enlightening. Similar to how Burnley fell under the spell of Vincent Kompany in 2022/23, Newcastle fans had a great relationship with Rafael Benitez - their manager from 2016 to 2019. Hired towards the end of their 2015/16 relegation season, it was considered quite a coup to attract Benitez to a Championship-bound club. And the fans showed their appreciation during his first full season in charge with record-breaking attendances.</p>
+<p>Typically, we start to see the cracks in season 2 outside the top flight. Filtering out teams like Leicester who were promoted at the first attempt and had Premier League fixtures to pull in the fans, only 6 teams see attendance figures in the black by season 2.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 6%">
+<col style="width: 17%">
+<col style="width: 11%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Relegated Team (Season)</th>
+<th>Attd.</th>
+<th>Attd. year after</th>
+<th>Loss/Gain %</th>
+<th>Attd. 2 yrs. after</th>
+<th>Loss/Gain % 2 yrs.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sunderland (96/97)</td>
+<td>20,865</td>
+<td>33,492</td>
+<td>60.5%</td>
+<td>38,745</td>
+<td>86%</td>
+</tr>
+<tr class="even">
+<td>Middlesbrough (92/93)</td>
+<td>16,724</td>
+<td>10,400</td>
+<td>-37.8%</td>
+<td>18,702</td>
+<td>11.8%</td>
+</tr>
+<tr class="odd">
+<td>Crystal Palace (94/95)</td>
+<td>14,992</td>
+<td>15,248</td>
+<td>1.7%</td>
+<td>16,085</td>
+<td>7.3%</td>
+</tr>
+<tr class="even">
+<td>Manchester City (95/96)</td>
+<td>27,869</td>
+<td>26,753</td>
+<td>-4.0%</td>
+<td>28,196</td>
+<td>1.2%</td>
+</tr>
+<tr class="odd">
+<td>Norwich City (04/05)</td>
+<td>24,350</td>
+<td>24,952</td>
+<td>2.5%</td>
+<td>24,545</td>
+<td>0.8%</td>
+</tr>
+<tr class="even">
+<td>Ipswich Town (01/02)</td>
+<td>24,426</td>
+<td>25,455</td>
+<td>4.2%</td>
+<td>24,520</td>
+<td>0.4%</td>
+</tr>
+</tbody>
+</table>
+<p>Again, we have some anomalies. Middlesborough’s attendance nosedived in 1993-94 but they were undergoing a stadium rebuild. Basically, they had more stadium 2 years later. By 2017-18, Middlesborough were hosting 25,544 fans a game in the Championship and over 30,000 during their stint for the preceding year’s stint in the Prem. So their 10,400 fan turnout - heck, even their 18,702 fan turnout, are merely reflective of stadium constraints and not reflective of their true fanbase.</p>
+</section>
+<section id="nosedives" class="level3">
+<h3 class="anchored" data-anchor-id="nosedives">Nosedives</h3>
+<p>middlesborough, oldham</p>
+</section>
+<section id="and-in-general" class="level3">
+<h3 class="anchored" data-anchor-id="and-in-general">And in general?</h3>
+<p>On average, attendance falls significantly after relegation. The below table shows a 1st-year average decrease of 13.72%. And it shows that in the second year, there is an average decrease of 12.34%.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 38%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>League</th>
+<th>Year After Avg. Loss/Gain %</th>
+<th>2 yrs After Avg. of Loss/Gain %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Championship</td>
+<td>-13.72%</td>
+<td>-19.15%</td>
+</tr>
+<tr class="even">
+<td>League 1</td>
+<td>N/A</td>
+<td>-23.80%</td>
+</tr>
+<tr class="odd">
+<td>PL</td>
+<td>N/A</td>
+<td>5.36%</td>
+</tr>
+<tr class="even">
+<td>Overall</td>
+<td>-13.72%</td>
+<td>-12.34%</td>
+</tr>
+</tbody>
+</table>
+<p>EXCLUDING MIDDLESBOROUGH, LEICESTER &amp; SUNDERLAND</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 38%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>League</th>
+<th>Year After Avg. Loss/Gain %</th>
+<th>2 yrs After Avg. of Loss/Gain %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Championship</td>
+<td>-13.45%</td>
+<td>-21.49%</td>
+</tr>
+<tr class="even">
+<td>League 1</td>
+<td>N/A</td>
+<td>-23.80%</td>
+</tr>
+<tr class="odd">
+<td>PL</td>
+<td>N/A</td>
+<td>3.24%</td>
+</tr>
+<tr class="even">
+<td>Overall</td>
+<td>-14.98%</td>
+<td>-14.59%</td>
+</tr>
+</tbody>
+</table>
+<p>I think this table excluding Middlesborough, Leicester and Sunderland who introduce anomalies related to stadium constructions may be a better reference for this data. Superficially, the above data is reassuring. If you just look at the overalls, then it would seem attendances stabilise in Year 2 after relegation. You lose 15% of your attendance immediately after relegation, but at least it doesn’t get worse. But it does.</p>
+<p>If you didn’t get promoted to the Premier League at the first time of asking and spend a 2nd year in the Championship, then you can expect to lose a further 8% of your Premier League attendance. And if you get relegated to League 1, that jumps above 10%. So it seems teams will stick with a team more resolutely in the year after their relegation, likely hoping for a successful season and a swift return. By Year 2, that optimism may fade and attendance figures dwindle still further. Let’s probe that performance factor further.</p>
+</section>
+<section id="does-performance-affect-attendance" class="level3">
+<h3 class="anchored" data-anchor-id="does-performance-affect-attendance">Does performance affect attendance?</h3>
+<p>The below table shows how the outcome of your first season post-relegation can impact attendance figures during that season.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Destination during Championship Season</th>
+<th>Average of Loss/Gain %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Championship</td>
+<td>-16.58%</td>
+</tr>
+<tr class="even">
+<td>League 1</td>
+<td>-28.16%</td>
+</tr>
+<tr class="odd">
+<td>PL</td>
+<td>-5.84%</td>
+</tr>
+<tr class="even">
+<td>2023/24 teams without year 2 data</td>
+<td>-4.07%</td>
+</tr>
+<tr class="odd">
+<td>&nbsp;&nbsp;&nbsp;Burnley</td>
+<td>-7.29%</td>
+</tr>
+<tr class="even">
+<td>&nbsp;&nbsp;&nbsp;Luton Town</td>
+<td>1.57%</td>
+</tr>
+<tr class="odd">
+<td>&nbsp;&nbsp;&nbsp;Sheffield United</td>
+<td>-6.47%</td>
+</tr>
+</tbody>
+</table>
+<p>EXCLUDING MIDDLESBOROUGH (93/94), LEICESTER (02/03) &amp; SUNDERLAND (97/98)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Destination during Championship Season</th>
+<th>Average of Loss/Gain %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Championship</td>
+<td>-17.53%</td>
+</tr>
+<tr class="even">
+<td>League 1</td>
+<td>-28.16%</td>
+</tr>
+<tr class="odd">
+<td>PL</td>
+<td>-8.15%</td>
+</tr>
+<tr class="even">
+<td>2023/24 teams with unknown destination</td>
+<td>-4.07%</td>
+</tr>
+<tr class="odd">
+<td>&nbsp;&nbsp;&nbsp;Burnley</td>
+<td>-7.29%</td>
+</tr>
+<tr class="even">
+<td>&nbsp;&nbsp;&nbsp;Luton Town</td>
+<td>1.57%</td>
+</tr>
+<tr class="odd">
+<td>&nbsp;&nbsp;&nbsp;Sheffield United</td>
+<td>-6.47%</td>
+</tr>
+</tbody>
+</table>
+<p>If your club isn’t on track to bounce straight back, then they can expect to lose around 17% of the previous years’ attendance. And if they are heading for back-to-back relegations, with a freefall to League 1, expect losses of 28.16%. If, however, they are in the hunt for promotion then the losses are considerably less. Teams bound for the Premier League only lose 5.84% (8.15% excluding the new-stadium teams). As you can see, the above data also excludes teams who were relegated in 2023/24 - Burnley, Luton, Sheffield United. However, I think it’s best to include them. Luton are likely to be relegated, Burnley are likely to be promoted, and Sheffield United will probably just miss out on the top 2 and console themselves with the playoffs. Since all 3 clubs have spent the entire season on these trajectories, it’s safe enough to incorporate their impact on the season’s attendances. So I will include them as Luton: relegated to League 1; Burnley and Sheffield United promoted to the Premier League.</p>
+<p>With Burnley &amp; Sheffield United as PL, and Luton as League 1</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Destination during Championship Season</th>
+<th>Average of Loss/Gain %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Overall</td>
+<td>-13.72%</td>
+</tr>
+<tr class="even">
+<td>Championship</td>
+<td>-16.58%</td>
+</tr>
+<tr class="odd">
+<td>League 1</td>
+<td>-20.73%</td>
+</tr>
+<tr class="even">
+<td>PL</td>
+<td>-5.92%</td>
+</tr>
+<tr class="odd">
+<td>Grand Total</td>
+<td>-13.72%</td>
+</tr>
+</tbody>
+</table>
+<p>With Burnley &amp; Sheffield United as PL, and Luton as League 1. EXCLUDING MIDDLESBOROUGH (93/94), LEICESTER (02/03) &amp; SUNDERLAND (97/98)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Destination during Championship Season</th>
+<th>Average of Loss/Gain %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Overall</td>
+<td>-14.98%</td>
+</tr>
+<tr class="even">
+<td>Championship</td>
+<td>-17.53%</td>
+</tr>
+<tr class="odd">
+<td>League 1</td>
+<td>-20.73%</td>
+</tr>
+<tr class="even">
+<td>PL</td>
+<td>-8.05%</td>
+</tr>
+<tr class="odd">
+<td>Grand Total</td>
+<td>-14.98%</td>
+</tr>
+</tbody>
+</table>
+<p>Luton really buck the trend for League 1-destined sides. And because there are so few teams who are relegated from the Premier League to League 1 in consecutive seasons, their outlier status has a huge impact on the data, dropping the averages by almost 8%. But can Luton really be considered anomalous when the data population is so small? In my view, yes. First of all, Luton had an emotional relegation season. Their captain Tom Lockyer suffered a cardiac arrest mid-game. Fortunately, he survived and has been on a road to recovery ever since with the view to playing again. Moreover, Luton battled very bravely against relegation despite these traumatising events and despite being financial minnows. Luton were a uniquely united club during their relegation season. However, that is not the only explanation. The other is that Luton are another stadium-constrained side. Kenilworth Road is famously tiny, and was a peculiar relic among Premier League stadiums. Luton have received approval for a stadium rebuild that will double its capacity. Based on their increased attendances post-relegation, Luton are another case of a club where demand has exceeded supply for some time.</p>
+<p>Just a quick note on Burnley, who were in the black during their Kompany-led campaign but have lost almost 8% this season. There are a few factors at play. First, morale sank during Kompany’s PL season. Burnley were truly awful and the core of their Championship-winning side was cast aside in favour of new recruits - an inexplicable decision in the view of many fans. Moreover, ALK capital - the ownership group - made some ill-judged and patronising comments to supporters for not bringing a positive enough atmosphere to Turf Moor. In a nutshell, the mood was bleak by the end of 2022-23. Kompany’s departure and subsequent replacement by Scott Parker failed to excite fans. Nor did selling half the first team squad and sitting through a million 0-0 draws. Despite the successful campaign, Parker-ball has been a bit of a slog. Sidenote: I was a huge Parker skeptic at first but I think he has brought the solidity Burnley needed and, as the season has gone on, a more cohesive team has taken shape, the football has yielded more goals and the fanbase has gotten on side. In any case, this all goes to highlight that there are complexities behind the averages I am presenting here.</p>
+</section>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<ul>
+<li>Teams can typically expect to lose 12 to 15% of their attendance after relegation</li>
+<li>If you are on track for Promotion, these losses are lessened</li>
+<li>If you are on track to stay in the Championship, these losses are slightly higher</li>
+<li>And if you are on track for League 1, these losses are considerably higher</li>
+<li>Investigating the outliers in the dataset tends to reveal mitigating circumstances. Often these relate to stadium builds, but in other cases - like Newcastle and Burnley - it is just vibes at play. To really understand the data I would dig into each relegated team a little more to understand what underlying factors affect other teams because it’s possibly more nuanced than relegation = fanbandonment.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

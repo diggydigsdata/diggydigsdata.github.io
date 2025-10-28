@@ -1,9 +1,9 @@
 ---
 title: "Quarto Set Up"
 author: "Diggy"
-date: "YYYY-MM-DD"
-description: "Description placeholder for this post."
+date: "2025-11-06"
+description: "Turning my Jekyll site into a Quarto one. Pros, cons and challenges."
 image: "featured.jpg"
 image-alt: "Image description"
-categories: [Journalism]
+categories: [Technical Writing, Quarto]
 ---

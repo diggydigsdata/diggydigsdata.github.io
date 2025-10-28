@@ -112,7 +112,7 @@ all have the same dark background and light text */
   color: #80bfff;
 }
 
-.about-links {
+.about-link, .about-link:visited {
   color: $body-color;
   text-decoration: none;
 }
