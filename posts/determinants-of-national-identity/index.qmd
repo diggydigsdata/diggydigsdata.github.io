@@ -6,6 +6,7 @@ description: "This essay updates Richard Breen's 1996 essay entitled ‘Who Want
 image: "featured.jpg"
 image-alt: "Mural in Belfast that commemorates '4000 years of Ulster-Scots' cultural heritage"
 categories: [Northern Ireland, SPSS, Analytics]
+license: "CC BY"
 ---
 
 ## Introduction

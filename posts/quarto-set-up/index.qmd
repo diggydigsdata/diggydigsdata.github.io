@@ -6,4 +6,5 @@ description: "Turning my Jekyll site into a Quarto one. Pros, cons and challenge
 image: "featured.jpg"
 image-alt: "Image description"
 categories: [Technical Writing, Quarto]
+license: "CC BY"
 ---

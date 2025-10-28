@@ -17,6 +17,7 @@ execute:
   cache: false
 freeze: false
 jupyter: python3
+license: "CC BY"
 ---
 
 

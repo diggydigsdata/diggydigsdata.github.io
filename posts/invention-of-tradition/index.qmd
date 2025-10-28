@@ -6,6 +6,7 @@ description: "Examining Hobsbawm and Ranger's 'Invention of Tradition' concept i
 image: "featured.jpg"
 image-alt: "Historical classification table from 1916 showing caste and tribe breakdown by occupation for Punjab Province, British India."
 categories: [History, India, Kenya, Colonialism, Bachelor's]
+license: "CC BY"
 ---
 
 The concept of ‘invention of tradition’ was introduced in a 1983 book of the same name edited by Eric Hobsbawm and Terence Ranger. They argued that neo-traditions (such as monarchy) were shaped in Europe during a period of rapid socio-economic change to induce membership of imagined communities bounded by ‘romantic nationalism’[^1] and engrained through mass ritual practice. These legitimized the authority of state institutions while investing them with meaningful symbolic power e.g. titles. Finally, neo-traditions normalized behavioural patterns consistent with broader objectification of societal roles, formulating class consciousness[^2].

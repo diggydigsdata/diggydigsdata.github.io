@@ -6,6 +6,7 @@ description: "University essay: How a society deals with its past has a major de
 image: "featured.jpg"
 image-alt: "Image description"
 categories: [History, Africa, Reconciliation, South Africa, Rwanda]
+license: "CC BY"
 ---
 
 Image by Scott Chacon - <https://flic.kr/p/jgiFi>, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0 "Creative Commons Attribution 2.0"), [Source](https://commons.wikimedia.org/w/index.php?curid=50454022)

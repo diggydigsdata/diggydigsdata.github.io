@@ -4,6 +4,7 @@ author: "Diggy"
 date: "2025-10-19"
 description: "How would a footballer's stats look if they could only take the penalties they actually won themselves?"
 categories: [Football, Analytics, Penalties, Python, Power BI]
+license: "CC BY"
 ---
 
 What do Raheem Sterling and Shaquille O'Neal have in common? Quite a lot, actually.

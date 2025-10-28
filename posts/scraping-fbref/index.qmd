@@ -6,6 +6,7 @@ description: "The Python ScraperFC package makes it incredibly easy to scrape fo
 image: "featured.png"
 image-alt: "Code snippet showing the ScraperFc package in use."
 categories: [Technical Writing, Python, Scraping, Football, Analytics]
+license: "CC BY"
 ---
 
 ## Scraping FBref with Python

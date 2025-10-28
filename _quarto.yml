@@ -40,7 +40,7 @@ website:
     background: "#A7D5E8"
     right:
     - text: "License"
-      href: LICENSE.md
+      href: LICENSE
 
 format:
   html:

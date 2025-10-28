@@ -1,1 +1,5 @@
 /.quarto/
+/assets/archived_md/
+/files/datasets/
+/_site/
+_quarto_internal_scss_error.scss

@@ -4,6 +4,7 @@ author: "Diggy"
 date: "2025-11-01"
 description: "How loyal are football fans when their team drops out of the PL?"
 categories: [Football, Analytics, Tableau]
+license: "CC BY"
 ---
 
 I'm a Burnley fan. And in honour of our impending promotion to the Premier League and consolidation as a yoyo club par excellence, I thought it would be a good time to assess the impact of relegation from the Premier League on attendance figures. Because it's never too early to plan ahead.
