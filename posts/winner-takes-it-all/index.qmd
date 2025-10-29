@@ -120,10 +120,11 @@ And yet, football might stand to learn something from it. No, I'm not about to p
 Let's just see *what happens if we start retroactively giving penalties to the players who won them*. We'll use penalty conversion averages to change historical goalscoring statistics, and in the spirit of meritocracy, we'll also be playing with xAG (expected assisted goals). Basically, the goal of all of this is to s
 
 <p class="pbi-wrap">
-    <iframe title="fbref"
-    width="600"
-    height="373.5"
-    src="https://app.powerbi.com/view?r=eyJrIjoiNzY3ZGJmOWYtN2ZkYS00NzkxLWE4YzctN2U3ZmUyZTNhMjlkIiwidCI6ImE1MmIxMmI5LTdkYzktNGE3MS05YzQ5LTliZTkyOTIwNzAyZiJ9&pageName=7ac0fd6edc0a07143511" frameborder="0"
+    <iframe title="pkwon_all_draft"
+    width="1024"
+    height="804"
+    src="https://app.powerbi.com/view?r=eyJrIjoiY2U0ZDRhZjctMDQyMC00MWU4LWI3YTgtOWYyMTQ3YjE2N2RjIiwidCI6ImE1MmIxMmI5LTdkYzktNGE3MS05YzQ5LTliZTkyOTIwNzAyZiJ9"
+    frameborder="0"
     allowFullScreen="true">
     </iframe>
 </p>
@@ -142,106 +143,44 @@ Let's just see *what happens if we start retroactively giving penalties to the p
 }
 </style>
 
-⚙️ Upcoming Table Fixes
-#	Feature	Description / Action	Priority
-1	Minutes-weighted fairness rule for unattributed penalties	Use player-minutes share to distribute team-level unattributed penalties fairly across players.	🔴 High
-2	Revert to assists (no xAG) for 2016/17	Replace xAG values with raw assists in Hall of Fame tables for 2016/17 (xAG not tracked that year).	🟠 Medium
-3	SQL short_name column for teams	Add short_name field in dimteam to prevent text wrapping for long team names (e.g., “Borussia Mönchengladbach”).	🔴 High
-4	Adaptive PKW weighting by conversion rate	Weight PKW by player conversion rate (pens_scored / pens_attempted), default 0.757 if no attempts exist.	🟠 Medium
+⚙️ Upcoming Table Fixes  
+#	Feature	Description / Action	Priority  
+1	Minutes-weighted fairness rule for unattributed penalties	Use player-minutes share to distribute team-level unattributed penalties fairly across players.	🔴 High  
 
-🚀 Upcoming Features
-#	Feature	Description / Action	Priority
-5	Add UEFA Champions League 24/25 scraping feature	Extend scraper to include UCL 2024/25 data and integrate into the main pipeline.	🔴 High
-6	Tooltip linking unattributed PKWon info	Add hover tooltips linking to unattributed PKWon reference table (superseded by standalone visual).	🟢 Low
-7	Reset bookmark (unfiltered state)	Configure a Reset button to restore default slicers via bookmarks.	🔴 High
-8	Fix Hall of Fame visuals’ row-click response	Adjust interactions / DAX filters so Hall of Fame cards ignore table-row selections.	🟠 Medium
-9	Conditional formatting for awards	Add Ballon d’Or 🟡 and Golden Boy 👦 flags with icon-based formatting (superseded by dedicated award page).	🟢 Low
-10	Create and integrate SQL views for Power BI	Create 4 SQL views (v_player_team_comp_season, v_player_team_comp, v_player_comp_season, v_player_overall) and link them into Power BI.	🔴 High
-11	Standalone visualisations (outside dashboards)	Build exportable visuals (trend lines, scatter plots, radar charts) for blog / static use.	🟠 Medium
-12	Ballon d’Or comparison page	Add a Power BI page comparing Ballon d’Or-winning seasons — metrics for winners, runners-up, and non-winners.	🔴 High
-13 Scrape current season data for all comps (CL, PL, La Liga, Serie A, Bundesliga, Ligue 1)	🟠 High
-13	Live build for current season (CI/CD)	GitHub Actions workflow to run scraper daily, clean / load into DB, and refresh Power BI dataset automatically.	🟠 Medium
-14	Fully automated Plotly Dash + embed	Long-term goal: Dash app that fetches live data and regenerates visuals automatically — no Power BI refresh needed.	🟠 Medium
-15 Re-scrape FBref for np expected goals data and add ratio of npgoals to npxg as calculated column	🟠 High
+2	Revert to assists (no xAG) for 2016/17	Replace xAG values with raw assists in Hall of Fame tables for 2016/17 (xAG not tracked that year).	🟠 Medium  
 
-🧭 Upcoming Documentation
-#	Feature	Description / Action	Priority
-15	Documentation & rationale layer	Add detailed project docs (weighting rules, schema design, analytical logic, Power BI implementation, reproducibility). Includes sections A–E (Weighting Logic, Data Model, Analytical Design, Power BI Implementation, Reproducibility).	🔴 High
-16	Pull Request: scraperfc (CL 24/25)	Submit a PR to the scraperfc package adding UCL 24/25 support and update documentation accordingly (public-facing technical note).	🟢 Low
+3	SQL short_name column for teams	Add short_name field in dimteam to prevent text wrapping for long team names (e.g., “Borussia Mönchengladbach”).	🔴 High  
 
-1) v_player_team_comp_season
+4	Adaptive PKW weighting by conversion rate	Weight PKW by player conversion rate (pens_scored / pens_attempted), default 0.757 if no attempts exist.	🟠 Medium  
 
-Grain: one row per Player × Team × Competition × Season (atomic fact).
-Columns (typical):
+🚀 Upcoming Features  
+#	Feature	Description / Action	Priority  
+5	Add UEFA Champions League 24/25 scraping feature	Extend scraper to include UCL 2024/25 data and integrate into the main pipeline.	🔴 High  
 
-Keys: player_id, team_id, comp_id, season_id
+6	Tooltip linking unattributed PKWon info	Add hover tooltips linking to unattributed PKWon reference table (superseded by standalone visual).	🟢 Low  
 
-Additives: minutes, goals, non_penalty_goals, penalties_won, pens_scored, pens_attempted, xAG, assists …
+7	Reset bookmark (unfiltered state)	Configure a Reset button to restore default slicers via bookmarks.	🔴 High  
 
-Optionally: starts, subs_on, cards_y/r
+8	Fix Hall of Fame visuals’ row-click response	Adjust interactions / DAX filters so Hall of Fame cards ignore table-row selections.	🟠 Medium  
 
-No pre-aggregation other than data cleaning.
+9	Conditional formatting for awards	Add Ballon d’Or 🟡 and Golden Boy 👦 flags with icon-based formatting (superseded by dedicated award page).	🟢 Low  
 
-Use in Power BI (pages it facilitates):
+10	Create and integrate SQL views for Power BI	Create 4 SQL views (v_player_team_comp_season, v_player_team_comp, v_player_comp_season, v_player_overall) and link them into Power BI.	🔴 High  
 
-Player Season Detail (drill-through from any summary): season-by-season line/table for a player within a team+comp.
+11	Standalone visualisations (outside dashboards)	Build exportable visuals (trend lines, scatter plots, radar charts) for blog / static use.	🟠 Medium  
 
-Ballon d’Or Comparison page (winner vs runners-up vs notable seasons → needs true per-season rows).
+12	Ballon d’Or comparison page	Add a Power BI page comparing Ballon d’Or-winning seasons — metrics for winners, runners-up, and non-winners.	🔴 High  
 
-League Defaults Reference (join by comp_id, season_id to show league-season constants).
+13 Scrape current season data for all comps (CL, PL, La Liga, Serie A, Bundesliga, Ligue 1)	🟠 High  
 
-Any time series visual (season on X-axis).
+13	Live build for current season (CI/CD)	GitHub Actions workflow to run scraper daily, clean / load into DB, and refresh Power BI dataset automatically.	🟠 Medium  
 
-Typical visuals: season table; season KPI strip; per-season trend lines (NPG, PKWon, xAG).
-Example measures: per-90 (divide by minutes/90), season ranks within comp.
+14	Fully automated Plotly Dash + embed	Long-term goal: Dash app that fetches live data and regenerates visuals automatically — no Power BI refresh needed.	🟠 Medium  
 
-2) v_player_team_comp
+15 Re-scrape FBref for np expected goals data and add ratio of npgoals to npxg as calculated column	🟠 High  
 
-Grain: one row per Player × Team × Competition (aggregated across all seasons).
-Columns: same additive metrics summed across seasons:
-SUM(minutes) AS minutes, SUM(goals) AS goals, SUM(non_penalty_goals) AS npg, SUM(penalties_won) AS pkwon, SUM(pens_scored) AS pens_scored, …
+🧭 Upcoming Documentation  
+#	Feature	Description / Action	Priority  
+15	Documentation & rationale layer	Add detailed project docs (weighting rules, schema design, analytical logic, Power BI implementation, reproducibility). Includes sections A–E (Weighting Logic, Data Model, Analytical Design, Power BI Implementation, Reproducibility).	🔴 High  
 
-Use in Power BI (pages it facilitates):
-
-Club Career by Competition (e.g., Aubameyang at Arsenal in EPL vs UCL totals).
-
-Roll of Honour / “Best Stints” (top multi-season stints by comp).
-
-Table of Player–Team–Comp combos (clean 1 line per combo; prevents duplicate seasons).
-
-Typical visuals: tables ranked by NPG, PKWon, Goals; bar charts comparing comps for a player’s stint at a club.
-Example measures: %GoalsFromPens, NPG + PKWon*rate at stint level.
-
-3) v_player_comp_season
-
-Grain: one row per Player × Competition × Season (aggregated across teams).
-Columns: additives summed across teams in that season (handles mid-season transfers):
-SUM(minutes), SUM(goals), SUM(npg), SUM(pkwon), SUM(pens_scored), …
-
-Use in Power BI (pages it facilitates):
-
-Season Dossiers by Competition (e.g., “Messi in 2018/19 UCL” even if multiple teams; common for players changing clubs).
-
-Ballon d’Or Comparison (winner + runners-up often compared at competition-season level).
-
-League Tables of a Season (top scorers/creators in EPL 2021/22).
-
-Typical visuals: year slicer + comp slicer → ranked season table; season radar for a single comp.
-Example measures: season ranks within comp, league-specific unattributed share lookups.
-
-4) v_player_overall
-
-Grain: one row per Player (career totals across all teams, competitions, seasons).
-Columns: global sums:
-SUM(minutes), SUM(goals), SUM(npg), SUM(pkwon), SUM(pens_scored), SUM(xAG), SUM(assists) …
-
-Use in Power BI (pages it facilitates):
-
-Career Leaderboards (global top lists).
-
-Player Finder / Similarity starting point (overall vectors).
-
-Award Winners Overview (career totals side-by-side).
-
-Typical visuals: top-N tables, scatter (career NPG vs xAG), profile cards.
-Example measures: career per-90, career penalty reliance, career conversion.
+16	Pull Request: scraperfc (CL 24/25)	Submit a PR to the scraperfc package adding UCL 24/25 support and update documentation accordingly (public-facing technical note).	🟢 Low  

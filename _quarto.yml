@@ -3,6 +3,7 @@ project:
 
 execute:
   engine: jupyter
+  freeze: auto
 
 website:
   title: "Diggy Digs Data"
@@ -11,6 +12,7 @@ website:
   site-url: https://diggydigsdata.github.io
   repo-url: https://github.com/diggydigsdata
   repo-actions: [source]
+  google-analytics: "G-HNQKPVKC29"
 
   open-graph: true
 
