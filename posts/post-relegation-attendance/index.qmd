@@ -1,11 +1,22 @@
 ---
-title: "Post Relegation Attendance"
+title: "Fair-Weather Fans?"
 author: "Diggy"
 date: "2025-11-01"
-description: "How loyal are football fans when their team drops out of the PL?"
+description: "Dishing the data dirt on post-relegation loyalty."
+image: "featured.jpg"
+image-alt: "A picture of Stadion Za Lužánkami, formerly the 50,000 capacity home ground of Zbrojovka Brno, and now an overgrown jungle."
 categories: [Football, Analytics, Tableau]
 license: "CC BY"
 ---
+::: {.callout-note collapse="true"}
+### Project To-Dos:
+- [ ] Make a Tableau dashboard that plots this data onto a map of England <!-- TODO -->
+- [ ] Add a box plot with Destination: PL relegation, Championship survival, Championship promotion, Championship relegation on the x axis # TODO
+- [ ] Currently, my tables are just built from data I crunched in Excel a while back. I want to revamp all of this with Python # TODO
+- [ ] Maybe add formal hypothesis testing and a regression model # TODO
+- [ ] Add more leagues. I am expecting things to stabilise once you are out of the Prem and bouncing around the Football League # TODO
+- [ ] Re-draft of the text
+:::
 
 I'm a Burnley fan. And in honour of our impending promotion to the Premier League and consolidation as a yoyo club par excellence, I thought it would be a good time to assess the impact of relegation from the Premier League on attendance figures. Because it's never too early to plan ahead.
 
@@ -25,7 +36,6 @@ I'm a Burnley fan. And in honour of our impending promotion to the Premier Leagu
 | Southampton          | 3              | 2                       | Championship     |
 
 Incidentally, Leicester's recent relegation not only brings them into second place on the Premier League relegation rankings but pulls them clear of Birmingham atop the Top-Flight relegations table with 13.
-
 
 ## Methodology
 
@@ -71,7 +81,7 @@ Again, we have some anomalies. Middlesborough's attendance nosedived in 1993-94 
 
 ### Nosedives
 
-middlesborough, oldham
+*This will include a mini investigation into Middlesborough and Oldham to find out why their attendances plummeted. I think there were explanatory factors.*
 
 ### And in general?
 
@@ -157,3 +167,5 @@ Just a quick note on Burnley, who were in the black during their Kompany-led cam
 - If you are on track to stay in the Championship, these losses are slightly higher
 - And if you are on track for League 1, these losses are considerably higher
 - Investigating the outliers in the dataset tends to reveal mitigating circumstances. Often these relate to stadium builds, but in other cases - like Newcastle and Burnley - it is just vibes at play. To really understand the data I would dig into each relegated team a little more to understand what underlying factors affect other teams because it's possibly more nuanced than relegation = fanbandonment.
+
+> Thumbnail image courtesy of <a href="https://commons.wikimedia.org/wiki/File:Brno_-_Abandoned_soccer_stadium.jpg">Jaroslav A. Polák from Brno, Czech Republic</a>, CC0, via Wikimedia Commons

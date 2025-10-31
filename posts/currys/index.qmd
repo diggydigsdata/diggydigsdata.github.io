@@ -4,7 +4,7 @@ author: "Diggy"
 date: "2024-09-30"
 description: "Writing samples from my days as a copywriter at tech retailer Currys."
 image: "featured.jpg"
-image-alt: "Image description"
+image-alt: "The Currys brand logo"
 categories: [Copywriting, Marketing, Ecommerce, Consumer Tech]
 ---
 
@@ -52,3 +52,5 @@ Increasingly, these products are no longer on the main Currys site. But archived
 [LEAPFROG Magic Adventures Microscope Toy](https://business.currys.co.uk/catalogue/domestic-appliances/health-wellbeing/parent-child/leapfrog-magic-adventures-microscope-toy/N760223W)
 
 ## Wearables
+
+> Thumnail image courtesy of FutureBrand Currys PLC, CC BY-SA 4.0, <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons

@@ -3,8 +3,8 @@ title: "Quarto Set Up"
 author: "Diggy"
 date: "2025-11-06"
 description: "Turning my Jekyll site into a Quarto one. Pros, cons and challenges."
-image: "featured.jpg"
-image-alt: "Image description"
+image: "featured.png"
+image-alt: "A picture of the Quarto homepage on 31st October 2025."
 categories: [Technical Writing, Quarto]
 license: "CC BY"
 ---

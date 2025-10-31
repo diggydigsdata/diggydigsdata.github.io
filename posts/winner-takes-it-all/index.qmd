@@ -1,8 +1,10 @@
 ---
-title: "The Winner Takes It All"
+title: "The Winner Takes Them All"
 author: "Diggy"
 date: "2025-10-19"
 description: "How would a footballer's stats look if they could only take the penalties they actually won themselves?"
+image: "featured.png"
+image-alt: "A Power Bi dashboard which shows various stats related to non-penalty goals and penalties won."
 categories: [Football, Analytics, Penalties, Python, Power BI]
 license: "CC BY"
 ---
