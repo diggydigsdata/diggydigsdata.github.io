@@ -1,0 +1,41 @@
+---
+title: "Currys"
+author: "Diggy"
+date: "2024-09-30"
+description: "Writing samples from my days as a copywriter at tech retailer Currys."
+image: "featured.jpg"
+image-alt: "The Currys brand logo"
+lightbox: true
+categories: [Copywriting, Marketing, Ecommerce, Consumer Tech]
+---
+
+A compilation of some ecommerce copy I wrote while working as a copywriter for [Currys](https://www.currys.co.uk). I wrote about everything and anything - particularly computing.
+
+Some links will inevitably break over time. Increasingly, these products are no longer on the main Currys site. But archived products often sit on Currys Business - the ugly duckling sibling site - to wither and rot. Where I've used a Currys Business link, the neglected product would be especially grateful to receive your visit.
+
+My name isn't on any of these, but I promise I wrote them!  
+
+[LEDGER Nano X Hardware Wallet For Crypto](https://www.currys.co.uk/products/ledger-nano-x-hardware-wallet-onyx-black-10249595.html)
+![Edited screenshot of Ledger Nano X copy](/assets/img/ledger-nano-x.png){.lightbox group="Currys"}  
+
+---
+
+[SHOKZ OpenRun Bone Conduction Sports Headphones](https://www.currys.co.uk/products/shokz-openrun-wireless-bluetooth-sports-headphones-red-10249470.html)
+![Screenshot of Shokz headphone copy](/assets/img/SHOKZ%20OpenRun.png){.lightbox group="Currys"}  
+
+---
+
+[Football Manager 24](https://business.currys.co.uk/catalogue/tv-entertainment/gaming/gaming-software/pc-football-manager-24/N646825W)
+![Screenshot of Football Manager 24 copy](/assets/img/football-manager-24.png){.lightbox group="Currys"}  
+
+---
+
+[SpongeBob SquarePants: The Cosmic Shake](https://business.currys.co.uk/catalogue/tv-entertainment/gaming/gaming-software/nintendo-switch-spongebob-squarepants-the-cosmic-shake/N572164W)  
+
+---
+
+[ASUS ROG Strix SCAR 18" Gaming Laptop](https://business.currys.co.uk/catalogue/computing/laptops/windows-laptop/asus-rog-strix-scar-18-18-gaming-laptop-intel-core-i9-rtx-4090-2-tb-ssd/N645530W)  
+
+---
+
+> Thumbnail image courtesy of FutureBrand Currys PLC, CC BY-SA 4.0, <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons

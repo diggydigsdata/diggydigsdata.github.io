@@ -106,5 +106,17 @@
   },
   "assets/notebooks/Main notebook.ipynb": {
     "Main notebook.html": "b61712e7"
+  },
+  "posts/winner-takes-them-all/index.qmd": {
+    "index.html": "79af60d6"
+  },
+  "posts/jekyll-to-quarto/index.qmd": {
+    "index.html": "5deaaa56"
+  },
+  "posts/python-environment-guide/index.qmd": {
+    "index.html": "bc22d61f"
+  },
+  "posts/currys-copywriting-samples/index.qmd": {
+    "index.html": "55321581"
   }
 }

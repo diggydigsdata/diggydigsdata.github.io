@@ -24,10 +24,6 @@ website:
     collapse-below: lg
 
     right:
-      - text: Analytics
-      - text: Tutorials
-      - text: Reviews
-      - text: Upcomings
       - text: About
         href: about.qmd
       - icon: github
@@ -49,6 +45,7 @@ format:
     theme:
       light: [flatly, styles.scss]
       dark: [flatly, styles-dark.scss]
+    toc: true
     highlight-style: a11y-dark
     code-copy: true
     code-overflow: wrap

@@ -4,6 +4,7 @@ listing:
   sort: "date desc"
   type: grid
   categories: true
+  fields: [image, date, title, author, reading-time]
   sort-ui: false
   filter-ui: false
 page-layout: full
