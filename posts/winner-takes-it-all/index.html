@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2025-10-19">
 <meta name="description" content="How would a footballer’s stats look if they could only take the penalties they actually won themselves?">
 
-<title>The Winner Takes It All – Diggy Digs Data</title>
+<title>The Winner Takes Them All – Diggy Digs Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,9 +86,13 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </script>
 
 
-<meta property="og:title" content="The Winner Takes It All – Diggy Digs Data">
+<meta property="og:title" content="The Winner Takes Them All – Diggy Digs Data">
 <meta property="og:description" content="How would a footballer’s stats look if they could only take the penalties they actually won themselves?">
+<meta property="og:image" content="https://diggydigsdata.github.io/posts/winner-takes-it-all/featured.png">
 <meta property="og:site_name" content="Diggy Digs Data">
+<meta property="og:image:height" content="718">
+<meta property="og:image:width" content="1027">
+<meta property="og:image:alt" content="A Power Bi dashboard which shows various stats related to non-penalty goals and penalties won.">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -322,7 +326,7 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">The Winner Takes It All</h1>
+      <h1 class="title">The Winner Takes Them All</h1>
                   <div>
         <div class="description">
           How would a footballer’s stats look if they could only take the penalties they actually won themselves?
@@ -371,6 +375,31 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Project To-Dos:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><label><input type="checkbox">Fix the PowerBi dashboard because only single league/single column measures are working properly wtih the cards and slicers.</label></li>
+<li><label><input type="checkbox">2 cards are responding to table row selections. I don’t want that.</label></li>
+<li><label><input type="checkbox">Add UEFA Champions League 24/25 and UEL edge case scrapes. Will require modifying the ScraperFC package and I should submit a PR afterwards.</label></li>
+<li><label><input type="checkbox">Standalone visualisations (outside dashboards)</label></li>
+<li>Ballon d’Or comparisons — metrics for winners, runners-up, and non-winners.</li>
+<li><label><input type="checkbox">Scrape current season data for all comps (CL, PL, La Liga, Serie A, Bundesliga, Ligue 1)</label></li>
+<li><label><input type="checkbox">Live build for current season (CI/CD). Script to run scraper weekly, clean / load into DB, and refresh Dash app automatically.</label></li>
+<li><label><input type="checkbox">Fully automated Plotly Dash + embed Long-term goal: Dash app that fetches live data and regenerates visuals automatically — no Power BI refresh needed.</label></li>
+</ul>
+</div>
+</div>
+</div>
 <p>What do Raheem Sterling and Shaquille O’Neal have in common? Quite a lot, actually.</p>
 <p>Raheem is the PL’s greatest ever winner of penalties - with 26. Raheem is also one of the PL’s greatest ever goalscorers; with 123 goals, he ranks 20th all-time. Meanwhile, Shaq is one of basketball’s greatest ever free throw foul-drawers. He ranks 4th all-time:</p>
 <ol type="1">
@@ -552,30 +581,6 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
   border: 0;
 }
 </style>
-<p>⚙️ Upcoming Table Fixes<br>
-# Feature Description / Action Priority<br>
-1 Minutes-weighted fairness rule for unattributed penalties Use player-minutes share to distribute team-level unattributed penalties fairly across players. 🔴 High</p>
-<p>2 Revert to assists (no xAG) for 2016/17 Replace xAG values with raw assists in Hall of Fame tables for 2016/17 (xAG not tracked that year). 🟠 Medium</p>
-<p>3 SQL short_name column for teams Add short_name field in dimteam to prevent text wrapping for long team names (e.g., “Borussia Mönchengladbach”). 🔴 High</p>
-<p>4 Adaptive PKW weighting by conversion rate Weight PKW by player conversion rate (pens_scored / pens_attempted), default 0.757 if no attempts exist. 🟠 Medium</p>
-<p>🚀 Upcoming Features<br>
-# Feature Description / Action Priority<br>
-5 Add UEFA Champions League 24/25 scraping feature Extend scraper to include UCL 2024/25 data and integrate into the main pipeline. 🔴 High</p>
-<p>6 Tooltip linking unattributed PKWon info Add hover tooltips linking to unattributed PKWon reference table (superseded by standalone visual). 🟢 Low</p>
-<p>7 Reset bookmark (unfiltered state) Configure a Reset button to restore default slicers via bookmarks. 🔴 High</p>
-<p>8 Fix Hall of Fame visuals’ row-click response Adjust interactions / DAX filters so Hall of Fame cards ignore table-row selections. 🟠 Medium</p>
-<p>9 Conditional formatting for awards Add Ballon d’Or 🟡 and Golden Boy 👦 flags with icon-based formatting (superseded by dedicated award page). 🟢 Low</p>
-<p>10 Create and integrate SQL views for Power BI Create 4 SQL views (v_player_team_comp_season, v_player_team_comp, v_player_comp_season, v_player_overall) and link them into Power BI. 🔴 High</p>
-<p>11 Standalone visualisations (outside dashboards) Build exportable visuals (trend lines, scatter plots, radar charts) for blog / static use. 🟠 Medium</p>
-<p>12 Ballon d’Or comparison page Add a Power BI page comparing Ballon d’Or-winning seasons — metrics for winners, runners-up, and non-winners. 🔴 High</p>
-<p>13 Scrape current season data for all comps (CL, PL, La Liga, Serie A, Bundesliga, Ligue 1) 🟠 High</p>
-<p>13 Live build for current season (CI/CD) GitHub Actions workflow to run scraper daily, clean / load into DB, and refresh Power BI dataset automatically. 🟠 Medium</p>
-<p>14 Fully automated Plotly Dash + embed Long-term goal: Dash app that fetches live data and regenerates visuals automatically — no Power BI refresh needed. 🟠 Medium</p>
-<p>15 Re-scrape FBref for np expected goals data and add ratio of npgoals to npxg as calculated column 🟠 High</p>
-<p>🧭 Upcoming Documentation<br>
-# Feature Description / Action Priority<br>
-15 Documentation &amp; rationale layer Add detailed project docs (weighting rules, schema design, analytical logic, Power BI implementation, reproducibility). Includes sections A–E (Weighting Logic, Data Model, Analytical Design, Power BI Implementation, Reproducibility). 🔴 High</p>
-<p>16 Pull Request: scraperfc (CL 24/25) Submit a PR to the scraperfc package adding UCL 24/25 support and update documentation accordingly (public-facing technical note). 🟢 Low</p>
 
 
 </section>
