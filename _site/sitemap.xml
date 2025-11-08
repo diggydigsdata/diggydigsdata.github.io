@@ -1,87 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://diggydigsdata.github.io/posts/winner-takes-it-all/index.html</loc>
-    <lastmod>2025-10-31T15:33:09.907Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/the-bear-necessities-of-strife/index.html</loc>
-    <lastmod>2025-10-30T00:46:12.381Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/shared-future-news-YLT-survey/index.html</loc>
-    <lastmod>2025-10-30T00:46:12.367Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/scraping-fbref/index.html</loc>
-    <lastmod>2025-11-02T11:30:51.238Z</lastmod>
-  </url>
-  <url>
     <loc>https://diggydigsdata.github.io/posts/post-relegation-attendance/index.html</loc>
-    <lastmod>2025-10-31T00:05:34.427Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/invention-of-tradition/index.html</loc>
-    <lastmod>2025-10-30T00:46:12.349Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/determinants-of-national-identity/index.html</loc>
-    <lastmod>2025-10-30T00:46:12.349Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/index.html</loc>
-    <lastmod>2025-11-02T11:14:36.454Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/about.html</loc>
-    <lastmod>2025-11-07T18:24:40.679Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/assets/notebooks/Main notebook.html</loc>
-    <lastmod>2025-10-30T00:46:12.338Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/currys/index.html</loc>
-    <lastmod>2025-11-07T10:43:35.593Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/from-beijing-to-brasov/index.html</loc>
-    <lastmod>2025-10-30T00:46:12.349Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/no-fear-at-that-age/index.html</loc>
-    <lastmod>2025-10-31T01:00:16.942Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/quarto-set-up/index.html</loc>
-    <lastmod>2025-10-31T00:26:55.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/shared-future-news-reconciliation/index.html</loc>
-    <lastmod>2025-10-30T00:46:12.372Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/sport-and-national-identity/index.html</loc>
-    <lastmod>2025-10-30T00:46:12.373Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/transitional-justice/index.html</loc>
-    <lastmod>2025-10-30T00:46:12.381Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/winner-takes-them-all/index.html</loc>
-    <lastmod>2025-11-01T23:06:52.180Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/jekyll-to-quarto/index.html</loc>
-    <lastmod>2025-11-01T22:22:53.840Z</lastmod>
-  </url>
-  <url>
-    <loc>https://diggydigsdata.github.io/posts/python-environment-guide/index.html</loc>
-    <lastmod>2025-11-01T23:08:23.194Z</lastmod>
+    <lastmod>2025-11-07T18:37:55.097Z</lastmod>
   </url>
   <url>
     <loc>https://diggydigsdata.github.io/posts/currys-copywriting-samples/index.html</loc>
-    <lastmod>2025-11-07T10:43:35.593Z</lastmod>
+    <lastmod>2025-11-07T18:37:55.097Z</lastmod>
+  </url>
+  <url>
+    <loc>https://diggydigsdata.github.io/assets/notebooks/Main notebook.html</loc>
+    <lastmod>2025-11-07T18:37:55.097Z</lastmod>
+  </url>
+  <url>
+    <loc>https://diggydigsdata.github.io/about.html</loc>
+    <lastmod>2025-11-08T01:02:16.565Z</lastmod>
+  </url>
+  <url>
+    <loc>https://diggydigsdata.github.io/index.html</loc>
+    <lastmod>2025-11-07T18:37:55.097Z</lastmod>
+  </url>
+  <url>
+    <loc>https://diggydigsdata.github.io/posts/no-fear-at-that-age/index.html</loc>
+    <lastmod>2025-11-07T18:37:55.097Z</lastmod>
   </url>
 </urlset>
