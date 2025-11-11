@@ -363,7 +363,10 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
   <li><a href="#a-results-business" id="toc-a-results-business" class="nav-link" data-scroll-target="#a-results-business">A Results Business</a></li>
   <li><a href="#would-champagne-football-help" id="toc-would-champagne-football-help" class="nav-link" data-scroll-target="#would-champagne-football-help">Would champagne football help?</a></li>
   </ul></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a>
+  <ul class="collapse">
+  <li><a href="#sources-1" id="toc-sources-1" class="nav-link" data-scroll-target="#sources-1">Sources:</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/posts/post-relegation-attendance/index.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -514,7 +517,7 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <section id="increased-attendance-after-relegation" class="level3">
 <h3 class="anchored" data-anchor-id="increased-attendance-after-relegation">Increased attendance after relegation?</h3>
 <p>Let’s start on a positive note. On 10 occasions, teams managed to increase their average attendance in the first season (Y+1) immediately following relegation.</p>
-<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-10T08:57:25.049565Z&quot;,&quot;start_time&quot;:&quot;2025-11-10T08:57:25.038752Z&quot;}}" data-cap="Table 1: Teams with Increased Attendance in Year +1">
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-10T08:57:25.049565Z&quot;,&quot;start_time&quot;:&quot;2025-11-10T08:57:25.038752Z&quot;}}" data-cap="Table 1: Teams with Increased Attendance in Year +1" data-execution_count="70">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 --- TABLE 1: Increased Attendance (Year +1) ---
@@ -548,7 +551,7 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="and-in-general">And in general?</h3>
 <p>Those positive stories are, unfortunately, the exceptions. On average, attendance falls significantly. But to find the real signal, we must first identify and handle the noise.</p>
 <p>A box plot of all post-relegation data (Y+1 and Y+2) shows the wild variance in outcomes.</p>
-<div id="cell-14" class="cell">
+<div id="cell-14" class="cell" data-execution_count="76">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 --- PLOT: Box Plot for Distribution (All Data Included) ---</code></pre>
@@ -557,18 +560,18 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="index_files/figure-html/cell-8-output-2.png" class="img-fluid figure-img"></p>
-<figcaption>Distribution of attendance change (Y+1 &amp; Y+2) by outcome, including all outliers.</figcaption>
+<figcaption>Distribution of attendance change (Y+1 &amp; Y+2) by outcome, including all outliers and sample sizes.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>The plot above clearly shows several extreme statistical outliers (the dots) that are skewing the data. To understand what they are, we can use the <code>1.5 * IQR</code> rule (the same logic the box plot uses) to print a list of them.</p>
-<div id="cell-16" class="cell">
+<div id="cell-16" class="cell" data-execution_count="72">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 --- Outlier Hunt (Using 1.5 * IQR Rule) ---
 
---- Outliers for 'Promoted' (Outside -21.27 to 17.22) ---
+--- Outliers for 'Promoted' (Outside -22.31 to 17.73) ---
 | Relegation_Event_ID      |   Year_vs_Relegation |   Pct_Change_vs_Y0_Display |
 |:-------------------------|---------------------:|---------------------------:|
 | Leicester City 2001-02   |                    2 |                      56.20 |
@@ -579,7 +582,7 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 | Hull City 2014-15        |                    1 |                     -26.99 |
 | Birmingham City 2007-08  |                    1 |                     -27.12 |
 
---- Outliers for 'Survived' (Outside -53.32 to 16.09) ---
+--- Outliers for 'Survived' (Outside -53.88 to 17.15) ---
 | Relegation_Event_ID   |   Year_vs_Relegation |   Pct_Change_vs_Y0_Display |
 |:----------------------|---------------------:|---------------------------:|
 | Sunderland 1996-97    |                    2 |                      85.69 |
@@ -687,7 +690,7 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <section id="a-results-business" class="level3">
 <h3 class="anchored" data-anchor-id="a-results-business">A Results Business</h3>
 <p>Next up, we’ll look at our <code>Year_End_Outcome</code> variable. Let’s plot the attendance change over time, grouping teams by whether they were Promoted, Survived, or Relegated in their first post-relegation season.</p>
-<div id="cell-20" class="cell">
+<div id="cell-20" class="cell" data-execution_count="73">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 --- PLOT 1: Attendance Change by Y+1 Outcome (Final Filter) ---
@@ -695,12 +698,12 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 --- New Averages for Analysis ---
 | Outcome_Group   |   Year_vs_Relegation |   Pct_Change_vs_Y0_Display |
 |:----------------|---------------------:|---------------------------:|
-| Promoted        |                    1 |                       -8.6 |
+| Promoted        |                    1 |                       -8.5 |
 | Promoted        |                    2 |                        2.0 |
-| Relegated       |                    1 |                      -28.2 |
-| Relegated       |                    2 |                      -23.8 |
-| Survived        |                    1 |                      -17.4 |
-| Survived        |                    2 |                      -21.9 |</code></pre>
+| Relegated       |                    1 |                      -20.7 |
+| Relegated       |                    2 |                      -17.5 |
+| Survived        |                    1 |                      -17.2 |
+| Survived        |                    2 |                      -21.6 |</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -713,14 +716,14 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </div>
 <p>Irrespective of season outcome, relegated teams <em>on average</em> lose fans. And there seems to be a clear correlation between team performance and attendance. Moreover, it does seem that performance affects attendances.</p>
 <p><strong>Promoted (Green Line)</strong>: Teams that bounce straight back (like Burnley) see their Y+1 attendance drop minimized to just -8.6%. By Y+2, they are back in the Premier League, and attendance recovers to surpass its pre-relegation level by 2%.</p>
-<p><strong>Survived (Blue Line)</strong>: Teams that “survive” and stay in the Championship see a much larger initial drop of -17.4%. Worse, by Y+2, that optimism fades and attendance dwindles further to -21.9%.</p>
+<p><strong>Survived (Blue Line)</strong>: Teams that “survive” and stay in the Championship see a much larger initial drop of -17.2%. Worse, by Y+2, that optimism fades and attendance dwindles further to -21.6%.</p>
 <p><strong>Relegated (Orange Line)</strong>: Teams that enter freefall and plummet into League 1 see a catastrophic -28% drop in Y+1, which slightly recovers to -24% in Y+2.</p>
 </section>
 <section id="would-champagne-football-help" class="level3">
 <h3 class="anchored" data-anchor-id="would-champagne-football-help">Would champagne football help?</h3>
 <p>If you’re stuck in the Championship, can you at least keep the fans entertained with attacking football?</p>
 <p>To test this, I’ve plotted <code>Goals_For_Per_Game</code> against the percentage change in attendance for all post-relegation seasons (Y+1 and Y+2), again grouped by the team’s outcome and with the stadium anomalies removed.</p>
-<div id="cell-23" class="cell">
+<div id="cell-23" class="cell" data-execution_count="74">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 --- PLOT 2: Goals vs. Attendance % Change (Final Filter) ---</code></pre>
@@ -736,30 +739,25 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </div>
 <p>The answer seems to be: yes, but only if you have nothing else to play for.</p>
 <p>For Survived teams, there is a fairly clear positive relationship. If a team is destined for another year of mid-table Championship football, entertainment value (scoring goals) seems to help keep traffic coming through the turnstiles.</p>
-<!-- Luton really buck the trend for League 1-destined sides. And because there are so few teams who are relegated from the Premier League to League 1 in consecutive seasons, their outlier status has a huge impact on the data, dropping the averages by almost 8%. But can Luton really be considered anomalous when the data population is so small? In my view, yes. First of all, Luton had an emotional relegation season. Their captain Tom Lockyer suffered a cardiac arrest mid-game. Fortunately, he survived and has been on a road to recovery ever since with the view to playing again. Moreover, Luton battled very bravely against relegation despite these traumatising events and despite being financial minnows. Luton were a uniquely united club during their relegation season. However, that is not the only explanation. The other is that Luton are another stadium-constrained side. Kenilworth Road is famously tiny, and was a peculiar relic among Premier League stadiums. Luton have received approval for a stadium rebuild that will double its capacity. Based on their increased attendances post-relegation, Luton are another case of a club where demand has exceeded supply for some time.
-
-Just a quick note on Burnley, who were in the black during their Kompany-led campaign but have lost almost 8% this season. There are a few factors at play. First, morale sank during Kompany's PL season. Burnley were truly awful and the core of their Championship-winning side was cast aside in favour of new recruits - an inexplicable decision in the view of many fans. Moreover, ALK capital - the ownership group - made some ill-judged and patronising comments to supporters for not bringing a positive enough atmosphere to Turf Moor. In a nutshell, the mood was bleak by the end of 2022-23. Kompany's departure and subsequent replacement by Scott Parker failed to excite fans. Nor did selling half the first team squad and sitting through a million 0-0 draws. Despite the successful campaign, Parker-ball has been a bit of a slog. Sidenote: I was a huge Parker skeptic at first but I think he has brought the solidity Burnley needed and, as the season has gone on, a more cohesive team has taken shape, the football has yielded more goals and the fanbase has gotten on side. In any case, this all goes to highlight that there are complexities behind the averages I am presenting here.-->
+<!-- Luton really buck the trend for League 1-destined sides. And because there are so few teams who are relegated from the Premier League to League 1 in consecutive seasons, their outlier status has a huge impact on the data, dropping the averages by almost 8%. But can Luton really be considered anomalous when the data population is so small? In my view, yes. First of all, Luton had an emotional relegation season. Their captain Tom Lockyer suffered a cardiac arrest mid-game. Fortunately, he survived and has been on a road to recovery ever since with the view to playing again. Moreover, Luton battled very bravely against relegation despite these traumatising events and despite being financial minnows. Luton were a uniquely united club during their relegation season. However, that is not the only explanation. The other is that Luton are another stadium-constrained side. Kenilworth Road is famously tiny, and was a peculiar relic among Premier League stadiums. Luton have received approval for a stadium rebuild that will double its capacity. Based on their increased attendances post-relegation, Luton are another case of a club where demand has exceeded supply for some time.-->
 </section>
 </section>
 <section id="conclusions" class="level2">
 <h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
 <ul>
 <li>Teams can typically expect to lose 16-22% of their attendance after relegation if they don’t bounce straight back, and that drop accelerates in the second year.</li>
-<li>If you are on track for promotion, losses are minimized to ~8% and attendance fully recovers upon returning to the Premier League.</li>
-<li>“Vibes” (like a popular manager) and “style” (attacking football) seem to be real factors, but their effect is most visible for teams stuck in mid-table, where the on-pitch result isn’t exciting enough on its own.</li>
+<li>If you are on track for promotion, losses are minimized to ~8% and attendance fully recovers upon returning to the Premier League. “Vibes” (like a popular manager), “toxicity” (like a detested owner) and “style” (attacking football) seem to be real factors. Style is most visible for teams stuck in mid-table, where the on-pitch result isn’t exciting enough on its own. But vibes and toxicity can keep a club afloat or cause it to sink.</li>
 <li>And if you are on track for League 1, these losses are considerably higher</li>
 <li>Relegation doesn’t automatically mean fan abandonment. Context matters: management, entertainment value, stadium capacity, and hope for promotion all play a role.</li>
 </ul>
-<p>Conclusions Teams can typically expect to lose 15-17% of their attendance after relegation if they don’t bounce straight back.</p>
-<p>This drop in attendance accelerates in the second year, falling to over 21% if the team is still in the Championship.</p>
-<p>If you are on track for promotion, losses are minimized to less than 10% and recover almost fully upon returning to the Premier League.</p>
-<p>“Vibes” (like a popular manager), “toxicity” (like a detested owner) and “style” (attacking football) seem to be real factors. Style is most visible for teams stuck in mid-table, where the on-pitch result isn’t exciting enough on its own. But vibes and toxicity can keep a club afloat or cause it to sink.</p>
-<p>Relegation doesn’t automatically mean fan abandonment. Context matters: management, entertainment value, stadium capacity, and hope for promotion all play a role.</p>
-<blockquote class="blockquote">
+<section id="sources-1" class="level3">
+<h3 class="anchored" data-anchor-id="sources-1">Sources:</h3>
+<p>Fjelstul, Joshua C. “The Fjelstul English Football Database v1.1.0.” May 26, 2024. <a href="https://www.github.com/jfjelstul/englishfootball">https://www.github.com/jfjelstul/englishfootball</a></p>
+<p><a href="https://www.european-football-statistics.co.uk/index1.htm">European-Football-Statistics.co.uk</a></p>
 <p>Thumbnail image courtesy of <a href="https://commons.wikimedia.org/wiki/File:Brno_-_Abandoned_soccer_stadium.jpg">Jaroslav A. Polák from Brno, Czech Republic</a>, CC0, via Wikimedia Commons</p>
-</blockquote>
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
