@@ -24,6 +24,7 @@ My background is in ecommerce copywriting, teaching & special needs care. Here i
 #### TechSmith
 
 [Camtasia](/assets/files/camtasia-cert-2025.pdf)  
+[Snagit](/assets/files/snagit-cert-2025.pdf)  
 [Snagit - Techniques for Creating Training Materials](/assets/files/snagit-training-materials.pdf)  
 [Snagit - Techniques for Technical Documentation](/assets/files/snagit-technical-docs.pdf)  
 
@@ -31,9 +32,9 @@ My background is in ecommerce copywriting, teaching & special needs care. Here i
 
 #### Coding:  
 
-[Learn Python 3 Skill Path (Codecademy)](/assets/files/LearnPython3_CodecademySkillPath.pdf)
-[DataCamp Python Certificates](/assets/files/DataCamp_Python_certificates.pdf)
-[DataCamp R Certificates](/assets/files/DataCamp_R_certificates.pdf)
+[Learn Python 3 Skill Path (Codecademy)](/assets/files/LearnPython3_CodecademySkillPath.pdf)  
+[DataCamp Python Certificates](/assets/files/DataCamp_Python_certificates.pdf)  
+[DataCamp R Certificates](/assets/files/DataCamp_R_certificates.pdf)  
 [DataCamp SQL Certificates](/assets/files/DataCampSQLcertificates.pdf)  
 
 ---
@@ -46,14 +47,14 @@ My background is in ecommerce copywriting, teaching & special needs care. Here i
 
 #### SEO & Marketing:  
 
-[Get Started Using Google Analytics (GA4)](https://skillshop.credential.net/31bf1a39-29ee-49dc-b7dd-a7fbd4e670f2#acc.iMpVTfh1)
+[Get Started Using Google Analytics (GA4)](https://skillshop.credential.net/31bf1a39-29ee-49dc-b7dd-a7fbd4e670f2#acc.iMpVTfh1)  
 [Semrush Academy SEO Principles: An Essential Guide for Beginners](https://static.semrush.com/academy/certificates/49d01032e9/eoin-dignan_10.pdf)  
 
 ---
 
 #### Teaching:  
 
-[International House Certificate in Teaching Young Learners and Teenagers (IHCYLT)](/assets/files/IHCYLT_EnglishTeaching_Certificate.pdf)
-[Certificate in Teaching English to Speakers of Other Languages](/assets/files/CELTA_EnglishTeaching_Certificate.pdf)
+[International House Certificate in Teaching Young Learners and Teenagers (IHCYLT)](/assets/files/IHCYLT_EnglishTeaching_Certificate.pdf)  
+[Certificate in Teaching English to Speakers of Other Languages](/assets/files/CELTA_EnglishTeaching_Certificate.pdf)  
 
 </details>

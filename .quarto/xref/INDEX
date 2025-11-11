@@ -118,5 +118,20 @@
   },
   "posts/currys-copywriting-samples/index.qmd": {
     "index.html": "55321581"
+  },
+  "posts/post-relegation-attendance/tidy_attendance.ipynb": {
+    "tidy_attendance.html": "c3863a92"
+  },
+  "assets/archived_md/index.qmd": {
+    "index.html": "6367d162"
+  },
+  "assets/scripts/tidy_attendance.ipynb": {
+    "tidy_attendance.html": "7ccdb6a1"
+  },
+  "posts/post-relegation-attendance/index.ipynb": {
+    "index.html": "95a8649c"
+  },
+  "posts/too-messy-to-melt/index.qmd": {
+    "index.html": "fa8567cf"
   }
 }

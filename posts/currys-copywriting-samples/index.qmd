@@ -16,25 +16,28 @@ Some links will inevitably break over time. Increasingly, these products are no 
 My name isn't on any of these, but I promise I wrote them!  
 
 [LEDGER Nano X Hardware Wallet For Crypto](https://www.currys.co.uk/products/ledger-nano-x-hardware-wallet-onyx-black-10249595.html)
-![Edited screenshot of Ledger Nano X copy](/assets/img/ledger-nano-x.png){.lightbox group="Currys"}  
+![Screenshot of Ledger Nano X crypto wallet copy](/assets/img/ledger-nano-x.png){.lightbox group="Currys"}  
 
 ---
 
 [SHOKZ OpenRun Bone Conduction Sports Headphones](https://www.currys.co.uk/products/shokz-openrun-wireless-bluetooth-sports-headphones-red-10249470.html)
-![Screenshot of Shokz headphone copy](/assets/img/SHOKZ%20OpenRun.png){.lightbox group="Currys"}  
+![Screenshot of Shokz bone-conduction headphones copy](/assets/img/SHOKZ%20OpenRun.png){.lightbox group="Currys"}  
 
 ---
 
 [Football Manager 24](https://business.currys.co.uk/catalogue/tv-entertainment/gaming/gaming-software/pc-football-manager-24/N646825W)
-![Screenshot of Football Manager 24 copy](/assets/img/football-manager-24.png){.lightbox group="Currys"}  
+![Screenshot of Football Manager 24 for PC copy](/assets/img/football-manager-24.png){.lightbox group="Currys"}  
 
 ---
 
 [SpongeBob SquarePants: The Cosmic Shake](https://business.currys.co.uk/catalogue/tv-entertainment/gaming/gaming-software/nintendo-switch-spongebob-squarepants-the-cosmic-shake/N572164W)  
+![Screenshot of Spongebob for Nintendo Switch copy](/assets/img/spongebob.png){.lightbox group="Currys"}  
 
 ---
 
+
 [ASUS ROG Strix SCAR 18" Gaming Laptop](https://business.currys.co.uk/catalogue/computing/laptops/windows-laptop/asus-rog-strix-scar-18-18-gaming-laptop-intel-core-i9-rtx-4090-2-tb-ssd/N645530W)  
+![Screenshot of Asus ROG Strix Gaming Laptop copy](/assets/img/asus-rog.png){.lightbox group="Currys"}  
 
 ---
 
