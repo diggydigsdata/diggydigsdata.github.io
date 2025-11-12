@@ -40,17 +40,21 @@ and they will stay that way as long as you are on that tab (active)*/
   border-radius: 5px !important;
 }
 
-/* hovering over the brand name in the navbar also changes
-its color to a very dark claret and underlines it*/
-.navbar-brand:hover span {
-  color: #300C1D !important;
-  text-decoration: underline !important;
-  text-decoration-color: #300C1D !important;
-  text-underline-offset: 5px;
-  text-decoration-thickness: 2px;
+/* NAVBAR BRAND STYLING  */
+
+/* Give the brand's text span padding (buffer) in its static state */
+.navbar-brand span {
+  padding: 0.3em 0.5em;
   border-radius: 5px !important;
+  /* Add transition for a smooth hover effect */
+  transition: background-color 0.2s, color 0.2s;
 }
 
+/* On hover, change the background and text color of the span */
+.navbar-brand:hover span {
+  background-color: $claret-border-color !important;
+  color: $white-text-color !important;
+}
 /* FROM HERE THERE ARE DIFFERENCES BETWEEN DARK AND LIGHT MODES */
 /* This makes the post content and the title and author/date blocks
 all have the same dark background and light text */
@@ -125,7 +129,7 @@ a:not(.navbar-brand):visited {
 
 a:not(.navbar-brand):hover {
   color: #0056b3;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* stops the grid listing cards from being underlined on hover */

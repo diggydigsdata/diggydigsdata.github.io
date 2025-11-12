@@ -45,9 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ea6dcb636b98e4259611748ef6731b59.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-dd122c0da25c9fd53758c928d9b42162.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-ea6dcb636b98e4259611748ef6731b59.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-2f83f0ac04c3ba37addb9a3b48501ba5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-b7dfd321930551f38f4d773270eb8bab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2f83f0ac04c3ba37addb9a3b48501ba5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,22 +86,9 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
+
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script type="text/javascript">
-window.PlotlyConfig = {MathJaxConfig: 'local'};
-if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
-if (typeof require !== 'undefined') {
-require.undef("plotly");
-requirejs.config({
-    paths: {
-        'plotly': ['https://cdn.plot.ly/plotly-2.35.2.min']
-    }
-});
-require(['plotly'], function(Plotly) {
-    window._Plotly = Plotly;
-});
-}
-</script>
 
 
 
@@ -422,13 +409,32 @@ Figure&nbsp;1: Average penalties per match over time, by league (with global tre
 </div>
 </div>
 </div>
-<div id="cell-fig-penalties-per-match-plotly" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.009191Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:23:59.967651Z&quot;}}" data-execution_count="5">
-<div id="fig-penalties-per-match-plotly" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<div class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.009191Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:23:59.967651Z&quot;}}" data-execution_count="5">
+<div id="fig-penalties-per-match-plotly" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.009191Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:23:59.967651Z&quot;}}" data-execution_count="5">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-penalties-per-match-plotly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>                            <div id="38b45238-1ff3-40d2-97f0-8ae86cef0ed4" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("38b45238-1ff3-40d2-97f0-8ae86cef0ed4")) {                    Plotly.newPlot(                        "38b45238-1ff3-40d2-97f0-8ae86cef0ed4",                        [{"hovertemplate":"Season start: %{x}\u003cbr\u003eAvg\u002fMatch: %{y:.3f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"CL","mode":"markers","name":"CL","x":[1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],"y":[0.2484076433121019,0.25477707006369427,0.18471337579617833,0.1337579617834395,0.136,0.24,0.2,0.112,0.144,0.152,0.144,0.24,0.288,0.224,0.368,0.328,0.272,0.432,0.28,0.344,0.3949579831932773,0.472,0.36,0.392,0.312],"type":"scatter"},{"hoverinfo":"skip","legendgroup":"CL","mode":"lines","name":"CL trend","showlegend":false,"x":[1999,2023],"y":[0.14237592480204242,0.39015319792983405],"type":"scatter"},{"hovertemplate":"Season start: %{x}\u003cbr\u003eAvg\u002fMatch: %{y:.3f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"EPL","mode":"markers","name":"EPL","x":[1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],"y":[0.1471861471861472,0.17532467532467533,0.17532467532467533,0.16842105263157894,0.25,0.18947368421052632,0.1868421052631579,0.2236842105263158,0.17894736842105263,0.1763157894736842,0.23421052631578948,0.22631578947368422,0.21578947368421053,0.19473684210526315,0.2789473684210526,0.22105263157894736,0.2236842105263158,0.28421052631578947,0.2710526315789474,0.25263157894736843,0.22631578947368422,0.22894736842105262,0.21578947368421053,0.2394736842105263,0.2789473684210526,0.21052631578947367,0.2710526315789474,0.24210526315789474,0.32894736842105265,0.2710526315789474,0.26052631578947366,0.28157894736842104],"type":"scatter"},{"hoverinfo":"skip","legendgroup":"EPL","mode":"lines","name":"EPL trend","showlegend":false,"x":[1992,2023],"y":[0.17740516062884382,0.2806832421963996],"type":"scatter"},{"hovertemplate":"Season start: %{x}\u003cbr\u003eAvg\u002fMatch: %{y:.3f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"La Liga","mode":"markers","name":"La Liga","x":[1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],"y":[0.28157894736842104,0.29736842105263156,0.3,0.3631578947368421,0.30526315789473685,0.22631578947368422,0.2578947368421053,0.3,0.28157894736842104,0.33421052631578946,0.20789473684210527,0.3026315789473684,0.2578947368421053,0.2894736842105263,0.3026315789473684,0.2894736842105263,0.25526315789473686,0.3157894736842105,0.29736842105263156,0.34210526315789475,0.39210526315789473,0.37105263157894736,0.3473684210526316,0.3026315789473684,0.28157894736842104],"type":"scatter"},{"hoverinfo":"skip","legendgroup":"La Liga","mode":"lines","name":"La Liga trend","showlegend":false,"x":[1999,2023],"y":[0.2783157894736812,0.32189473684210457],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"black","dash":"dash","width":3},"mode":"lines","name":"Global regression","x":[1992,2023],"y":[0.17156563944244851,0.33064489694217514],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"margin":{"l":60,"r":30,"t":60,"b":60},"title":{"text":"Average penalties per match over time (interactive)"},"xaxis":{"title":{"text":"Season start year"},"dtick":2},"yaxis":{"title":{"text":"Average penalties per match"}},"legend":{"title":{"text":""}},"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+<div id="fig-penalties-per-match-plotly-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-penalties-per-match-plotly-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.1.1.min"</script>
+        
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-penalties-per-match-plotly-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+<div id="fig-penalties-per-match-plotly-2" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-penalties-per-match-plotly-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.1.min.js" integrity="sha256-HUEFyfiTnZJxCxur99FjbKYTvKSzwDaD3/x5TqHpFu4=" crossorigin="anonymous"></script>                <div id="6776fad3-6343-4f53-a15b-f374fba76f3b" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("6776fad3-6343-4f53-a15b-f374fba76f3b")) {                    Plotly.newPlot(                        "6776fad3-6343-4f53-a15b-f374fba76f3b",                        [{"hovertemplate":"Season start: %{x}\u003cbr\u003eAvg\u002fMatch: %{y:.3f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"CL","mode":"markers","name":"CL","x":{"dtype":"i2","bdata":"zwfQB9EH0gfTB9QH1QfWB9cH2AfZB9oH2wfcB90H3gffB+AH4QfiB+MH5AflB+YH5wc="},"y":{"dtype":"f8","bdata":"agsNWNLLzz\u002fhbux7RE7QP\u002fnTFhqwpMc\u002fOUG4G\u002fsewT+cxCCwcmjBP7gehetRuM4\u002fmpmZmZmZyT956SYxCKy8PzvfT42XbsI\u002f2\u002fl+arx0wz8730+Nl27CP7gehetRuM4\u002fO99PjZdu0j956SYxCKzMP1pkO99Pjdc\u002fy6FFtvP91D+cxCCwcmjRP9nO91Pjpds\u002f7FG4HoXr0T9qvHSTGATWP9n9Rtn9Rtk\u002faJHtfD813j8K16NwPQrXP0oMAiuHFtk\u002fK4cW2c730z8="},"type":"scatter"},{"hoverinfo":"skip","legendgroup":"CL","mode":"lines","name":"CL trend","showlegend":false,"x":{"dtype":"i2","bdata":"zwfnBw=="},"y":{"dtype":"f8","bdata":"gJph0l85wj8AdmIeRfjYPw=="},"type":"scatter"},{"hovertemplate":"Season start: %{x}\u003cbr\u003eAvg\u002fMatch: %{y:.3f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"EPL","mode":"markers","name":"EPL","x":{"dtype":"i2","bdata":"yAfJB8oHywfMB80HzgfPB9AH0QfSB9MH1AfVB9YH1wfYB9kH2gfbB9wH3QfeB98H4AfhB+IH4wfkB+UH5gfnBw=="},"y":{"dtype":"f8","bdata":"\u002fFtL5P7Wwj8oxFn5CXHGPyjEWfkJccY\u002f7ViBMNKOxT8AAAAAAADQPwuEkXasQMg\u002fp37PLXHqxz8bymsor6HMP3xuiVO\u002f58Y\u002fGGnHCoSRxj+q33NLnPrNP3\u002fPLXHq98w\u002f8LklTv2eyz\u002fSjhUII+3IP6QdKxBG2tE\u002ft8Sp33NLzD8bymsor6HMPwgj7ViBMNI\u002fjxUII+1Y0T+yAmGkHSvQP3\u002fPLXHq98w\u002f4tTvuSVOzT\u002fwuSVO\u002fZ7LP3Hq99wSp84\u002fpB0rEEba0T8or6G8hvLKP48VCCPtWNE\u002f1e+5JU79zj\u002fYUF5DeQ3VP48VCCPtWNE\u002fxwqEkXas0D9WIIy0YwXSPw=="},"type":"scatter"},{"hoverinfo":"skip","legendgroup":"EPL","mode":"lines","name":"EPL trend","showlegend":false,"x":{"dtype":"i2","bdata":"yAfnBw=="},"y":{"dtype":"f8","bdata":"AHGFWTa1xj+wM3HYtvbRPw=="},"type":"scatter"},{"hovertemplate":"Season start: %{x}\u003cbr\u003eAvg\u002fMatch: %{y:.3f}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"La Liga","mode":"markers","name":"La Liga","x":{"dtype":"i2","bdata":"zwfQB9EH0gfTB9QH1QfWB9cH2AfZB9oH2wfcB90H3gffB+AH4QfiB+MH5AflB+YH5wc="},"y":{"dtype":"f8","bdata":"ViCMtGMF0j+BMNKOFQjTPzMzMzMzM9M\u002f4HNLnPo91z+XOPV7bonTP3\u002fPLXHq98w\u002fFggj7ViB0D8zMzMzMzPTP1YgjLRjBdI\u002fO1YgjLRj1T\u002fFqd9zS5zKP+U1lNdQXtM\u002fFggj7ViB0D9sKK+hvIbSP+U1lNdQXtM\u002fbCivobyG0j9kBcJIO1bQP15DeQ3lNdQ\u002fgTDSjhUI0z9RXkN5DeXVP4SRdqxAGNk\u002f9XtuiVO\u002f1z+1YwXCSDvWP+U1lNdQXtM\u002fViCMtGMF0j8="},"type":"scatter"},{"hoverinfo":"skip","legendgroup":"La Liga","mode":"lines","name":"La Liga trend","showlegend":false,"x":{"dtype":"i2","bdata":"zwfnBw=="},"y":{"dtype":"f8","bdata":"GP5vB+3P0T+Qct9h7JnUPw=="},"type":"scatter"},{"hoverinfo":"skip","line":{"color":"black","dash":"dash","width":3},"mode":"lines","name":"Global regression","x":{"dtype":"i2","bdata":"yAfnBw=="},"y":{"dtype":"f8","bdata":"wOVC5dz1xT8ALr02SSnVPw=="},"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"margin":{"l":60,"r":30,"t":60,"b":60},"title":{"text":"Average penalties per match over time (interactive)"},"xaxis":{"title":{"text":"Season start year"},"dtick":2},"yaxis":{"title":{"text":"Average penalties per match"}},"legend":{"title":{"text":""}},"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('38b45238-1ff3-40d2-97f0-8ae86cef0ed4');
+var gd = document.getElementById('6776fad3-6343-4f53-a15b-f374fba76f3b');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -450,7 +456,13 @@ if (outputEl) {{
     x.observe(outputEl, {childList: true});
 }}
 
-                        })                };                });            </script>        </div>
+                        })                };            </script>        </div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-penalties-per-match-plotly-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-penalties-per-match-plotly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2
@@ -519,7 +531,7 @@ Figure&nbsp;2
 <section id="analysis" class="level2">
 <h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
 <p>First off, when it comes to conversion rates across the leagues, there are no differences whatsoever. Which is boring but convenient that we don’t need to worry too much about league effects.</p>
-<div id="d4640544" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.202570Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:24:00.101427Z&quot;}}" data-execution_count="8">
+<div id="8b831692" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.202570Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:24:00.101427Z&quot;}}" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -527,18 +539,59 @@ Figure&nbsp;2
 </figure>
 </div>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         PKatt    PK  PKm  conversion_rate
-Comp                                      
-CL         925   714  211        77.189189
-EPL       2892  2280  612        78.838174
-La Liga   2956  2288  668        77.401894</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PKatt</th>
+<th data-quarto-table-cell-role="th">PK</th>
+<th data-quarto-table-cell-role="th">PKm</th>
+<th data-quarto-table-cell-role="th">conversion_rate</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Comp</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">CL</td>
+<td>925</td>
+<td>714</td>
+<td>211</td>
+<td>77.189189</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">EPL</td>
+<td>2892</td>
+<td>2280</td>
+<td>612</td>
+<td>78.838174</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">La Liga</td>
+<td>2956</td>
+<td>2288</td>
+<td>668</td>
+<td>77.401894</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 <p>Or do we? Any differences when we break the leagues down by age group?</p>
 <p>There’s <em>maybe</em> a trend towards improved penalty conversion as you accumulate experience. The ‘no fear’ players are <em>slightly</em> more clinical than the players aged 21-23 who may be coming under pressure to make the next step as more mature and consistent players.</p>
 <p>But this is the smallest dataset - only 925 penalties.</p>
-<div id="6d9d92ed" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.578939Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:24:00.223231Z&quot;}}" data-execution_count="9">
+<div id="6163d5ef" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.578939Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:24:00.223231Z&quot;}}" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -547,7 +600,7 @@ La Liga   2956  2288  668        77.401894</code></pre>
 </div>
 </div>
 </div>
-<div id="07bc4177" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.758755Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:24:00.596706Z&quot;}}" data-execution_count="10">
+<div id="1d9bd841" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-09-29T16:24:00.758755Z&quot;,&quot;start_time&quot;:&quot;2025-09-29T16:24:00.596706Z&quot;}}" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">

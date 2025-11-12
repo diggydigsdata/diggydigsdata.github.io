@@ -481,7 +481,7 @@ plt.show()
 # Group by 'Comp' and calculate sums
 grouped = df.groupby('Comp')[['PKatt', 'PK', 'PKm']].sum()
 grouped['conversion_rate'] = (grouped['PK'] / grouped['PKatt']) * 100
-print(grouped)
+grouped
 ```
 
 Or do we? Any differences when we break the leagues down by age group?

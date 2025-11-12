@@ -3,13 +3,6 @@ title: "Eoin Dignan"
 image: "assets/img/mourne_mountains_profile.jpg"
 about:
   template: marquee
-  links:
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/eoindignan1989/
-    - icon: github
-      text: Github
-      href: https://github.com/diggydigsdata
 ---
 
 My name is Eoin, but throughout high school I was known exclusively as Diggy.  

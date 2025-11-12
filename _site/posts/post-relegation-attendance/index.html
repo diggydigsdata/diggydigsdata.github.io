@@ -26,7 +26,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -45,9 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ea6dcb636b98e4259611748ef6731b59.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-dd122c0da25c9fd53758c928d9b42162.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-ea6dcb636b98e4259611748ef6731b59.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-2f83f0ac04c3ba37addb9a3b48501ba5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-b7dfd321930551f38f4d773270eb8bab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2f83f0ac04c3ba37addb9a3b48501ba5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,6 +84,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <meta property="og:title" content="Fair-Weather Fans? – Diggy Digs Data">
@@ -355,15 +358,17 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
   <ul class="collapse">
   <li><a href="#increased-attendance-after-relegation" id="toc-increased-attendance-after-relegation" class="nav-link" data-scroll-target="#increased-attendance-after-relegation">Increased attendance after relegation?</a></li>
-  <li><a href="#and-in-general" id="toc-and-in-general" class="nav-link" data-scroll-target="#and-in-general">And in general?</a></li>
   </ul></li>
-  <li><a href="#case-by-case-anomaly-handling" id="toc-case-by-case-anomaly-handling" class="nav-link" data-scroll-target="#case-by-case-anomaly-handling">Case-by-Case Anomaly Handling</a></li>
-  <li><a href="#the-toxicity-factor-when-loyalty-snaps-and-when-it-doesnt" id="toc-the-toxicity-factor-when-loyalty-snaps-and-when-it-doesnt" class="nav-link" data-scroll-target="#the-toxicity-factor-when-loyalty-snaps-and-when-it-doesnt">The Toxicity Factor: When Loyalty Snaps (and When It Doesn’t)</a>
+  <li><a href="#anomalies" id="toc-anomalies" class="nav-link" data-scroll-target="#anomalies">Anomalies</a>
   <ul class="collapse">
+  <li><a href="#outlier-hunt-using-the-1.5-iqr-rule" id="toc-outlier-hunt-using-the-1.5-iqr-rule" class="nav-link" data-scroll-target="#outlier-hunt-using-the-1.5-iqr-rule">Outlier Hunt Using the 1.5 * IQR Rule</a></li>
+  <li><a href="#case-by-case-anomaly-handling" id="toc-case-by-case-anomaly-handling" class="nav-link" data-scroll-target="#case-by-case-anomaly-handling">Case-by-Case Anomaly Handling</a></li>
+  </ul></li>
+  <li><a href="#the-toxicity-factor-when-loyalty-snaps-and-when-it-doesnt" id="toc-the-toxicity-factor-when-loyalty-snaps-and-when-it-doesnt" class="nav-link" data-scroll-target="#the-toxicity-factor-when-loyalty-snaps-and-when-it-doesnt">The Toxicity Factor: When Loyalty Snaps (and When It Doesn’t)</a></li>
   <li><a href="#a-results-business" id="toc-a-results-business" class="nav-link" data-scroll-target="#a-results-business">A Results Business</a></li>
   <li><a href="#would-champagne-football-help" id="toc-would-champagne-football-help" class="nav-link" data-scroll-target="#would-champagne-football-help">Would champagne football help?</a></li>
-  </ul></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#sources-1" id="toc-sources-1" class="nav-link" data-scroll-target="#sources-1">Sources:</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/posts/post-relegation-attendance/index.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -470,15 +475,38 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <li>Year +1: The first season after relegation (in the Championship).</li>
 <li>Year +2: The second season after relegation.</li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>A temporary fifth year of data (Year +3) was programmatically generated to extract the league tier, which is used to determine the final outcome of the Year +2 season. After achieving that, the temporary Year +3 data was dropped.</p>
+</div>
+</div>
 <section id="sources" class="level4">
 <h4 class="anchored" data-anchor-id="sources">Sources</h4>
 <ol type="1">
 <li><p>For <strong>Attendance data</strong>, I referenced <a href="https://www.european-football-statistics.co.uk/index1.htm">European-Football-Statistics.co.uk</a>.</p></li>
-<li><p>For <strong>Position data</strong> and <strong>Performance data</strong> I incorporated data from the Fjelstul English Football Database, which is a comprehensive catalogue of English Football from 1888-2024. I used only a small section from the standings dataset, but he also has datasets covering seasons, teams, matches and appearances. Worth a look if you have a project in mind. The database is copyrighted (“© 2024 Joshua C. Fjelstul, Ph.D.”) but accessible via the CC-BY-SA 4.0 license (https://creativecommons.org/licenses/by-sa/4.0/legalcode).</p></li>
+<li><p>For both <strong>Position</strong> and <strong>Performance</strong> data I relied on the <a href="https://www.github.com/jfjelstul/englishfootball">Fjelstul English Football Database</a>, which is a comprehensive catalogue of English Football from 1888-2024. I used a small section from the standings dataset, but he also has datasets covering seasons, teams, matches, and appearances. Worth a look if you have a project in mind.</p></li>
 </ol>
-<p>I will also be making my own dataset available under the same CC-BY-SA 4.0 license.</p>
-<p>Fjelstul, Joshua C. “The Fjelstul English Football Database v1.1.0.” May 26, 2024. <a href="https://www.github.com/jfjelstul/englishfootball">https://www.github.com/jfjelstul/englishfootball</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dr.&nbsp;Fjelstul’s database is copyrighted (“© 2024 Joshua C. Fjelstul, Ph.D.”) but accessible via the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC-BY-SA 4.0 license</a>. I will also be making my own dataset available under the same CC-BY-SA 4.0 license.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="dataset" class="level3">
@@ -514,22 +542,87 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <section id="increased-attendance-after-relegation" class="level3">
 <h3 class="anchored" data-anchor-id="increased-attendance-after-relegation">Increased attendance after relegation?</h3>
 <p>Let’s start on a positive note. On 10 occasions, teams managed to increase their average attendance in the first season (Y+1) immediately following relegation.</p>
-<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-10T08:57:25.049565Z&quot;,&quot;start_time&quot;:&quot;2025-11-10T08:57:25.038752Z&quot;}}" data-cap="Table 1: Teams with Increased Attendance in Year +1">
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T00:48:27.927085Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T00:48:27.913995Z&quot;}}" data-cap="Table 1: Teams with Increased Attendance in Year +1" data-execution_count="16">
 <div class="cell-output cell-output-stdout">
 <pre><code>
---- TABLE 1: Increased Attendance (Year +1) ---
-| Team              |   Attendance (Y0) |   Attendance (Y+1) |   Change (%) |
-|:------------------|------------------:|-------------------:|-------------:|
-| Sunderland        |             20865 |              33492 |        60.52 |
-| Leicester City    |             19835 |              29231 |        47.37 |
-| Nottingham Forest |             21910 |              23051 |         5.21 |
-| Ipswich Town      |             24426 |              25455 |         4.21 |
-| Burnley           |             19399 |              19953 |         2.86 |
-| Newcastle United  |             49754 |              51106 |         2.72 |
-| Norwich City      |             24350 |              24952 |         2.47 |
-| Crystal Palace    |             14992 |              15248 |         1.71 |
-| Luton Town        |             11244 |              11420 |         1.57 |
-| Middlesbrough     |             29848 |              29994 |         0.49 |</code></pre>
+--- TABLE 1: Increased Attendance (Year +1) ---</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<style type="text/css">
+</style>
+
+<table id="T_de9c3" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_de9c3_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Team</th>
+<th id="T_de9c3_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Attendance (Y0)</th>
+<th id="T_de9c3_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Attendance (Y+1)</th>
+<th id="T_de9c3_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Change (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_de9c3_row0_col0" class="data row0 col0">Sunderland</td>
+<td id="T_de9c3_row0_col1" class="data row0 col1">20865</td>
+<td id="T_de9c3_row0_col2" class="data row0 col2">33492</td>
+<td id="T_de9c3_row0_col3" class="data row0 col3">60.52</td>
+</tr>
+<tr class="even">
+<td id="T_de9c3_row1_col0" class="data row1 col0">Leicester City</td>
+<td id="T_de9c3_row1_col1" class="data row1 col1">19835</td>
+<td id="T_de9c3_row1_col2" class="data row1 col2">29231</td>
+<td id="T_de9c3_row1_col3" class="data row1 col3">47.37</td>
+</tr>
+<tr class="odd">
+<td id="T_de9c3_row2_col0" class="data row2 col0">Nottingham Forest</td>
+<td id="T_de9c3_row2_col1" class="data row2 col1">21910</td>
+<td id="T_de9c3_row2_col2" class="data row2 col2">23051</td>
+<td id="T_de9c3_row2_col3" class="data row2 col3">5.21</td>
+</tr>
+<tr class="even">
+<td id="T_de9c3_row3_col0" class="data row3 col0">Ipswich Town</td>
+<td id="T_de9c3_row3_col1" class="data row3 col1">24426</td>
+<td id="T_de9c3_row3_col2" class="data row3 col2">25455</td>
+<td id="T_de9c3_row3_col3" class="data row3 col3">4.21</td>
+</tr>
+<tr class="odd">
+<td id="T_de9c3_row4_col0" class="data row4 col0">Burnley</td>
+<td id="T_de9c3_row4_col1" class="data row4 col1">19399</td>
+<td id="T_de9c3_row4_col2" class="data row4 col2">19953</td>
+<td id="T_de9c3_row4_col3" class="data row4 col3">2.86</td>
+</tr>
+<tr class="even">
+<td id="T_de9c3_row5_col0" class="data row5 col0">Newcastle United</td>
+<td id="T_de9c3_row5_col1" class="data row5 col1">49754</td>
+<td id="T_de9c3_row5_col2" class="data row5 col2">51106</td>
+<td id="T_de9c3_row5_col3" class="data row5 col3">2.72</td>
+</tr>
+<tr class="odd">
+<td id="T_de9c3_row6_col0" class="data row6 col0">Norwich City</td>
+<td id="T_de9c3_row6_col1" class="data row6 col1">24350</td>
+<td id="T_de9c3_row6_col2" class="data row6 col2">24952</td>
+<td id="T_de9c3_row6_col3" class="data row6 col3">2.47</td>
+</tr>
+<tr class="even">
+<td id="T_de9c3_row7_col0" class="data row7 col0">Crystal Palace</td>
+<td id="T_de9c3_row7_col1" class="data row7 col1">14992</td>
+<td id="T_de9c3_row7_col2" class="data row7 col2">15248</td>
+<td id="T_de9c3_row7_col3" class="data row7 col3">1.71</td>
+</tr>
+<tr class="odd">
+<td id="T_de9c3_row8_col0" class="data row8 col0">Luton Town</td>
+<td id="T_de9c3_row8_col1" class="data row8 col1">11244</td>
+<td id="T_de9c3_row8_col2" class="data row8 col2">11420</td>
+<td id="T_de9c3_row8_col3" class="data row8 col3">1.57</td>
+</tr>
+<tr class="even">
+<td id="T_de9c3_row9_col0" class="data row9 col0">Middlesbrough</td>
+<td id="T_de9c3_row9_col1" class="data row9 col1">29848</td>
+<td id="T_de9c3_row9_col2" class="data row9 col2">29994</td>
+<td id="T_de9c3_row9_col3" class="data row9 col3">0.49</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <p>And I have to give a shoutout to Burnley and, indeed, to Vincent Kompany because he certainly galvanised the supporters that season.</p>
@@ -544,31 +637,17 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <p>2016-17 was the polar opposite. Similar to how Burnley fell under the spell of Vincent Kompany in 2022/23, Newcastle fans had a great relationship with Rafael Benitez, even if Mike Ashley was still as loathed as ever. Benitez was hired towards the end of their 2015/16 relegation season and it was considered quite a coup to attract this Champions League-winning manager to a Championship-bound club. So the fans showed their appreciation during his first full season in charge with record-breaking attendances.</p>
 <!--Typically, we start to see the cracks in season 2 outside the top flight. Filtering out teams like Leicester who were promoted at the first attempt and had Premier League fixtures to pull in the fans, only 6 teams see attendance figures in the black by season 2.-->
 </section>
-<section id="and-in-general" class="level3">
-<h3 class="anchored" data-anchor-id="and-in-general">And in general?</h3>
-<p>Those positive stories are, unfortunately, the exceptions. On average, attendance falls significantly. But to find the real signal, we must first identify and handle the noise.</p>
-<p>A box plot of all post-relegation data (Y+1 and Y+2) shows the wild variance in outcomes.</p>
-<div id="cell-14" class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
---- PLOT: Box Plot for Distribution (All Data Included) ---</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-8-output-2.png" class="img-fluid figure-img"></p>
-<figcaption>Distribution of attendance change (Y+1 &amp; Y+2) by outcome, including all outliers.</figcaption>
-</figure>
-</div>
-</div>
-</div>
+</section>
+<section id="anomalies" class="level2">
+<h2 class="anchored" data-anchor-id="anomalies">Anomalies</h2>
+<p>Those positive stories are, unfortunately, anomalies. And they are not the only ones. A box plot of all post-relegation data (Y+1 and Y+2) shows the wild variance in outcomes.</p>
 <p>The plot above clearly shows several extreme statistical outliers (the dots) that are skewing the data. To understand what they are, we can use the <code>1.5 * IQR</code> rule (the same logic the box plot uses) to print a list of them.</p>
-<div id="cell-16" class="cell">
+<section id="outlier-hunt-using-the-1.5-iqr-rule" class="level3">
+<h3 class="anchored" data-anchor-id="outlier-hunt-using-the-1.5-iqr-rule">Outlier Hunt Using the 1.5 * IQR Rule</h3>
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T00:48:28.288763Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T00:48:28.255587Z&quot;}}" data-execution_count="18">
 <div class="cell-output cell-output-stdout">
 <pre><code>
---- Outlier Hunt (Using 1.5 * IQR Rule) ---
-
---- Outliers for 'Promoted' (Outside -21.27 to 17.22) ---
+--- Outliers for 'Promoted' (Outside -22.31 to 17.73) ---
 | Relegation_Event_ID      |   Year_vs_Relegation |   Pct_Change_vs_Y0_Display |
 |:-------------------------|---------------------:|---------------------------:|
 | Leicester City 2001-02   |                    2 |                      56.20 |
@@ -579,7 +658,7 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 | Hull City 2014-15        |                    1 |                     -26.99 |
 | Birmingham City 2007-08  |                    1 |                     -27.12 |
 
---- Outliers for 'Survived' (Outside -53.32 to 16.09) ---
+--- Outliers for 'Survived' (Outside -53.88 to 17.15) ---
 | Relegation_Event_ID   |   Year_vs_Relegation |   Pct_Change_vs_Y0_Display |
 |:----------------------|---------------------:|---------------------------:|
 | Sunderland 1996-97    |                    2 |                      85.69 |
@@ -589,9 +668,8 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </div>
 </div>
 </section>
-</section>
-<section id="case-by-case-anomaly-handling" class="level2">
-<h2 class="anchored" data-anchor-id="case-by-case-anomaly-handling">Case-by-Case Anomaly Handling</h2>
+<section id="case-by-case-anomaly-handling" class="level3">
+<h3 class="anchored" data-anchor-id="case-by-case-anomaly-handling">Case-by-Case Anomaly Handling</h3>
 <p>This list gives us a clear action plan. To understand the true relationship between performance and attendance, we must filter out cases where attendance was driven by external structural factors, not fan behavior.</p>
 <table class="caption-top table">
 <colgroup>
@@ -674,6 +752,7 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <p>Now, with the data properly filtered, let’s look at the real story.</p>
 <p>And we may as well start with that Toxicity factor I mentioned above.</p>
 </section>
+</section>
 <section id="the-toxicity-factor-when-loyalty-snaps-and-when-it-doesnt" class="level2">
 <h2 class="anchored" data-anchor-id="the-toxicity-factor-when-loyalty-snaps-and-when-it-doesnt">The Toxicity Factor: When Loyalty Snaps (and When It Doesn’t)</h2>
 <p>On-pitch performance isn’t the only driver. The data shows that a toxic or broken relationship between a club’s owners and its fans can act as a powerful accelerant for an attendance collapse.</p>
@@ -684,28 +763,15 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <p>In 2009-10, the vibe was poisonous. The result? A significant 11% drop in attendance.</p>
 <p>In 2016-17, a different “vibe” won. Hiring (and keeping) Rafa Benitez was such an unexpected coup that his popularity papered over the cracks, galvanizing the fanbase and leading to a 2.7% increase.</p>
 <p>Wimbledon (1999-2000): This is the ultimate case study. They were already a “homeless” club, playing at Crystal Palace’s Selhurst Park during their Y0 relegation season. Their baseline attendance was already depressed. When they lost their Premier League status, attendance collapsed by -59%. The showpiece occasion of a Premier League game seems to have been the last thread holding that displaced fanbase together. When it snapped, so did the club.</p>
-<section id="a-results-business" class="level3">
-<h3 class="anchored" data-anchor-id="a-results-business">A Results Business</h3>
+</section>
+<section id="a-results-business" class="level2">
+<h2 class="anchored" data-anchor-id="a-results-business">A Results Business</h2>
 <p>Next up, we’ll look at our <code>Year_End_Outcome</code> variable. Let’s plot the attendance change over time, grouping teams by whether they were Promoted, Survived, or Relegated in their first post-relegation season.</p>
-<div id="cell-20" class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
---- PLOT 1: Attendance Change by Y+1 Outcome (Final Filter) ---
-
---- New Averages for Analysis ---
-| Outcome_Group   |   Year_vs_Relegation |   Pct_Change_vs_Y0_Display |
-|:----------------|---------------------:|---------------------------:|
-| Promoted        |                    1 |                       -8.6 |
-| Promoted        |                    2 |                        2.0 |
-| Relegated       |                    1 |                      -28.2 |
-| Relegated       |                    2 |                      -23.8 |
-| Survived        |                    1 |                      -17.4 |
-| Survived        |                    2 |                      -21.9 |</code></pre>
-</div>
+<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T00:48:28.493315Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T00:48:28.323300Z&quot;}}" data-execution_count="19">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-10-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
 <figcaption>Average attendance change (anomalies removed) relative to the relegation season (Y0), grouped by the team’s outcome in their first post-relegation season (Y+1).</figcaption>
 </figure>
 </div>
@@ -713,22 +779,18 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </div>
 <p>Irrespective of season outcome, relegated teams <em>on average</em> lose fans. And there seems to be a clear correlation between team performance and attendance. Moreover, it does seem that performance affects attendances.</p>
 <p><strong>Promoted (Green Line)</strong>: Teams that bounce straight back (like Burnley) see their Y+1 attendance drop minimized to just -8.6%. By Y+2, they are back in the Premier League, and attendance recovers to surpass its pre-relegation level by 2%.</p>
-<p><strong>Survived (Blue Line)</strong>: Teams that “survive” and stay in the Championship see a much larger initial drop of -17.4%. Worse, by Y+2, that optimism fades and attendance dwindles further to -21.9%.</p>
+<p><strong>Survived (Blue Line)</strong>: Teams that “survive” and stay in the Championship see a much larger initial drop of -17.2%. Worse, by Y+2, that optimism fades and attendance dwindles further to -21.6%.</p>
 <p><strong>Relegated (Orange Line)</strong>: Teams that enter freefall and plummet into League 1 see a catastrophic -28% drop in Y+1, which slightly recovers to -24% in Y+2.</p>
 </section>
-<section id="would-champagne-football-help" class="level3">
-<h3 class="anchored" data-anchor-id="would-champagne-football-help">Would champagne football help?</h3>
+<section id="would-champagne-football-help" class="level2">
+<h2 class="anchored" data-anchor-id="would-champagne-football-help">Would champagne football help?</h2>
 <p>If you’re stuck in the Championship, can you at least keep the fans entertained with attacking football?</p>
 <p>To test this, I’ve plotted <code>Goals_For_Per_Game</code> against the percentage change in attendance for all post-relegation seasons (Y+1 and Y+2), again grouped by the team’s outcome and with the stadium anomalies removed.</p>
-<div id="cell-23" class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
---- PLOT 2: Goals vs. Attendance % Change (Final Filter) ---</code></pre>
-</div>
+<div id="cell-23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T00:48:29.032174Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T00:48:28.510213Z&quot;}}" data-execution_count="20">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
 <figcaption>Scatter plots (all structural anomalies removed) showing the relationship between attacking football and the percentage change in attendance.</figcaption>
 </figure>
 </div>
@@ -740,7 +802,6 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 
 Just a quick note on Burnley, who were in the black during their Kompany-led campaign but have lost almost 8% this season. There are a few factors at play. First, morale sank during Kompany's PL season. Burnley were truly awful and the core of their Championship-winning side was cast aside in favour of new recruits - an inexplicable decision in the view of many fans. Moreover, ALK capital - the ownership group - made some ill-judged and patronising comments to supporters for not bringing a positive enough atmosphere to Turf Moor. In a nutshell, the mood was bleak by the end of 2022-23. Kompany's departure and subsequent replacement by Scott Parker failed to excite fans. Nor did selling half the first team squad and sitting through a million 0-0 draws. Despite the successful campaign, Parker-ball has been a bit of a slog. Sidenote: I was a huge Parker skeptic at first but I think he has brought the solidity Burnley needed and, as the season has gone on, a more cohesive team has taken shape, the football has yielded more goals and the fanbase has gotten on side. In any case, this all goes to highlight that there are complexities behind the averages I am presenting here.-->
 </section>
-</section>
 <section id="conclusions" class="level2">
 <h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
 <ul>
@@ -750,14 +811,12 @@ Just a quick note on Burnley, who were in the black during their Kompany-led cam
 <li>And if you are on track for League 1, these losses are considerably higher</li>
 <li>Relegation doesn’t automatically mean fan abandonment. Context matters: management, entertainment value, stadium capacity, and hope for promotion all play a role.</li>
 </ul>
-<p>Conclusions Teams can typically expect to lose 15-17% of their attendance after relegation if they don’t bounce straight back.</p>
-<p>This drop in attendance accelerates in the second year, falling to over 21% if the team is still in the Championship.</p>
-<p>If you are on track for promotion, losses are minimized to less than 10% and recover almost fully upon returning to the Premier League.</p>
-<p>“Vibes” (like a popular manager), “toxicity” (like a detested owner) and “style” (attacking football) seem to be real factors. Style is most visible for teams stuck in mid-table, where the on-pitch result isn’t exciting enough on its own. But vibes and toxicity can keep a club afloat or cause it to sink.</p>
-<p>Relegation doesn’t automatically mean fan abandonment. Context matters: management, entertainment value, stadium capacity, and hope for promotion all play a role.</p>
-<blockquote class="blockquote">
+</section>
+<section id="sources-1" class="level2">
+<h2 class="anchored" data-anchor-id="sources-1">Sources:</h2>
+<p>Fjelstul, Joshua C. “The Fjelstul English Football Database v1.1.0.” May 26, 2024. <a href="https://www.github.com/jfjelstul/englishfootball">https://www.github.com/jfjelstul/englishfootball</a></p>
+<p><a href="https://www.european-football-statistics.co.uk/index1.htm">European-Football-Statistics.co.uk</a></p>
 <p>Thumbnail image courtesy of <a href="https://commons.wikimedia.org/wiki/File:Brno_-_Abandoned_soccer_stadium.jpg">Jaroslav A. Polák from Brno, Czech Republic</a>, CC0, via Wikimedia Commons</p>
-</blockquote>
 
 
 </section>

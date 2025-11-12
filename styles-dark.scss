@@ -32,7 +32,7 @@ $translucent-grid-hover: rgba(#444444, 0.7);
 
 /* even the links in the navbar are black */
 .nav-link {
-  color: #000000 !important; 
+  color: #000000 !important;
 }
 
 /* but everything will change upon hovering. the background
@@ -41,18 +41,23 @@ and they will stay that way as long as you are on that tab (active)*/
 .navbar .nav-item.active, .navbar .nav-link:hover {
   background-color: $claret-border-color !important;
   color: $white-text-color !important;
-  border-radius: 5px !important; 
+  border-radius: 5px !important;
 }
 
-/* hovering over the brand name in the navbar also changes
-its color to a very dark claret and underlines it*/
+/* NAVBAR BRAND STYLING  */
+
+/* Give the brand's text span padding (buffer) in its static state */
+.navbar-brand span {
+  padding: 0.3em 0.5em;
+  border-radius: 5px !important;
+  /* Add transition for a smooth hover effect */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* On hover, change the background and text color of the span */
 .navbar-brand:hover span {
-  color: #300C1D !important;
-  text-decoration: underline !important;
-  text-decoration-color: #300C1D !important;
-  text-underline-offset: 5px;
-  text-decoration-thickness: 2px;
-  border-radius: 5px !important; 
+  background-color: $claret-border-color !important;
+  color: $white-text-color !important;
 }
 
 /* FROM HERE THERE ARE DIFFERENCES BETWEEN DARK AND LIGHT MODES */
@@ -104,7 +109,7 @@ all have the same dark background and light text */
 }
 
 .quarto-content a:visited {
-  color: #AD85E3; 
+  color: #AD85E3;
 }
 
 #quarto-document-content a:hover {
@@ -121,7 +126,7 @@ all have the same dark background and light text */
   text-decoration: underline;
   background-color: #58A6FF !important;
   color: $white-text-color !important;
-  border-radius: 5px !important; 
+  border-radius: 5px !important;
 }
 
 /* stops the grid listing cards from being underlined on hover */
@@ -141,7 +146,7 @@ a:not(.navbar-brand):visited {
 
 a:not(.navbar-brand):hover {
   color: #80bfff;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .quarto-grid-item {
@@ -173,4 +178,39 @@ a:not(.navbar-brand):hover {
 
 .listing-categories, .listing-author, .listing-date, .quarto-category {
   color: #A3A3A3 !important;
+}
+
+/*
+ * =========================================
+ * NEW DARK MODE TABLE STYLES
+ * =========================================
+ */
+table {
+  color: $body-color; /* Uses your main B3B3B3 text color */
+}
+
+th,
+td {
+  border: 1px solid $lightened-border-color; /* Uses your 4A4A4A border */
+  color: $body-color;
+}
+
+thead th {
+  /* Make header distinct */
+  background-color: $grid-color;
+  color: $white-text-color; /* Use your bright white for headers */
+}
+
+/* Optional: Zebra-striping for readability */
+tbody tr:nth-child(odd) {
+  background-color: $grid-hover-color; /* Uses your 444444 */
+}
+
+/* Make sure links inside tables are also readable */
+table a {
+  color: $link-color; /* Uses your 80D4FF link color */
+}
+
+table a:visited {
+  color: $link-clicked-color; /* Uses your AD85E3 visited color */
 }
