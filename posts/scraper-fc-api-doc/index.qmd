@@ -10,140 +10,146 @@ license: "CC BY"
 execute: false
 ---
 
-_Copyright 2022 Owen Seymour. Use of this source code is governed by the GPL 3.0 license._
+*Copyright 2022 Owen Seymour. Use of this source code is governed by the GPL 3.0 license.*
 
 ## scrape_stats()
 
-- **Class:** `ScraperFC.fbref.FBref`
-- **Method:** `scrape_stats()`
-- **Returns:** A tuple of DataFrames
+-   **Class:** `ScraperFC.fbref.FBref`
+-   **Method:** `scrape_stats()`
+-   **Returns:** A tuple of DataFrames
 
 ::: callout-important
 ## Usage considerations
-- Before using this scraper on FBref data, review the Sports Reference Terms of Service.
-  - [Section 5 of their Site Terms of Use](https://www.sports-reference.com/termsofuse.html)
-  - [SR and Data Use policy](https://www.sports-reference.com/data_use.html)
-  - [Bot/Scraping/Crawler Traffic policies](https://www.sports-reference.com/bot-traffic.html)
-- **Data usage:** FBref permits scraping only under certain use cases (e.g., personal or educational). It is not permitted for competing analytics services or for public hosting.
-- **Rate limiting:** FBref requests no more than 10 site requests per minute. This scraper uses `wait_time=7` to pause between requests. Always check the current terms of service before scraping.
+
+-   Before using this scraper on FBref data, review the Sports Reference Terms of Service.
+    -   [Section 5 of their Site Terms of Use](https://www.sports-reference.com/termsofuse.html)
+    -   [SR and Data Use policy](https://www.sports-reference.com/data_use.html)
+    -   [Bot/Scraping/Crawler Traffic policies](https://www.sports-reference.com/bot-traffic.html)
+-   **Data usage:** FBref permits scraping only under certain use cases (e.g., personal or educational). It is not permitted for competing analytics services or for public hosting.
+-   **Rate limiting:** FBref requests no more than 10 site requests per minute. This scraper uses `wait_time=7` to pause between requests. Always check the current terms of service before scraping.
 :::
 
-`scrape_stats()` allows you to download FBref season-level _Squad Stats_, _Opponent Stats_, and _Player Stats_ for a chosen statistics collection such as "Advanced Goalkeeping".
+`scrape_stats()` allows you to download FBref season-level *Squad Stats*, *Opponent Stats*, and *Player Stats* for a chosen statistics collection such as "Advanced Goalkeeping".
 
-You can reference the available statistics collections by accessing:  
-Competition > 'Squad & Player Stats' dropdown > Statistical Collection > Toggle between 'Squad & Opponent Stats' or scroll for 'Player Stats'
+You can reference the available statistics collections through this FBref navigation:\
+Competition \> 'Squad & Player Stats' dropdown \> Statistical Collection \> Toggle between 'Squad & Opponent Stats' or scroll for 'Player Stats'
 
 You can find an example of Premier League 2024/25 'Player Stats' from the 'Standard' stats collection [here](https://fbref.com/en/comps/9/2024-2025/stats/2024-2025-Premier-League-Stats#all_stats_standard).
 
----
+------------------------------------------------------------------------
 
 ## Prerequisites
 
-1. Install the ScraperFC package:
+1.  Install the ScraperFC package:
 
-```bash
+``` bash
 pip install ScraperFC
 ```
 
-   (The package is not currently available on conda or conda-forge.)
+(The package is not currently available on conda or conda-forge.)
 
-2. Load the fbref module:
+2.  Load the fbref module:
 
-```python
+``` python
 from ScraperFC.fbref import FBref
 ```
 
-3. Initialize the scraper object:
+3.  Initialize the scraper object:
 
-```python
+``` python
 fb_scraper = FBref()
 ```
 
----
+------------------------------------------------------------------------
 
 ## Parameters
 
-- **year** (str, required)
-  - Season to scrape.
-  - Format: match the season strings on the _Competition History_ page of the target league (e.g., [Big 5 Leagues](https://fbref.com/en/comps/Big5/history/Big-5-European-Leagues-Seasons)).
-  - You can check accepted year inputs with `get_valid_seasons()`:
+-   **year** (str, required)
+    -   Season to scrape.
+    -   Format: match the season strings on the *Competition History* page of the target league (e.g., [Big 5 Leagues](https://fbref.com/en/comps/Big5/history/Big-5-European-Leagues-Seasons)).
+    -   You can check accepted year inputs with `get_valid_seasons()`:
 
-```python
+``` python
 valid_seasons = fb_scraper.get_valid_seasons("La Liga")
 season_list = list(valid_seasons.keys())
 print(season_list)
 ```
 
-  Output:
-
+::: {.callout-note}
+## Output
 ```text
 ['2025-2026', '2024-2025', '2023-2024', '2022-2023', ...]
 ```
+:::
 
-- **league** (str, required)
-  - League to scrape (usually the long name, e.g., "Bundesliga", "Ligue 1"; some exceptions like "EPL").
-  - Check accepted values with `comps.keys()`:
+-   **league** (str, required)
+    -   League to scrape (usually the long name, e.g., "Bundesliga", "Ligue 1"; some exceptions like "EPL").
+    -   Check accepted values with `comps.keys()`:
 
-```python
+``` python
 valid_league_names = list(fb_scraper.comps.keys())
 print(valid_league_names)
 ```
 
-  Output:
-
+::: {.callout-note}
+## Output
 ```text
 ['Copa Libertadores', 'Champions League', 'Europa League', ...]
 ```
+:::
 
-- **stat_category** (str, required)
-  - Stat category to scrape; use the full names except "miscellaneous", which should be `"misc"`.
-  - Check accepted values with `stats_categories.keys()`:
+-   **stat_category** (str, required)
+    -   Stat category to scrape; use the full names except "miscellaneous", which should be `"misc"`.
+    -   Check accepted values with `stats_categories.keys()`:
 
-```python
+``` python
 stat_categories = list(fb_scraper.stats_categories.keys())
 print(stat_categories)
 ```
 
-  Output:
-  
-`['standard', 'goalkeeping', 'advanced goalkeeping', ...]`
+::: {.callout-note}
+## Output
+```text
+['standard', 'goalkeeping', 'advanced goalkeeping', ...]
+```
+:::
 
----
+------------------------------------------------------------------------
 
 ## Returns
 
 A tuple of three `pd.DataFrame` objects: `(squad_stats, opponent_stats, player_stats)`
 
-1. `squad_stats`: Aggregated stats for all squads in the league and season.
-2. `opponent_stats`: Aggregated opponent stats for all squads.
-3. `player_stats`: Player-level stats for the league and season.
+1.  `squad_stats`: Aggregated stats for all squads in the league and season.
+2.  `opponent_stats`: Aggregated opponent stats for all squads.
+3.  `player_stats`: Player-level stats for the league and season.
 
----
+------------------------------------------------------------------------
 
 ## Error handling
 
 If an invalid league name is passed, an error message will print the accepted entries:
 
-```python
+``` python
 seasons = ["2025-2026"]
 leagues = ["not a league"]
 ```
 
-Output:
-
+::: {.callout-note}
+## Output
 ```text
 Scraping not a league 2025-2026...
-
 Failed scraping not a league 2025-2026: not a league is not a valid league for FBref. Valid leagues are ['Copa Libertadores', 'Champions League', 'Europa League', 'Europa Conference League', ...]
 ```
+:::
 
----
+------------------------------------------------------------------------
 
 ## Full workflow example
 
 This example loops through multiple leagues and seasons, retrieves the `standard` and `misc` stat categories, and stores only the `player_stats` DataFrames.
 
-```python
+``` python
 from ScraperFC.fbref import FBref
 import pandas as pd
 
@@ -178,7 +184,7 @@ for season in seasons:
 print("Scraping complete.")
 ```
 
----
+------------------------------------------------------------------------
 
 ## Versioning
 
@@ -186,7 +192,7 @@ This documentation applies to ScraperFC v3.4.0 (current stable release).
 
 To check your installed version:
 
-```python
+``` python
 from importlib.metadata import version
 
 installed_version = version("ScraperFC")
@@ -197,10 +203,11 @@ print(f"ScraperFC Version: {installed_version}")
 A major overhaul to the league-names parameter is planned for v4.0. Upgrading may break existing code. To preview upcoming changes, switch the documentation dropdown (bottom-right) from "stable" to "latest".
 :::
 
----
+------------------------------------------------------------------------
 
 ## Sources
 
-- https://scraperfc.readthedocs.io/en/latest/
-- https://pypi.org/project/ScraperFC/
-- https://github.com/oseymour/ScraperFC
+-   [ScraperFC's official docs](https://scraperfc.readthedocs.io/en/latest/)
+-   [Package page on PyPi](https://pypi.org/project/ScraperFC/)
+-   [Creator's GitHub](https://github.com/oseymour/ScraperFC)
+-   [Creator's Buy Me a Coffee](https://buymeacoffee.com/oseymour)
