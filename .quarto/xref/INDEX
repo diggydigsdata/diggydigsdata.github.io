@@ -133,5 +133,8 @@
   },
   "posts/too-messy-to-melt/index.qmd": {
     "index.html": "fa8567cf"
+  },
+  "posts/scraper-fc-api-doc/index.qmd": {
+    "index.html": "dc4ad1ec"
   }
 }

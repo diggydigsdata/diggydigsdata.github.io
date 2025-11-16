@@ -46,7 +46,7 @@
     "href": "index.html",
     "title": "Diggy Digs Data",
     "section": "",
-    "text": "Fair-Weather Fans?\n\n17 min\n\n\nDiggy\n\n\nNov 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nToo Messy to Melt\n\n2 min\n\n\nDiggy\n\n\nNov 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo Fear At That Age\n\n30 min\n\n\nDiggy\n\n\nSep 29, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nCurrys\n\n1 min\n\n\nDiggy\n\n\nSep 30, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "Fair-Weather Fans?\n\n17 min\n\n\nDiggy\n\n\nNov 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nScraperFC API Documentation\n\n4 min\n\n\nDiggy\n\n\nNov 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nToo Messy to Melt\n\n2 min\n\n\nDiggy\n\n\nNov 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo Fear At That Age\n\n30 min\n\n\nDiggy\n\n\nSep 29, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nCurrys\n\n1 min\n\n\nDiggy\n\n\nSep 30, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "assets/notebooks/Main notebook.html",
@@ -194,5 +194,68 @@
     "title": "Fair-Weather Fans?",
     "section": "Sources:",
     "text": "Sources:\nFjelstul, Joshua C. “The Fjelstul English Football Database v1.1.0.” May 26, 2024. https://www.github.com/jfjelstul/englishfootball\nEuropean-Football-Statistics.co.uk\nThumbnail image courtesy of Jaroslav A. Polák from Brno, Czech Republic, CC0, via Wikimedia Commons"
+  },
+  {
+    "objectID": "posts/scraper-fc-api-doc/index.html",
+    "href": "posts/scraper-fc-api-doc/index.html",
+    "title": "ScraperFC API Documentation",
+    "section": "",
+    "text": "Copyright 2022 Owen Seymour. Use of this source code is governed by the GPL 3.0 license."
+  },
+  {
+    "objectID": "posts/scraper-fc-api-doc/index.html#scrape_stats",
+    "href": "posts/scraper-fc-api-doc/index.html#scrape_stats",
+    "title": "ScraperFC API Documentation",
+    "section": "scrape_stats()",
+    "text": "scrape_stats()\n\nClass: ScraperFC.fbref.FBref\nMethod: scrape_stats()\nReturns: A tuple of DataFrames\n\n\n\n\n\n\n\nUsage considerations\n\n\n\n\nBefore using this scraper on FBref data, review the Sports Reference Terms of Service.\n\nSection 5 of their Site Terms of Use\nSR and Data Use policy\nBot/Scraping/Crawler Traffic policies\n\nData usage: FBref permits scraping only under certain use cases (e.g., personal or educational). It is not permitted for competing analytics services or for public hosting.\nRate limiting: FBref requests no more than 10 site requests per minute. This scraper uses wait_time=7 to pause between requests. Always check the current terms of service before scraping.\n\n\n\nscrape_stats() allows you to download FBref season-level Squad Stats, Opponent Stats, and Player Stats for a chosen statistics collection such as “Advanced Goalkeeping”.\nYou can reference the available statistics collections by accessing:\nCompetition &gt; ‘Squad & Player Stats’ dropdown &gt; Statistical Collection &gt; Toggle between ‘Squad & Opponent Stats’ or scroll for ‘Player Stats’\nYou can find an example of Premier League 2024/25 ‘Player Stats’ from the ‘Standard’ stats collection here."
+  },
+  {
+    "objectID": "posts/scraper-fc-api-doc/index.html#prerequisites",
+    "href": "posts/scraper-fc-api-doc/index.html#prerequisites",
+    "title": "ScraperFC API Documentation",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nInstall the ScraperFC package:\n\npip install ScraperFC\n(The package is not currently available on conda or conda-forge.)\n\nLoad the fbref module:\n\nfrom ScraperFC.fbref import FBref\n\nInitialize the scraper object:\n\nfb_scraper = FBref()"
+  },
+  {
+    "objectID": "posts/scraper-fc-api-doc/index.html#parameters",
+    "href": "posts/scraper-fc-api-doc/index.html#parameters",
+    "title": "ScraperFC API Documentation",
+    "section": "Parameters",
+    "text": "Parameters\n\nyear (str, required)\n\nSeason to scrape.\nFormat: match the season strings on the Competition History page of the target league (e.g., Big 5 Leagues).\nYou can check accepted year inputs with get_valid_seasons():\n\n\nvalid_seasons = fb_scraper.get_valid_seasons(\"La Liga\")\nseason_list = list(valid_seasons.keys())\nprint(season_list)\nOutput:\n['2025-2026', '2024-2025', '2023-2024', '2022-2023', ...]\n\nleague (str, required)\n\nLeague to scrape (usually the long name, e.g., “Bundesliga”, “Ligue 1”; some exceptions like “EPL”).\nCheck accepted values with comps.keys():\n\n\nvalid_league_names = list(fb_scraper.comps.keys())\nprint(valid_league_names)\nOutput:\n['Copa Libertadores', 'Champions League', 'Europa League', ...]\n\nstat_category (str, required)\n\nStat category to scrape; use the full names except “miscellaneous”, which should be \"misc\".\nCheck accepted values with stats_categories.keys():\n\n\nstat_categories = list(fb_scraper.stats_categories.keys())\nprint(stat_categories)\nOutput:\n['standard', 'goalkeeping', 'advanced goalkeeping', ...]"
+  },
+  {
+    "objectID": "posts/scraper-fc-api-doc/index.html#returns",
+    "href": "posts/scraper-fc-api-doc/index.html#returns",
+    "title": "ScraperFC API Documentation",
+    "section": "Returns",
+    "text": "Returns\nA tuple of three pd.DataFrame objects: (squad_stats, opponent_stats, player_stats)\n\nsquad_stats: Aggregated stats for all squads in the league and season.\nopponent_stats: Aggregated opponent stats for all squads.\nplayer_stats: Player-level stats for the league and season."
+  },
+  {
+    "objectID": "posts/scraper-fc-api-doc/index.html#error-handling",
+    "href": "posts/scraper-fc-api-doc/index.html#error-handling",
+    "title": "ScraperFC API Documentation",
+    "section": "Error handling",
+    "text": "Error handling\nIf an invalid league name is passed, an error message will print the accepted entries:\nseasons = [\"2025-2026\"]\nleagues = [\"not a league\"]\nOutput:\nScraping not a league 2025-2026...\n\nFailed scraping not a league 2025-2026: not a league is not a valid league for FBref. Valid leagues are ['Copa Libertadores', 'Champions League', 'Europa League', 'Europa Conference League', ...]"
+  },
+  {
+    "objectID": "posts/scraper-fc-api-doc/index.html#full-workflow-example",
+    "href": "posts/scraper-fc-api-doc/index.html#full-workflow-example",
+    "title": "ScraperFC API Documentation",
+    "section": "Full workflow example",
+    "text": "Full workflow example\nThis example loops through multiple leagues and seasons, retrieves the standard and misc stat categories, and stores only the player_stats DataFrames.\nfrom ScraperFC.fbref import FBref\nimport pandas as pd\n\n# Initialize scraper object\nfb_scraper = FBref()\n\n# Select desired seasons and leagues\nseasons = [\"2022-2023\", \"2023-2024\"]\nleagues = [\"EPL\", \"La Liga\"]\n\n# Capture the DataFrames during the loop\nall_player_dfs = []\n\n# Loop through all desired seasons and leagues\nfor season in seasons:\n    for league in leagues:\n        try:\n            print(f\"Scraping {league} {season}...\")\n\n            # Scrape 'standard' stats and omit squad/opponent stats\n            _, _, df_standard = fb_scraper.scrape_stats(season, league, \"standard\")\n\n            # Scrape 'misc' stats and omit squad/opponent stats\n            _, _, df_misc = fb_scraper.scrape_stats(season, league, \"misc\")\n\n            # Populate the list\n            all_player_dfs.append(df_standard)\n            all_player_dfs.append(df_misc)\n        except Exception as e:\n            print(f\"Failed scraping {league} {season}: {e}\")\n\nprint(\"Scraping complete.\")"
+  },
+  {
+    "objectID": "posts/scraper-fc-api-doc/index.html#versioning",
+    "href": "posts/scraper-fc-api-doc/index.html#versioning",
+    "title": "ScraperFC API Documentation",
+    "section": "Versioning",
+    "text": "Versioning\nThis documentation applies to ScraperFC v3.4.0 (current stable release).\nTo check your installed version:\nfrom importlib.metadata import version\n\ninstalled_version = version(\"ScraperFC\")\nprint(f\"ScraperFC Version: {installed_version}\")\n\n\n\n\n\n\nWarning\n\n\n\nA major overhaul to the league-names parameter is planned for v4.0. Upgrading may break existing code. To preview upcoming changes, switch the documentation dropdown (bottom-right) from “stable” to “latest”."
+  },
+  {
+    "objectID": "posts/scraper-fc-api-doc/index.html#sources",
+    "href": "posts/scraper-fc-api-doc/index.html#sources",
+    "title": "ScraperFC API Documentation",
+    "section": "Sources",
+    "text": "Sources\n\nhttps://scraperfc.readthedocs.io/en/latest/\nhttps://pypi.org/project/ScraperFC/\nhttps://github.com/oseymour/ScraperFC"
   }
 ]
