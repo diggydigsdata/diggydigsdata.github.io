@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Diggy">
+<meta name="dcterms.date" content="2025-11-01">
+<meta name="description" content="An example of API technical writing. Documents a method from the ScraperFC package (Python). Covers parameters, return types, workflow examples, error handling, versioning and data-extraction constraints.">
 
-<title>Diggy Digs Data</title>
+<title>index – Diggy Digs Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,33 +23,66 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/img/favicons/favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2f83f0ac04c3ba37addb9a3b48501ba5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-b7dfd321930551f38f4d773270eb8bab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-2f83f0ac04c3ba37addb9a3b48501ba5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/favicons/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2f83f0ac04c3ba37addb9a3b48501ba5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-b7dfd321930551f38f4d773270eb8bab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2f83f0ac04c3ba37addb9a3b48501ba5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,35 +110,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HNQKPVKC29"></script>
 
 <script type="text/javascript">
@@ -113,40 +120,10 @@ gtag('js', new Date());
 gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <meta property="og:title" content="Diggy Digs Data">
-<meta property="og:image" content="https://diggydigsdata.github.io/posts/post-relegation-attendance/featured.jpg">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Diggy Digs Data">
-<meta property="og:image:alt" content="A picture of Stadion Za Lužánkami, formerly the 50,000 capacity home ground of Zbrojovka Brno, and now an overgrown jungle.">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -312,14 +289,14 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets\img\brand.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets\img\brand.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Diggy Digs Data</span>
     </a>
   </div>
@@ -330,7 +307,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -357,138 +334,251 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">ScraperFC API Documentation</h1>
+                  <div>
+        <div class="description">
+          An example of API technical writing. Documents a method from the ScraperFC package (Python). Covers parameters, return types, workflow examples, error handling, versioning and data-extraction constraints.
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Diggy </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 1, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="QW5hbHl0aWNz">Analytics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="QVBJJTIwRG9jdW1lbnRhdGlvbg==">API Documentation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29uc3VtZXIlMjBUZWNo">Consumer Tech <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29weXdyaXRpbmc=">Copywriting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RWNvbW1lcmNl">Ecommerce <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RXhjZWw=">Excel <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Rm9vdGJhbGw=">Football <span class="quarto-category-count">(4)</span></div><div class="category" data-category="TWFya2V0aW5n">Marketing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGxvdGx5">Plotly <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VGVjaG5pY2FsJTIwV3JpdGluZw==">Technical Writing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VGlkeS1EYXRh">Tidy-Data <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#scrape_stats" id="toc-scrape_stats" class="nav-link active" data-scroll-target="#scrape_stats">scrape_stats()</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
+  <li><a href="#error-handling" id="toc-error-handling" class="nav-link" data-scroll-target="#error-handling">Error handling</a></li>
+  <li><a href="#full-workflow-example" id="toc-full-workflow-example" class="nav-link" data-scroll-target="#full-workflow-example">Full workflow example</a></li>
+  <li><a href="#versioning" id="toc-versioning" class="nav-link" data-scroll-target="#versioning">Versioning</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/posts/scraper-fc-api-doc/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
 
+<p><em>Copyright 2022 Owen Seymour. Use of this source code is governed by the GPL 3.0 license.</em></p>
+<section id="scrape_stats" class="level2">
+<h2 class="anchored" data-anchor-id="scrape_stats">scrape_stats()</h2>
+<ul>
+<li><strong>Class:</strong> <code>ScraperFC.fbref.FBref</code></li>
+<li><strong>Method:</strong> <code>scrape_stats()</code></li>
+<li><strong>Returns:</strong> A tuple of DataFrames</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Usage considerations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Before using this scraper on FBref data, review the Sports Reference Terms of Service.
+<ul>
+<li><a href="https://www.sports-reference.com/termsofuse.html">Section 5 of their Site Terms of Use</a></li>
+<li><a href="https://www.sports-reference.com/data_use.html">SR and Data Use policy</a></li>
+<li><a href="https://www.sports-reference.com/bot-traffic.html">Bot/Scraping/Crawler Traffic policies</a></li>
+</ul></li>
+<li><strong>Data usage:</strong> FBref permits scraping only under certain use cases (e.g., personal or educational). It is not permitted for competing analytics services or for public hosting.</li>
+<li><strong>Rate limiting:</strong> FBref requests no more than 10 site requests per minute. This scraper uses <code>wait_time=7</code> to pause between requests. Always check the current terms of service before scraping.</li>
+</ul>
+</div>
+</div>
+<p><code>scrape_stats()</code> allows you to download FBref season-level <em>Squad Stats</em>, <em>Opponent Stats</em>, and <em>Player Stats</em> for a chosen statistics collection such as “Advanced Goalkeeping”.</p>
+<p>You can reference the available statistics collections by accessing:<br>
+Competition &gt; ‘Squad &amp; Player Stats’ dropdown &gt; Statistical Collection &gt; Toggle between ‘Squad &amp; Opponent Stats’ or scroll for ‘Player Stats’</p>
+<p>You can find an example of Premier League 2024/25 ‘Player Stats’ from the ‘Standard’ stats collection <a href="https://fbref.com/en/comps/9/2024-2025/stats/2024-2025-Premier-League-Stats#all_stats_standard">here</a>.</p>
+<hr>
+</section>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<ol type="1">
+<li>Install the ScraperFC package:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install ScraperFC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(The package is not currently available on conda or conda-forge.)</p>
+<ol start="2" type="1">
+<li>Load the fbref module:</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ScraperFC.fbref <span class="im">import</span> FBref</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Initialize the scraper object:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fb_scraper <span class="op">=</span> FBref()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="parameters" class="level2">
+<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<ul>
+<li><strong>year</strong> (str, required)
+<ul>
+<li>Season to scrape.</li>
+<li>Format: match the season strings on the <em>Competition History</em> page of the target league (e.g., <a href="https://fbref.com/en/comps/Big5/history/Big-5-European-Leagues-Seasons">Big 5 Leagues</a>).</li>
+<li>You can check accepted year inputs with <code>get_valid_seasons()</code>:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>valid_seasons <span class="op">=</span> fb_scraper.get_valid_seasons(<span class="st">"La Liga"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>season_list <span class="op">=</span> <span class="bu">list</span>(valid_seasons.keys())</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(season_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<pre class="text"><code>['2025-2026', '2024-2025', '2023-2024', '2022-2023', ...]</code></pre>
+<ul>
+<li><strong>league</strong> (str, required)
+<ul>
+<li>League to scrape (usually the long name, e.g., “Bundesliga”, “Ligue 1”; some exceptions like “EPL”).</li>
+<li>Check accepted values with <code>comps.keys()</code>:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>valid_league_names <span class="op">=</span> <span class="bu">list</span>(fb_scraper.comps.keys())</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid_league_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<pre class="text"><code>['Copa Libertadores', 'Champions League', 'Europa League', ...]</code></pre>
+<ul>
+<li><strong>stat_category</strong> (str, required)
+<ul>
+<li>Stat category to scrape; use the full names except “miscellaneous”, which should be <code>"misc"</code>.</li>
+<li>Check accepted values with <code>stats_categories.keys()</code>:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>stat_categories <span class="op">=</span> <span class="bu">list</span>(fb_scraper.stats_categories.keys())</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stat_categories)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<p><code>['standard', 'goalkeeping', 'advanced goalkeeping', ...]</code></p>
+<hr>
+</section>
+<section id="returns" class="level2">
+<h2 class="anchored" data-anchor-id="returns">Returns</h2>
+<p>A tuple of three <code>pd.DataFrame</code> objects: <code>(squad_stats, opponent_stats, player_stats)</code></p>
+<ol type="1">
+<li><code>squad_stats</code>: Aggregated stats for all squads in the league and season.</li>
+<li><code>opponent_stats</code>: Aggregated opponent stats for all squads.</li>
+<li><code>player_stats</code>: Player-level stats for the league and season.</li>
+</ol>
+<hr>
+</section>
+<section id="error-handling" class="level2">
+<h2 class="anchored" data-anchor-id="error-handling">Error handling</h2>
+<p>If an invalid league name is passed, an error message will print the accepted entries:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">"2025-2026"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>leagues <span class="op">=</span> [<span class="st">"not a league"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<pre class="text"><code>Scraping not a league 2025-2026...
+
+Failed scraping not a league 2025-2026: not a league is not a valid league for FBref. Valid leagues are ['Copa Libertadores', 'Champions League', 'Europa League', 'Europa Conference League', ...]</code></pre>
+<hr>
+</section>
+<section id="full-workflow-example" class="level2">
+<h2 class="anchored" data-anchor-id="full-workflow-example">Full workflow example</h2>
+<p>This example loops through multiple leagues and seasons, retrieves the <code>standard</code> and <code>misc</code> stat categories, and stores only the <code>player_stats</code> DataFrames.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ScraperFC.fbref <span class="im">import</span> FBref</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize scraper object</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>fb_scraper <span class="op">=</span> FBref()</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Select desired seasons and leagues</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">"2022-2023"</span>, <span class="st">"2023-2024"</span>]</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>leagues <span class="op">=</span> [<span class="st">"EPL"</span>, <span class="st">"La Liga"</span>]</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Capture the DataFrames during the loop</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>all_player_dfs <span class="op">=</span> []</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop through all desired seasons and leagues</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> season <span class="kw">in</span> seasons:</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> league <span class="kw">in</span> leagues:</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Scraping </span><span class="sc">{</span>league<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>season<span class="sc">}</span><span class="ss">..."</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Scrape 'standard' stats and omit squad/opponent stats</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>            _, _, df_standard <span class="op">=</span> fb_scraper.scrape_stats(season, league, <span class="st">"standard"</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Scrape 'misc' stats and omit squad/opponent stats</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>            _, _, df_misc <span class="op">=</span> fb_scraper.scrape_stats(season, league, <span class="st">"misc"</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Populate the list</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>            all_player_dfs.append(df_standard)</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>            all_player_dfs.append(df_misc)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Failed scraping </span><span class="sc">{</span>league<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>season<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Scraping complete."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="versioning" class="level2">
+<h2 class="anchored" data-anchor-id="versioning">Versioning</h2>
+<p>This documentation applies to ScraperFC v3.4.0 (current stable release).</p>
+<p>To check your installed version:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> importlib.metadata <span class="im">import</span> version</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>installed_version <span class="op">=</span> version(<span class="st">"ScraperFC"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ScraperFC Version: </span><span class="sc">{</span>installed_version<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A major overhaul to the league-names parameter is planned for v4.0. Upgrading may break existing code. To preview upcoming changes, switch the documentation dropdown (bottom-right) from “stable” to “latest”.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<ul>
+<li>https://scraperfc.readthedocs.io/en/latest/</li>
+<li>https://pypi.org/project/ScraperFC/</li>
+<li>https://github.com/oseymour/ScraperFC</li>
+</ul>
 
 
+</section>
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Rm9vdGJhbGwlMkNBbmFseXRpY3M=" data-listing-date-sort="1761951600000" data-listing-file-modified-sort="1762914032228" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3306">
-<a href="./posts/post-relegation-attendance/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/post-relegation-attendance/featured.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="A picture of Stadion Za Lužánkami, formerly the 50,000 capacity home ground of Zbrojovka Brno, and now an overgrown jungle.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Fair-Weather Fans?
-</h5>
-<div class="listing-reading-time card-text text-muted">17 min</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Diggy
-</div>
-<div class="listing-date">
-Nov 1, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="VGVjaG5pY2FsJTIwV3JpdGluZyUyQ0Zvb3RiYWxsJTJDUHl0aG9uJTJDQVBJJTIwRG9jdW1lbnRhdGlvbg==" data-listing-date-sort="1761951600000" data-listing-file-modified-sort="1763253579060" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="719">
-<a href="./posts/scraper-fc-api-doc/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/scraper-fc-api-doc/featured.png" class="thumbnail-image card-img" style="height: 150px;" alt="A code snippet showing a possible implementation of the API.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-ScraperFC API Documentation
-</h5>
-<div class="listing-reading-time card-text text-muted">4 min</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Diggy
-</div>
-<div class="listing-date">
-Nov 1, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Rm9vdGJhbGwlMkNBbmFseXRpY3MlMkNFeGNlbCUyQ1B5dGhvbiUyQ1IlMkNUaWR5LURhdGE=" data-listing-date-sort="1761951600000" data-listing-file-modified-sort="1762830836959" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="225">
-<a href="./posts/too-messy-to-melt/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/too-messy-to-melt/featured.png" class="thumbnail-image card-img" style="height: 150px;" alt="Image showing a sprawling and chaotic excel spreadsheet on top of a neat and tidy pandas dataframe">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Too Messy to Melt
-</h5>
-<div class="listing-reading-time card-text text-muted">2 min</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Diggy
-</div>
-<div class="listing-date">
-Nov 1, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Rm9vdGJhbGwlMkNBbmFseXRpY3MlMkNQeXRob24lMkNQbG90bHk=" data-listing-date-sort="1759096800000" data-listing-file-modified-sort="1762904960434" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="30" data-listing-word-count-sort="5868">
-<a href="./posts/no-fear-at-that-age/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/no-fear-at-that-age/featured.png" class="thumbnail-image card-img" style="height: 150px;" alt="Lamine Yamal at a press conference.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-No Fear At That Age
-</h5>
-<div class="listing-reading-time card-text text-muted">30 min</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Diggy
-</div>
-<div class="listing-date">
-Sep 29, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="Q29weXdyaXRpbmclMkNNYXJrZXRpbmclMkNFY29tbWVyY2UlMkNDb25zdW1lciUyMFRlY2g=" data-listing-date-sort="1727647200000" data-listing-file-modified-sort="1762830836955" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="180">
-<a href="./posts/currys-copywriting-samples/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/currys-copywriting-samples/featured.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="The Currys brand logo">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Currys
-</h5>
-<div class="listing-reading-time card-text text-muted">1 min</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Diggy
-</div>
-<div class="listing-date">
-Sep 30, 2024
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -909,11 +999,11 @@ Sep 30, 2024
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/diggydigsdata/blob/main/posts/scraper-fc-api-doc/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./LICENSE">
+    <a class="nav-link" href="../../LICENSE">
 <p>License</p>
 </a>
   </li>  
