@@ -425,7 +425,7 @@ Usage considerations
 </div>
 </div>
 <p><code>scrape_stats()</code> allows you to download FBref season-level <em>Squad Stats</em>, <em>Opponent Stats</em>, and <em>Player Stats</em> for a chosen statistics collection such as “Advanced Goalkeeping”.</p>
-<p>You can reference the available statistics collections by accessing:<br>
+<p>You can reference the available statistics collections through this FBref navigation:<br>
 Competition &gt; ‘Squad &amp; Player Stats’ dropdown &gt; Statistical Collection &gt; Toggle between ‘Squad &amp; Opponent Stats’ or scroll for ‘Player Stats’</p>
 <p>You can find an example of Premier League 2024/25 ‘Player Stats’ from the ‘Standard’ stats collection <a href="https://fbref.com/en/comps/9/2024-2025/stats/2024-2025-Premier-League-Stats#all_stats_standard">here</a>.</p>
 <hr>
@@ -460,8 +460,19 @@ Competition &gt; ‘Squad &amp; Player Stats’ dropdown &gt; Statistical Collec
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>valid_seasons <span class="op">=</span> fb_scraper.get_valid_seasons(<span class="st">"La Liga"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>season_list <span class="op">=</span> <span class="bu">list</span>(valid_seasons.keys())</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(season_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Output:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Output
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <pre class="text"><code>['2025-2026', '2024-2025', '2023-2024', '2022-2023', ...]</code></pre>
+</div>
+</div>
 <ul>
 <li><strong>league</strong> (str, required)
 <ul>
@@ -471,8 +482,19 @@ Competition &gt; ‘Squad &amp; Player Stats’ dropdown &gt; Statistical Collec
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>valid_league_names <span class="op">=</span> <span class="bu">list</span>(fb_scraper.comps.keys())</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(valid_league_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Output:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Output
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <pre class="text"><code>['Copa Libertadores', 'Champions League', 'Europa League', ...]</code></pre>
+</div>
+</div>
 <ul>
 <li><strong>stat_category</strong> (str, required)
 <ul>
@@ -482,8 +504,19 @@ Competition &gt; ‘Squad &amp; Player Stats’ dropdown &gt; Statistical Collec
 </ul>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>stat_categories <span class="op">=</span> <span class="bu">list</span>(fb_scraper.stats_categories.keys())</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stat_categories)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Output:</p>
-<p><code>['standard', 'goalkeeping', 'advanced goalkeeping', ...]</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Output
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<pre class="text"><code>['standard', 'goalkeeping', 'advanced goalkeeping', ...]</code></pre>
+</div>
+</div>
 <hr>
 </section>
 <section id="returns" class="level2">
@@ -499,59 +532,69 @@ Competition &gt; ‘Squad &amp; Player Stats’ dropdown &gt; Statistical Collec
 <section id="error-handling" class="level2">
 <h2 class="anchored" data-anchor-id="error-handling">Error handling</h2>
 <p>If an invalid league name is passed, an error message will print the accepted entries:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">"2025-2026"</span>]</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>leagues <span class="op">=</span> [<span class="st">"not a league"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Output:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">"2025-2026"</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>leagues <span class="op">=</span> [<span class="st">"not a league"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Output
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <pre class="text"><code>Scraping not a league 2025-2026...
-
 Failed scraping not a league 2025-2026: not a league is not a valid league for FBref. Valid leagues are ['Copa Libertadores', 'Champions League', 'Europa League', 'Europa Conference League', ...]</code></pre>
+</div>
+</div>
 <hr>
 </section>
 <section id="full-workflow-example" class="level2">
 <h2 class="anchored" data-anchor-id="full-workflow-example">Full workflow example</h2>
 <p>This example loops through multiple leagues and seasons, retrieves the <code>standard</code> and <code>misc</code> stat categories, and stores only the <code>player_stats</code> DataFrames.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ScraperFC.fbref <span class="im">import</span> FBref</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize scraper object</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>fb_scraper <span class="op">=</span> FBref()</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Select desired seasons and leagues</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">"2022-2023"</span>, <span class="st">"2023-2024"</span>]</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>leagues <span class="op">=</span> [<span class="st">"EPL"</span>, <span class="st">"La Liga"</span>]</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Capture the DataFrames during the loop</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>all_player_dfs <span class="op">=</span> []</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop through all desired seasons and leagues</span></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> season <span class="kw">in</span> seasons:</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> league <span class="kw">in</span> leagues:</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Scraping </span><span class="sc">{</span>league<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>season<span class="sc">}</span><span class="ss">..."</span>)</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Scrape 'standard' stats and omit squad/opponent stats</span></span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>            _, _, df_standard <span class="op">=</span> fb_scraper.scrape_stats(season, league, <span class="st">"standard"</span>)</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Scrape 'misc' stats and omit squad/opponent stats</span></span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>            _, _, df_misc <span class="op">=</span> fb_scraper.scrape_stats(season, league, <span class="st">"misc"</span>)</span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Populate the list</span></span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>            all_player_dfs.append(df_standard)</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>            all_player_dfs.append(df_misc)</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Failed scraping </span><span class="sc">{</span>league<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>season<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Scraping complete."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ScraperFC.fbref <span class="im">import</span> FBref</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize scraper object</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>fb_scraper <span class="op">=</span> FBref()</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Select desired seasons and leagues</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">"2022-2023"</span>, <span class="st">"2023-2024"</span>]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>leagues <span class="op">=</span> [<span class="st">"EPL"</span>, <span class="st">"La Liga"</span>]</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Capture the DataFrames during the loop</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>all_player_dfs <span class="op">=</span> []</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop through all desired seasons and leagues</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> season <span class="kw">in</span> seasons:</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> league <span class="kw">in</span> leagues:</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Scraping </span><span class="sc">{</span>league<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>season<span class="sc">}</span><span class="ss">..."</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Scrape 'standard' stats and omit squad/opponent stats</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>            _, _, df_standard <span class="op">=</span> fb_scraper.scrape_stats(season, league, <span class="st">"standard"</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Scrape 'misc' stats and omit squad/opponent stats</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>            _, _, df_misc <span class="op">=</span> fb_scraper.scrape_stats(season, league, <span class="st">"misc"</span>)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Populate the list</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>            all_player_dfs.append(df_standard)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>            all_player_dfs.append(df_misc)</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Failed scraping </span><span class="sc">{</span>league<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>season<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Scraping complete."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="versioning" class="level2">
 <h2 class="anchored" data-anchor-id="versioning">Versioning</h2>
 <p>This documentation applies to ScraperFC v3.4.0 (current stable release).</p>
 <p>To check your installed version:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> importlib.metadata <span class="im">import</span> version</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>installed_version <span class="op">=</span> version(<span class="st">"ScraperFC"</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ScraperFC Version: </span><span class="sc">{</span>installed_version<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> importlib.metadata <span class="im">import</span> version</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>installed_version <span class="op">=</span> version(<span class="st">"ScraperFC"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ScraperFC Version: </span><span class="sc">{</span>installed_version<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -570,9 +613,10 @@ Warning
 <section id="sources" class="level2">
 <h2 class="anchored" data-anchor-id="sources">Sources</h2>
 <ul>
-<li>https://scraperfc.readthedocs.io/en/latest/</li>
-<li>https://pypi.org/project/ScraperFC/</li>
-<li>https://github.com/oseymour/ScraperFC</li>
+<li><a href="https://scraperfc.readthedocs.io/en/latest/">ScraperFC’s official docs</a></li>
+<li><a href="https://pypi.org/project/ScraperFC/">Package page on PyPi</a></li>
+<li><a href="https://github.com/oseymour/ScraperFC">Creator’s GitHub</a></li>
+<li><a href="https://buymeacoffee.com/oseymour">Creator’s Buy Me a Coffee</a></li>
 </ul>
 
 
