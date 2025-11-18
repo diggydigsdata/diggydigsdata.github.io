@@ -41,7 +41,7 @@ See also: [Pace](https://support.strava.com/hc/en-us/articles/115001136770-Pace-
 
 You can check your run's GAP on both the Strava website and the mobile app (Android / iOS). You'll find it in the following places:
 
-::: {callout-tip}
+::: {.callout-tip}
 #### To Do
 [Get side-by-side screenshot of the GAP metric on a post-run analysis screen. There would be captions under each image: 'Mobile View 'on the left, 'Desktop View' on the right]
 :::
