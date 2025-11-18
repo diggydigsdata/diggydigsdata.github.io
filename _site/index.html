@@ -44,9 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2f83f0ac04c3ba37addb9a3b48501ba5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-b7dfd321930551f38f4d773270eb8bab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-2f83f0ac04c3ba37addb9a3b48501ba5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
@@ -144,9 +144,11 @@ window.Quarto = {
 </script>
 
 <meta property="og:title" content="Diggy Digs Data">
-<meta property="og:image" content="https://diggydigsdata.github.io/posts/post-relegation-attendance/featured.jpg">
+<meta property="og:image" content="https://diggydigsdata.github.io/posts/strava-gap-metric/featured.png">
 <meta property="og:site_name" content="Diggy Digs Data">
-<meta property="og:image:alt" content="A picture of Stadion Za Lužánkami, formerly the 50,000 capacity home ground of Zbrojovka Brno, and now an overgrown jungle.">
+<meta property="og:image:alt" content="Graph of pace credits versus grade.">
+<meta property="og:image:height" content="480">
+<meta property="og:image:width" content="672">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -362,7 +364,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="QW5hbHl0aWNz">Analytics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="QVBJJTIwRG9jdW1lbnRhdGlvbg==">API Documentation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29uc3VtZXIlMjBUZWNo">Consumer Tech <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29weXdyaXRpbmc=">Copywriting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RWNvbW1lcmNl">Ecommerce <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RXhjZWw=">Excel <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Rm9vdGJhbGw=">Football <span class="quarto-category-count">(4)</span></div><div class="category" data-category="TWFya2V0aW5n">Marketing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGxvdGx5">Plotly <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VGVjaG5pY2FsJTIwV3JpdGluZw==">Technical Writing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VGlkeS1EYXRh">Tidy-Data <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="QW5hbHl0aWNz">Analytics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="QVBJJTIwRG9jdW1lbnRhdGlvbg==">API Documentation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29uc3VtZXIlMjBUZWNo">Consumer Tech <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29weXdyaXRpbmc=">Copywriting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RWNvbW1lcmNl">Ecommerce <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RXhjZWw=">Excel <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Rm9vdGJhbGw=">Football <span class="quarto-category-count">(4)</span></div><div class="category" data-category="TWFya2V0aW5n">Marketing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGxvdGx5">Plotly <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UnVubmluZw==">Running <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3RyYXZh">Strava <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VGVjaG5pY2FsJTIwV3JpdGluZw==">Technical Writing <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VGlkeS1EYXRh">Tidy-Data <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
@@ -376,7 +378,29 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Rm9vdGJhbGwlMkNBbmFseXRpY3M=" data-listing-date-sort="1761951600000" data-listing-file-modified-sort="1762914032228" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3306">
+<div class="g-col-1" data-index="0" data-categories="UnVubmluZyUyQ1N0cmF2YSUyQ1RlY2huaWNhbCUyMFdyaXRpbmclMkNQeXRob24=" data-listing-date-sort="1763334000000" data-listing-file-modified-sort="1763437052649" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1553">
+<a href="./posts/strava-gap-metric/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/strava-gap-metric/featured.png" class="thumbnail-image card-img" style="height: 150px;" alt="Graph of pace credits versus grade.">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Grade Adjusted Pace (GAP)
+</h5>
+<div class="listing-reading-time card-text text-muted">8 min</div>
+<div class="card-text listing-description delink">
+<p>Grade Adjusted Pace estimates how fast you would have run on a flat route even if your run was on varied grades.</p>
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 17, 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Rm9vdGJhbGwlMkNBbmFseXRpY3M=" data-listing-date-sort="1761951600000" data-listing-file-modified-sort="1762914032228" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17" data-listing-word-count-sort="3306">
 <a href="./posts/post-relegation-attendance/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -387,10 +411,10 @@ window.Quarto = {
 Fair-Weather Fans?
 </h5>
 <div class="listing-reading-time card-text text-muted">17 min</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Diggy
+<div class="card-text listing-description delink">
+<p>Dishing the data dirt on post-relegation loyalty.</p>
 </div>
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Nov 1, 2025
 </div>
@@ -398,7 +422,7 @@ Nov 1, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="VGVjaG5pY2FsJTIwV3JpdGluZyUyQ0Zvb3RiYWxsJTJDUHl0aG9uJTJDQVBJJTIwRG9jdW1lbnRhdGlvbg==" data-listing-date-sort="1761951600000" data-listing-file-modified-sort="1763255173333" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="808">
+<div class="g-col-1" data-index="2" data-categories="VGVjaG5pY2FsJTIwV3JpdGluZyUyQ0Zvb3RiYWxsJTJDUHl0aG9uJTJDQVBJJTIwRG9jdW1lbnRhdGlvbg==" data-listing-date-sort="1761951600000" data-listing-file-modified-sort="1763262358623" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="808">
 <a href="./posts/scraper-fc-api-doc/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -409,10 +433,10 @@ Nov 1, 2025
 ScraperFC API Documentation
 </h5>
 <div class="listing-reading-time card-text text-muted">5 min</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Diggy
+<div class="card-text listing-description delink">
+<p>An example of API technical writing. Documents a method from the ScraperFC package (Python). Covers parameters, return types, workflow examples, error handling, versioning…</p>
 </div>
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Nov 1, 2025
 </div>
@@ -420,7 +444,7 @@ Nov 1, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Rm9vdGJhbGwlMkNBbmFseXRpY3MlMkNFeGNlbCUyQ1B5dGhvbiUyQ1IlMkNUaWR5LURhdGE=" data-listing-date-sort="1761951600000" data-listing-file-modified-sort="1762830836959" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="225">
+<div class="g-col-1" data-index="3" data-categories="Rm9vdGJhbGwlMkNBbmFseXRpY3MlMkNFeGNlbCUyQ1B5dGhvbiUyQ1IlMkNUaWR5LURhdGE=" data-listing-date-sort="1761951600000" data-listing-file-modified-sort="1762830836959" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="225">
 <a href="./posts/too-messy-to-melt/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -431,10 +455,10 @@ Nov 1, 2025
 Too Messy to Melt
 </h5>
 <div class="listing-reading-time card-text text-muted">2 min</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Diggy
+<div class="card-text listing-description delink">
+<p>Getting an analysis-ready dataset from a tabular trashcan</p>
 </div>
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Nov 1, 2025
 </div>
@@ -442,7 +466,7 @@ Nov 1, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Rm9vdGJhbGwlMkNBbmFseXRpY3MlMkNQeXRob24lMkNQbG90bHk=" data-listing-date-sort="1759096800000" data-listing-file-modified-sort="1762904960434" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="30" data-listing-word-count-sort="5868">
+<div class="g-col-1" data-index="4" data-categories="Rm9vdGJhbGwlMkNBbmFseXRpY3MlMkNQeXRob24lMkNQbG90bHk=" data-listing-date-sort="1759096800000" data-listing-file-modified-sort="1762904960434" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="30" data-listing-word-count-sort="5868">
 <a href="./posts/no-fear-at-that-age/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -453,10 +477,10 @@ Nov 1, 2025
 No Fear At That Age
 </h5>
 <div class="listing-reading-time card-text text-muted">30 min</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Diggy
+<div class="card-text listing-description delink">
+<p>Testing if there’s merit to the claim that young players are fearless.</p>
 </div>
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Sep 29, 2025
 </div>
@@ -464,7 +488,7 @@ Sep 29, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Q29weXdyaXRpbmclMkNNYXJrZXRpbmclMkNFY29tbWVyY2UlMkNDb25zdW1lciUyMFRlY2g=" data-listing-date-sort="1727647200000" data-listing-file-modified-sort="1762830836955" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="180">
+<div class="g-col-1" data-index="5" data-categories="Q29weXdyaXRpbmclMkNNYXJrZXRpbmclMkNFY29tbWVyY2UlMkNDb25zdW1lciUyMFRlY2g=" data-listing-date-sort="1727647200000" data-listing-file-modified-sort="1762830836955" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="180">
 <a href="./posts/currys-copywriting-samples/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -475,10 +499,10 @@ Sep 29, 2025
 Currys
 </h5>
 <div class="listing-reading-time card-text text-muted">1 min</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Diggy
+<div class="card-text listing-description delink">
+<p>Writing samples from my days as a copywriter at tech retailer Currys.</p>
 </div>
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Sep 30, 2024
 </div>

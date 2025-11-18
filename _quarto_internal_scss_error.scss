@@ -1040,14 +1040,13 @@ $theme-name: null !default;
 // quarto-scss-analysis-annotation { "origin": "Defaults from user-defined SCSS" }
 
 $claret-border-color: #6c1d45;
+$grid-border-color: hsl(44, 5%, 90%);
+$grid-color: #FFFEF5;
+$grid-hover-color: #FFFEEA;
 $white-text-color: #f6f6f2;
-$body-bg: #222222;
-/* necessary to override default dark text color */
-$body-color: #F0F0F0;
-$link-color: #0000FF;
-$link-clicked-color: #d43484;
-$link-hover-color: #00FF85;
-$translucent-grid-hover: rgba(#444444, 0.7);
+$link-clicked-color: #551A8B;
+$body-bg: #FFFFFC;
+$translucent-grid-hover: rgba($grid-hover-color, 0.7);
 
 
 // Heading font size customization
@@ -12980,6 +12979,9 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
 // quarto-scss-analysis-annotation { "origin": null }
 
 
+/* all navbar and footer rules are identical in dark & light modes */
+
+/*borders for navbar and footer*/
 .navbar {
   border-bottom: 2pt solid $claret-border-color;
 }
@@ -12988,91 +12990,151 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
   border-top: 2pt solid $claret-border-color;
 }
 
+/* ensuring text is jet black in navbar */
 .navbar-brand {
   color: #000000 !important;
 }
 
+/* even the links in the navbar are black */
 .nav-link {
-  color: #000000 !important; 
+  color: #000000 !important;
 }
 
+/* but everything will change upon hovering. the background
+will become the same as the border and the text will turn white.
+and they will stay that way as long as you are on that tab (active)*/
 .navbar .nav-item.active, .navbar .nav-link:hover {
   background-color: $claret-border-color !important;
   color: $white-text-color !important;
-  border-radius: 5px !important; 
+  border-radius: 5px !important;
 }
 
+/* NAVBAR BRAND STYLING  */
+
+/* Give the brand's text span padding (buffer) in its static state */
+.navbar-brand span {
+  padding: 0.3em 0.5em;
+  border-radius: 5px !important;
+  /* Add transition for a smooth hover effect */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* On hover, change the background and text color of the span */
 .navbar-brand:hover span {
-  color: #300C1D !important;
-  text-decoration: underline !important;
-  text-decoration-color: #300C1D !important;
-  text-underline-offset: 5px;
-  text-decoration-thickness: 2px;
-  border-radius: 5px !important; 
+  background-color: $claret-border-color !important;
+  color: $white-text-color !important;
 }
-
+/* FROM HERE THERE ARE DIFFERENCES BETWEEN DARK AND LIGHT MODES */
+/* This makes the post content and the title and author/date blocks
+all have the same dark background and light text */
 .quarto-title-banner {
   margin-bottom: 1em;
-  color: $body-color !important;
+  color: #000000 !important;
   background-color: $body-bg;
 }
+
 .quarto-title-block {
   margin-bottom: 1em;
-  color: $body-color !important;
+  color: #000000 !important;
   background-color: $body-bg;
 }
 
-.title {
-  color: $body-color !important;
+/* Footer links */
+.nav-footer p a,
+.footer .toc-actions a,
+.footer .nav-link p {
+  text-decoration: underline;
+  color: #000000;
 }
 
-.listing-category {
-  color: rgb(150, 150, 150);
+.nav-footer p a:visited,
+.footer .toc-actions a:visited,
+.footer .nav-link p:visited {
+  text-decoration: underline;
+  color: #000000;
 }
 
-/* This defines the color and underlining of links in the
-main text section and the about section. It excludes
-the navbar. */
-.quarto-content a:not(.navbar-brand) {
-  color: #58A6FF;
-  text-decoration: none;
+.nav-footer p a:hover,
+.footer .toc-actions a:hover,
+.footer .nav-link p:hover {
+  text-decoration: underline;
+  color: $claret-border-color;
 }
 
 .quarto-content a:visited {
-  color: #AD85E3; 
+  color: $link-clicked-color;
+}
+
+#quarto-document-content a {
+  color: #0000FF;
 }
 
 #quarto-document-content a:hover {
   text-decoration: underline;
+  color: #0056b3;
+}
+
+.about-links {
+  color: $body-color;
+  text-decoration: none;
+}
+
+.about-link:hover {
+  text-decoration: underline;
+  background-color: #0000FF !important;
+  color: $white-text-color !important;
+  border-radius: 5px !important;
+}
+
+/*makes links blue and not underlined in body content - posts and about section*/
+a:not(.navbar-brand) {
   color: #0000FF;
+  text-decoration: none;
 }
 
 a:not(.navbar-brand):visited {
-  $link-clicked-color;
+  color: $link-clicked-color;
 }
 
 a:not(.navbar-brand):hover {
-  text-decoration: underline;
+  color: #0056b3;
+  text-decoration: none;
+}
+
+/* stops the grid listing cards from being underlined on hover */
+#listing-listing a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.quarto-grid-item {
+  background-color: $grid-color !important;
+  text-decoration: none;
+  border: 1pt solid $grid-border-color;
 }
 
 .quarto-grid-item:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transform: scale(1.02);
   transition: transform 0.2s;
-  background-color: $translucent-grid-hover;
-  color: #FAFAFA !important;
+  background-color: $grid-hover-color;
   text-decoration: none;
+  border: 2pt solid $grid-border-color;
 }
 
 .listing-card:hover .listing-categories,
 .listing-card:hover .listing-author,
 .listing-card:hover .listing-date,
 .listing-card:hover .quarto-category:hover {
-  color: #C4C4C4 !important;
+  color: #202020 !important;
 }
 
 .listing-categories, .listing-author, .listing-date, .quarto-category {
-  color: #A3A3A3 !important;
+  color: #626262 !important;
+}
+
+##TOC > ul {
+  color: $claret-border-color;
 }
 
 // quarto-scss-analysis-annotation { "origin": null }

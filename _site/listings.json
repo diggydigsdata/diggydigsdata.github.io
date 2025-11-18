@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/strava-gap-metric/index.html",
       "/posts/post-relegation-attendance/index.html",
       "/posts/scraper-fc-api-doc/index.html",
       "/posts/too-messy-to-melt/index.html",

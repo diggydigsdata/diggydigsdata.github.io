@@ -163,3 +163,11 @@ a:not(.navbar-brand):hover {
 .listing-categories, .listing-author, .listing-date, .quarto-category {
   color: #626262 !important;
 }
+
+#TOC .nav-link {
+  color: black !important;
+}
+
+#TOC .nav-link:hover, #TOC .nav-link.active, #TOC .toc-action:hover, .category:hover, .category.active {
+  color: $claret-border-color !important;
+}
