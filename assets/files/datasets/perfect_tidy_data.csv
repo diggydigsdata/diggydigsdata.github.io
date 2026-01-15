@@ -1,0 +1,413 @@
+Relegation_Event_ID,Team,Season,Tier,Position,Attendance,Year_vs_Relegation,Year_End_Outcome,Games_Played_History,Wins_History,Goals_For_History,Goals_Against_History,Points_History
+Aston Villa 2015-16,Aston Villa,2014-15,1,17,34133,-1,Survived,38,10,31,57,38
+Aston Villa 2015-16,Aston Villa,2015-16,1,20,33690,0,Relegated,38,3,27,76,17
+Aston Villa 2015-16,Aston Villa,2016-17,2,13,32107,1,Survived,46,16,47,48,62
+Aston Villa 2015-16,Aston Villa,2017-18,2,4,32097,2,Survived,46,24,72,42,83
+Barnsley 1997-98,Barnsley,1996-97,2,2,11356,-1,Promoted,46,22,76,55,80
+Barnsley 1997-98,Barnsley,1997-98,1,19,18449,0,Relegated,38,10,37,82,35
+Barnsley 1997-98,Barnsley,1998-99,2,13,16269,1,Survived,46,14,59,56,59
+Barnsley 1997-98,Barnsley,1999-00,2,4,15412,2,Survived,46,24,88,67,82
+Birmingham City 2005-06,Birmingham City,2004-05,1,12,28760,-1,Survived,38,11,40,46,45
+Birmingham City 2005-06,Birmingham City,2005-06,1,18,27392,0,Relegated,38,8,28,50,34
+Birmingham City 2005-06,Birmingham City,2006-07,2,2,22274,1,Promoted,46,26,67,42,86
+Birmingham City 2005-06,Birmingham City,2007-08,1,19,26181,2,Relegated,38,8,46,62,35
+Birmingham City 2007-08,Birmingham City,2006-07,2,2,22274,-1,Promoted,46,26,67,42,86
+Birmingham City 2007-08,Birmingham City,2007-08,1,19,26181,0,Relegated,38,8,46,62,35
+Birmingham City 2007-08,Birmingham City,2008-09,2,2,19081,1,Promoted,46,23,54,37,83
+Birmingham City 2007-08,Birmingham City,2009-10,1,9,25246,2,Survived,38,13,38,47,50
+Birmingham City 2010-11,Birmingham City,2009-10,1,9,25246,-1,Survived,38,13,38,47,50
+Birmingham City 2010-11,Birmingham City,2010-11,1,18,25462,0,Relegated,38,8,37,58,39
+Birmingham City 2010-11,Birmingham City,2011-12,2,4,19127,1,Survived,46,20,78,51,76
+Birmingham City 2010-11,Birmingham City,2012-13,2,12,16703,2,Survived,46,15,63,69,61
+Blackburn Rovers 1998-99,Blackburn Rovers,1997-98,1,6,25253,-1,Survived,38,16,57,52,58
+Blackburn Rovers 1998-99,Blackburn Rovers,1998-99,1,19,25773,0,Relegated,38,7,38,52,35
+Blackburn Rovers 1998-99,Blackburn Rovers,1999-00,2,11,19253,1,Survived,46,15,55,51,62
+Blackburn Rovers 1998-99,Blackburn Rovers,2000-01,2,2,20740,2,Promoted,46,26,76,39,91
+Blackburn Rovers 2011-12,Blackburn Rovers,2010-11,1,15,25000,-1,Survived,38,11,46,59,43
+Blackburn Rovers 2011-12,Blackburn Rovers,2011-12,1,19,22551,0,Relegated,38,8,48,78,31
+Blackburn Rovers 2011-12,Blackburn Rovers,2012-13,2,17,14997,1,Survived,46,14,55,62,58
+Blackburn Rovers 2011-12,Blackburn Rovers,2013-14,2,8,14962,2,Survived,46,18,70,62,70
+Blackpool 2010-11,Blackpool,2009-10,2,6,8611,-1,Promoted,46,19,74,58,70
+Blackpool 2010-11,Blackpool,2010-11,1,19,15780,0,Relegated,38,10,55,78,39
+Blackpool 2010-11,Blackpool,2011-12,2,5,12764,1,Survived,46,20,79,59,75
+Blackpool 2010-11,Blackpool,2012-13,2,15,13917,2,Survived,46,14,62,63,59
+Bolton Wanderers 1995-96,Bolton Wanderers,1994-95,2,3,13029,-1,Promoted,46,21,67,45,77
+Bolton Wanderers 1995-96,Bolton Wanderers,1995-96,1,20,18822,0,Relegated,38,8,39,71,29
+Bolton Wanderers 1995-96,Bolton Wanderers,1996-97,2,1,15826,1,Promoted,46,28,100,53,98
+Bolton Wanderers 1995-96,Bolton Wanderers,1997-98,1,18,24352,2,Relegated,38,9,41,61,40
+Bolton Wanderers 1997-98,Bolton Wanderers,1996-97,2,1,15826,-1,Promoted,46,28,100,53,98
+Bolton Wanderers 1997-98,Bolton Wanderers,1997-98,1,18,24352,0,Relegated,38,9,41,61,40
+Bolton Wanderers 1997-98,Bolton Wanderers,1998-99,2,6,18196,1,Survived,46,20,78,59,76
+Bolton Wanderers 1997-98,Bolton Wanderers,1999-00,2,6,14297,2,Survived,46,21,69,50,76
+Bolton Wanderers 2011-12,Bolton Wanderers,2010-11,1,14,22870,-1,Survived,38,12,52,56,46
+Bolton Wanderers 2011-12,Bolton Wanderers,2011-12,1,18,23670,0,Relegated,38,10,46,77,36
+Bolton Wanderers 2011-12,Bolton Wanderers,2012-13,2,7,18034,1,Survived,46,18,69,61,68
+Bolton Wanderers 2011-12,Bolton Wanderers,2013-14,2,14,16141,2,Survived,46,14,59,60,59
+Bournemouth 2019-20,Bournemouth,2018-19,1,14,10532,-1,Survived,38,13,56,70,45
+Bournemouth 2019-20,Bournemouth,2019-20,1,18,10510,0,Relegated,38,9,40,65,34
+Bournemouth 2019-20,Bournemouth,2020-21,2,6,,1,Survived,46,22,73,46,77
+Bournemouth 2019-20,Bournemouth,2021-22,2,2,9588,2,Promoted,46,25,74,39,88
+Bradford City 2000-01,Bradford City,1999-00,1,17,18030,-1,Survived,38,9,38,68,36
+Bradford City 2000-01,Bradford City,2000-01,1,20,18511,0,Relegated,38,5,30,70,26
+Bradford City 2000-01,Bradford City,2001-02,2,15,15489,1,Survived,46,15,69,76,55
+Bradford City 2000-01,Bradford City,2002-03,2,19,12501,2,Survived,46,14,51,73,52
+Burnley 2009-10,Burnley,2008-09,2,5,13082,-1,Promoted,46,21,72,60,76
+Burnley 2009-10,Burnley,2009-10,1,18,20654,0,Relegated,38,8,42,82,30
+Burnley 2009-10,Burnley,2010-11,2,8,14931,1,Survived,46,18,65,61,68
+Burnley 2009-10,Burnley,2011-12,2,13,14048,2,Survived,46,17,61,58,62
+Burnley 2014-15,Burnley,2013-14,2,2,13719,-1,Promoted,46,26,72,37,93
+Burnley 2014-15,Burnley,2014-15,1,19,19131,0,Relegated,38,7,28,53,33
+Burnley 2014-15,Burnley,2015-16,2,1,16823,1,Promoted,46,26,72,35,93
+Burnley 2014-15,Burnley,2016-17,1,16,20558,2,Survived,38,11,39,55,40
+Burnley 2021-22,Burnley,2020-21,1,17,,-1,Survived,38,10,33,55,39
+Burnley 2021-22,Burnley,2021-22,1,18,19399,0,Relegated,38,7,34,53,35
+Burnley 2021-22,Burnley,2022-23,2,1,19953,1,Promoted,46,29,87,35,101
+Burnley 2021-22,Burnley,2023-24,1,19,21184,2,Relegated,38,5,41,78,24
+Burnley 2023-24,Burnley,2022-23,2,1,19953,-1,Promoted,46,29,87,35,101
+Burnley 2023-24,Burnley,2023-24,1,19,21184,0,Relegated,38,5,41,78,24
+Burnley 2023-24,Burnley,2024-25,2,2,19639,1,,46,28,69,16,100
+Burnley 2023-24,Burnley,2025-26,,,21524,2,,,,,,
+Cardiff City 2013-14,Cardiff City,2012-13,2,1,22999,-1,Promoted,46,25,72,45,87
+Cardiff City 2013-14,Cardiff City,2013-14,1,20,27430,0,Relegated,38,7,32,74,30
+Cardiff City 2013-14,Cardiff City,2014-15,2,11,21124,1,Survived,46,16,57,61,62
+Cardiff City 2013-14,Cardiff City,2015-16,2,8,16463,2,Survived,46,17,56,51,68
+Cardiff City 2018-19,Cardiff City,2017-18,2,2,20164,-1,Promoted,46,27,69,39,90
+Cardiff City 2018-19,Cardiff City,2018-19,1,18,31408,0,Relegated,38,10,34,69,34
+Cardiff City 2018-19,Cardiff City,2019-20,2,5,22822,1,Survived,46,19,68,58,73
+Cardiff City 2018-19,Cardiff City,2020-21,2,8,,2,Survived,46,18,66,49,68
+Charlton Athletic 1998-99,Charlton Athletic,1997-98,2,4,13275,-1,Promoted,46,26,80,49,88
+Charlton Athletic 1998-99,Charlton Athletic,1998-99,1,18,19816,0,Relegated,38,8,41,56,36
+Charlton Athletic 1998-99,Charlton Athletic,1999-00,2,1,19558,1,Promoted,46,27,79,45,91
+Charlton Athletic 1998-99,Charlton Athletic,2000-01,1,9,20023,2,Survived,38,14,50,57,52
+Charlton Athletic 2006-07,Charlton Athletic,2005-06,1,13,26196,-1,Survived,38,13,41,55,47
+Charlton Athletic 2006-07,Charlton Athletic,2006-07,1,19,26195,0,Relegated,38,8,34,60,34
+Charlton Athletic 2006-07,Charlton Athletic,2007-08,2,11,23159,1,Survived,46,17,63,58,64
+Charlton Athletic 2006-07,Charlton Athletic,2008-09,2,24,20894,2,Relegated,46,8,52,74,39
+Coventry City 2000-01,Coventry City,1999-00,1,14,20809,-1,Survived,38,12,47,54,44
+Coventry City 2000-01,Coventry City,2000-01,1,19,20582,0,Relegated,38,8,36,63,34
+Coventry City 2000-01,Coventry City,2001-02,2,11,16150,1,Survived,46,20,59,53,66
+Coventry City 2000-01,Coventry City,2002-03,2,20,14813,2,Survived,46,12,46,62,50
+Crystal Palace 1992-93,Crystal Palace,1991-92,1,10,17618,-1,Survived,42,14,53,61,57
+Crystal Palace 1992-93,Crystal Palace,1992-93,1,20,15748,0,Relegated,42,11,48,61,49
+Crystal Palace 1992-93,Crystal Palace,1993-94,2,1,15365,1,Promoted,46,27,73,46,90
+Crystal Palace 1992-93,Crystal Palace,1994-95,1,19,14992,2,Relegated,42,11,34,49,45
+Crystal Palace 1994-95,Crystal Palace,1993-94,2,1,15365,-1,Promoted,46,27,73,46,90
+Crystal Palace 1994-95,Crystal Palace,1994-95,1,19,14992,0,Relegated,42,11,34,49,45
+Crystal Palace 1994-95,Crystal Palace,1995-96,2,3,15248,1,Survived,46,20,67,48,75
+Crystal Palace 1994-95,Crystal Palace,1996-97,2,6,16085,2,Promoted,46,19,78,48,71
+Crystal Palace 1997-98,Crystal Palace,1996-97,2,6,16085,-1,Promoted,46,19,78,48,71
+Crystal Palace 1997-98,Crystal Palace,1997-98,1,20,21983,0,Relegated,38,8,37,71,33
+Crystal Palace 1997-98,Crystal Palace,1998-99,2,14,17123,1,Survived,46,14,58,71,58
+Crystal Palace 1997-98,Crystal Palace,1999-00,2,15,15662,2,Survived,46,13,57,67,54
+Crystal Palace 2004-05,Crystal Palace,2003-04,2,6,17344,-1,Promoted,46,21,72,61,73
+Crystal Palace 2004-05,Crystal Palace,2004-05,1,18,24108,0,Relegated,38,7,41,62,33
+Crystal Palace 2004-05,Crystal Palace,2005-06,2,6,19457,1,Survived,46,21,67,48,75
+Crystal Palace 2004-05,Crystal Palace,2006-07,2,12,17541,2,Survived,46,18,59,51,65
+Derby County 2001-02,Derby County,2000-01,1,17,28551,-1,Survived,38,10,37,59,42
+Derby County 2001-02,Derby County,2001-02,1,19,29816,0,Relegated,38,8,33,63,30
+Derby County 2001-02,Derby County,2002-03,2,18,25470,1,Survived,46,15,55,74,52
+Derby County 2001-02,Derby County,2003-04,2,20,22200,2,Survived,46,13,53,67,52
+Derby County 2007-08,Derby County,2006-07,2,3,25945,-1,Promoted,46,25,62,46,84
+Derby County 2007-08,Derby County,2007-08,1,20,32432,0,Relegated,38,1,20,89,11
+Derby County 2007-08,Derby County,2008-09,2,18,29440,1,Survived,46,14,55,67,54
+Derby County 2007-08,Derby County,2009-10,2,14,29230,2,Survived,46,15,53,63,56
+Fulham 2013-14,Fulham,2012-13,1,12,25394,-1,Survived,38,11,50,60,43
+Fulham 2013-14,Fulham,2013-14,1,19,24977,0,Relegated,38,9,40,85,32
+Fulham 2013-14,Fulham,2014-15,2,17,18276,1,Survived,46,14,62,83,52
+Fulham 2013-14,Fulham,2015-16,2,20,17566,2,Survived,46,12,66,79,51
+Fulham 2018-19,Fulham,2017-18,2,3,19896,-1,Promoted,46,25,79,46,88
+Fulham 2018-19,Fulham,2018-19,1,19,24371,0,Relegated,38,7,34,81,26
+Fulham 2018-19,Fulham,2019-20,2,4,18204,1,Promoted,46,23,64,48,81
+Fulham 2018-19,Fulham,2020-21,1,18,,2,Relegated,38,5,27,53,28
+Fulham 2020-21,Fulham,2019-20,2,4,18204,-1,Promoted,46,23,64,48,81
+Fulham 2020-21,Fulham,2019-20,2,4,18204,-1,Promoted,46,23,64,48,81
+Fulham 2020-21,Fulham,2020-21,1,18,,0,Relegated,38,5,27,53,28
+Fulham 2020-21,Fulham,2020-21,1,18,,0,Relegated,38,5,27,53,28
+Fulham 2020-21,Fulham,2021-22,2,1,17774,1,Survived,46,27,106,43,90
+Fulham 2020-21,Fulham,2021-22,2,1,17774,1,Promoted,46,27,106,43,90
+Fulham 2020-21,Fulham,2022-23,1,10,23746,2,Survived,38,15,55,53,52
+Fulham 2020-21,Fulham,2022-23,1,10,23746,2,Survived,38,15,55,53,52
+Huddersfield Town 2018-19,Huddersfield Town,2017-18,1,16,24028,-1,Survived,38,9,28,58,37
+Huddersfield Town 2018-19,Huddersfield Town,2018-19,1,20,23203,0,Relegated,38,3,22,76,16
+Huddersfield Town 2018-19,Huddersfield Town,2019-20,2,18,21748,1,Survived,46,13,52,70,51
+Huddersfield Town 2018-19,Huddersfield Town,2020-21,2,20,,2,Survived,46,12,50,71,49
+Hull City 2009-10,Hull City,2008-09,1,17,24816,-1,Survived,38,8,39,64,35
+Hull City 2009-10,Hull City,2009-10,1,19,24390,0,Relegated,38,6,34,75,30
+Hull City 2009-10,Hull City,2010-11,2,11,21169,1,Survived,46,16,52,51,65
+Hull City 2009-10,Hull City,2011-12,2,8,18790,2,Survived,46,19,47,44,68
+Hull City 2014-15,Hull City,2013-14,1,16,24117,-1,Survived,38,10,38,53,37
+Hull City 2014-15,Hull City,2014-15,1,18,23557,0,Relegated,38,8,33,51,35
+Hull City 2014-15,Hull City,2015-16,2,4,17199,1,Promoted,46,24,69,35,83
+Hull City 2014-15,Hull City,2016-17,1,18,20761,2,Relegated,38,9,37,80,34
+Hull City 2016-17,Hull City,2015-16,2,4,17199,-1,Promoted,46,24,69,35,83
+Hull City 2016-17,Hull City,2016-17,1,18,20761,0,Relegated,38,9,37,80,34
+Hull City 2016-17,Hull City,2017-18,2,18,15622,1,Survived,46,11,70,70,49
+Hull City 2016-17,Hull City,2018-19,2,13,12165,2,Survived,46,17,66,68,62
+Ipswich Town 1994-95,Ipswich Town,1993-94,1,19,16382,-1,Survived,42,9,35,58,43
+Ipswich Town 1994-95,Ipswich Town,1994-95,1,22,16818,0,Relegated,42,7,36,93,27
+Ipswich Town 1994-95,Ipswich Town,1995-96,2,7,12604,1,Survived,46,19,79,69,69
+Ipswich Town 1994-95,Ipswich Town,1996-97,2,4,11953,2,Survived,46,20,68,50,74
+Ipswich Town 2001-02,Ipswich Town,2000-01,1,5,22532,-1,Survived,38,20,57,42,66
+Ipswich Town 2001-02,Ipswich Town,2001-02,1,18,24426,0,Relegated,38,9,41,64,36
+Ipswich Town 2001-02,Ipswich Town,2002-03,2,7,25455,1,Survived,46,19,80,64,70
+Ipswich Town 2001-02,Ipswich Town,2003-04,2,5,24520,2,Survived,46,21,84,72,73
+Ipswich Town 2024-25,Ipswich Town,2023-24,2,2,28845,-1,Promoted,46,28,92,57,96
+Ipswich Town 2024-25,Ipswich Town,2024-25,1,19,29742,0,Relegated,38,4,36,82,22
+Ipswich Town 2024-25,Ipswich Town,2025-26,,,28610,1,,,,,,
+Ipswich Town 2024-25,Ipswich Town,2026-27,,,,2,,,,,,
+Leeds United 2003-04,Leeds United,2002-03,1,15,39120,-1,Survived,38,14,58,57,47
+Leeds United 2003-04,Leeds United,2003-04,1,19,36666,0,Relegated,38,8,40,79,33
+Leeds United 2003-04,Leeds United,2004-05,2,14,29207,1,Survived,46,14,49,52,60
+Leeds United 2003-04,Leeds United,2005-06,2,5,22355,2,Survived,46,21,57,38,78
+Leeds United 2022-23,Leeds United,2021-22,1,17,36308,-1,Survived,38,9,42,79,38
+Leeds United 2022-23,Leeds United,2022-23,1,19,36566,0,Relegated,38,7,48,78,31
+Leeds United 2022-23,Leeds United,2023-24,2,3,35989,1,Survived,46,27,81,43,90
+Leeds United 2022-23,Leeds United,2024-25,2,1,36216,2,,46,29,95,30,100
+Leicester City 1994-95,Leicester City,1993-94,2,4,16009,-1,Promoted,46,19,72,59,73
+Leicester City 1994-95,Leicester City,1994-95,1,21,19532,0,Relegated,42,6,45,80,29
+Leicester City 1994-95,Leicester City,1995-96,2,5,16530,1,Promoted,46,19,66,60,71
+Leicester City 1994-95,Leicester City,1996-97,1,9,20184,2,Survived,38,12,46,54,47
+Leicester City 2001-02,Leicester City,2000-01,1,13,20452,-1,Survived,38,14,39,51,48
+Leicester City 2001-02,Leicester City,2001-02,1,20,19835,0,Relegated,38,5,30,64,28
+Leicester City 2001-02,Leicester City,2002-03,2,2,29231,1,Promoted,46,26,73,40,92
+Leicester City 2001-02,Leicester City,2003-04,1,18,30983,2,Relegated,38,6,48,65,33
+Leicester City 2003-04,Leicester City,2002-03,2,2,29231,-1,Promoted,46,26,73,40,92
+Leicester City 2003-04,Leicester City,2003-04,1,18,30983,0,Relegated,38,6,48,65,33
+Leicester City 2003-04,Leicester City,2004-05,2,15,24137,1,Survived,46,12,49,46,57
+Leicester City 2003-04,Leicester City,2005-06,2,16,22234,2,Survived,46,13,51,59,54
+Leicester City 2022-23,Leicester City,2021-22,1,8,32061,-1,Survived,38,14,62,59,52
+Leicester City 2022-23,Leicester City,2022-23,1,18,31887,0,Relegated,38,9,51,68,34
+Leicester City 2022-23,Leicester City,2023-24,2,1,31238,1,Promoted,46,31,89,41,97
+Leicester City 2022-23,Leicester City,2024-25,1,18,31740,2,,38,6,33,80,25
+Leicester City 2024-25,Leicester City,2023-24,2,1,31238,-1,Promoted,46,31,89,41,97
+Leicester City 2024-25,Leicester City,2024-25,1,18,31448,0,Relegated,38,6,33,80,25
+Leicester City 2024-25,Leicester City,2025-26,,,29871,1,,,,,,
+Leicester City 2024-25,Leicester City,2026-27,,,,2,,,,,,
+Luton Town 2023-24,Luton Town,2022-23,2,3,9854,-1,Promoted,46,21,57,39,80
+Luton Town 2023-24,Luton Town,2023-24,1,18,11244,0,Relegated,38,6,52,85,26
+Luton Town 2023-24,Luton Town,2024-25,2,22,11420,1,,46,13,45,69,49
+Luton Town 2023-24,Luton Town,2025-26,,,11414,2,,,,,,
+Manchester City 1995-96,Manchester City,1994-95,1,17,22725,-1,Survived,42,12,53,64,49
+Manchester City 1995-96,Manchester City,1995-96,1,18,27869,0,Relegated,38,9,33,58,38
+Manchester City 1995-96,Manchester City,1996-97,2,14,26753,1,Survived,46,17,59,60,61
+Manchester City 1995-96,Manchester City,1997-98,2,22,28196,2,Relegated,46,12,56,57,48
+Manchester City 2000-01,Manchester City,1999-00,2,2,32088,-1,Promoted,46,26,78,40,89
+Manchester City 2000-01,Manchester City,2000-01,1,18,34058,0,Relegated,38,8,41,65,34
+Manchester City 2000-01,Manchester City,2001-02,2,1,33059,1,Promoted,46,31,108,52,99
+Manchester City 2000-01,Manchester City,2002-03,1,9,34565,2,Survived,38,15,47,54,51
+Middlesbrough 1992-93,Middlesbrough,1991-92,2,2,14703,-1,Promoted,46,23,58,41,80
+Middlesbrough 1992-93,Middlesbrough,1992-93,1,21,16724,0,Relegated,42,11,54,75,44
+Middlesbrough 1992-93,Middlesbrough,1993-94,2,9,10400,1,Survived,46,18,66,54,67
+Middlesbrough 1992-93,Middlesbrough,1994-95,2,1,18702,2,Promoted,46,23,67,40,82
+Middlesbrough 1996-97,Middlesbrough,1995-96,1,12,29283,-1,Survived,38,11,35,50,43
+Middlesbrough 1996-97,Middlesbrough,1996-97,1,19,29848,0,Relegated,38,10,51,60,39
+Middlesbrough 1996-97,Middlesbrough,1997-98,2,2,29994,1,Promoted,46,27,77,41,91
+Middlesbrough 1996-97,Middlesbrough,1998-99,1,9,34386,2,Survived,38,12,48,54,51
+Middlesbrough 2008-09,Middlesbrough,2007-08,1,13,26708,-1,Survived,38,10,43,53,42
+Middlesbrough 2008-09,Middlesbrough,2008-09,1,19,28429,0,Relegated,38,7,28,57,32
+Middlesbrough 2008-09,Middlesbrough,2009-10,2,11,19948,1,Survived,46,16,58,50,62
+Middlesbrough 2008-09,Middlesbrough,2010-11,2,12,16269,2,Survived,46,17,68,68,62
+Middlesbrough 2016-17,Middlesbrough,2015-16,2,2,24627,-1,Promoted,46,26,63,31,89
+Middlesbrough 2016-17,Middlesbrough,2016-17,1,19,30449,0,Relegated,38,5,27,53,28
+Middlesbrough 2016-17,Middlesbrough,2017-18,2,5,25544,1,Survived,46,22,67,45,76
+Middlesbrough 2016-17,Middlesbrough,2018-19,2,7,23217,2,Survived,46,20,49,41,73
+Newcastle United 2008-09,Newcastle United,2007-08,1,12,51321,-1,Survived,38,11,45,65,43
+Newcastle United 2008-09,Newcastle United,2008-09,1,18,48750,0,Relegated,38,7,40,59,34
+Newcastle United 2008-09,Newcastle United,2009-10,2,1,43388,1,Promoted,46,30,90,35,102
+Newcastle United 2008-09,Newcastle United,2010-11,1,12,47718,2,Survived,38,11,56,57,46
+Newcastle United 2015-16,Newcastle United,2014-15,1,15,50359,-1,Survived,38,10,40,63,39
+Newcastle United 2015-16,Newcastle United,2015-16,1,18,49754,0,Relegated,38,9,44,65,37
+Newcastle United 2015-16,Newcastle United,2016-17,2,1,51106,1,Promoted,46,29,85,40,94
+Newcastle United 2015-16,Newcastle United,2017-18,1,10,51992,2,Survived,38,12,39,47,44
+Norwich City 1994-95,Norwich City,1993-94,1,12,18164,-1,Survived,42,12,65,61,53
+Norwich City 1994-95,Norwich City,1994-95,1,20,18625,0,Relegated,42,10,37,54,43
+Norwich City 1994-95,Norwich City,1995-96,2,16,14581,1,Survived,46,14,59,55,57
+Norwich City 1994-95,Norwich City,1996-97,2,13,14719,2,Survived,46,17,63,68,63
+Norwich City 2004-05,Norwich City,2003-04,2,1,18987,-1,Promoted,46,28,79,39,94
+Norwich City 2004-05,Norwich City,2004-05,1,19,24350,0,Relegated,38,7,42,77,33
+Norwich City 2004-05,Norwich City,2005-06,2,9,24952,1,Survived,46,18,56,65,62
+Norwich City 2004-05,Norwich City,2006-07,2,16,24545,2,Survived,46,16,56,71,57
+Norwich City 2013-14,Norwich City,2012-13,1,11,26672,-1,Survived,38,10,41,58,44
+Norwich City 2013-14,Norwich City,2013-14,1,18,26805,0,Relegated,38,8,28,62,33
+Norwich City 2013-14,Norwich City,2014-15,2,3,26343,1,Promoted,46,25,88,48,86
+Norwich City 2013-14,Norwich City,2015-16,1,19,26972,2,Relegated,38,9,39,67,34
+Norwich City 2015-16,Norwich City,2014-15,2,3,26343,-1,Promoted,46,25,88,48,86
+Norwich City 2015-16,Norwich City,2015-16,1,19,26972,0,Relegated,38,9,39,67,34
+Norwich City 2015-16,Norwich City,2016-17,2,8,26354,1,Survived,46,20,85,69,70
+Norwich City 2015-16,Norwich City,2017-18,2,14,25959,2,Survived,46,15,49,60,60
+Norwich City 2019-20,Norwich City,2018-19,2,1,26014,-1,Promoted,46,27,93,57,94
+Norwich City 2019-20,Norwich City,2019-20,1,20,27025,0,Relegated,38,5,26,75,21
+Norwich City 2019-20,Norwich City,2020-21,2,1,,1,Promoted,46,29,75,36,97
+Norwich City 2019-20,Norwich City,2021-22,1,20,26836,2,Relegated,38,5,23,84,22
+Norwich City 2021-22,Norwich City,2020-21,2,1,,-1,Promoted,46,29,75,36,97
+Norwich City 2021-22,Norwich City,2021-22,1,20,26836,0,Relegated,38,5,23,84,22
+Norwich City 2021-22,Norwich City,2022-23,2,13,26069,1,Survived,46,17,57,54,62
+Norwich City 2021-22,Norwich City,2023-24,2,6,26077,2,,46,21,79,64,73
+Nottingham Forest 1992-93,Nottingham Forest,1991-92,1,8,23721,-1,Survived,42,16,60,58,59
+Nottingham Forest 1992-93,Nottingham Forest,1992-93,1,22,21910,0,Relegated,42,10,41,62,40
+Nottingham Forest 1992-93,Nottingham Forest,1993-94,2,2,23051,1,Promoted,46,23,74,49,83
+Nottingham Forest 1992-93,Nottingham Forest,1994-95,1,3,23633,2,Survived,42,22,72,43,77
+Nottingham Forest 1996-97,Nottingham Forest,1995-96,1,9,25916,-1,Survived,38,15,50,54,58
+Nottingham Forest 1996-97,Nottingham Forest,1996-97,1,20,24587,0,Relegated,38,6,31,59,34
+Nottingham Forest 1996-97,Nottingham Forest,1997-98,2,1,20584,1,Promoted,46,28,82,42,94
+Nottingham Forest 1996-97,Nottingham Forest,1998-99,1,20,24415,2,Relegated,38,7,35,69,30
+Nottingham Forest 1998-99,Nottingham Forest,1997-98,2,1,20584,-1,Promoted,46,28,82,42,94
+Nottingham Forest 1998-99,Nottingham Forest,1998-99,1,20,24415,0,Relegated,38,7,35,69,30
+Nottingham Forest 1998-99,Nottingham Forest,1999-00,2,14,17196,1,Survived,46,14,53,55,56
+Nottingham Forest 1998-99,Nottingham Forest,2000-01,2,11,20615,2,Survived,46,20,55,53,68
+Oldham Athletic 1993-94,Oldham Athletic,1992-93,1,19,12859,-1,Survived,42,13,63,74,49
+Oldham Athletic 1993-94,Oldham Athletic,1993-94,1,21,12563,0,Relegated,42,9,42,68,40
+Oldham Athletic 1993-94,Oldham Athletic,1994-95,2,14,8444,1,Survived,46,16,60,60,61
+Oldham Athletic 1993-94,Oldham Athletic,1995-96,2,18,6634,2,Survived,46,14,54,50,56
+Portsmouth 2009-10,Portsmouth,2008-09,1,14,19830,-1,Survived,38,10,38,57,41
+Portsmouth 2009-10,Portsmouth,2009-10,1,20,18249,0,Relegated,38,7,34,66,19
+Portsmouth 2009-10,Portsmouth,2010-11,2,16,15707,1,Survived,46,15,53,60,58
+Portsmouth 2009-10,Portsmouth,2011-12,2,22,15016,2,Relegated,46,13,50,59,40
+Queens Park Rangers 1995-96,Queens Park Rangers,1994-95,1,8,14613,-1,Survived,42,17,61,59,60
+Queens Park Rangers 1995-96,Queens Park Rangers,1995-96,1,19,15683,0,Relegated,38,9,38,57,33
+Queens Park Rangers 1995-96,Queens Park Rangers,1996-97,2,9,12554,1,Survived,46,18,64,60,66
+Queens Park Rangers 1995-96,Queens Park Rangers,1997-98,2,21,13083,2,Survived,46,10,51,63,49
+Queens Park Rangers 2012-13,Queens Park Rangers,2011-12,1,17,17295,-1,Survived,38,10,43,66,37
+Queens Park Rangers 2012-13,Queens Park Rangers,2012-13,1,20,17779,0,Relegated,38,4,30,60,25
+Queens Park Rangers 2012-13,Queens Park Rangers,2013-14,2,4,16656,1,Promoted,46,23,60,44,80
+Queens Park Rangers 2012-13,Queens Park Rangers,2014-15,1,20,17809,2,Relegated,38,8,42,73,30
+Queens Park Rangers 2014-15,Queens Park Rangers,2013-14,2,4,16656,-1,Promoted,46,23,60,44,80
+Queens Park Rangers 2014-15,Queens Park Rangers,2014-15,1,20,17809,0,Relegated,38,8,42,73,30
+Queens Park Rangers 2014-15,Queens Park Rangers,2015-16,2,12,15994,1,Survived,46,14,54,54,60
+Queens Park Rangers 2014-15,Queens Park Rangers,2016-17,2,18,14616,2,Survived,46,15,52,66,53
+Reading 2007-08,Reading,2006-07,1,8,23829,-1,Survived,38,16,52,47,55
+Reading 2007-08,Reading,2007-08,1,18,23585,0,Relegated,38,10,41,66,36
+Reading 2007-08,Reading,2008-09,2,4,19936,1,Survived,46,21,72,40,77
+Reading 2007-08,Reading,2009-10,2,9,17408,2,Survived,46,17,68,63,63
+Reading 2012-13,Reading,2011-12,2,1,19219,-1,Promoted,46,27,69,41,89
+Reading 2012-13,Reading,2012-13,1,19,23862,0,Relegated,38,6,43,73,28
+Reading 2012-13,Reading,2013-14,2,7,19171,1,Survived,46,19,70,56,71
+Reading 2012-13,Reading,2014-15,2,19,17022,2,Survived,46,13,48,69,50
+Sheffield United 1993-94,Sheffield United,1992-93,1,14,18801,-1,Survived,42,14,54,53,52
+Sheffield United 1993-94,Sheffield United,1993-94,1,20,19562,0,Relegated,42,8,42,60,42
+Sheffield United 1993-94,Sheffield United,1994-95,2,8,14462,1,Survived,46,17,74,55,68
+Sheffield United 1993-94,Sheffield United,1995-96,2,9,12901,2,Survived,46,16,57,54,62
+Sheffield United 2006-07,Sheffield United,2005-06,2,2,23650,-1,Promoted,46,26,76,46,90
+Sheffield United 2006-07,Sheffield United,2006-07,1,18,30512,0,Relegated,38,10,32,55,38
+Sheffield United 2006-07,Sheffield United,2007-08,2,9,25631,1,Survived,46,17,56,51,66
+Sheffield United 2006-07,Sheffield United,2008-09,2,3,26023,2,Survived,46,22,64,39,80
+Sheffield United 2020-21,Sheffield United,2019-20,1,9,30869,-1,Survived,38,14,39,39,54
+Sheffield United 2020-21,Sheffield United,2019-20,1,9,30869,-1,Survived,38,14,39,39,54
+Sheffield United 2020-21,Sheffield United,2020-21,1,20,,0,Relegated,38,7,20,63,23
+Sheffield United 2020-21,Sheffield United,2020-21,1,20,,0,Relegated,38,7,20,63,23
+Sheffield United 2020-21,Sheffield United,2021-22,2,5,27611,1,Survived,46,21,63,45,75
+Sheffield United 2020-21,Sheffield United,2021-22,2,5,27611,1,Survived,46,21,63,45,75
+Sheffield United 2020-21,Sheffield United,2022-23,2,2,28746,2,Survived,46,28,73,39,91
+Sheffield United 2020-21,Sheffield United,2022-23,2,2,28746,2,Promoted,46,28,73,39,91
+Sheffield United 2023-24,Sheffield United,2022-23,2,2,28746,-1,Promoted,46,28,73,39,91
+Sheffield United 2023-24,Sheffield United,2023-24,1,20,30011,0,Relegated,38,3,35,104,16
+Sheffield United 2023-24,Sheffield United,2024-25,2,3,28070,1,,46,28,63,36,90
+Sheffield United 2023-24,Sheffield United,2025-26,,,27788,2,,,,,,
+Sheffield Wednesday 1999-2000,Sheffield Wednesday,1998-99,1,12,26745,-1,Survived,38,13,41,42,46
+Sheffield Wednesday 1999-2000,Sheffield Wednesday,1999-00,1,19,24855,0,Relegated,38,8,38,70,31
+Sheffield Wednesday 1999-2000,Sheffield Wednesday,2000-01,2,17,19268,1,Survived,46,15,52,71,53
+Sheffield Wednesday 1999-2000,Sheffield Wednesday,2001-02,2,20,20870,2,Survived,46,12,49,71,50
+Southampton 2004-05,Southampton,2003-04,1,12,31717,-1,Survived,38,12,44,45,47
+Southampton 2004-05,Southampton,2004-05,1,20,30610,0,Relegated,38,6,45,66,32
+Southampton 2004-05,Southampton,2005-06,2,12,23614,1,Survived,46,13,49,50,58
+Southampton 2004-05,Southampton,2006-07,2,6,23556,2,Survived,46,21,77,53,75
+Southampton 2022-23,Southampton,2021-22,1,15,29889,-1,Survived,38,9,43,67,40
+Southampton 2022-23,Southampton,2022-23,1,20,30440,0,Relegated,38,6,36,73,25
+Southampton 2022-23,Southampton,2023-24,2,4,29373,1,Promoted,46,26,87,63,87
+Southampton 2022-23,Southampton,2024-25,1,20,31147,2,,38,2,26,86,12
+Southampton 2024-25,Southampton,2023-24,2,4,29373,-1,Promoted,46,26,87,63,87
+Southampton 2024-25,Southampton,2024-25,1,20,30865,0,Relegated,38,2,26,86,12
+Southampton 2024-25,Southampton,2025-26,,,28783,1,,,,,,
+Southampton 2024-25,Southampton,2026-27,,,,2,,,,,,
+Stoke City 2017-18,Stoke City,2016-17,1,13,27433,-1,Survived,38,11,41,56,44
+Stoke City 2017-18,Stoke City,2017-18,1,19,29280,0,Relegated,38,7,35,68,33
+Stoke City 2017-18,Stoke City,2018-19,2,16,25200,1,Survived,46,11,45,52,55
+Stoke City 2017-18,Stoke City,2019-20,2,15,22828,2,Survived,46,16,62,68,56
+Sunderland 1996-97,Sunderland,1995-96,2,1,17482,-1,Promoted,46,22,59,33,83
+Sunderland 1996-97,Sunderland,1996-97,1,18,20865,0,Relegated,38,10,35,53,40
+Sunderland 1996-97,Sunderland,1997-98,2,3,33492,1,Survived,46,26,86,50,90
+Sunderland 1996-97,Sunderland,1998-99,2,1,38745,2,Promoted,46,31,91,28,105
+Sunderland 2002-03,Sunderland,2001-02,1,17,46745,-1,Survived,38,10,29,51,40
+Sunderland 2002-03,Sunderland,2002-03,1,20,39698,0,Relegated,38,4,21,65,19
+Sunderland 2002-03,Sunderland,2003-04,2,3,27119,1,Survived,46,22,62,45,79
+Sunderland 2002-03,Sunderland,2004-05,2,1,28821,2,Promoted,46,29,76,41,94
+Sunderland 2005-06,Sunderland,2004-05,2,1,28821,-1,Promoted,46,29,76,41,94
+Sunderland 2005-06,Sunderland,2005-06,1,20,33904,0,Relegated,38,3,26,69,15
+Sunderland 2005-06,Sunderland,2006-07,2,1,31887,1,Promoted,46,27,76,47,88
+Sunderland 2005-06,Sunderland,2007-08,1,15,43344,2,Survived,38,11,36,59,39
+Sunderland 2016-17,Sunderland,2015-16,1,17,43071,-1,Survived,38,9,48,62,39
+Sunderland 2016-17,Sunderland,2016-17,1,20,41287,0,Relegated,38,6,29,69,24
+Sunderland 2016-17,Sunderland,2017-18,2,24,27635,1,Relegated,46,7,52,80,37
+Sunderland 2016-17,Sunderland,2018-19,3,5,32157,2,Survived,46,22,80,47,85
+Swansea City 2017-18,Swansea City,2016-17,1,15,20619,-1,Survived,38,12,45,70,41
+Swansea City 2017-18,Swansea City,2017-18,1,18,20623,0,Relegated,38,8,28,56,33
+Swansea City 2017-18,Swansea City,2018-19,2,10,18737,1,Survived,46,18,65,62,65
+Swansea City 2017-18,Swansea City,2019-20,2,6,16151,2,Survived,46,18,62,53,70
+Swindon Town 1993-94,Swindon Town,1992-93,2,5,10716,-1,Promoted,46,21,74,59,76
+Swindon Town 1993-94,Swindon Town,1993-94,1,22,15274,0,Relegated,42,5,47,100,30
+Swindon Town 1993-94,Swindon Town,1994-95,2,21,9744,1,Relegated,46,12,54,73,48
+Swindon Town 1993-94,Swindon Town,1995-96,3,1,10602,2,Promoted,46,25,71,34,92
+Watford 1999-2000,Watford,1998-99,2,5,11822,-1,Promoted,46,21,65,56,77
+Watford 1999-2000,Watford,1999-00,1,20,18544,0,Relegated,38,6,35,77,24
+Watford 1999-2000,Watford,2000-01,2,9,13941,1,Survived,46,20,76,67,69
+Watford 1999-2000,Watford,2001-02,2,14,14868,2,Survived,46,16,62,56,59
+Watford 2006-07,Watford,2005-06,2,3,15450,-1,Promoted,46,22,77,53,81
+Watford 2006-07,Watford,2006-07,1,20,18751,0,Relegated,38,5,29,59,28
+Watford 2006-07,Watford,2007-08,2,6,16876,1,Survived,46,18,62,56,70
+Watford 2006-07,Watford,2008-09,2,13,14858,2,Survived,46,16,68,72,58
+Watford 2019-20,Watford,2018-19,1,11,20016,-1,Survived,38,14,52,59,50
+Watford 2019-20,Watford,2019-20,1,19,20837,0,Relegated,38,8,36,64,34
+Watford 2019-20,Watford,2020-21,2,2,,1,Promoted,46,27,63,30,91
+Watford 2019-20,Watford,2021-22,1,19,20614,2,Relegated,38,6,34,77,23
+Watford 2021-22,Watford,2020-21,2,2,,-1,Promoted,46,27,63,30,91
+Watford 2021-22,Watford,2021-22,1,19,20614,0,Relegated,38,6,34,77,23
+Watford 2021-22,Watford,2022-23,2,11,19172,1,Survived,46,16,56,53,63
+Watford 2021-22,Watford,2023-24,2,15,18876,2,,46,13,61,61,56
+West Bromwich Albion 2002-03,West Bromwich Albion,2001-02,2,2,20910,-1,Promoted,46,27,61,29,89
+West Bromwich Albion 2002-03,West Bromwich Albion,2002-03,1,19,26731,0,Relegated,38,6,29,65,26
+West Bromwich Albion 2002-03,West Bromwich Albion,2003-04,2,2,24765,1,Promoted,46,25,64,42,86
+West Bromwich Albion 2002-03,West Bromwich Albion,2004-05,1,17,25987,2,Survived,38,6,36,61,34
+West Bromwich Albion 2005-06,West Bromwich Albion,2004-05,1,17,25987,-1,Survived,38,6,36,61,34
+West Bromwich Albion 2005-06,West Bromwich Albion,2005-06,1,19,25404,0,Relegated,38,7,31,58,30
+West Bromwich Albion 2005-06,West Bromwich Albion,2006-07,2,4,20472,1,Survived,46,22,81,55,76
+West Bromwich Albion 2005-06,West Bromwich Albion,2007-08,2,1,22311,2,Promoted,46,23,88,55,81
+West Bromwich Albion 2008-09,West Bromwich Albion,2007-08,2,1,22311,-1,Promoted,46,23,88,55,81
+West Bromwich Albion 2008-09,West Bromwich Albion,2008-09,1,20,25828,0,Relegated,38,8,36,67,32
+West Bromwich Albion 2008-09,West Bromwich Albion,2009-10,2,2,22199,1,Promoted,46,26,89,48,91
+West Bromwich Albion 2008-09,West Bromwich Albion,2010-11,1,11,24683,2,Survived,38,12,56,71,47
+West Bromwich Albion 2017-18,West Bromwich Albion,2016-17,1,10,23876,-1,Survived,38,12,43,51,45
+West Bromwich Albion 2017-18,West Bromwich Albion,2017-18,1,20,24520,0,Relegated,38,6,31,56,31
+West Bromwich Albion 2017-18,West Bromwich Albion,2018-19,2,4,24148,1,Survived,46,23,87,62,80
+West Bromwich Albion 2017-18,West Bromwich Albion,2019-20,2,2,24053,2,Promoted,46,22,77,45,83
+West Bromwich Albion 2020-21,West Bromwich Albion,2019-20,2,2,24053,-1,Promoted,46,22,77,45,83
+West Bromwich Albion 2020-21,West Bromwich Albion,2019-20,2,2,24053,-1,Promoted,46,22,77,45,83
+West Bromwich Albion 2020-21,West Bromwich Albion,2020-21,1,19,,0,Relegated,38,5,35,76,26
+West Bromwich Albion 2020-21,West Bromwich Albion,2020-21,1,19,,0,Relegated,38,5,35,76,26
+West Bromwich Albion 2020-21,West Bromwich Albion,2021-22,2,10,21481,1,Survived,46,18,52,45,67
+West Bromwich Albion 2020-21,West Bromwich Albion,2021-22,2,10,21481,1,Survived,46,18,52,45,67
+West Bromwich Albion 2020-21,West Bromwich Albion,2022-23,2,9,23094,2,Survived,46,18,59,53,66
+West Bromwich Albion 2020-21,West Bromwich Albion,2022-23,2,9,23094,2,Survived,46,18,59,53,66
+West Ham United 2002-03,West Ham United,2001-02,1,7,31570,-1,Survived,38,15,48,57,53
+West Ham United 2002-03,West Ham United,2002-03,1,18,34432,0,Relegated,38,10,42,59,42
+West Ham United 2002-03,West Ham United,2003-04,2,4,31167,1,Survived,46,19,67,45,74
+West Ham United 2002-03,West Ham United,2004-05,2,6,27403,2,Promoted,46,21,66,56,73
+West Ham United 2010-11,West Ham United,2009-10,1,17,33683,-1,Survived,38,8,47,66,35
+West Ham United 2010-11,West Ham United,2010-11,1,20,33492,0,Relegated,38,7,43,70,33
+West Ham United 2010-11,West Ham United,2011-12,2,3,30923,1,Promoted,46,24,81,48,86
+West Ham United 2010-11,West Ham United,2012-13,1,10,34720,2,Survived,38,12,45,53,46
+Wigan Athletic 2012-13,Wigan Athletic,2011-12,1,15,18634,-1,Survived,38,11,42,62,43
+Wigan Athletic 2012-13,Wigan Athletic,2012-13,1,18,19359,0,Relegated,38,9,47,73,36
+Wigan Athletic 2012-13,Wigan Athletic,2013-14,2,5,15177,1,Survived,46,21,61,48,73
+Wigan Athletic 2012-13,Wigan Athletic,2014-15,2,23,12882,2,Relegated,46,9,39,64,39
+Wimbledon 1999-2000,Wimbledon,1998-99,1,16,18207,-1,Survived,38,10,40,63,42
+Wimbledon 1999-2000,Wimbledon,1999-00,1,18,17157,0,Relegated,38,7,46,74,33
+Wimbledon 1999-2000,Wimbledon,2000-01,2,8,7901,1,Survived,46,17,71,50,69
+Wimbledon 1999-2000,Wimbledon,2001-02,2,9,6961,2,Survived,46,18,63,57,67
+Wolverhampton Wanderers 2003-04,Wolverhampton Wanderers,2002-03,2,5,25745,-1,Promoted,46,20,81,44,76
+Wolverhampton Wanderers 2003-04,Wolverhampton Wanderers,2003-04,1,20,28874,0,Relegated,38,7,38,77,33
+Wolverhampton Wanderers 2003-04,Wolverhampton Wanderers,2004-05,2,9,26620,1,Survived,46,15,72,59,66
+Wolverhampton Wanderers 2003-04,Wolverhampton Wanderers,2005-06,2,7,23624,2,Survived,46,16,50,42,67
+Wolverhampton Wanderers 2011-12,Wolverhampton Wanderers,2010-11,1,17,27696,-1,Survived,38,11,46,66,40
+Wolverhampton Wanderers 2011-12,Wolverhampton Wanderers,2011-12,1,20,25682,0,Relegated,38,5,40,82,25
+Wolverhampton Wanderers 2011-12,Wolverhampton Wanderers,2012-13,2,23,21773,1,Relegated,46,14,55,69,51
+Wolverhampton Wanderers 2011-12,Wolverhampton Wanderers,2013-14,3,1,20879,2,Promoted,46,31,89,31,103

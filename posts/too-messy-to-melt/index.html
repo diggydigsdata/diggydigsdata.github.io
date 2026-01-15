@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Diggy">
-<meta name="dcterms.date" content="2025-11-01">
-<meta name="description" content="Getting an analysis-ready dataset from a tabular trashcan">
+<meta name="dcterms.date" content="2025-12-22">
+<meta name="description" content="Downloadable attendance churn dataset and walkthrough of its creation - from messy and manual Excel to a tidy and reproducible Python pipeline.">
 
 <title>Too Messy to Melt – Diggy Digs Data</title>
 <style>
@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -48,6 +83,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-b7dfd321930551f38f4d773270eb8bab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -87,12 +125,12 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 
 
 <meta property="og:title" content="Too Messy to Melt – Diggy Digs Data">
-<meta property="og:description" content="Getting an analysis-ready dataset from a tabular trashcan">
+<meta property="og:description" content="Downloadable attendance churn dataset and walkthrough of its creation - from messy and manual Excel to a tidy and reproducible Python pipeline.">
 <meta property="og:image" content="https://diggydigsdata.github.io/posts/too-messy-to-melt/featured.png">
 <meta property="og:site_name" content="Diggy Digs Data">
-<meta property="og:image:height" content="656">
-<meta property="og:image:width" content="1806">
-<meta property="og:image:alt" content="Image showing a sprawling and chaotic excel spreadsheet on top of a neat and tidy pandas dataframe">
+<meta property="og:image:height" content="355">
+<meta property="og:image:width" content="855">
+<meta property="og:image:alt" content="A picture of Stadion Za Lužánkami, formerly the 50,000 capacity home ground of Zbrojovka Brno, and now an overgrown jungle.">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -309,16 +347,13 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
       <h1 class="title">Too Messy to Melt</h1>
                   <div>
         <div class="description">
-          Getting an analysis-ready dataset from a tabular trashcan
+          Downloadable attendance churn dataset and walkthrough of its creation - from messy and manual Excel to a tidy and reproducible Python pipeline.
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">Football</div>
                 <div class="quarto-category">Analytics</div>
-                <div class="quarto-category">Excel</div>
-                <div class="quarto-category">Python</div>
-                <div class="quarto-category">R</div>
-                <div class="quarto-category">Tidy-Data</div>
+                <div class="quarto-category">Data Engineering</div>
               </div>
                   </div>
   </div>
@@ -336,7 +371,7 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 1, 2025</p>
+        <p class="date">December 22, 2025</p>
       </div>
     </div>
     
@@ -347,8 +382,49 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#dataset-scope" id="toc-dataset-scope" class="nav-link" data-scroll-target="#dataset-scope">Dataset Scope</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data sources</a>
+  <ul class="collapse">
+  <li><a href="#attendance-data" id="toc-attendance-data" class="nav-link" data-scroll-target="#attendance-data">Attendance data</a></li>
+  <li><a href="#league-position-and-performance" id="toc-league-position-and-performance" class="nav-link" data-scroll-target="#league-position-and-performance">League position and performance</a></li>
+  </ul></li>
+  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary">Data dictionary</a>
+  <ul class="collapse">
+  <li><a href="#identifiers-and-structure" id="toc-identifiers-and-structure" class="nav-link" data-scroll-target="#identifiers-and-structure">Identifiers and structure</a></li>
+  <li><a href="#attendance" id="toc-attendance" class="nav-link" data-scroll-target="#attendance">Attendance</a></li>
+  <li><a href="#league-status-and-outcome" id="toc-league-status-and-outcome" class="nav-link" data-scroll-target="#league-status-and-outcome">League status and outcome</a></li>
+  <li><a href="#raw-season-performance-totals" id="toc-raw-season-performance-totals" class="nav-link" data-scroll-target="#raw-season-performance-totals">Raw season performance totals</a></li>
+  </ul></li>
+  <li><a href="#inputs-and-outputs" id="toc-inputs-and-outputs" class="nav-link" data-scroll-target="#inputs-and-outputs">Inputs and outputs</a></li>
+  <li><a href="#dataset-design" id="toc-dataset-design" class="nav-link" data-scroll-target="#dataset-design">Dataset design</a>
+  <ul class="collapse">
+  <li><a href="#primary-identifier-relegation_event_id" id="toc-primary-identifier-relegation_event_id" class="nav-link" data-scroll-target="#primary-identifier-relegation_event_id">Primary identifier: <code>Relegation_Event_ID</code></a></li>
+  </ul></li>
+  <li><a href="#reshaping-pipeline" id="toc-reshaping-pipeline" class="nav-link" data-scroll-target="#reshaping-pipeline">Reshaping pipeline</a>
+  <ul class="collapse">
+  <li><a href="#step-0-prerequisites" id="toc-step-0-prerequisites" class="nav-link" data-scroll-target="#step-0-prerequisites">Step 0: Prerequisites</a></li>
+  <li><a href="#step-1-load-the-wide-spreadsheet-and-clean-attendance-columns" id="toc-step-1-load-the-wide-spreadsheet-and-clean-attendance-columns" class="nav-link" data-scroll-target="#step-1-load-the-wide-spreadsheet-and-clean-attendance-columns">Step 1 — Load the wide spreadsheet and clean attendance columns</a></li>
+  <li><a href="#step-2-load-standings-data-for-auditing-enrichment" id="toc-step-2-load-standings-data-for-auditing-enrichment" class="nav-link" data-scroll-target="#step-2-load-standings-data-for-auditing-enrichment">Step 2 — Load standings data (for auditing + enrichment)</a></li>
+  <li><a href="#step-3-audit-team-names-fuzzy-matching" id="toc-step-3-audit-team-names-fuzzy-matching" class="nav-link" data-scroll-target="#step-3-audit-team-names-fuzzy-matching">Step 3 — Audit team names (fuzzy matching)</a></li>
+  <li><a href="#step-4-standardize-team-names-auto-map-manual-overrides" id="toc-step-4-standardize-team-names-auto-map-manual-overrides" class="nav-link" data-scroll-target="#step-4-standardize-team-names-auto-map-manual-overrides">Step 4 — Standardize team names (auto-map + manual overrides)</a></li>
+  <li><a href="#step-5-create-a-stable-event-key-relegation_event_id" id="toc-step-5-create-a-stable-event-key-relegation_event_id" class="nav-link" data-scroll-target="#step-5-create-a-stable-event-key-relegation_event_id">Step 5 — Create a stable event key (Relegation_Event_ID)</a></li>
+  <li><a href="#step-6-convert-wide-tidy-safe-slices-concat" id="toc-step-6-convert-wide-tidy-safe-slices-concat" class="nav-link" data-scroll-target="#step-6-convert-wide-tidy-safe-slices-concat">Step 6 — Convert wide → tidy (safe slices + concat)</a></li>
+  <li><a href="#step-7-standardize-season-keys-yyyy-yy" id="toc-step-7-standardize-season-keys-yyyy-yy" class="nav-link" data-scroll-target="#step-7-standardize-season-keys-yyyy-yy">Step 7 — Standardize season keys (YYYY-YY)</a></li>
+  <li><a href="#step-7.5-temporary-year-3-rows-outcome-extraction-only" id="toc-step-7.5-temporary-year-3-rows-outcome-extraction-only" class="nav-link" data-scroll-target="#step-7.5-temporary-year-3-rows-outcome-extraction-only">Step 7.5 — Temporary Year +3 rows (outcome extraction only)</a></li>
+  <li><a href="#step-8-enrich-tidy-data-with-standings-raw-totals" id="toc-step-8-enrich-tidy-data-with-standings-raw-totals" class="nav-link" data-scroll-target="#step-8-enrich-tidy-data-with-standings-raw-totals">Step 8 — Enrich tidy data with standings (raw totals)</a></li>
+  <li><a href="#step-8.5-compute-year_end_outcome-from-tier-transitions" id="toc-step-8.5-compute-year_end_outcome-from-tier-transitions" class="nav-link" data-scroll-target="#step-8.5-compute-year_end_outcome-from-tier-transitions">Step 8.5 — Compute Year_End_Outcome from tier transitions</a></li>
+  <li><a href="#step-9-finalize-schema-and-export" id="toc-step-9-finalize-schema-and-export" class="nav-link" data-scroll-target="#step-9-finalize-schema-and-export">Step 9 — Finalize schema and export</a></li>
+  </ul></li>
+  <li><a href="#from-tidy-data-to-analysis-ready-tables" id="toc-from-tidy-data-to-analysis-ready-tables" class="nav-link" data-scroll-target="#from-tidy-data-to-analysis-ready-tables">From tidy data to analysis-ready tables</a></li>
+  <li><a href="#analysis-prep-script-full-copy-paste-ready" id="toc-analysis-prep-script-full-copy-paste-ready" class="nav-link" data-scroll-target="#analysis-prep-script-full-copy-paste-ready">Analysis prep script (full, copy-paste ready)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/posts/too-messy-to-melt/index.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -358,12 +434,776 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 
 
 
-<section id="coming-soon" class="level4">
-<h4 class="anchored" data-anchor-id="coming-soon">Coming Soon</h4>
-<!--
-#### Tidy Data
-One of the driving forces behind some of the complex logic in this dataset was that I have adapted a project I started before beginning my MSc Data Science. I had never heard of Tidy Data, so I set about chucking data into a big Excel spreadsheet. Even when I learned about Tidy Data, my Excel brain still thought it seemed like a major hassle to create a big, long table and fiddle with pd.melt or dplyr. You can just make one wide table and be done with it. But when I came back to fix up this article and add some nice plots and analytics beyond my pivot tables, I didn't quite know where to start. It was such a mess and there were so many variables that wrapping my head around them was turning into a linear algebra problem. This data wasn't just untidy, it was a statistical cesspit. Normally, it's fairly straightforward to flip a dataset from wide to long, or from dirty to tidy. Pandas has pd.melt and R has TidyR. But my data was in such a mess that neither of those would be enough. Along the way, I ended up discovering much more robust ways to engineer the variables I needed and to ensure accuracy. So a technical walkthrough to tidy this tabular trashcan is documented here.
--->
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In pandas (and tidy-data workflows), <code>melt()</code> is the standard tool for reshaping a <strong>wide</strong> table into a <strong>long</strong> one.<br>
+In this project, the original spreadsheet (see below) wasn’t just wide — it was inconsistent across season formats, team naming conventions, and placeholder values (e.g., <code>COVID</code>). A naive <code>pd.melt()</code> would have produced incorrect joins and silent errors.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../assets/img/excel_mess.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Unusably messy attendance spreadsheet"><img src="../../assets/img/excel_mess.png" class="img-fluid figure-img" alt="Unusably messy attendance spreadsheet"></a></p>
+<figcaption>Unusably messy attendance spreadsheet</figcaption>
+</figure>
+</div>
+<p>This page documents the <strong>reproducible reshaping pipeline</strong> used to build the final open dataset.</p>
+<p>The final output of this process is the <strong>perfect_tidy_data.csv</strong> file. Read on to learn more about its structure, contents and composition or simply <a href="../../assets/files/datasets/perfect_tidy_data.csv">Download perfect_tidy_data.csv</a>. The CSV becomes an analysis-ready Python DataFrame after some further enrichment - see the final code block for details.</p>
+</section>
+<section id="dataset-scope" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-scope">Dataset Scope</h2>
+<p>All Premier League relegations with usable attendance data. This means Covid seasons are excluded. Each Premier League relegation event is represented across a consistent four-season window and includes league performance as well as attendance figures. Data is on a per-season basis, not per-match. - <strong>Year -1</strong>: Season before relegation<br>
+- <strong>Year 0</strong>: Relegation season (Premier League)<br>
+- <strong>Year +1</strong>: First post-relegation season<br>
+- <strong>Year +2</strong>: Second post-relegation season</p>
+<p>A temporary <strong>Year +3</strong> is generated programmatically only to determine the <strong>Year +2 season outcome</strong> (Promoted / Survived / Relegated). After outcome extraction, the Year +3 rows are dropped.</p>
+<p><strong>Granularity</strong> is one row per team × season × relegation event. So one relegation event (e.g., Burnley 2023-24) is represented by four rows (Year -1 through Year +2).</p>
+</section>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data sources</h2>
+<section id="attendance-data" class="level3">
+<h3 class="anchored" data-anchor-id="attendance-data">Attendance data</h3>
+<p>Attendance values were manually compiled into an Excel workbook using:</p>
+<ul>
+<li><strong>European-Football-Statistics.co.uk</strong> (season-level attendances)</li>
+</ul>
+<p>Because COVID-affected seasons are not comparable to normal seasons, I sometimes entered the string value <code>COVID</code> into attendance cells during manual compilation. The pipeline converts these placeholders to missing values (<code>pd.NA</code>) before numeric conversion.</p>
+<p><a href="../../assets/files/datasets/Relegation Attendance Churn_copy.xlsx">Download Relegation Attendance Churn.xlsx</a></p>
+</section>
+<section id="league-position-and-performance" class="level3">
+<h3 class="anchored" data-anchor-id="league-position-and-performance">League position and performance</h3>
+<p>League tier, final position, and raw season performance totals come from:</p>
+<ul>
+<li><strong>The Fjelstul English Football Database (standings dataset)</strong><br>
+Fjelstul, Joshua C. “The Fjelstul English Football Database v1.1.0.” May 26, 2024. https://www.github.com/jfjelstul/englishfootball</li>
+</ul>
+<blockquote class="blockquote">
+<p>Licensing note: The Fjelstul database is distributed under <strong>CC-BY-SA 4.0</strong>. This derived dataset is made available under the same <strong>CC BY-SA 4.0</strong> license.</p>
+</blockquote>
+<ul>
+<li><strong>Patch file</strong><br>
+The Fjelstul dataset does not include the 2024/25 season, so I have supplemented it with a patch file (<code>standings24_25.csv</code>) to include the most recent completed season.</li>
+</ul>
+<p><a href="../../assets/files/datasets/standings24_25.csv">Download standings24_25.csv</a></p>
+</section>
+</section>
+<section id="data-dictionary" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary">Data dictionary</h2>
+<section id="identifiers-and-structure" class="level3">
+<h3 class="anchored" data-anchor-id="identifiers-and-structure">Identifiers and structure</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Relegation_Event_ID</td>
+<td>string</td>
+<td>Unique ID for a relegation event (<code>"{Team} {Season}"</code>)</td>
+</tr>
+<tr class="even">
+<td>Team</td>
+<td>string</td>
+<td>Standardized club name (matches standings naming)</td>
+</tr>
+<tr class="odd">
+<td>Season</td>
+<td>string</td>
+<td>Season in <code>YYYY-YY</code> format (e.g., <code>2002-03</code>)</td>
+</tr>
+<tr class="even">
+<td>Year_vs_Relegation</td>
+<td>int</td>
+<td>Relative season index: <code>-1</code>, <code>0</code>, <code>1</code>, <code>2</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attendance" class="level3">
+<h3 class="anchored" data-anchor-id="attendance">Attendance</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Attendance</td>
+<td>int (nullable)</td>
+<td>Average home league attendance. Missing where unusable (e.g.&nbsp;COVID).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="league-status-and-outcome" class="level3">
+<h3 class="anchored" data-anchor-id="league-status-and-outcome">League status and outcome</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tier</td>
+<td>int (nullable)</td>
+<td>League tier (<code>1</code> = top flight, <code>2</code> = Championship, etc.)</td>
+</tr>
+<tr class="even">
+<td>Position</td>
+<td>int (nullable)</td>
+<td>Final league position</td>
+</tr>
+<tr class="odd">
+<td>Year_End_Outcome</td>
+<td>string</td>
+<td><code>Promoted</code>, <code>Survived</code>, or <code>Relegated</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="raw-season-performance-totals" class="level3">
+<h3 class="anchored" data-anchor-id="raw-season-performance-totals">Raw season performance totals</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Games_Played_History</td>
+<td>int (nullable)</td>
+<td>League matches played</td>
+</tr>
+<tr class="even">
+<td>Wins_History</td>
+<td>int (nullable)</td>
+<td>League wins</td>
+</tr>
+<tr class="odd">
+<td>Goals_For_History</td>
+<td>int (nullable)</td>
+<td>League goals scored</td>
+</tr>
+<tr class="even">
+<td>Goals_Against_History</td>
+<td>int (nullable)</td>
+<td>League goals conceded</td>
+</tr>
+<tr class="odd">
+<td>Points_History</td>
+<td>int (nullable)</td>
+<td>League points total</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="inputs-and-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="inputs-and-outputs">Inputs and outputs</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Inputs</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Outputs</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="../../assets/files/datasets/Relegation Attendance Churn_copy.xlsx">Relegation Attendance Churn.xlsx</a></td>
+<td>Wide-format attendance sheet</td>
+</tr>
+<tr class="even">
+<td><a href="../../assets/files/datasets/standings24_25.csv">Standings24_25.csv</a></td>
+<td>Patch file for 24/25 season</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="../../assets/files/datasets/perfect_tidy_data.csv">perfect_tidy_data.csv</a></td>
+<td>Final tidy dataset</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="dataset-design" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-design">Dataset design</h2>
+<section id="primary-identifier-relegation_event_id" class="level3">
+<h3 class="anchored" data-anchor-id="primary-identifier-relegation_event_id">Primary identifier: <code>Relegation_Event_ID</code></h3>
+<p>A relegation event is uniquely identified as:</p>
+<p><code>Relegation_Event_ID = "{Team} {RelegationSeason}"</code></p>
+<p>Example: <code>Burnley 2023-24</code></p>
+<p>This identifier is repeated across the four rows representing Year -1 through Year +2.</p>
+</section>
+</section>
+<section id="reshaping-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="reshaping-pipeline">Reshaping pipeline</h2>
+<section id="step-0-prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="step-0-prerequisites">Step 0: Prerequisites</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># You may need to install thefuzz</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>pip install thefuzz</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> thefuzz <span class="im">import</span> process</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-1-load-the-wide-spreadsheet-and-clean-attendance-columns" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-load-the-wide-spreadsheet-and-clean-attendance-columns">Step 1 — Load the wide spreadsheet and clean attendance columns</h3>
+<p><strong>Why:</strong> The attendance sheet is wide-format, and attendance values include commas and placeholders (e.g., <code>COVID</code>).</p>
+<p><strong>What happens:</strong> - Strip commas (e.g., <code>23,721</code> → <code>23721</code>) - Convert <code>COVID</code> and <code>nan</code> placeholders to missing values (<code>pd.NA</code>) - Coerce to numeric</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>attendance_cols <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> df_wide.columns <span class="cf">if</span> <span class="st">"Attendance"</span> <span class="kw">in</span> c]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> attendance_cols:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    df_wide[col] <span class="op">=</span> df_wide[col].astype(<span class="bu">str</span>).<span class="bu">str</span>.replace(<span class="st">','</span>, <span class="st">''</span>).replace(<span class="st">'COVID'</span>, pd.NA).replace(<span class="st">'nan'</span>, pd.NA)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    df_wide[col] <span class="op">=</span> pd.to_numeric(df_wide[col], errors<span class="op">=</span><span class="st">'coerce'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-2-load-standings-data-for-auditing-enrichment" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-load-standings-data-for-auditing-enrichment">Step 2 — Load standings data (for auditing + enrichment)</h3>
+<p><strong>Why:</strong> Team naming mismatches and season key mismatches can silently break merges. The standings dataset provides a stable reference list of teams and seasons.</p>
+<p><strong>What happens:</strong> - Load standings.csv - Optionally append standings24_25.csv - Rename and select relevant columns - Coerce numeric columns</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Load 'season' as string to be safe</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    df_history <span class="op">=</span> pd.read_csv(<span class="st">'../../assets/files/datasets/standings.csv'</span>, dtype<span class="op">=</span>{<span class="st">'season'</span>: <span class="bu">str</span>})</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- Load patch file and combine ---</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        df_patch <span class="op">=</span> pd.read_csv(<span class="st">'../../assets/files/datasets/standings24_25.csv'</span>, dtype<span class="op">=</span>{<span class="st">'season'</span>: <span class="bu">str</span>})</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Append patch data to history data</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        df_history <span class="op">=</span> pd.concat([df_history, df_patch], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Step 2a: Loaded and applied 'standings24_25.csv'."</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Step 2a: 'standings24_25.csv' not found. Skipping patch."</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- End new patch logic ---</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Step 2b: Loaded historical data for auditing."</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the cleaned df_positions here for later use</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    df_positions <span class="op">=</span> df_history.rename(columns<span class="op">=</span>{</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'team_name'</span>: <span class="st">'Team'</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'season'</span>: <span class="st">'Season'</span>,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">'position'</span>: <span class="st">'Position_History'</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">'played'</span>: <span class="st">'Games_Played_History'</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">'wins'</span>: <span class="st">'Wins_History'</span>,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">'goals_for'</span>: <span class="st">'Goals_For_History'</span>,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">'goals_against'</span>: <span class="st">'Goals_Against_History'</span>,</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">'points'</span>: <span class="st">'Points_History'</span>,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">'tier'</span>: <span class="st">'Tier_History'</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    })[[<span class="st">'Team'</span>, <span class="st">'Season'</span>, <span class="st">'Position_History'</span>, <span class="st">'Games_Played_History'</span>, <span class="st">'Wins_History'</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Goals_For_History'</span>, <span class="st">'Goals_Against_History'</span>, <span class="st">'Points_History'</span>, <span class="st">'Tier_History'</span>]]</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert new history columns to numeric</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    numeric_cols <span class="op">=</span> [<span class="st">'Position_History'</span>, <span class="st">'Games_Played_History'</span>, <span class="st">'Wins_History'</span>,</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'Goals_For_History'</span>, <span class="st">'Goals_Against_History'</span>, <span class="st">'Points_History'</span>, <span class="st">'Tier_History'</span>]</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> numeric_cols:</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        df_positions[col] <span class="op">=</span> pd.to_numeric(df_positions[col], errors<span class="op">=</span><span class="st">'coerce'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-3-audit-team-names-fuzzy-matching" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-audit-team-names-fuzzy-matching">Step 3 — Audit team names (fuzzy matching)</h3>
+<p><strong>Why:</strong> The manual spreadsheet uses informal names (Man City, Spurs, etc.). The merge requires standardized names.</p>
+<p><strong>What happens:</strong><br>
+- Identify team names in attendance sheet that don’t match standings - Propose high-confidence fuzzy matches (&gt;85) - Warn on low-confidence values</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>teams_in_wide_df <span class="op">=</span> <span class="bu">set</span>(df_wide[<span class="st">'Relegated Team'</span>].astype(<span class="bu">str</span>).unique())</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    teams_in_history_df <span class="op">=</span> <span class="bu">set</span>(df_positions[<span class="st">'Team'</span>].astype(<span class="bu">str</span>).unique())</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    unmatched_teams <span class="op">=</span> teams_in_wide_df.difference(teams_in_history_df)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create an empty map to build automatically</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    auto_team_name_map <span class="op">=</span> {}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> unmatched_teams:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"--- AUDIT: TEAM NAME MISMATCHES FOUND ---"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"The following teams from your file do not match the history file."</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Attempting to build an automatic mapping..."</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Loop through each unique unmatched team and find the best match</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> team <span class="kw">in</span> <span class="bu">sorted</span>(unmatched_teams):</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            <span class="co"># process.extractOne returns a tuple: (best_match, score)</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            suggestion <span class="op">=</span> process.extractOne(team, teams_in_history_df)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Auto-map spaces, asterisks, and high-confidence matches</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> suggestion[<span class="dv">1</span>] <span class="op">&gt;</span> <span class="dv">85</span>:</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f"  - Auto-mapping: </span><span class="ch">\"</span><span class="sc">{</span>team<span class="sc">}</span><span class="ch">\"</span><span class="ss"> -&gt; </span><span class="ch">\"</span><span class="sc">{</span>suggestion[<span class="dv">0</span>]<span class="sc">}</span><span class="ch">\"</span><span class="ss"> (Score: </span><span class="sc">{</span>suggestion[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>                auto_team_name_map[team] <span class="op">=</span> suggestion[<span class="dv">0</span>]</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Don't map low-confidence or junk data</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> team <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'nan'</span>, <span class="st">'TEAM'</span>, <span class="st">'Relegated Team'</span>]:</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>                        <span class="ss">f"  - WARNING: </span><span class="ch">\"</span><span class="sc">{</span>team<span class="sc">}</span><span class="ch">\"</span><span class="ss"> has no confident match. (Best: </span><span class="ch">\"</span><span class="sc">{</span>suggestion[<span class="dv">0</span>]<span class="sc">}</span><span class="ch">\"</span><span class="ss"> at </span><span class="sc">{</span>suggestion[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">%)"</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"    -&gt; Please add a fix for </span><span class="ch">\"</span><span class="sc">{</span>team<span class="sc">}</span><span class="ch">\"</span><span class="ss"> to 'manual_overrides_map' in Step 4."</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"---------------------------------------------"</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"--- AUDIT: TEAM NAMES OK ---"</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"All team names in your file match the history file."</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Error: '../../assets/files/datasets/standings.csv' not found. Skipping audit and enrichment."</span>)</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create empty dataframes if file not found</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    df_positions <span class="op">=</span> pd.DataFrame(columns<span class="op">=</span>[<span class="st">'Team'</span>, <span class="st">'Season'</span>, <span class="st">'Position_History'</span>, <span class="st">'Games_Played_History'</span>,</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">'Wins_History'</span>, <span class="st">'Goals_For_History'</span>, <span class="st">'Goals_Against_History'</span>,</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">'Points_History'</span>, <span class="st">'Tier_History'</span>])</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    auto_team_name_map <span class="op">=</span> {}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-4-standardize-team-names-auto-map-manual-overrides" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-standardize-team-names-auto-map-manual-overrides">Step 4 — Standardize team names (auto-map + manual overrides)</h3>
+<p><strong>Why:</strong> Fuzzy matching is helpful but not perfect; known edge cases are fixed with manual overrides.</p>
+<p><strong>What happens:</strong> - Merge the auto-map and manual overrides<br>
+- Replace names in the wide spreadsheet<br>
+- Filter out remaining junk/unmapped rows</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>manual_overrides_map <span class="op">=</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Man Utd"</span>: <span class="st">"Manchester United"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Man City"</span>: <span class="st">"Manchester City"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Spurs"</span>: <span class="st">"Tottenham Hotspur"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"QPR"</span>: <span class="st">"Queens Park Rangers"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Wolves"</span>: <span class="st">"Wolverhampton Wanderers"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sheff Utd"</span>: <span class="st">"Sheffield United"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sheff Wed"</span>: <span class="st">"Sheffield Wednesday"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Nott'm Forest"</span>: <span class="st">"Nottingham Forest"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Notts County"</span>: <span class="st">"Nottingham Forest"</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># e.g., if audit warns about "Bradford", add:</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># "Bradford": "Bradford City",</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the auto-generated map with the manual overrides</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># This is where we combine the two dictionaries.</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># The 'manual_overrides_map' will overwrite any conflicting keys from 'auto_team_name_map'.</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>final_team_map <span class="op">=</span> {<span class="op">**</span>auto_team_name_map, <span class="op">**</span>manual_overrides_map}</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>df_wide[<span class="st">'Relegated Team'</span>] <span class="op">=</span> df_wide[<span class="st">'Relegated Team'</span>].replace(final_team_map)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 4: Standardized 'Relegated Team' names using auto-mapping and manual overrides."</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 4.5. FILTERING STEP ---</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Now that names are mapped, we can filter out junk rows that didn't get mapped</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>teams_in_history_df <span class="op">=</span> <span class="bu">set</span>(df_positions[<span class="st">'Team'</span>].astype(<span class="bu">str</span>).unique())</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>df_wide <span class="op">=</span> df_wide[df_wide[<span class="st">'Relegated Team'</span>].isin(teams_in_history_df)]</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 4.5: Filtered out junk rows (e.g., 'nan', 'TEAM')."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-5-create-a-stable-event-key-relegation_event_id" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-create-a-stable-event-key-relegation_event_id">Step 5 — Create a stable event key (Relegation_Event_ID)</h3>
+<p><strong>Why:</strong> Each relegation event needs a stable identifier across Year -1..+2.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_wide[<span class="st">'Relegation_Event_ID'</span>] <span class="op">=</span> df_wide[<span class="st">'Relegated Team'</span>] <span class="op">+</span> <span class="st">' '</span> <span class="op">+</span> df_wide[<span class="st">'Season'</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 5: Created 'Relegation_Event_ID'."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-6-convert-wide-tidy-safe-slices-concat" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-convert-wide-tidy-safe-slices-concat">Step 6 — Convert wide → tidy (safe slices + concat)</h3>
+<p><strong>Why:</strong> The attendance sheet is wide and not safely meltable without careful column mapping.</p>
+<p><strong>What happens:</strong><br>
+- Create four normalized slices (Year -1..+2)<br>
+- Concatenate into one long table with a consistent schema</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Helper function to create each slice</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_slice(df, team_col, season_col, att_col, year_vs):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- Check if att_col exists, otherwise use pd.NA ---</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This makes the function robust for the missing Y3 attendance</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> att_col <span class="kw">not</span> <span class="kw">in</span> df.columns:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create a temporary column of NAs if the attendance col doesn't exist</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        df <span class="op">=</span> df.assign(Attendance_tmp<span class="op">=</span>pd.NA) </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># If the col *does* exist, rename it</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        df <span class="op">=</span> df.rename(columns<span class="op">=</span>{att_col: <span class="st">"Attendance_tmp"</span>})</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    slice_df <span class="op">=</span> df.rename(columns<span class="op">=</span>{</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        team_col: <span class="st">"Team"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        season_col: <span class="st">"Season_tmp"</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    }).assign(Year_vs_Relegation<span class="op">=</span>year_vs)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Select and rename final columns</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    slice_df <span class="op">=</span> slice_df[[<span class="st">'Relegation_Event_ID'</span>, <span class="st">'Team'</span>, <span class="st">'Season_tmp'</span>, <span class="st">'Attendance_tmp'</span>, <span class="st">'Year_vs_Relegation'</span>]].copy()</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    slice_df.columns <span class="op">=</span> [<span class="st">'Relegation_Event_ID'</span>, <span class="st">'Team'</span>, <span class="st">'Season'</span>, <span class="st">'Attendance'</span>, <span class="st">'Year_vs_Relegation'</span>]</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> slice_df</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Create slices (Only up to Year 2)</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>slice_minus1 <span class="op">=</span> make_slice(df_wide, <span class="st">"Relegated Team"</span>, <span class="st">"Year Before"</span>, <span class="st">"Year Before Att"</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>slice_0      <span class="op">=</span> make_slice(df_wide, <span class="st">"Relegated Team"</span>, <span class="st">"Season"</span>, <span class="st">"Attendance"</span>, <span class="dv">0</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>slice_1      <span class="op">=</span> make_slice(df_wide, <span class="st">"Relegated Team"</span>, <span class="st">"Year After"</span>, <span class="st">"Attendance year after"</span>, <span class="dv">1</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>slice_2      <span class="op">=</span> make_slice(df_wide, <span class="st">"Relegated Team"</span>, <span class="st">"2 years after"</span>, <span class="st">"Attendance 2 years after"</span>, <span class="dv">2</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenate slices safely</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>df_tidy <span class="op">=</span> pd.concat([slice_minus1, slice_0, slice_1, slice_2], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 6: Data has been 'tidied' successfully!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-7-standardize-season-keys-yyyy-yy" class="level3">
+<h3 class="anchored" data-anchor-id="step-7-standardize-season-keys-yyyy-yy">Step 7 — Standardize season keys (YYYY-YY)</h3>
+<ul>
+<li>Why: Season formats vary (e.g., 1991-1992 vs 1992-93) and must align for joins.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- HELPER FUNCTION 1 ---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_season(season_str):</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Converts '1991-1992' to '1991-92' and leaves '1992-93' as is."""</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pd.isna(season_str):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> pd.NA</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    parts <span class="op">=</span> <span class="bu">str</span>(season_str).split(<span class="st">'-'</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(parts) <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(parts[<span class="dv">1</span>]) <span class="op">==</span> <span class="dv">4</span>:  <span class="co"># Format is '1991-1992'</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>parts[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">-</span><span class="sc">{</span>parts[<span class="dv">1</span>][<span class="op">-</span><span class="dv">2</span>:]<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:  <span class="co"># Format is '1992-93'</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> season_str</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> season_str  <span class="co"># Return as-is if not in expected format</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># --- HELPER FUNCTION 2 ---</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increment_season(season_str):</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Converts a season string like '1995-96' to '1996-97'."""</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pd.isna(season_str):</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> pd.NA</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        start_year <span class="op">=</span> <span class="bu">int</span>(season_str.split(<span class="st">'-'</span>)[<span class="dv">0</span>])</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        next_start_year <span class="op">=</span> start_year <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Handle the '1999-00' case</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> next_start_year <span class="op">==</span> <span class="dv">1999</span>:</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"1999-00"</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>        next_end_year_short <span class="op">=</span> <span class="bu">str</span>(next_start_year <span class="op">+</span> <span class="dv">1</span>)[<span class="op">-</span><span class="dv">2</span>:] <span class="co"># e.g., 97</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>next_start_year<span class="sc">}</span><span class="ss">-</span><span class="sc">{</span>next_end_year_short<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Error incrementing season '</span><span class="sc">{</span>season_str<span class="sc">}</span><span class="ss">': </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> pd.NA</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the formatting</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>df_tidy[<span class="st">'Season'</span>] <span class="op">=</span> df_tidy[<span class="st">'Season'</span>].<span class="bu">apply</span>(format_season)</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 7: Standardized 'Season' key to 'YYYY-YY' format (e.g., '1992-93')."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-7.5-temporary-year-3-rows-outcome-extraction-only" class="level3">
+<h3 class="anchored" data-anchor-id="step-7.5-temporary-year-3-rows-outcome-extraction-only">Step 7.5 — Temporary Year +3 rows (outcome extraction only)</h3>
+<p><strong>Why:</strong> To compute the outcome of Year +2, we need to observe the next season’s tier transition.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 7.5: Generating temporary Year 3 rows for outcome calculation..."</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Find all Year 2 rows</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>df_y2_rows <span class="op">=</span> df_tidy[df_tidy[<span class="st">'Year_vs_Relegation'</span>] <span class="op">==</span> <span class="dv">2</span>].copy()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Transform them into Year 3 rows</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>df_y2_rows[<span class="st">'Year_vs_Relegation'</span>] <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>df_y2_rows[<span class="st">'Attendance'</span>] <span class="op">=</span> pd.NA <span class="co"># Attendance data is not needed</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>df_y2_rows[<span class="st">'Season'</span>] <span class="op">=</span> df_y2_rows[<span class="st">'Season'</span>].<span class="bu">apply</span>(increment_season)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Concatenate these helper rows back onto the main tidy dataframe</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>df_tidy <span class="op">=</span> pd.concat([df_tidy, df_y2_rows], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 7.5: Temporary Year 3 rows created and added."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-8-enrich-tidy-data-with-standings-raw-totals" class="level3">
+<h3 class="anchored" data-anchor-id="step-8-enrich-tidy-data-with-standings-raw-totals">Step 8 — Enrich tidy data with standings (raw totals)</h3>
+<p><strong>Why:</strong> Add tier, position, and season totals for later analysis while keeping this dataset “raw”.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> df_positions.empty:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- Upgrade the history file's 'Season' column ---</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    season_numeric <span class="op">=</span> pd.to_numeric(df_positions[<span class="st">'Season'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>).dropna()</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    season_end_year <span class="op">=</span> (season_numeric <span class="op">+</span> <span class="dv">1</span>).astype(<span class="bu">int</span>).astype(<span class="bu">str</span>).<span class="bu">str</span>.zfill(<span class="dv">4</span>).<span class="bu">str</span>[<span class="op">-</span><span class="dv">2</span>:]</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    df_positions.loc[season_numeric.index, <span class="st">'Season'</span>] <span class="op">=</span> season_numeric.astype(<span class="bu">int</span>).astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">'-'</span> <span class="op">+</span> season_end_year</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Step 8a: Upgraded history file 'Season' key."</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- MODIFICATION ---</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We are NO LONGER calculating per-game metrics here.</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We are ONLY merging the raw values.</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    df_positions_merge <span class="op">=</span> df_positions[[</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Team'</span>, <span class="st">'Season'</span>, <span class="st">'Position_History'</span>, <span class="st">'Tier_History'</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Games_Played_History'</span>, <span class="st">'Wins_History'</span>, <span class="st">'Goals_For_History'</span>, </span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Goals_Against_History'</span>, <span class="st">'Points_History'</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    ]]</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- </span><span class="re">END</span><span class="co"> MODIFICATION ---</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- Merge the data ---</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Step 8b: Merging tidy data with position data..."</span>)</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    df_final <span class="op">=</span> pd.merge(</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>        df_tidy,</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        df_positions_merge,  <span class="co"># Use the merge-ready dataframe with raw columns</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>        on<span class="op">=</span>[<span class="st">'Team'</span>, <span class="st">'Season'</span>],</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>        how<span class="op">=</span><span class="st">'left'</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    df_final[<span class="st">'Position'</span>] <span class="op">=</span> df_final[<span class="st">'Position_History'</span>]</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    df_final[<span class="st">'Tier'</span>] <span class="op">=</span> df_final[<span class="st">'Tier_History'</span>]</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Step 8: Data enriched. 'df_final' created and 'Tier' column added."</span>)</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Step 8: Skipping merge as 'standings.csv' was not loaded."</span>)</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>    df_final <span class="op">=</span> df_tidy.copy() </span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add empty columns</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> [<span class="st">'Position'</span>, <span class="st">'Tier'</span>, <span class="st">'Games_Played_History'</span>, <span class="st">'Wins_History'</span>, <span class="st">'Goals_For_History'</span>, <span class="st">'Goals_Against_History'</span>, <span class="st">'Points_History'</span>]:</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>        df_final[col] <span class="op">=</span> pd.NA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-8.5-compute-year_end_outcome-from-tier-transitions" class="level3">
+<h3 class="anchored" data-anchor-id="step-8.5-compute-year_end_outcome-from-tier-transitions">Step 8.5 — Compute Year_End_Outcome from tier transitions</h3>
+<p><strong>Why:</strong> Outcomes (Promoted/Survived/Relegated) are derived from how tier changes year-to-year within each event.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 8.5: Calculating 'Year_End_Outcome' based on precise timeline..."</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Calculate the Tier Change (Tier_Next_Year - Tier_Current_Year)</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>df_final[<span class="st">'Tier_Next_Year'</span>] <span class="op">=</span> df_final.groupby(<span class="st">'Relegation_Event_ID'</span>)[<span class="st">'Tier'</span>].shift(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>df_final[<span class="st">'Tier_Change'</span>] <span class="op">=</span> df_final[<span class="st">'Tier_Next_Year'</span>] <span class="op">-</span> df_final[<span class="st">'Tier'</span>]</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Map the Tier Change to the Outcome Label</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> map_tier_change_to_outcome(row):</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Maps the outcome based on the user's exact timeline definition."""</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    year_vs_relegation <span class="op">=</span> row[<span class="st">'Year_vs_Relegation'</span>] </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    current_tier <span class="op">=</span> row[<span class="st">'Tier'</span>]</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    tier_change <span class="op">=</span> row[<span class="st">'Tier_Change'</span>]</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 1. Handle Year -1 (Based on CURRENT Tier) ---</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> year_vs_relegation <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>:</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> current_tier <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">'Survived'</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> current_tier <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">'Promoted'</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> pd.NA</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 2. Handle Year 0 (The Relegation Event) ---</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> year_vs_relegation <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Relegated'</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 3. Handle Year +1 and +2 (Based on TIER CHANGE) ---</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> year_vs_relegation <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>]:</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> pd.isna(tier_change):</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> pd.NA </span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> tier_change <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>:</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">'Promoted'</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> tier_change <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">'Survived'</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> tier_change <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">'Relegated'</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> pd.NA</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.NA <span class="co"># Catches Y3 row</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function</span></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>df_final[<span class="st">'Year_End_Outcome'</span>] <span class="op">=</span> df_final.<span class="bu">apply</span>(map_tier_change_to_outcome, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 8.5: 'Year_End_Outcome' column successfully created."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-9-finalize-schema-and-export" class="level3">
+<h3 class="anchored" data-anchor-id="step-9-finalize-schema-and-export">Step 9 — Finalize schema and export</h3>
+<p><strong>What happens:</strong><br>
+- Cast numeric fields to nullable integers<br>
+- Drop helper Year +3 rows<br>
+- Select final column set and sort<br>
+- Write perfect_tidy_data.csv</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 9: Polishing final data..."</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --- MODIFICATION: Added all _History columns ---</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>final_columns <span class="op">=</span> [</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Relegation_Event_ID'</span>, <span class="st">'Team'</span>, <span class="st">'Season'</span>, <span class="st">'Tier'</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Position'</span>, <span class="st">'Attendance'</span>, <span class="st">'Year_vs_Relegation'</span>, <span class="st">'Year_End_Outcome'</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Games_Played_History'</span>, <span class="st">'Wins_History'</span>, <span class="st">'Goals_For_History'</span>, </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Goals_Against_History'</span>, <span class="st">'Points_History'</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># --- </span><span class="re">END</span><span class="co"> MODIFICATION ---</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure final columns exist before slicing</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> final_columns:</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> col <span class="kw">not</span> <span class="kw">in</span> df_final.columns:</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        df_final[col] <span class="op">=</span> pd.NA</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># --- MODIFICATION: Cast all numeric columns to Int64 ---</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> [<span class="st">'Attendance'</span>, <span class="st">'Position'</span>, <span class="st">'Tier'</span>, <span class="st">'Games_Played_History'</span>, <span class="st">'Wins_History'</span>, <span class="st">'Goals_For_History'</span>, <span class="st">'Goals_Against_History'</span>, <span class="st">'Points_History'</span>]:</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    df_final[col] <span class="op">=</span> pd.to_numeric(df_final[col], errors<span class="op">=</span><span class="st">'coerce'</span>).astype(<span class="st">'Int64'</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co"># --- </span><span class="re">END</span><span class="co"> MODIFICATION ---</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co"># --- DROP THE HELPER ROW ---</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> df_final[df_final[<span class="st">'Year_vs_Relegation'</span>] <span class="op">!=</span> <span class="dv">3</span>].copy()</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only the final columns and sort</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> df_final[final_columns].sort_values(by<span class="op">=</span>[<span class="st">'Relegation_Event_ID'</span>, <span class="st">'Year_vs_Relegation'</span>])</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the final, perfect data to a new CSV in the 'datasets' folder</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>output_path <span class="op">=</span> <span class="st">"../../assets/files/datasets/perfect_tidy_data.csv"</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>df_final.to_csv(output_path, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Step 9: Success! Final table saved to '</span><span class="sc">{</span>output_path<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="from-tidy-data-to-analysis-ready-tables" class="level2">
+<h2 class="anchored" data-anchor-id="from-tidy-data-to-analysis-ready-tables">From tidy data to analysis-ready tables</h2>
+<p>While that completes the reshaping pipeline, further steps are needed to prepare the data for analysis and visualization.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- PREPARING DATA FOR ANALYSIS ---"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># --- ANALYSIS PREP ---</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This block creates the 'df_plot' DataFrame for all visualizations</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Get the baseline attendance (Year 0) for each event</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>df_y0_baseline <span class="op">=</span> df_final[</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    df_final[<span class="st">'Year_vs_Relegation'</span>] <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>][[<span class="st">'Relegation_Event_ID'</span>, <span class="st">'Attendance'</span>]].rename(columns<span class="op">=</span>{<span class="st">'Attendance'</span>: <span class="st">'Attendance_Y0_Baseline'</span>})</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Merge this baseline back onto the main df</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>df_plot <span class="op">=</span> pd.merge(df_final, df_y0_baseline, on<span class="op">=</span><span class="st">'Relegation_Event_ID'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Calculate the Pct Change vs. Year 0 for all years</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Pct_Change_vs_Y0'</span>] <span class="op">=</span> (</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    (df_plot[<span class="st">'Attendance'</span>] <span class="op">-</span> df_plot[<span class="st">'Attendance_Y0_Baseline'</span>]) <span class="op">/</span> </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    df_plot[<span class="st">'Attendance_Y0_Baseline'</span>]</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Get the *key outcome* from Year 1 (the first post-relegation season)</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>df_y1_outcome <span class="op">=</span> df_final[</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    df_final[<span class="st">'Year_vs_Relegation'</span>] <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>][[<span class="st">'Relegation_Event_ID'</span>, <span class="st">'Year_End_Outcome'</span>]].rename(columns<span class="op">=</span>{<span class="st">'Year_End_Outcome'</span>: <span class="st">'Outcome_Group'</span>})</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Merge this outcome group onto the whole plot dataset</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>df_plot <span class="op">=</span> pd.merge(df_plot, df_y1_outcome, on<span class="op">=</span><span class="st">'Relegation_Event_ID'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 5.5: IMPUTE 2024-25 OUTCOMES ---</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="co"># The Y+1 outcome for the 2023-24 cohort is NA. We impute it manually.</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Imputing outcomes for 2023-24 cohort..."</span>)</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Define our imputations based on likely 2024-25 season-end performance</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>impute_map <span class="op">=</span> {</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Burnley 2023-24'</span>: <span class="st">'Promoted'</span>,</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sheffield United 2023-24'</span>: <span class="st">'Survived'</span>, <span class="co"># Assuming playoffs = Survived</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Luton Town 2023-24'</span>: <span class="st">'Relegated'</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the imputation</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="co"># This finds rows where Outcome_Group is NA and maps the Event ID to our new value</span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Outcome_Group'</span>] <span class="op">=</span> df_plot[<span class="st">'Outcome_Group'</span>].fillna(</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>    df_plot[<span class="st">'Relegation_Event_ID'</span>].<span class="bu">map</span>(impute_map)</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Imputation complete."</span>)</span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Convert Pct_Change to a percentage number (e.g., 0.05 -&gt; 5)</span></span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Pct_Change_vs_Y0_Display'</span>] <span class="op">=</span> df_plot[<span class="st">'Pct_Change_vs_Y0'</span>] <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Calculate Per-Game metrics on the fly</span></span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Goals_For_Per_Game'</span>] <span class="op">=</span> df_plot[<span class="st">'Goals_For_History'</span>] <span class="op">/</span> df_plot[<span class="st">'Games_Played_History'</span>]</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Points_Per_Game'</span>] <span class="op">=</span> df_plot[<span class="st">'Points_History'</span>] <span class="op">/</span> df_plot[<span class="st">'Games_Played_History'</span>]</span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. Define the FINAL anomaly list</span></span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a><span class="co"># We are KEEPING Wimbledon, as it's a valid case study.</span></span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>anomaly_events <span class="op">=</span> [</span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Middlesbrough 1992-93'</span>, <span class="co"># Rebuild</span></span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sunderland 1996-97'</span>,    <span class="co"># New stadium</span></span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Leicester City 2001-02'</span>, <span class="co"># New stadium</span></span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Bolton Wanderers 1995-96'</span>  <span class="co"># New stadium (in Y+2)</span></span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a><span class="co"># 9. Create the FINAL filtered DataFrame for plotting</span></span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>df_plot_filtered <span class="op">=</span> df_plot[<span class="op">~</span>df_plot[<span class="st">'Relegation_Event_ID'</span>].isin(anomaly_events)]</span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Removed </span><span class="sc">{</span><span class="bu">len</span>(df_plot) <span class="op">-</span> <span class="bu">len</span>(df_plot_filtered)<span class="sc">}</span><span class="ss"> total data points for structural anomalies."</span>)</span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a><span class="co"># 10. Create the cleaner plot labels</span></span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>label_map <span class="op">=</span> {</span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Promoted'</span>: <span class="st">'Promoted (Back in PL)'</span>,</span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Survived'</span>: <span class="st">'Survived (Still in Champ)'</span>,</span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Relegated'</span>: <span class="st">'Relegated (Down to L1)'</span></span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Plot_Group_Label'</span>] <span class="op">=</span> df_plot[<span class="st">'Outcome_Group'</span>].<span class="bu">map</span>(label_map)</span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>df_plot_filtered[<span class="st">'Plot_Group_Label'</span>] <span class="op">=</span> df_plot_filtered[<span class="st">'Outcome_Group'</span>].<span class="bu">map</span>(label_map)</span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- Analysis data is ready. ---"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="analysis-prep-script-full-copy-paste-ready" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-prep-script-full-copy-paste-ready">Analysis prep script (full, copy-paste ready)</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## From tidy data to analysis-ready tables</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- PREPARING DATA FOR ANALYSIS ---"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># --- ANALYSIS PREP ---</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># This block creates the 'df_plot' DataFrame for all visualizations</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Get the baseline attendance (Year 0) for each event</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>df_y0_baseline <span class="op">=</span> df_final[</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    df_final[<span class="st">'Year_vs_Relegation'</span>] <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>][[<span class="st">'Relegation_Event_ID'</span>, <span class="st">'Attendance'</span>]].rename(columns<span class="op">=</span>{<span class="st">'Attendance'</span>: <span class="st">'Attendance_Y0_Baseline'</span>})</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Merge this baseline back onto the main df</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>df_plot <span class="op">=</span> pd.merge(df_final, df_y0_baseline, on<span class="op">=</span><span class="st">'Relegation_Event_ID'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Calculate the Pct Change vs. Year 0 for all years</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Pct_Change_vs_Y0'</span>] <span class="op">=</span> (</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    (df_plot[<span class="st">'Attendance'</span>] <span class="op">-</span> df_plot[<span class="st">'Attendance_Y0_Baseline'</span>]) <span class="op">/</span> </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    df_plot[<span class="st">'Attendance_Y0_Baseline'</span>]</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Get the *key outcome* from Year 1 (the first post-relegation season)</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>df_y1_outcome <span class="op">=</span> df_final[</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    df_final[<span class="st">'Year_vs_Relegation'</span>] <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>][[<span class="st">'Relegation_Event_ID'</span>, <span class="st">'Year_End_Outcome'</span>]].rename(columns<span class="op">=</span>{<span class="st">'Year_End_Outcome'</span>: <span class="st">'Outcome_Group'</span>})</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Merge this outcome group onto the whole plot dataset</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>df_plot <span class="op">=</span> pd.merge(df_plot, df_y1_outcome, on<span class="op">=</span><span class="st">'Relegation_Event_ID'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 5.5: IMPUTE 2024-25 OUTCOMES ---</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="co"># The Y+1 outcome for the 2023-24 cohort is NA. We impute it manually.</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Imputing outcomes for 2023-24 cohort..."</span>)</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Define our imputations based on likely 2024-25 season-end performance</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>impute_map <span class="op">=</span> {</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Burnley 2023-24'</span>: <span class="st">'Promoted'</span>,</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sheffield United 2023-24'</span>: <span class="st">'Survived'</span>, <span class="co"># Assuming playoffs = Survived</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Luton Town 2023-24'</span>: <span class="st">'Relegated'</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the imputation</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="co"># This finds rows where Outcome_Group is NA and maps the Event ID to our new value</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Outcome_Group'</span>] <span class="op">=</span> df_plot[<span class="st">'Outcome_Group'</span>].fillna(</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>    df_plot[<span class="st">'Relegation_Event_ID'</span>].<span class="bu">map</span>(impute_map)</span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Imputation complete."</span>)</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Convert Pct_Change to a percentage number (e.g., 0.05 -&gt; 5)</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Pct_Change_vs_Y0_Display'</span>] <span class="op">=</span> df_plot[<span class="st">'Pct_Change_vs_Y0'</span>] <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Calculate Per-Game metrics on the fly</span></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Goals_For_Per_Game'</span>] <span class="op">=</span> df_plot[<span class="st">'Goals_For_History'</span>] <span class="op">/</span> df_plot[<span class="st">'Games_Played_History'</span>]</span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Points_Per_Game'</span>] <span class="op">=</span> df_plot[<span class="st">'Points_History'</span>] <span class="op">/</span> df_plot[<span class="st">'Games_Played_History'</span>]</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. Define the FINAL anomaly list</span></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a><span class="co"># We are KEEPING Wimbledon, as it's a valid case study.</span></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>anomaly_events <span class="op">=</span> [</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Middlesbrough 1992-93'</span>, <span class="co"># Rebuild</span></span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sunderland 1996-97'</span>,    <span class="co"># New stadium</span></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Leicester City 2001-02'</span>, <span class="co"># New stadium</span></span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Bolton Wanderers 1995-96'</span>  <span class="co"># New stadium (in Y+2)</span></span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a><span class="co"># 9. Create the FINAL filtered DataFrame for plotting</span></span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>df_plot_filtered <span class="op">=</span> df_plot[<span class="op">~</span>df_plot[<span class="st">'Relegation_Event_ID'</span>].isin(anomaly_events)]</span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Removed </span><span class="sc">{</span><span class="bu">len</span>(df_plot) <span class="op">-</span> <span class="bu">len</span>(df_plot_filtered)<span class="sc">}</span><span class="ss"> total data points for structural anomalies."</span>)</span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a><span class="co"># 10. Create the cleaner plot labels</span></span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a>label_map <span class="op">=</span> {</span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Promoted'</span>: <span class="st">'Promoted (Back in PL)'</span>,</span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Survived'</span>: <span class="st">'Survived (Still in Champ)'</span>,</span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Relegated'</span>: <span class="st">'Relegated (Down to L1)'</span></span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>df_plot[<span class="st">'Plot_Group_Label'</span>] <span class="op">=</span> df_plot[<span class="st">'Outcome_Group'</span>].<span class="bu">map</span>(label_map)</span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>df_plot_filtered[<span class="st">'Plot_Group_Label'</span>] <span class="op">=</span> df_plot_filtered[<span class="st">'Outcome_Group'</span>].<span class="bu">map</span>(label_map)</span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- Analysis data is ready. ---"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -789,7 +1629,7 @@ One of the driving forces behind some of the complex logic in this dataset was t
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/posts/too-messy-to-melt/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/diggydigsdata/blob/main/posts/too-messy-to-melt/index.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -801,6 +1641,38 @@ One of the driving forces behind some of the complex logic in this dataset was t
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
