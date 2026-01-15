@@ -139,5 +139,11 @@
   },
   "posts/strava-gap-metric/index.qmd": {
     "index.html": "017e7e7f"
+  },
+  "posts/too-messy-to-melt/index.ipynb": {
+    "index.html": "74cc36dd"
+  },
+  "posts/vignettes/index.qmd": {
+    "index.html": "32d30c21"
   }
 }

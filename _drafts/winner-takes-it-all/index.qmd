@@ -1,0 +1,107 @@
+---
+title: "The Winner Takes It All (Project Map with Power BI Dashboard)"
+date: 2025-12-21 22:02 +0000
+description: "A penalty-won-adjusted goals metric, a demo Power BI dashboard, and a roadmap toward a refreshable data pipeline."
+image: "featured.png"
+image-alt: "Screenshot of a Power BI dashboard showing player rankings based on penalty-won-adjusted goals metrics."
+permalink: /football/npg+pkwon/
+categories: [Football, Analytics, Python, R, Penalties]
+tags: [data, analytics, hypotheticals, rule changes, basketball, penalties, soccer, football, Power BI]
+license: "CC BY"
+execute:
+  echo: false
+  output: false
+jupyter: python3
+---
+
+Football credits the *taker* of a penalty, not the player who *won* it. That's why we end up with nicknames like "Penaldo". A BBC caption - "Misstiano Penaldo" - even went viral after CR7 missed against Slovenia in 2024.
+
+This project asks a simple counterfactual:
+
+**What would goal totals look like if penalties were allocated back to the players who won them? — using expected goals rather than automatic "full goals"?**
+
+Why not just give them the full goals? Because this is a counterfactual allocation problem, we have to account for the possibility that they would miss. So my made-up metric is Expected Goals from Penalties Won (xGpw).
+
+---
+
+So far, the workflow is:
+
+1. **Bulk scrape** FBref season/competition player data from years where Penalty Kicks Won (PkWon) data is either tracked or deducible. This is the Big 5 Leagues plus the Champions League from 2016/2017.
+2. **Clean + transform** in **pandas** (consistency checks, joins, derived metrics)
+3. **Load into MySQL** using **SQLAlchemy** (from pandas → MySQL)
+4. **Schema work** (dimensions/facts + keys so the model is scalable)
+5. **Publish a demo layer** in **Power BI** (prototype dashboard)
+
+This isn't intended as a one-off analysis — it's a pipeline project. Long-term, I plan to transition this pipeline to a paid football API to ensure scalability and commercial compliance. The data I scraped is just for my experimentation with the above workflow. In future, I intend to make a Shiny dashboard that automatically refreshes data, and fully explorable by site visitors. I will periodically publish small vignettes based on my own exploration. 
+
+---
+
+## Dashboard (prototype)
+Here is a small prototype I made in Power BI.
+
+### Known limitations (current dashboard)
+- This can only be filtered to a **single-season / single-competition** grain as I have encountered issues with my DAX measures.
+- Cross-filter interactions can be annoying (table clicks affecting cards in ways I don't want)
+
+<p class="pbi-wrap">
+<iframe title="pkwon_single_season_single_comp" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGE1Y2VkYWItZGZiOC00NTlhLWE1NmYtMTBjMTk0NDY0YzhmIiwidCI6ImE1MmIxMmI5LTdkYzktNGE3MS05YzQ5LTliZTkyOTIwNzAyZiJ9" frameborder="0" allowFullScreen="true"></iframe>
+</p>
+
+<style>
+.pbi-wrap { position: relative; padding-top: 56.25%; }
+.pbi-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+</style>
+
+---
+
+## Roadmap (pipeline + reliability)
+
+I'm treating this as a pipeline project, not just a one-off analysis. Here's the plan:
+
+### Phase 1 — Extend coverage (data completeness)
+- Add missing competitions (e.g., UCL) via a football API
+- Standardize competition + season keys
+- Solidify grains like **player × team × competition × season**
+
+### Phase 2 — Validation + repeatability (data trust)
+- Cross-source checks (API vs scrape): row counts, key uniqueness, spot checks
+- Data freshness + completeness checks
+- Document metric logic + assumptions clearly (so it's reviewable)
+
+### Phase 3 — Refresh + product layer (usable outputs)
+- Weekly refresh cadence (automation + monitoring)
+- Publish updated outputs through:
+  - Power BI for now (demo layer), and later a cleaner rebuild (Tableau/Streamlit are candidates),
+  - plus lightweight "export-friendly" views for ad-hoc questions
+
+---
+
+## Ongoing outputs: small vignettes, regularly
+
+The goal isn't just a dashboard that updates—it's a steady stream of **small, testable stories** pulled from the same underlying data.
+
+As the pipeline matures and coverage expands, I'll publish short vignettes like:
+- **Harry Kane in context:** how much of the headline is penalties, and how his non-penalty output compares
+- **Sterling and the record books:** where he sits among PL greats under penalty-won allocation
+- **The Shearer/Cole thought experiment:** how "penalty credit" shifts rankings (within `PkWon` limits)
+- **One weird season:** a single player-season where penalties (won vs taken) distort the story the most
+
+Each vignette will link back to the metric definitions and the exact view used, so the logic stays transparent and repeatable.
+
+---
+
+## Sidebar: "Hack-a-Shaq" and why I'm borrowing from basketball
+
+> Shaq was so bad at free throws (~52% success rate) that teams started deliberately fouling him ("Hack-a-Shaq").  
+> The logic: two free throws at 52% could be less damaging than letting the play continue and risking an easy dunk.  
+> 
+> Football can't copy this mechanic perfectly, but the *principle* is interesting: **the fouled player takes the shot**, which naturally ties "chance creation" to "credit".
+>
+> Similarly, Raheem Sterling and Shaq share a common trait: both are elite at drawing fouls (Sterling: 26 PL penalties won, 4th-most all-time; Shaq: 4th all-time in free throw attempts) but terrible at converting (Sterling: 43%; Shaq: 52%).
+
+---
+
+## Notes / limitations
+- `PkWon` availability limits historical scope (especially pre-2016/17 for some leagues).
+- Metric choices (conversion rates, positional assumptions) are assumptions, not facts.
+- This is meant to be auditable: you can see the logic and disagree with it. 

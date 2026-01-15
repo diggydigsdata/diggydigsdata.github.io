@@ -380,7 +380,6 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 
 
 
-<p>TO-DO: I need to fix my dark mode style settings because they are affecting my plots and the boxplot isn’t pleasant - though it’s visible at least.</p>
 <p>I’m a Burnley fan. With our recent promotion to the Premier League we are firmly consolidated as a yoyo club par excellence - we rank joint-4th with Sunderland on the Yoyo-meter (below). So what better time to assess some of the impacts of relegation from the Premier League? Because it’s never too early to plan ahead.</p>
 <p>In this article, I’ll be exploring if, how and for how long Premier League relegation disrupts attendances. We’ll also examine some mitigating factors. Does attractive football help maintain attendances? Is mid-table mediocrity worse for attendances than being in a relegation dogfight?</p>
 <p>The dataset I have designed for this project combines a few different online resources and also engineers some variables. You can read about it and download it <a href="../too-messy-to-melt/">here</a>.</p>
@@ -543,80 +542,80 @@ Note
 <section id="increased-attendance-after-relegation" class="level3">
 <h3 class="anchored" data-anchor-id="increased-attendance-after-relegation">Increased attendance after relegation?</h3>
 <p>Let’s start on a positive note. On 10 occasions, teams managed to increase their average attendance in the first season (Y+1) immediately following relegation.</p>
-<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:20.288502Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.271205Z&quot;}}" data-cap="Table 1: Teams with Increased Attendance in Year +1" data-execution_count="37">
-<div class="cell-output cell-output-display" data-execution_count="37">
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:20.288502Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.271205Z&quot;}}" data-cap="Table 1: Teams with Increased Attendance in Year +1" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <style type="text/css">
 </style>
 
-<table id="T_5bff5" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<table id="T_fbafa" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th id="T_5bff5_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Team</th>
-<th id="T_5bff5_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Attendance (Y0)</th>
-<th id="T_5bff5_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Attendance (Y+1)</th>
-<th id="T_5bff5_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Change (%)</th>
+<th id="T_fbafa_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Team</th>
+<th id="T_fbafa_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Attendance (Y0)</th>
+<th id="T_fbafa_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Attendance (Y+1)</th>
+<th id="T_fbafa_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Change (%)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_5bff5_row0_col0" class="data row0 col0">Sunderland</td>
-<td id="T_5bff5_row0_col1" class="data row0 col1">20865</td>
-<td id="T_5bff5_row0_col2" class="data row0 col2">33492</td>
-<td id="T_5bff5_row0_col3" class="data row0 col3">60.52</td>
+<td id="T_fbafa_row0_col0" class="data row0 col0">Sunderland</td>
+<td id="T_fbafa_row0_col1" class="data row0 col1">20865</td>
+<td id="T_fbafa_row0_col2" class="data row0 col2">33492</td>
+<td id="T_fbafa_row0_col3" class="data row0 col3">60.52</td>
 </tr>
 <tr class="even">
-<td id="T_5bff5_row1_col0" class="data row1 col0">Leicester City</td>
-<td id="T_5bff5_row1_col1" class="data row1 col1">19835</td>
-<td id="T_5bff5_row1_col2" class="data row1 col2">29231</td>
-<td id="T_5bff5_row1_col3" class="data row1 col3">47.37</td>
+<td id="T_fbafa_row1_col0" class="data row1 col0">Leicester City</td>
+<td id="T_fbafa_row1_col1" class="data row1 col1">19835</td>
+<td id="T_fbafa_row1_col2" class="data row1 col2">29231</td>
+<td id="T_fbafa_row1_col3" class="data row1 col3">47.37</td>
 </tr>
 <tr class="odd">
-<td id="T_5bff5_row2_col0" class="data row2 col0">Nottingham Forest</td>
-<td id="T_5bff5_row2_col1" class="data row2 col1">21910</td>
-<td id="T_5bff5_row2_col2" class="data row2 col2">23051</td>
-<td id="T_5bff5_row2_col3" class="data row2 col3">5.21</td>
+<td id="T_fbafa_row2_col0" class="data row2 col0">Nottingham Forest</td>
+<td id="T_fbafa_row2_col1" class="data row2 col1">21910</td>
+<td id="T_fbafa_row2_col2" class="data row2 col2">23051</td>
+<td id="T_fbafa_row2_col3" class="data row2 col3">5.21</td>
 </tr>
 <tr class="even">
-<td id="T_5bff5_row3_col0" class="data row3 col0">Ipswich Town</td>
-<td id="T_5bff5_row3_col1" class="data row3 col1">24426</td>
-<td id="T_5bff5_row3_col2" class="data row3 col2">25455</td>
-<td id="T_5bff5_row3_col3" class="data row3 col3">4.21</td>
+<td id="T_fbafa_row3_col0" class="data row3 col0">Ipswich Town</td>
+<td id="T_fbafa_row3_col1" class="data row3 col1">24426</td>
+<td id="T_fbafa_row3_col2" class="data row3 col2">25455</td>
+<td id="T_fbafa_row3_col3" class="data row3 col3">4.21</td>
 </tr>
 <tr class="odd">
-<td id="T_5bff5_row4_col0" class="data row4 col0">Burnley</td>
-<td id="T_5bff5_row4_col1" class="data row4 col1">19399</td>
-<td id="T_5bff5_row4_col2" class="data row4 col2">19953</td>
-<td id="T_5bff5_row4_col3" class="data row4 col3">2.86</td>
+<td id="T_fbafa_row4_col0" class="data row4 col0">Burnley</td>
+<td id="T_fbafa_row4_col1" class="data row4 col1">19399</td>
+<td id="T_fbafa_row4_col2" class="data row4 col2">19953</td>
+<td id="T_fbafa_row4_col3" class="data row4 col3">2.86</td>
 </tr>
 <tr class="even">
-<td id="T_5bff5_row5_col0" class="data row5 col0">Newcastle United</td>
-<td id="T_5bff5_row5_col1" class="data row5 col1">49754</td>
-<td id="T_5bff5_row5_col2" class="data row5 col2">51106</td>
-<td id="T_5bff5_row5_col3" class="data row5 col3">2.72</td>
+<td id="T_fbafa_row5_col0" class="data row5 col0">Newcastle United</td>
+<td id="T_fbafa_row5_col1" class="data row5 col1">49754</td>
+<td id="T_fbafa_row5_col2" class="data row5 col2">51106</td>
+<td id="T_fbafa_row5_col3" class="data row5 col3">2.72</td>
 </tr>
 <tr class="odd">
-<td id="T_5bff5_row6_col0" class="data row6 col0">Norwich City</td>
-<td id="T_5bff5_row6_col1" class="data row6 col1">24350</td>
-<td id="T_5bff5_row6_col2" class="data row6 col2">24952</td>
-<td id="T_5bff5_row6_col3" class="data row6 col3">2.47</td>
+<td id="T_fbafa_row6_col0" class="data row6 col0">Norwich City</td>
+<td id="T_fbafa_row6_col1" class="data row6 col1">24350</td>
+<td id="T_fbafa_row6_col2" class="data row6 col2">24952</td>
+<td id="T_fbafa_row6_col3" class="data row6 col3">2.47</td>
 </tr>
 <tr class="even">
-<td id="T_5bff5_row7_col0" class="data row7 col0">Crystal Palace</td>
-<td id="T_5bff5_row7_col1" class="data row7 col1">14992</td>
-<td id="T_5bff5_row7_col2" class="data row7 col2">15248</td>
-<td id="T_5bff5_row7_col3" class="data row7 col3">1.71</td>
+<td id="T_fbafa_row7_col0" class="data row7 col0">Crystal Palace</td>
+<td id="T_fbafa_row7_col1" class="data row7 col1">14992</td>
+<td id="T_fbafa_row7_col2" class="data row7 col2">15248</td>
+<td id="T_fbafa_row7_col3" class="data row7 col3">1.71</td>
 </tr>
 <tr class="odd">
-<td id="T_5bff5_row8_col0" class="data row8 col0">Luton Town</td>
-<td id="T_5bff5_row8_col1" class="data row8 col1">11244</td>
-<td id="T_5bff5_row8_col2" class="data row8 col2">11420</td>
-<td id="T_5bff5_row8_col3" class="data row8 col3">1.57</td>
+<td id="T_fbafa_row8_col0" class="data row8 col0">Luton Town</td>
+<td id="T_fbafa_row8_col1" class="data row8 col1">11244</td>
+<td id="T_fbafa_row8_col2" class="data row8 col2">11420</td>
+<td id="T_fbafa_row8_col3" class="data row8 col3">1.57</td>
 </tr>
 <tr class="even">
-<td id="T_5bff5_row9_col0" class="data row9 col0">Middlesbrough</td>
-<td id="T_5bff5_row9_col1" class="data row9 col1">29848</td>
-<td id="T_5bff5_row9_col2" class="data row9 col2">29994</td>
-<td id="T_5bff5_row9_col3" class="data row9 col3">0.49</td>
+<td id="T_fbafa_row9_col0" class="data row9 col0">Middlesbrough</td>
+<td id="T_fbafa_row9_col1" class="data row9 col1">29848</td>
+<td id="T_fbafa_row9_col2" class="data row9 col2">29994</td>
+<td id="T_fbafa_row9_col3" class="data row9 col3">0.49</td>
 </tr>
 </tbody>
 </table>
@@ -638,11 +637,11 @@ Note
 <section id="anomalies" class="level2">
 <h2 class="anchored" data-anchor-id="anomalies">Anomalies</h2>
 <p>Those positive stories are, unfortunately, anomalies. And they are not the only ones. A box plot of all post-relegation data (Y+1 and Y+2) shows the wild variance in outcomes.</p>
-<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T02:17:19.834993Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T02:17:19.724752Z&quot;}}" data-fig-format="png" data-execution_count="50">
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T02:17:19.834993Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T02:17:19.724752Z&quot;}}" data-fig-format="png" data-execution_count="26">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
 <figcaption>Distribution of attendance change (Y+1 &amp; Y+2) by outcome, including all outliers and sample sizes.</figcaption>
 </figure>
 </div>
@@ -651,27 +650,101 @@ Note
 <p>The plot above clearly shows several extreme statistical outliers (the dots) that are skewing the data. To understand what they are, we can use the <code>1.5 * IQR</code> rule (the same logic the box plot uses) to print a list of them.</p>
 <section id="outlier-hunt-using-the-1.5-iqr-rule" class="level3">
 <h3 class="anchored" data-anchor-id="outlier-hunt-using-the-1.5-iqr-rule">Outlier Hunt Using the 1.5 * IQR Rule</h3>
-<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:20.871071Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.839302Z&quot;}}" data-execution_count="39">
-<div class="cell-output cell-output-stdout">
-<pre><code>
---- Outliers for 'Promoted' (Outside -22.31 to 17.73) ---
-| Relegation_Event_ID      |   Year_vs_Relegation |   Pct_Change_vs_Y0_Display |
-|:-------------------------|---------------------:|---------------------------:|
-| Leicester City 2001-02   |                    2 |                      56.20 |
-| Leicester City 2001-02   |                    1 |                      47.37 |
-| Bolton Wanderers 1995-96 |                    2 |                      29.38 |
-| Sunderland 2005-06       |                    2 |                      27.84 |
-| Fulham 2018-19           |                    1 |                     -25.30 |
-| Hull City 2014-15        |                    1 |                     -26.99 |
-| Birmingham City 2007-08  |                    1 |                     -27.12 |
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:20.871071Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.839302Z&quot;}}" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="20">
+<style type="text/css">
+</style>
 
---- Outliers for 'Survived' (Outside -53.88 to 17.15) ---
-| Relegation_Event_ID   |   Year_vs_Relegation |   Pct_Change_vs_Y0_Display |
-|:----------------------|---------------------:|---------------------------:|
-| Sunderland 1996-97    |                    2 |                      85.69 |
-| Sunderland 1996-97    |                    1 |                      60.52 |
-| Wimbledon 1999-2000   |                    1 |                     -53.95 |
-| Wimbledon 1999-2000   |                    2 |                     -59.43 |</code></pre>
+<table id="T_348e6" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th id="T_348e6_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Outcome</th>
+<th id="T_348e6_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Team</th>
+<th id="T_348e6_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Season</th>
+<th id="T_348e6_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Year</th>
+<th id="T_348e6_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Change vs Y0 (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_348e6_row0_col0" class="data row0 col0">Survived</td>
+<td id="T_348e6_row0_col1" class="data row0 col1">Sunderland</td>
+<td id="T_348e6_row0_col2" class="data row0 col2">1998-99</td>
+<td id="T_348e6_row0_col3" class="data row0 col3">2</td>
+<td id="T_348e6_row0_col4" class="data row0 col4">+85.7</td>
+</tr>
+<tr class="even">
+<td id="T_348e6_row1_col0" class="data row1 col0">Survived</td>
+<td id="T_348e6_row1_col1" class="data row1 col1">Sunderland</td>
+<td id="T_348e6_row1_col2" class="data row1 col2">1997-98</td>
+<td id="T_348e6_row1_col3" class="data row1 col3">1</td>
+<td id="T_348e6_row1_col4" class="data row1 col4">+60.5</td>
+</tr>
+<tr class="odd">
+<td id="T_348e6_row2_col0" class="data row2 col0">Promoted</td>
+<td id="T_348e6_row2_col1" class="data row2 col1">Leicester City</td>
+<td id="T_348e6_row2_col2" class="data row2 col2">2003-04</td>
+<td id="T_348e6_row2_col3" class="data row2 col3">2</td>
+<td id="T_348e6_row2_col4" class="data row2 col4">+56.2</td>
+</tr>
+<tr class="even">
+<td id="T_348e6_row3_col0" class="data row3 col0">Promoted</td>
+<td id="T_348e6_row3_col1" class="data row3 col1">Leicester City</td>
+<td id="T_348e6_row3_col2" class="data row3 col2">2002-03</td>
+<td id="T_348e6_row3_col3" class="data row3 col3">1</td>
+<td id="T_348e6_row3_col4" class="data row3 col4">+47.4</td>
+</tr>
+<tr class="odd">
+<td id="T_348e6_row4_col0" class="data row4 col0">Promoted</td>
+<td id="T_348e6_row4_col1" class="data row4 col1">Bolton Wanderers</td>
+<td id="T_348e6_row4_col2" class="data row4 col2">1997-98</td>
+<td id="T_348e6_row4_col3" class="data row4 col3">2</td>
+<td id="T_348e6_row4_col4" class="data row4 col4">+29.4</td>
+</tr>
+<tr class="even">
+<td id="T_348e6_row5_col0" class="data row5 col0">Promoted</td>
+<td id="T_348e6_row5_col1" class="data row5 col1">Sunderland</td>
+<td id="T_348e6_row5_col2" class="data row5 col2">2007-08</td>
+<td id="T_348e6_row5_col3" class="data row5 col3">2</td>
+<td id="T_348e6_row5_col4" class="data row5 col4">+27.8</td>
+</tr>
+<tr class="odd">
+<td id="T_348e6_row6_col0" class="data row6 col0">Promoted</td>
+<td id="T_348e6_row6_col1" class="data row6 col1">Fulham</td>
+<td id="T_348e6_row6_col2" class="data row6 col2">2019-20</td>
+<td id="T_348e6_row6_col3" class="data row6 col3">1</td>
+<td id="T_348e6_row6_col4" class="data row6 col4">-25.3</td>
+</tr>
+<tr class="even">
+<td id="T_348e6_row7_col0" class="data row7 col0">Promoted</td>
+<td id="T_348e6_row7_col1" class="data row7 col1">Hull City</td>
+<td id="T_348e6_row7_col2" class="data row7 col2">2015-16</td>
+<td id="T_348e6_row7_col3" class="data row7 col3">1</td>
+<td id="T_348e6_row7_col4" class="data row7 col4">-27.0</td>
+</tr>
+<tr class="odd">
+<td id="T_348e6_row8_col0" class="data row8 col0">Promoted</td>
+<td id="T_348e6_row8_col1" class="data row8 col1">Birmingham City</td>
+<td id="T_348e6_row8_col2" class="data row8 col2">2008-09</td>
+<td id="T_348e6_row8_col3" class="data row8 col3">1</td>
+<td id="T_348e6_row8_col4" class="data row8 col4">-27.1</td>
+</tr>
+<tr class="even">
+<td id="T_348e6_row9_col0" class="data row9 col0">Survived</td>
+<td id="T_348e6_row9_col1" class="data row9 col1">Wimbledon</td>
+<td id="T_348e6_row9_col2" class="data row9 col2">2000-01</td>
+<td id="T_348e6_row9_col3" class="data row9 col3">1</td>
+<td id="T_348e6_row9_col4" class="data row9 col4">-53.9</td>
+</tr>
+<tr class="odd">
+<td id="T_348e6_row10_col0" class="data row10 col0">Survived</td>
+<td id="T_348e6_row10_col1" class="data row10 col1">Wimbledon</td>
+<td id="T_348e6_row10_col2" class="data row10 col2">2001-02</td>
+<td id="T_348e6_row10_col3" class="data row10 col3">2</td>
+<td id="T_348e6_row10_col4" class="data row10 col4">-59.4</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
@@ -774,11 +847,11 @@ Note
 <section id="a-results-business" class="level2">
 <h2 class="anchored" data-anchor-id="a-results-business">A Results Business</h2>
 <p>Next up, we’ll look at our <code>Year_End_Outcome</code> variable. Let’s plot the attendance change over time, grouping teams by whether they were Promoted, Survived, or Relegated in their first post-relegation season.</p>
-<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.070482Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.905042Z&quot;}}" data-execution_count="40">
+<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.070482Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.905042Z&quot;}}" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
 <figcaption>Average attendance change (anomalies removed) relative to the relegation season (Y0), grouped by the team’s outcome in their first post-relegation season (Y+1).</figcaption>
 </figure>
 </div>
@@ -793,11 +866,11 @@ Note
 <h2 class="anchored" data-anchor-id="would-champagne-football-help">Would champagne football help?</h2>
 <p>If you’re stuck in the Championship, can you at least keep the fans entertained with attacking football?</p>
 <p>To test this, I’ve plotted <code>Goals_For_Per_Game</code> against the percentage change in attendance for all post-relegation seasons (Y+1 and Y+2), again grouped by the team’s outcome and with the stadium anomalies removed.</p>
-<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.628912Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:21.086946Z&quot;}}" data-execution_count="41">
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.628912Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:21.086946Z&quot;}}" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
 <figcaption>Scatter plots (all structural anomalies removed) showing the relationship between attacking football and the percentage change in attendance.</figcaption>
 </figure>
 </div>
