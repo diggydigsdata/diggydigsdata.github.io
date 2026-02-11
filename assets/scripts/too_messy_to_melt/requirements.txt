@@ -1,0 +1,11 @@
+# --- Core Data Processing ---
+pandas>=2.0.0
+numpy
+openpyxl
+
+# --- Tidy Pipeline (Silver Script) ---
+thefuzz
+python-Levenshtein
+
+# --- Analysis & Parquet Export (Gold Script) ---
+pyarrow
