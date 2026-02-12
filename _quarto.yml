@@ -24,6 +24,8 @@ website:
     collapse-below: lg
 
     right:
+      - text: Datasets
+        href: datasets/index.qmd
       - text: About
         href: about.qmd
       - icon: github

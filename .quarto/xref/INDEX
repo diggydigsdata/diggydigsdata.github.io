@@ -145,5 +145,17 @@
   },
   "posts/vignettes/index.qmd": {
     "index.html": "32d30c21"
+  },
+  "assets/scripts/too_messy_to_melt/exploring.ipynb": {
+    "exploring.html": "d2683f4b"
+  },
+  "datasets.qmd": {
+    "datasets.html": "f632d00a"
+  },
+  "datasets/index.qmd": {
+    "index.html": "19d49d10"
+  },
+  "datasets/too-messy-to-melt/index.ipynb": {
+    "index.html": "55b9ea0c"
   }
 }

@@ -1,0 +1,15 @@
+---
+title: "Downloadable datasets"
+listing:
+  contents: too-messy-to-melt/
+  type: grid             # Options: 'default', 'grid', or 'table'
+  sort: "date desc"
+  categories: true       # Allows users to filter by 'Silver', 'Gold', etc.
+  sort-ui: true
+  filter-ui: true
+  fields: [title, author, date, image, description, categories]
+---
+
+Welcome to my data repository. These datasets are provided with full data contracts, schema definitions, and DIY pipeline instructions.
+
+---
