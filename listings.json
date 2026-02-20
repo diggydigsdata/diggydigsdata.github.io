@@ -2,13 +2,19 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/too-messy-to-melt/index.html",
       "/posts/winner-takes-them-all/index.html",
+      "/datasets/too-messy-to-melt/index.html",
       "/posts/strava-gap-metric/index.html",
       "/posts/post-relegation-attendance/index.html",
       "/posts/scraper-fc-api-doc/index.html",
       "/posts/no-fear-at-that-age/index.html",
       "/posts/currys-copywriting-samples/index.html"
+    ]
+  },
+  {
+    "listing": "/datasets/index.html",
+    "items": [
+      "/datasets/too-messy-to-melt/index.html"
     ]
   }
 ]

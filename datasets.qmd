@@ -1,0 +1,53 @@
+---
+title: "Downloadable datasets"
+listing:
+  categories: false
+  
+---
+
+My name is Eoin, but throughout high school I was known exclusively as Diggy.  
+
+I'm an MSc Data Science student (part-time) with an expected completion in 2027.  
+
+My background is in ecommerce copywriting, teaching & special needs care. Here is my [resume](/assets/files/eoin-dignan-resume.pdf).  
+
+<details>
+<summary><strong> Miscellaneous Certificates</strong></summary>
+
+#### TechSmith
+
+[Camtasia](/assets/files/camtasia-cert-2025.pdf)  
+[Snagit](/assets/files/snagit-cert-2025.pdf)  
+[Snagit - Techniques for Creating Training Materials](/assets/files/snagit-training-materials.pdf)  
+[Snagit - Techniques for Technical Documentation](/assets/files/snagit-technical-docs.pdf)  
+
+---
+
+#### Coding:  
+
+[Learn Python 3 Skill Path (Codecademy)](/assets/files/LearnPython3_CodecademySkillPath.pdf)  
+[DataCamp Python Certificates](/assets/files/DataCamp_Python_certificates.pdf)  
+[DataCamp R Certificates](/assets/files/DataCamp_R_certificates.pdf)  
+[DataCamp SQL Certificates](/assets/files/DataCampSQLcertificates.pdf)  
+
+---
+
+#### Business Intelligence:  
+
+[DataCamp Power BI & Excel Certificates](/assets/files/DataCamp_Power_BI_and_Excel_certificates.pdf)  
+
+---
+
+#### SEO & Marketing:  
+
+[Get Started Using Google Analytics (GA4)](https://skillshop.credential.net/31bf1a39-29ee-49dc-b7dd-a7fbd4e670f2#acc.iMpVTfh1)  
+[Semrush Academy SEO Principles: An Essential Guide for Beginners](https://static.semrush.com/academy/certificates/49d01032e9/eoin-dignan_10.pdf)  
+
+---
+
+#### Teaching:  
+
+[International House Certificate in Teaching Young Learners and Teenagers (IHCYLT)](/assets/files/IHCYLT_EnglishTeaching_Certificate.pdf)  
+[Certificate in Teaching English to Speakers of Other Languages](/assets/files/CELTA_EnglishTeaching_Certificate.pdf)  
+
+</details>

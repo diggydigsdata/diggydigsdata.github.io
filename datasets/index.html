@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Eoin Dignan – Diggy Digs Data</title>
+<title>Downloadable datasets – Diggy Digs Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +23,30 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/img/favicons/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-b7dfd321930551f38f4d773270eb8bab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/img/favicons/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b7dfd321930551f38f4d773270eb8bab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HNQKPVKC29"></script>
 
 <script type="text/javascript">
@@ -81,14 +113,46 @@ gtag('js', new Date());
 gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Eoin Dignan – Diggy Digs Data">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Downloadable datasets – Diggy Digs Data">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://diggydigsdata.github.io/assets/img/mourne_mountains_profile.jpg">
+<meta property="og:image" content="https://diggydigsdata.github.io/datasets/too-messy-to-melt/featured.png">
 <meta property="og:site_name" content="Diggy Digs Data">
+<meta property="og:image:alt" content="A picture of Stadion Za Lužánkami, formerly the 50,000 capacity home ground of Zbrojovka Brno, and now an overgrown jungle.">
+<meta property="og:image:height" content="355">
+<meta property="og:image:width" content="855">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -255,10 +319,10 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets\img\brand.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets\img\brand.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Diggy Digs Data</span>
     </a>
   </div>
@@ -269,11 +333,11 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./datasets/index.html"> 
+    <a class="nav-link active" href="../datasets/index.html" aria-current="page"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -303,66 +367,101 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QW5hbHl0aWNz">Analytics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGF0YSUyMEVuZ2luZWVyaW5n">Data Engineering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Rm9vdGJhbGw=">Football <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<div class="quarto-about-marquee">
-  <div class="about-image-container">
-    <img src="assets/img/mourne_mountains_profile.jpg" class="about-image " style="width: 100%;">
-  </div>
-  <div class="about-contents">
-    <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Eoin Dignan</h1>
+<h1 class="title">Downloadable datasets</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-</header> <main class="content" id="quarto-document-content">
-
-<p>My name is Eoin, but throughout high school I was known exclusively as Diggy.</p>
-<p>I’m an MSc Data Science student (part-time) with an expected completion in 2027.</p>
-<p>My background is in ecommerce copywriting, teaching &amp; special needs care. Here is my <a href=".\assets/files/eoin-dignan-resume.pdf">resume</a>.</p>
-<details>
-<summary>
-<strong> Miscellaneous Certificates</strong>
-</summary>
-<section id="techsmith" class="level4">
-<h4 data-anchor-id="techsmith">TechSmith</h4>
-<p><a href=".\assets/files/camtasia-cert-2025.pdf">Camtasia</a><br>
-<a href=".\assets/files/snagit-cert-2025.pdf">Snagit</a><br>
-<a href=".\assets/files/snagit-training-materials.pdf">Snagit - Techniques for Creating Training Materials</a><br>
-<a href=".\assets/files/snagit-technical-docs.pdf">Snagit - Techniques for Technical Documentation</a></p>
-<hr>
-</section>
-<section id="coding" class="level4">
-<h4 data-anchor-id="coding">Coding:</h4>
-<p><a href=".\assets/files/LearnPython3_CodecademySkillPath.pdf">Learn Python 3 Skill Path (Codecademy)</a><br>
-<a href=".\assets/files/DataCamp_Python_certificates.pdf">DataCamp Python Certificates</a><br>
-<a href=".\assets/files/DataCamp_R_certificates.pdf">DataCamp R Certificates</a><br>
-<a href=".\assets/files/DataCampSQLcertificates.pdf">DataCamp SQL Certificates</a></p>
-<hr>
-</section>
-<section id="business-intelligence" class="level4">
-<h4 data-anchor-id="business-intelligence">Business Intelligence:</h4>
-<p><a href=".\assets/files/DataCamp_Power_BI_and_Excel_certificates.pdf">DataCamp Power BI &amp; Excel Certificates</a></p>
-<hr>
-</section>
-<section id="seo-marketing" class="level4">
-<h4 data-anchor-id="seo-marketing">SEO &amp; Marketing:</h4>
-<p><a href="https://skillshop.credential.net/31bf1a39-29ee-49dc-b7dd-a7fbd4e670f2#acc.iMpVTfh1">Get Started Using Google Analytics (GA4)</a><br>
-<a href="https://static.semrush.com/academy/certificates/49d01032e9/eoin-dignan_10.pdf">Semrush Academy SEO Principles: An Essential Guide for Beginners</a></p>
-<hr>
-</section>
-<section id="teaching" class="level4">
-<h4 data-anchor-id="teaching">Teaching:</h4>
-<p><a href=".\assets/files/IHCYLT_EnglishTeaching_Certificate.pdf">International House Certificate in Teaching Young Learners and Teenagers (IHCYLT)</a><br>
-<a href=".\assets/files/CELTA_EnglishTeaching_Certificate.pdf">Certificate in Teaching English to Speakers of Other Languages</a></p>
-</section></details>
+  
 
 
-</main> 
+</header>
+
+
+<p>Welcome to my data repository. These datasets are provided with full data contracts, schema definitions, and DIY pipeline instructions.</p>
+<hr>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-title" data-direction="asc">
+        Title
+      </option>
+      <option value="listing-date-sort" data-direction="asc">
+        Date - Oldest
+      </option>
+      <option value="listing-date-sort" data-direction="desc">
+        Date - Newest
+      </option>
+      <option value="listing-author" data-direction="asc">
+        Author
+      </option>
+    </select>
   </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
 </div>
- <!-- /main -->
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Rm9vdGJhbGwlMkNBbmFseXRpY3MlMkNEYXRhJTIwRW5naW5lZXJpbmc=" data-listing-date-sort="1768431600000" data-listing-file-modified-sort="1771601603670" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4296">
+<a href="../datasets/too-messy-to-melt/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="../datasets/too-messy-to-melt/featured.png" class="thumbnail-image card-img" style="height: 150px;" alt="A picture of Stadion Za Lužánkami, formerly the 50,000 capacity home ground of Zbrojovka Brno, and now an overgrown jungle.">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Too Messy to Melt (Stable)
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Rm9vdGJhbGw='); return false;">Football</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QW5hbHl0aWNz'); return false;">Analytics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMEVuZ2luZWVyaW5n'); return false;">Data Engineering</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Downloadable attendance churn dataset and walkthrough of its creation - from messy and manual Excel to a tidy and reproducible Python pipeline.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Diggy
+</div>
+<div class="listing-date">
+Jan 15, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -378,6 +477,13 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
       window.document.body.appendChild(a);
     }
     window.setColorSchemeToggle(window.hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -776,11 +882,11 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/datasets/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./LICENSE">
+    <a class="nav-link" href="../LICENSE">
 <p>License</p>
 </a>
   </li>  

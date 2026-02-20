@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Eoin Dignan – Diggy Digs Data</title>
+<title>exploring – Diggy Digs Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,30 +20,66 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/img/favicons/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-b7dfd321930551f38f4d773270eb8bab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/img/favicons/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-013882879a21c3ca3416aac467d3c23f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-b7dfd321930551f38f4d773270eb8bab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-6f54ce9af9dcb4054d4614137579ee5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,13 +118,11 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </script>
 
 
-<meta property="og:title" content="Eoin Dignan – Diggy Digs Data">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://diggydigsdata.github.io/assets/img/mourne_mountains_profile.jpg">
+<meta property="og:title" content="Diggy Digs Data">
 <meta property="og:site_name" content="Diggy Digs Data">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -255,10 +289,10 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets\img\brand.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets\img\brand.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Diggy Digs Data</span>
     </a>
   </div>
@@ -269,11 +303,11 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./datasets/index.html"> 
+    <a class="nav-link" href="../../../datasets/index.html"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -303,66 +337,145 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<div class="quarto-about-marquee">
-  <div class="about-image-container">
-    <img src="assets/img/mourne_mountains_profile.jpg" class="about-image " style="width: 100%;">
-  </div>
-  <div class="about-contents">
-    <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Eoin Dignan</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+
+<div id="532aee3a" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="quarto-title-meta">
-  </div>
-</header> <main class="content" id="quarto-document-content">
+<div id="abfc8431" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gold_data <span class="op">=</span> pd.read_parquet(<span class="st">"../../files/datasets/too_messy_to_melt/gold_relegation_attendance.parquet"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gold_data.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           Observation_ID  Relegation_Event_ID         Team   Season  Tier  \
+0  Aston Villa 2015-16_-1  Aston Villa 2015-16  Aston Villa  2014-15     1   
+1   Aston Villa 2015-16_0  Aston Villa 2015-16  Aston Villa  2015-16     1   
+2   Aston Villa 2015-16_1  Aston Villa 2015-16  Aston Villa  2016-17     2   
+3   Aston Villa 2015-16_2  Aston Villa 2015-16  Aston Villa  2017-18     2   
+4     Barnsley 1997-98_-1     Barnsley 1997-98     Barnsley  1996-97     2   
 
-<p>My name is Eoin, but throughout high school I was known exclusively as Diggy.</p>
-<p>I’m an MSc Data Science student (part-time) with an expected completion in 2027.</p>
-<p>My background is in ecommerce copywriting, teaching &amp; special needs care. Here is my <a href=".\assets/files/eoin-dignan-resume.pdf">resume</a>.</p>
-<details>
-<summary>
-<strong> Miscellaneous Certificates</strong>
-</summary>
-<section id="techsmith" class="level4">
-<h4 data-anchor-id="techsmith">TechSmith</h4>
-<p><a href=".\assets/files/camtasia-cert-2025.pdf">Camtasia</a><br>
-<a href=".\assets/files/snagit-cert-2025.pdf">Snagit</a><br>
-<a href=".\assets/files/snagit-training-materials.pdf">Snagit - Techniques for Creating Training Materials</a><br>
-<a href=".\assets/files/snagit-technical-docs.pdf">Snagit - Techniques for Technical Documentation</a></p>
-<hr>
-</section>
-<section id="coding" class="level4">
-<h4 data-anchor-id="coding">Coding:</h4>
-<p><a href=".\assets/files/LearnPython3_CodecademySkillPath.pdf">Learn Python 3 Skill Path (Codecademy)</a><br>
-<a href=".\assets/files/DataCamp_Python_certificates.pdf">DataCamp Python Certificates</a><br>
-<a href=".\assets/files/DataCamp_R_certificates.pdf">DataCamp R Certificates</a><br>
-<a href=".\assets/files/DataCampSQLcertificates.pdf">DataCamp SQL Certificates</a></p>
-<hr>
-</section>
-<section id="business-intelligence" class="level4">
-<h4 data-anchor-id="business-intelligence">Business Intelligence:</h4>
-<p><a href=".\assets/files/DataCamp_Power_BI_and_Excel_certificates.pdf">DataCamp Power BI &amp; Excel Certificates</a></p>
-<hr>
-</section>
-<section id="seo-marketing" class="level4">
-<h4 data-anchor-id="seo-marketing">SEO &amp; Marketing:</h4>
-<p><a href="https://skillshop.credential.net/31bf1a39-29ee-49dc-b7dd-a7fbd4e670f2#acc.iMpVTfh1">Get Started Using Google Analytics (GA4)</a><br>
-<a href="https://static.semrush.com/academy/certificates/49d01032e9/eoin-dignan_10.pdf">Semrush Academy SEO Principles: An Essential Guide for Beginners</a></p>
-<hr>
-</section>
-<section id="teaching" class="level4">
-<h4 data-anchor-id="teaching">Teaching:</h4>
-<p><a href=".\assets/files/IHCYLT_EnglishTeaching_Certificate.pdf">International House Certificate in Teaching Young Learners and Teenagers (IHCYLT)</a><br>
-<a href=".\assets/files/CELTA_EnglishTeaching_Certificate.pdf">Certificate in Teaching English to Speakers of Other Languages</a></p>
-</section></details>
+   Position  Attendance  Year_vs_Relegation Year_End_Outcome  \
+0        17       34133                  -1         Survived   
+1        20       33690                   0        Relegated   
+2        13       32107                   1         Survived   
+3         4       32097                   2         Survived   
+4         2       11356                  -1         Promoted   
 
+   Games_Played_History  ...  Covid_Baseline_Review_Flag  \
+0                    38  ...                       False   
+1                    38  ...                       False   
+2                    46  ...                       False   
+3                    46  ...                       False   
+4                    46  ...                       False   
 
-</main> 
-  </div>
+   Pct_Change_vs_Baseline  Pct_Change_vs_Baseline_Display  \
+0                0.013149                         1.31493   
+1                     0.0                             0.0   
+2               -0.046987                       -4.698724   
+3               -0.047284                       -4.728406   
+4               -0.384465                      -38.446528   
+
+   Pct_Change_Analysis Outcome_Group  Goals_For_Per_Game Points_Per_Game  \
+0                 &lt;NA&gt;      Survived            0.815789             1.0   
+1                 &lt;NA&gt;      Survived            0.710526        0.447368   
+2            -4.698724      Survived            1.021739        1.347826   
+3            -4.728406      Survived            1.565217        1.804348   
+4                 &lt;NA&gt;      Survived            1.652174         1.73913   
+
+  Is_Structural_Anomaly           Plot_Group_Label  Is_Baseline_Substituted  
+0                 False  Survived (Still in Champ)                    False  
+1                 False  Survived (Still in Champ)                    False  
+2                 False  Survived (Still in Champ)                    False  
+3                 False  Survived (Still in Champ)                    False  
+4                 False  Survived (Still in Champ)                    False  
+
+[5 rows x 35 columns]</code></pre>
 </div>
- <!-- /main -->
+</div>
+<div id="afe63e5e" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gold_data[<span class="st">"Relegation_Season_Index"</span>] <span class="op">=</span> (</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    gold_data[<span class="st">"Relegation_Event_ID"</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="st">" | Y"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> gold_data[<span class="st">"Year_vs_Relegation"</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="d34fd161" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> gold_data[<span class="st">"Relegation_Season_Index"</span>].is_unique</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="a33e8a34" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dupes <span class="op">=</span> (</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    gold_data</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">"Relegation_Event_ID"</span>, <span class="st">"Year_vs_Relegation"</span>])</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    .size()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    .reset_index(name<span class="op">=</span><span class="st">"n"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    .query(<span class="st">"n &gt; 1"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    .sort_values(<span class="st">"n"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dupes.head(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Empty DataFrame
+Columns: [Relegation_Event_ID, Year_vs_Relegation, n]
+Index: []</code></pre>
+</div>
+</div>
+<div id="64ce3515" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>silver_data <span class="op">=</span> pd.read_parquet(<span class="st">"../../files/datasets/too_messy_to_melt/silver_relegation_attendance.parquet"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(silver_data.head())</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>dupes_silver <span class="op">=</span> (</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    silver_data</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    .groupby([<span class="st">"Relegation_Event_ID"</span>, <span class="st">"Year_vs_Relegation"</span>])</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    .size()</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    .reset_index(name<span class="op">=</span><span class="st">"n"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    .query(<span class="st">"n &gt; 1"</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    .sort_values(<span class="st">"n"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dupes_silver.head(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           Observation_ID  Relegation_Event_ID         Team   Season  Tier  \
+0  Aston Villa 2015-16_-1  Aston Villa 2015-16  Aston Villa  2014-15     1   
+1   Aston Villa 2015-16_0  Aston Villa 2015-16  Aston Villa  2015-16     1   
+2   Aston Villa 2015-16_1  Aston Villa 2015-16  Aston Villa  2016-17     2   
+3   Aston Villa 2015-16_2  Aston Villa 2015-16  Aston Villa  2017-18     2   
+4     Barnsley 1997-98_-1     Barnsley 1997-98     Barnsley  1996-97     2   
+
+   Position  Attendance  Year_vs_Relegation Year_End_Outcome  \
+0        17       34133                  -1         Survived   
+1        20       33690                   0        Relegated   
+2        13       32107                   1         Survived   
+3         4       32097                   2         Survived   
+4         2       11356                  -1         Promoted   
+
+   Games_Played_History  Wins_History  Goals_For_History  \
+0                    38            10                 31   
+1                    38             3                 27   
+2                    46            16                 47   
+3                    46            24                 72   
+4                    46            22                 76   
+
+   Goals_Against_History  Points_History  
+0                     57              38  
+1                     76              17  
+2                     48              62  
+3                     42              83  
+4                     55              80  
+Empty DataFrame
+Columns: [Relegation_Event_ID, Year_vs_Relegation, n]
+Index: []</code></pre>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -378,6 +491,13 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
       window.document.body.appendChild(a);
     }
     window.setColorSchemeToggle(window.hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -776,11 +896,11 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/about.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/assets/scripts/too_messy_to_melt/exploring.ipynb" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./LICENSE">
+    <a class="nav-link" href="../../../LICENSE">
 <p>License</p>
 </a>
   </li>  
