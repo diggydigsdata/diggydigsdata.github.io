@@ -3,11 +3,6 @@
     "python-envs.defaultPackageManager": "ms-python.python:conda",
     "python-envs.pythonProjects": [
         {
-            "path": "posts/shared-future-news-YLT-survey",
-            "envManager": "ms-python.python:conda",
-            "packageManager": "ms-python.python:conda"
-        },
-        {
             "path": "",
             "envManager": "ms-python.python:conda",
             "packageManager": "ms-python.python:conda"

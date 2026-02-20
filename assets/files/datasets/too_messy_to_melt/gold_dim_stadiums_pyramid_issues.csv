@@ -1,0 +1,43 @@
+Season,Tier,SourceURL,IssueType,Details
+1992–93,2,https://en.wikipedia.org/wiki/1992–93_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1993–94,2,https://en.wikipedia.org/wiki/1993–94_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1994–95,2,https://en.wikipedia.org/wiki/1994–95_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1995–96,2,https://en.wikipedia.org/wiki/1995–96_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1996–97,2,https://en.wikipedia.org/wiki/1996–97_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1998–99,2,https://en.wikipedia.org/wiki/1998–99_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1999–2000,2,https://en.wikipedia.org/wiki/1999–2000_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2000–01,2,https://en.wikipedia.org/wiki/2000–01_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2001–02,2,https://en.wikipedia.org/wiki/2001–02_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2007–08,2,https://en.wikipedia.org/wiki/2007–08_Football_League_Championship,SCRAPE_FAILED,"ValueError('The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().')"
+2016–17,2,https://en.wikipedia.org/wiki/2016–17_EFL_Championship,CAPACITY_OUTLIERS,"Cap<500: 0, Cap>150000: 1"
+1992–93,3,https://en.wikipedia.org/wiki/1992–93_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1993–94,3,https://en.wikipedia.org/wiki/1993–94_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1994–95,3,https://en.wikipedia.org/wiki/1994–95_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1995–96,3,https://en.wikipedia.org/wiki/1995–96_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1996–97,3,https://en.wikipedia.org/wiki/1996–97_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1997–98,3,https://en.wikipedia.org/wiki/1997–98_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1998–99,3,https://en.wikipedia.org/wiki/1998–99_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1999–2000,3,https://en.wikipedia.org/wiki/1999–2000_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2000–01,3,https://en.wikipedia.org/wiki/2000–01_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2001–02,3,https://en.wikipedia.org/wiki/2001–02_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2002–03,3,https://en.wikipedia.org/wiki/2002–03_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2003–04,3,https://en.wikipedia.org/wiki/2003–04_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2004–05,3,https://en.wikipedia.org/wiki/2004–05_Football_League_League_One,SCRAPE_FAILED,HTTPError('404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/2004%E2%80%9305_Football_League_League_One')
+2005–06,3,https://en.wikipedia.org/wiki/2005–06_Football_League_League_One,SCRAPE_FAILED,"ConnectTimeout(MaxRetryError(""HTTPSConnectionPool(host='en.wikipedia.org', port=443): Max retries exceeded with url: /wiki/2005%E2%80%9306_Football_League_League_One (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002BAC51DB390>, 'Connection to en.wikipedia.org timed out. (connect timeout=30)'))""))"
+2006–07,3,https://en.wikipedia.org/wiki/2006–07_Football_League_League_One,SCRAPE_FAILED,HTTPError('404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/2006%E2%80%9307_Football_League_League_One')
+2016–17,3,https://en.wikipedia.org/wiki/2016–17_EFL_League_One,CAPACITY_OUTLIERS,"Cap<500: 0, Cap>150000: 2"
+1992–93,4,https://en.wikipedia.org/wiki/1992–93_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1993–94,4,https://en.wikipedia.org/wiki/1993–94_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1994–95,4,https://en.wikipedia.org/wiki/1994–95_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1995–96,4,https://en.wikipedia.org/wiki/1995–96_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1996–97,4,https://en.wikipedia.org/wiki/1996–97_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1997–98,4,https://en.wikipedia.org/wiki/1997–98_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1998–99,4,https://en.wikipedia.org/wiki/1998–99_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+1999–2000,4,https://en.wikipedia.org/wiki/1999–2000_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2000–01,4,https://en.wikipedia.org/wiki/2000–01_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2001–02,4,https://en.wikipedia.org/wiki/2001–02_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2002–03,4,https://en.wikipedia.org/wiki/2002–03_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2003–04,4,https://en.wikipedia.org/wiki/2003–04_Football_League,SCRAPE_FAILED,No suitable stadia table found.
+2004–05,4,https://en.wikipedia.org/wiki/2004–05_Football_League_League_Two,SCRAPE_FAILED,HTTPError('404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/2004%E2%80%9305_Football_League_League_Two')
+2005–06,4,https://en.wikipedia.org/wiki/2005–06_Football_League_League_Two,SCRAPE_FAILED,HTTPError('404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/2005%E2%80%9306_Football_League_League_Two')
+2006–07,4,https://en.wikipedia.org/wiki/2006–07_Football_League_League_Two,SCRAPE_FAILED,HTTPError('404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/2006%E2%80%9307_Football_League_League_Two')

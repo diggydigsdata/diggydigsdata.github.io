@@ -1,0 +1,53 @@
+raw_team,mapped_team,method
+ Aston Villa,Aston Villa,auto
+ Barnsley,Barnsley,auto
+ Birmingham City,Birmingham City,auto
+ Blackburn Rovers,Blackburn Rovers,auto
+ Blackpool,Blackpool,auto
+ Bolton Wanderers,Bolton Wanderers,auto
+ Bournemouth,Bournemouth,auto
+ Bradford City,Bradford City,auto
+ Burnley,Burnley,auto
+ Cardiff City,Cardiff City,auto
+ Charlton Athletic,Charlton Athletic,auto
+ Coventry City,Coventry City,auto
+ Crystal Palace,Crystal Palace,auto
+ Derby County,Derby County,auto
+ Fulham,Fulham,auto
+ Huddersfield Town,Huddersfield Town,auto
+ Hull City,Hull City,auto
+ Ipswich Town,Ipswich Town,auto
+ Leeds United,Leeds United,auto
+ Leicester City,Leicester City,auto
+ Luton Town,Luton Town,auto
+ Manchester City,Manchester City,auto
+ Middlesbrough,Middlesbrough,auto
+ Newcastle United,Newcastle United,auto
+ Norwich City,Norwich City,auto
+ Nottingham Forest,Nottingham Forest,auto
+ Oldham Athletic,Oldham Athletic,auto
+ Portsmouth,Portsmouth,auto
+ Queens Park Rangers,Queens Park Rangers,auto
+ Reading,Reading,auto
+ Sheffield United,Sheffield United,auto
+ Sheffield Wednesday,Sheffield Wednesday,auto
+ Southampton,Southampton,auto
+ Stoke City,Stoke City,auto
+ Sunderland,Sunderland,auto
+ Swansea City,Swansea City,auto
+ Swindon Town,Swindon Town,auto
+ Watford,Watford,auto
+ West Bromwich Albion,West Bromwich Albion,auto
+ West Ham United,West Ham United,auto
+ Wigan Athletic,Wigan Athletic,auto
+ Wimbledon,Wimbledon,auto
+ Wolverhampton Wanderers,Wolverhampton Wanderers,auto
+Man City,Manchester City,manual
+Man Utd,Manchester United,manual
+Nott'm Forest,Nottingham Forest,manual
+Notts County,Nottingham Forest,manual
+QPR,Queens Park Rangers,manual
+Sheff Utd,Sheffield United,manual
+Sheff Wed,Sheffield Wednesday,manual
+Spurs,Tottenham Hotspur,manual
+Wolves,Wolverhampton Wanderers,manual

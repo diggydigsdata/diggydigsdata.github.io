@@ -1,6 +1,8 @@
 ---
 listing:
-  contents: posts
+  contents:
+    - posts
+    - datasets/too-messy-to-melt/
   sort: "date desc"
   type: grid
   categories: true
