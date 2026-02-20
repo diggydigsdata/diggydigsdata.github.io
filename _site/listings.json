@@ -12,18 +12,6 @@
     ]
   },
   {
-    "listing": "/datasets.html",
-    "items": [
-      "/posts/currys-copywriting-samples/index.html",
-      "/posts/post-relegation-attendance/index.html",
-      "/posts/strava-gap-metric/index.html",
-      "/posts/no-fear-at-that-age/index.html",
-      "/posts/scraper-fc-api-doc/index.html",
-      "/posts/winner-takes-them-all/index.html",
-      "/posts/too-messy-to-melt/index.html"
-    ]
-  },
-  {
     "listing": "/datasets/index.html",
     "items": [
       "/datasets/too-messy-to-melt/index.html"

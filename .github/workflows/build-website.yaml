@@ -14,11 +14,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v5
 
-      - name: Set up Python and Dependencies
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.13t'
-
+      - name: Set up Conda
+          uses: conda-incubator/setup-miniconda@v3
+          with:
+            environment-file: environment.yml
+            activate-environment: diggydigsdata
+            python-version: "3.13t"
+            auto-activate-base: false
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2

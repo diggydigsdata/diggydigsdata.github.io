@@ -1,24 +1,11 @@
 {
   "listingMap": {
+    "datasets\\index.qmd": [
+      "too-messy-to-melt/"
+    ],
     "index.qmd": [
       "posts",
-      "../datasets",
-      "../datasets/too-messy-to-melt/index.qmd",
-      "datasets",
-      "datasets/too-messy-to-melt/index.qmd",
       "datasets/too-messy-to-melt/"
-    ],
-    "datasets.qmd": [
-      "assets/files/datasets",
-      "posts",
-      "*/index.qmd"
-    ],
-    "datasets\\index.qmd": [
-      "*/index.qmd",
-      "datasets",
-      "datasets/",
-      "datasets/too-messy-to-melt/",
-      "too-messy-to-melt/"
     ]
   }
 }
