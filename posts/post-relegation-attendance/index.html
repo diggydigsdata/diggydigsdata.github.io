@@ -384,9 +384,9 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 
 
 
-<p>I’m a Burnley fan. With our recent promotion to the Premier League we are firmly consolidated as a yoyo club par excellence - we rank joint-4th with Sunderland on the Yoyo-meter (below). So what better time to assess some of the impacts of relegation from the Premier League? Because it’s never too early to plan ahead.</p>
-<p>In this article, I’ll be exploring if, how and for how long Premier League relegation disrupts attendances. We’ll also examine some mitigating factors. Does attractive football help maintain attendances? Is mid-table mediocrity worse for attendances than being in a relegation dogfight?</p>
-<p>The dataset I have designed for this project combines a few different online resources and also engineers some variables. You can read about it and download it <a href="../too-messy-to-melt/">here</a>.</p>
+<p>I’m a Burnley fan - and, with our recent promotion to the Premier League (and impending relegation), we are firmly consolidated as a yoyo club par excellence. In fact, we rank joint-4th with Sunderland on the Yoyo-meter (below). So what better time to assess of the impacts of relegation from the Premier League? Because it’s never too early to plan ahead.</p>
+<p>In this article, I’ll be exploring if, how and for how long Premier League relegation disrupts attendances. We’ll also examine some mitigating factors. Does attractive football help maintain attendances? Is mid-table mediocrity worse for attendances than being mired in a relegation dogfight?</p>
+<p>The dataset I have designed for this project combines a few different online resources and also engineers some variables. You can read an in-depth article about how it was produced and download it <a href="../too-messy-to-melt/">here</a>. This article gives a much briefer overview of my methodology, the dataset design and some limitations. Of course, you can also skip straight to the <a href="#analysis">analysis section</a>.</p>
 <section id="yoyometer" class="level3">
 <h3 class="anchored" data-anchor-id="yoyometer">Yoyometer</h3>
 <table class="caption-top table">
@@ -515,8 +515,7 @@ Note
 </section>
 <section id="dataset" class="level3">
 <h3 class="anchored" data-anchor-id="dataset">Dataset</h3>
-<p>In addition to merging attendance data with position data and performance data, some key features of the dataset had to be engineered. I needed <code>Year_vs_Relegation</code> and <code>Year_End_Outcome</code> columns in order to group by season outcomes and to track attendance over time.</p>
-<p>For my <em>single source of truth</em> dataset, I am using the raw values for performance (Points, Goals, etc.) and calculating per-game metrics as needed for analysis. Below is a snapshot of the final, tidy dataset.</p>
+<p>In addition to merging attendance data with position data and performance data, some key features of the dataset had to be engineered. I needed <code>Year_vs_Relegation</code> and <code>Year_End_Outcome</code> columns in order to group by season outcomes and to track attendance over time. Below is a snapshot of the final, tidy dataset.</p>
 <section id="limitations" class="level4">
 <h4 class="anchored" data-anchor-id="limitations">Limitations</h4>
 <p>As tidy as it is, there are still some pretty big limitations to this dataset:</p>
@@ -546,7 +545,7 @@ Note
 <section id="increased-attendance-after-relegation" class="level3">
 <h3 class="anchored" data-anchor-id="increased-attendance-after-relegation">Increased attendance after relegation?</h3>
 <p>Let’s start on a positive note. On 10 occasions, teams managed to increase their average attendance in the first season (Y+1) immediately following relegation.</p>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:20.288502Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.271205Z&quot;}}" data-cap="Table 1: Teams with Increased Attendance in Year +1" data-execution_count="11">
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:20.288502Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.271205Z&quot;}}" data-cap="Table 1: Teams with Increased Attendance in Year +1" data-execution_count="11">
 <div class="cell-output cell-output-display" data-execution_count="11">
 <style type="text/css">
 </style>
@@ -641,7 +640,7 @@ Note
 <section id="anomalies" class="level2">
 <h2 class="anchored" data-anchor-id="anomalies">Anomalies</h2>
 <p>Those positive stories are, unfortunately, anomalies. And they are not the only ones. A box plot of all post-relegation data (Y+1 and Y+2) shows the wild variance in outcomes.</p>
-<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T02:17:19.834993Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T02:17:19.724752Z&quot;}}" data-fig-format="png" data-execution_count="26">
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T02:17:19.834993Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T02:17:19.724752Z&quot;}}" data-fig-format="png" data-execution_count="26">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -654,7 +653,7 @@ Note
 <p>The plot above clearly shows several extreme statistical outliers (the dots) that are skewing the data. To understand what they are, we can use the <code>1.5 * IQR</code> rule (the same logic the box plot uses) to print a list of them.</p>
 <section id="outlier-hunt-using-the-1.5-iqr-rule" class="level3">
 <h3 class="anchored" data-anchor-id="outlier-hunt-using-the-1.5-iqr-rule">Outlier Hunt Using the 1.5 * IQR Rule</h3>
-<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:20.871071Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.839302Z&quot;}}" data-execution_count="20">
+<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:20.871071Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.839302Z&quot;}}" data-execution_count="20">
 <div class="cell-output cell-output-display" data-execution_count="20">
 <style type="text/css">
 </style>
@@ -851,7 +850,7 @@ Note
 <section id="a-results-business" class="level2">
 <h2 class="anchored" data-anchor-id="a-results-business">A Results Business</h2>
 <p>Next up, we’ll look at our <code>Year_End_Outcome</code> variable. Let’s plot the attendance change over time, grouping teams by whether they were Promoted, Survived, or Relegated in their first post-relegation season.</p>
-<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.070482Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.905042Z&quot;}}" data-execution_count="14">
+<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.070482Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.905042Z&quot;}}" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -870,7 +869,7 @@ Note
 <h2 class="anchored" data-anchor-id="would-champagne-football-help">Would champagne football help?</h2>
 <p>If you’re stuck in the Championship, can you at least keep the fans entertained with attacking football?</p>
 <p>To test this, I’ve plotted <code>Goals_For_Per_Game</code> against the percentage change in attendance for all post-relegation seasons (Y+1 and Y+2), again grouped by the team’s outcome and with the stadium anomalies removed.</p>
-<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.628912Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:21.086946Z&quot;}}" data-execution_count="15">
+<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.628912Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:21.086946Z&quot;}}" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
