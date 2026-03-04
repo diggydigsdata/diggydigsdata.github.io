@@ -1,0 +1,19 @@
+::: callout-important
+**Dataset Versioning: v0.1 (Deprecated) → v0.2 (Beta)**
+This dataset is currently being upgraded to include bug fixes and new features. While the data linked below is the source for the original [Relegation Attendance Churn article](/posts/post-relegation-attendance/index.ipynb), the post will be updated once the stable v0.2 release is finalized.
+
+**What's New**: 
+* A Power BI preview dashboard is available below using the v0.2 Beta.
+
+{{< include /_includes/dashboards/attendance_dashboard.html >}}
+
+Full release notes and documentation for the v0.1 to v0.2 transition will be included when v0.2 is stable.
+
+**Beta Downloads:**  
+- Patch file for 24/25 performance data: [standings24_25.csv](assets/files/datasets/too_messy_to_melt/standings24_25.csv)  
+- Silver (tidy): [silver_relegation_attendance.csv](assets/files/datasets/too_messy_to_melt/silver_relegation_attendance.csv)  
+- Stadium capacities: [gold_dim_stadiums_pyramid.csv](assets/files/datasets/too_messy_to_melt/gold_dim_stadiums_pyramid.csv)  
+- Gold (analytics-ready): [gold_relegation_attendance.parquet](assets/files/datasets/too_messy_to_melt/gold_relegation_attendance.parquet)
+
+*Note: The pipeline utilises Databricks' [Medallion Architecure](https://www.databricks.com/glossary/medallion-architecture) (Bronze/Silver/Gold).*
+:::

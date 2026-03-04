@@ -40,13 +40,6 @@ Here is a small prototype I made in Power Bi.
 
 ### Known limitations (current dashboard)
 - This can only be filtered to a **single-season / single-competition** grain as I have encountered issues with my DAX measures.
-- Cross-filter interactions can be annoying (table clicks affecting cards in ways I don't want)
+- Reset button doesn't work.
 
-<p class="pbi-wrap">
-<iframe title="pkwon_single_season_single_comp" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGE1Y2VkYWItZGZiOC00NTlhLWE1NmYtMTBjMTk0NDY0YzhmIiwidCI6ImE1MmIxMmI5LTdkYzktNGE3MS05YzQ5LTliZTkyOTIwNzAyZiJ9" frameborder="0" allowFullScreen="true"></iframe>
-</p>
-
-<style>
-.pbi-wrap { position: relative; padding-top: 56.25%; }
-.pbi-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-</style>
+{{< include /_includes/dashboards/pkwon_dashboard.html >}}
