@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-12-21">
+<meta name="dcterms.date" content="2026-01-15">
 <meta name="description" content="A penalty-won-adjusted goals metric, a demo Power BI dashboard, and a roadmap toward a refreshable data pipeline.">
 
 <title>The Winner Takes Them All (Project Map with Power BI Dashboard) – Diggy Digs Data</title>
@@ -332,7 +332,7 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 21, 2025</p>
+        <p class="date">January 15, 2026</p>
       </div>
     </div>
     
@@ -385,15 +385,27 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="known-limitations-current-dashboard">Known limitations (current dashboard)</h3>
 <ul>
 <li>This can only be filtered to a <strong>single-season / single-competition</strong> grain as I have encountered issues with my DAX measures.</li>
-<li>Cross-filter interactions can be annoying (table clicks affecting cards in ways I don’t want)</li>
+<li>Reset button doesn’t work.</li>
 </ul>
-<p class="pbi-wrap">
-<iframe title="pkwon_single_season_single_comp" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGE1Y2VkYWItZGZiOC00NTlhLWE1NmYtMTBjMTk0NDY0YzhmIiwidCI6ImE1MmIxMmI5LTdkYzktNGE3MS05YzQ5LTliZTkyOTIwNzAyZiJ9" frameborder="0" allowfullscreen="true">
-</iframe>
-</p>
+<div class="pbi-container">
+<p><iframe title="pkwon_single_season_single_comp" src="https://app.powerbi.com/view?r=eyJrIjoiMTQzODhiMjUtNWEzNC00N2UzLTk3YmEtZjdhYjhhYzMwNmQ3IiwidCI6ImE1MmIxMmI5LTdkYzktNGE3MS05YzQ5LTliZTkyOTIwNzAyZiJ9" allowfullscreen="true"> </iframe></p>
+</div>
 <style>
-.pbi-wrap { position: relative; padding-top: 56.25%; }
-.pbi-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.pbi-container { 
+  position: relative; 
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0; 
+  overflow: hidden; 
+  max-width: 100%; 
+}
+.pbi-container iframe { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  border: 0; 
+}
 </style>
 
 

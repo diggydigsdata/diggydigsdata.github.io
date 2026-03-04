@@ -437,13 +437,47 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 </header>
 
 
-<p>This dataset is being deprecated as I am upgrading it with new features and big fixes. The dataset linked and described here is still the source for the <a href="C:\Users\eoind\Documents\Projects\diggydigsdata.github.io\posts\post-relegation-attendance\index.ipynb">Relegation Attendance Churn article</a>, but that will use the new version of this dataset as soon as I have a stable version of it. In the meantime, here is a landing page for the beta version, which includes the dataset and the documentation. If you would like to inspect the GitHub repository, you can do so here. And if you would like to download the beta dataset, you can do so below. Both CSV and parquet versions will be made available as part of the stable version. The silver and gold nomenclature references Databricks’ <a href="https://www.databricks.com/glossary/medallion-architecture">Medallion Architecure</a>.</p>
-<ul>
-<li>Patch file for 24/25 performance data: <a href="assets/files/datasets/too_messy_to_melt/standings24_25.csv">standings24_25.csv</a></li>
-<li>Silver (tidy): <a href="assets/files/datasets/too_messy_to_melt/silver_relegation_attendance.csv">silver_relegation_attendance.csv</a></li>
-<li>Stadium capacities: <a href="assets/files/datasets/too_messy_to_melt/gold_dim_stadiums_pyramid.csv">gold_dim_stadiums_pyramid.csv</a></li>
-<li>Gold (analytics-ready): <a href="assets/files/datasets/too_messy_to_melt/gold_relegation_attendance.parquet">gold_relegation_attendance.parquet</a></li>
-</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Dataset Versioning: v0.1 (Deprecated) → v0.2 (Beta)</strong> This dataset is currently being upgraded to include bug fixes and new features. While the data linked below is the source for the original <a href="../../posts/post-relegation-attendance/index.html">Relegation Attendance Churn article</a>, the post will be updated once the stable v0.2 release is finalized.</p>
+<p><strong>What’s New</strong>: * A Power BI preview dashboard is available below using the v0.2 Beta.</p>
+<div class="pbi-container">
+<p><iframe title="attendance churn 1 page" src="https://app.powerbi.com/view?r=eyJrIjoiZTExNTk3NjItYzk2ZC00OGU5LTg0N2QtZDRkNDJiMzU5NDI2IiwidCI6ImE1MmIxMmI5LTdkYzktNGE3MS05YzQ5LTliZTkyOTIwNzAyZiJ9" allowfullscreen="true"> </iframe></p>
+</div>
+<style>
+.pbi-container { 
+  position: relative; 
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0; 
+  overflow: hidden; 
+  max-width: 100%; 
+}
+.pbi-container iframe { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  border: 0; 
+}
+</style>
+<p>Full release notes and documentation for the v0.1 to v0.2 transition will be included when v0.2 is stable.</p>
+<p><strong>Beta Downloads:</strong><br>
+- Patch file for 24/25 performance data: <a href="assets/files/datasets/too_messy_to_melt/standings24_25.csv">standings24_25.csv</a><br>
+- Silver (tidy): <a href="assets/files/datasets/too_messy_to_melt/silver_relegation_attendance.csv">silver_relegation_attendance.csv</a><br>
+- Stadium capacities: <a href="assets/files/datasets/too_messy_to_melt/gold_dim_stadiums_pyramid.csv">gold_dim_stadiums_pyramid.csv</a><br>
+- Gold (analytics-ready): <a href="assets/files/datasets/too_messy_to_melt/gold_relegation_attendance.parquet">gold_relegation_attendance.parquet</a></p>
+<p><em>Note: The pipeline utilises Databricks’ <a href="https://www.databricks.com/glossary/medallion-architecture">Medallion Architecure</a> (Bronze/Silver/Gold).</em></p>
+</div>
+</div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In pandas (and tidy-data workflows), <code>melt()</code> is the standard tool for reshaping a <strong>wide</strong> table into a <strong>long</strong> one.<br>
@@ -455,7 +489,7 @@ In this project, the original spreadsheet (see below) wasn’t just wide — it 
 </figure>
 </div>
 <p>This page documents the <strong>reproducible reshaping pipeline</strong> used to build the final open dataset.</p>
-<p>Read on to learn more about its structure, contents and composition or simply <a href="../../assets/files/datasets/perfect_tidy_data.csv">Download perfect_tidy_data.csv</a>. The CSV becomes an analysis-ready Python DataFrame after some further enrichment - see the final code block for details.</p>
+<p>Read on to learn more about its structure, contents and composition or simply <a href="../../assets/files/datasets/too_messy_to_melt/tidy_attendance_data.csv">Download tidy_attendance_data.csv</a>. The CSV becomes an analysis-ready Python DataFrame after some further enrichment - see the final code block for details.</p>
 </section>
 <section id="dataset-scope" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-scope">Dataset Scope</h2>
@@ -475,7 +509,7 @@ In this project, the original spreadsheet (see below) wasn’t just wide — it 
 <li><strong>European-Football-Statistics.co.uk</strong> (season-level attendances)</li>
 </ul>
 <p>Because COVID-affected seasons are not comparable to normal seasons, I sometimes entered the string value <code>COVID</code> into attendance cells during manual compilation. The pipeline converts these placeholders to missing values (<code>pd.NA</code>) before numeric conversion.</p>
-<p><a href="../../assets/files/datasets/Relegation Attendance Churn_copy.xlsx">Download Relegation Attendance Churn.xlsx</a></p>
+<p><a href="../../assets/files/datasets/too_messy_to_melt/Relegation Attendance Churn_copy.xlsx">Download Relegation Attendance Churn.xlsx</a></p>
 </section>
 <section id="league-position-and-performance" class="level3">
 <h3 class="anchored" data-anchor-id="league-position-and-performance">League position and performance</h3>
@@ -491,7 +525,7 @@ Fjelstul, Joshua C. “The Fjelstul English Football Database v1.1.0.” May 26,
 <li><strong>Patch file</strong><br>
 The Fjelstul dataset does not include the 2024/25 season, so I have supplemented it with a patch file (<code>standings24_25.csv</code>) to include the most recent completed season.</li>
 </ul>
-<p><a href="../../assets/files/datasets/standings24_25.csv">Download standings24_25.csv</a></p>
+<p><a href="../../assets/files/datasets/too_messy_to_melt/standings24_25.csv">Download standings24_25.csv</a></p>
 </section>
 </section>
 <section id="data-dictionary" class="level2">
@@ -648,11 +682,11 @@ The Fjelstul dataset does not include the 2024/25 season, so I have supplemented
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="../../assets/files/datasets/Relegation Attendance Churn_copy.xlsx">Relegation Attendance Churn.xlsx</a></td>
+<td><a href="../../assets/files/datasets/too_messy_to_melt/Relegation Attendance Churn_copy.xlsx">Relegation Attendance Churn.xlsx</a></td>
 <td>Wide-format attendance sheet</td>
 </tr>
 <tr class="even">
-<td><a href="../../assets/files/datasets/standings24_25.csv">Standings24_25.csv</a></td>
+<td><a href="../../assets/files/datasets/too_messy_to_melt/standings24_25.csv">Standings24_25.csv</a></td>
 <td>Patch file for 24/25 season</td>
 </tr>
 </tbody>
@@ -668,7 +702,7 @@ The Fjelstul dataset does not include the 2024/25 season, so I have supplemented
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="../../assets/files/datasets/perfect_tidy_data.csv">perfect_tidy_data.csv</a></td>
+<td><a href="../../assets/files/datasets/too_messy_to_melt/tidy_attendance_data.csv">tidy_attendance_data.csv</a></td>
 <td>Final tidy dataset</td>
 </tr>
 </tbody>
@@ -712,11 +746,11 @@ The Fjelstul dataset does not include the 2024/25 season, so I have supplemented
 <p><strong>What happens:</strong> - Load standings.csv - Optionally append standings24_25.csv - Rename and select relevant columns - Coerce numeric columns</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Load 'season' as string to be safe</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    df_history <span class="op">=</span> pd.read_csv(<span class="st">'../../assets/files/datasets/standings.csv'</span>, dtype<span class="op">=</span>{<span class="st">'season'</span>: <span class="bu">str</span>})</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    df_history <span class="op">=</span> pd.read_csv(<span class="st">'../../assets/files/datasets/too_messy_to_melt/standings.csv'</span>, dtype<span class="op">=</span>{<span class="st">'season'</span>: <span class="bu">str</span>})</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- Load patch file and combine ---</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        df_patch <span class="op">=</span> pd.read_csv(<span class="st">'../../assets/files/datasets/standings24_25.csv'</span>, dtype<span class="op">=</span>{<span class="st">'season'</span>: <span class="bu">str</span>})</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        df_patch <span class="op">=</span> pd.read_csv(<span class="st">'../../assets/files/datasets/too_messy_to_melt/standings24_25.csv'</span>, dtype<span class="op">=</span>{<span class="st">'season'</span>: <span class="bu">str</span>})</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Append patch data to history data</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        df_history <span class="op">=</span> pd.concat([df_history, df_patch], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Step 2a: Loaded and applied 'standings24_25.csv'."</span>)</span>
@@ -786,7 +820,7 @@ The Fjelstul dataset does not include the 2024/25 season, so I have supplemented
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"All team names in your file match the history file."</span>)</span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Error: '../../assets/files/datasets/standings.csv' not found. Skipping audit and enrichment."</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Error: '../../assets/files/datasets/too_messy_to_melt/standings.csv' not found. Skipping audit and enrichment."</span>)</span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create empty dataframes if file not found</span></span>
 <span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    df_positions <span class="op">=</span> pd.DataFrame(columns<span class="op">=</span>[<span class="st">'Team'</span>, <span class="st">'Season'</span>, <span class="st">'Position_History'</span>, <span class="st">'Games_Played_History'</span>,</span>
 <span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">'Wins_History'</span>, <span class="st">'Goals_For_History'</span>, <span class="st">'Goals_Against_History'</span>,</span>
@@ -1022,7 +1056,7 @@ The Fjelstul dataset does not include the 2024/25 season, so I have supplemented
 - Cast numeric fields to nullable integers<br>
 - Drop helper Year +3 rows<br>
 - Select final column set and sort<br>
-- Write perfect_tidy_data.csv</p>
+- Write tidy_attendance_data.csv</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Step 9: Polishing final data..."</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --- MODIFICATION: Added all _History columns ---</span></span>
@@ -1051,7 +1085,7 @@ The Fjelstul dataset does not include the 2024/25 season, so I have supplemented
 <span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> df_final[final_columns].sort_values(by<span class="op">=</span>[<span class="st">'Relegation_Event_ID'</span>, <span class="st">'Year_vs_Relegation'</span>])</span>
 <span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the final, perfect data to a new CSV in the 'datasets' folder</span></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>output_path <span class="op">=</span> <span class="st">"../../assets/files/datasets/perfect_tidy_data.csv"</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>output_path <span class="op">=</span> <span class="st">"../../assets/files/datasets/too_messy_to_melt/tidy_attendance_data.csv"</span></span>
 <span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>df_final.to_csv(output_path, index<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Step 9: Success! Final table saved to '</span><span class="sc">{</span>output_path<span class="sc">}</span><span class="ss">'"</span>)</span>

@@ -384,6 +384,47 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 
 
 
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Dataset Versioning: v0.1 (Deprecated) → v0.2 (Beta)</strong> This dataset is currently being upgraded to include bug fixes and new features. While the data linked below is the source for the original <a href="../../posts/post-relegation-attendance/index.html">Relegation Attendance Churn article</a>, the post will be updated once the stable v0.2 release is finalized.</p>
+<p><strong>What’s New</strong>: * A Power BI preview dashboard is available below using the v0.2 Beta.</p>
+<div class="pbi-container">
+<p><iframe title="attendance churn 1 page" src="https://app.powerbi.com/view?r=eyJrIjoiZTExNTk3NjItYzk2ZC00OGU5LTg0N2QtZDRkNDJiMzU5NDI2IiwidCI6ImE1MmIxMmI5LTdkYzktNGE3MS05YzQ5LTliZTkyOTIwNzAyZiJ9" allowfullscreen="true"> </iframe></p>
+</div>
+<style>
+.pbi-container { 
+  position: relative; 
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0; 
+  overflow: hidden; 
+  max-width: 100%; 
+}
+.pbi-container iframe { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  border: 0; 
+}
+</style>
+<p>Full release notes and documentation for the v0.1 to v0.2 transition will be included when v0.2 is stable.</p>
+<p><strong>Beta Downloads:</strong><br>
+- Patch file for 24/25 performance data: <a href="assets/files/datasets/too_messy_to_melt/standings24_25.csv">standings24_25.csv</a><br>
+- Silver (tidy): <a href="assets/files/datasets/too_messy_to_melt/silver_relegation_attendance.csv">silver_relegation_attendance.csv</a><br>
+- Stadium capacities: <a href="assets/files/datasets/too_messy_to_melt/gold_dim_stadiums_pyramid.csv">gold_dim_stadiums_pyramid.csv</a><br>
+- Gold (analytics-ready): <a href="assets/files/datasets/too_messy_to_melt/gold_relegation_attendance.parquet">gold_relegation_attendance.parquet</a></p>
+<p><em>Note: The pipeline utilises Databricks’ <a href="https://www.databricks.com/glossary/medallion-architecture">Medallion Architecure</a> (Bronze/Silver/Gold).</em></p>
+</div>
+</div>
 <p>I’m a Burnley fan - and, with our recent promotion to the Premier League (and impending relegation), we are firmly consolidated as a yoyo club par excellence. In fact, we rank joint-4th with Sunderland on the Yoyo-meter (below). So what better time to assess of the impacts of relegation from the Premier League? Because it’s never too early to plan ahead.</p>
 <p>In this article, I’ll be exploring if, how and for how long Premier League relegation disrupts attendances. We’ll also examine some mitigating factors. Does attractive football help maintain attendances? Is mid-table mediocrity worse for attendances than being mired in a relegation dogfight?</p>
 <p>The dataset I have designed for this project combines a few different online resources and also engineers some variables. You can read an in-depth article about how it was produced and download it <a href="../too-messy-to-melt/">here</a>. This article gives a much briefer overview of my methodology, the dataset design and some limitations. Of course, you can also skip straight to the <a href="#analysis">analysis section</a>.</p>
@@ -838,25 +879,32 @@ Note
 </section>
 <section id="the-toxicity-factor-when-loyalty-snaps-and-when-it-doesnt" class="level2">
 <h2 class="anchored" data-anchor-id="the-toxicity-factor-when-loyalty-snaps-and-when-it-doesnt">The Toxicity Factor: When Loyalty Snaps (and When It Doesn’t)</h2>
-<p>On-pitch performance isn’t the only driver. The data shows that a toxic or broken relationship between a club’s owners and its fans can act as a powerful accelerant for an attendance collapse.</p>
-<p>These aren’t just “bad vibes”; they are measurable, real-world events:</p>
-<p>Hull City (2014-15): The -27% drop in Y+1 wasn’t just about relegation. It directly coincided with a fan mutiny over the owners’ deeply unpopular attempt to rebrand the club as “Hull Tigers.”</p>
-<p>Birmingham City (2007-08): A similar story. Their -27% nosedive in Y+1 was fueled by widespread fan protests calling for the board to resign.</p>
-<p>Newcastle (2009-10 vs.&nbsp;2016-17): This is the perfect A/B test. In both 2009 and 2016, the club had the same toxic ownership under Mike Ashley.</p>
-<p>In 2009-10, the vibe was poisonous. The result? A significant 11% drop in attendance.</p>
-<p>In 2016-17, a different “vibe” won. Hiring (and keeping) Rafa Benitez was such an unexpected coup that his popularity papered over the cracks, galvanizing the fanbase and leading to a 2.7% increase.</p>
-<p>Wimbledon (1999-2000): This is the ultimate case study. They were already a “homeless” club, playing at Crystal Palace’s Selhurst Park during their Y0 relegation season. Their baseline attendance was already depressed. When they lost their Premier League status, attendance collapsed by -59%. The showpiece occasion of a Premier League game seems to have been the last thread holding that displaced fanbase together. When it snapped, so did the club.</p>
+<p>The data shows that a toxic or broken relationship between a club’s owners and its fans can act as a powerful accelerant for attendance churn.</p>
+<p><strong>Hull City (2014-15)</strong>: The -27% drop in Y+1 wasn’t just about relegation. It directly coincided with a fan mutiny over the owners’ deeply unpopular attempt to rebrand the club as “Hull Tigers.”</p>
+<p><strong>Birmingham City (2007-08)</strong>: A similar story. Their -27% nosedive in Y+1 was fueled by widespread fan protests calling for the board to resign.</p>
+<p><strong>Newcastle (2009-10 vs.&nbsp;2016-17)</strong>: We discussed this earlier and it’s the perfect A/B test. In both 2009 and 2016, the club had the same toxic ownership under Mike Ashley. - 2009-10: atmosphere completely poisonous, and leads to 11% drop in attendance - 2016-17: Rafa Benitez’s decision to stay with the club despite relegation was such an unexpected coup he galvanized a 2.7% attendance increase</p>
+<p><strong>Wimbledon (1999-2000)</strong>: Wimbledon were “homeless” during their Y0 relegation season, and played at Crystal Palace’s Selhurst Park. Their baseline attendance was already depressed, and when they lost Premier League status attendances collapsed by -59%. The showpiece occasion of a Premier League game seems to have been the last thread holding that displaced fanbase together. When it snapped, so did the club.</p>
 </section>
 <section id="a-results-business" class="level2">
 <h2 class="anchored" data-anchor-id="a-results-business">A Results Business</h2>
 <p>Next up, we’ll look at our <code>Year_End_Outcome</code> variable. Let’s plot the attendance change over time, grouping teams by whether they were Promoted, Survived, or Relegated in their first post-relegation season.</p>
-<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.070482Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.905042Z&quot;}}" data-execution_count="14">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
-<figcaption>Average attendance change (anomalies removed) relative to the relegation season (Y0), grouped by the team’s outcome in their first post-relegation season (Y+1).</figcaption>
-</figure>
+<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.070482Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:20.905042Z&quot;}}" data-execution_count="2">
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[2], line 8</span>
+<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)">#| output: true</span>
+<span class="ansi-green-fg">      2</span> <span style="font-style:italic;color:rgb(95,135,135)">#| echo: false</span>
+<span class="ansi-green-fg">      3</span> <span style="font-style:italic;color:rgb(95,135,135)">#| fig-cap: "Average attendance change (anomalies removed) relative to the relegation season (Y0), grouped by the team's outcome in their first post-relegation season (Y+1)."</span>
+<span class="ansi-green-fg">      4</span> 
+<span class="ansi-green-fg">      5</span> <span style="font-style:italic;color:rgb(95,135,135)"># We use the pre-filtered 'df_plot_filtered' DataFrame</span>
+<span class="ansi-green-fg">      6</span> <span style="font-style:italic;color:rgb(95,135,135)"># (This was defined in the hidden setup block)</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 8</span> <span class="ansi-yellow-bg">plt</span><span style="color:rgb(98,98,98)">.</span>figure(figsize<span style="color:rgb(98,98,98)">=</span>(<span style="color:rgb(98,98,98)">12</span>, <span style="color:rgb(98,98,98)">7</span>))
+<span class="ansi-green-fg">      9</span> sns<span style="color:rgb(98,98,98)">.</span>set_theme(style<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">whitegrid</span><span style="color:rgb(175,0,0)">"</span>)
+<span class="ansi-green-fg">     11</span> <span style="font-style:italic;color:rgb(95,135,135)"># Define the order for the new labels</span>
+
+<span class="ansi-red-fg ansi-bold">NameError</span>: name 'plt' is not defined</pre>
 </div>
 </div>
 </div>
@@ -869,13 +917,22 @@ Note
 <h2 class="anchored" data-anchor-id="would-champagne-football-help">Would champagne football help?</h2>
 <p>If you’re stuck in the Championship, can you at least keep the fans entertained with attacking football?</p>
 <p>To test this, I’ve plotted <code>Goals_For_Per_Game</code> against the percentage change in attendance for all post-relegation seasons (Y+1 and Y+2), again grouped by the team’s outcome and with the stadium anomalies removed.</p>
-<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.628912Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:21.086946Z&quot;}}" data-execution_count="15">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
-<figcaption>Scatter plots (all structural anomalies removed) showing the relationship between attacking football and the percentage change in attendance.</figcaption>
-</figure>
+<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2025-11-12T01:22:21.628912Z&quot;,&quot;start_time&quot;:&quot;2025-11-12T01:22:21.086946Z&quot;}}" data-execution_count="3">
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[3], line 6</span>
+<span class="ansi-green-fg">      1</span> <span style="font-style:italic;color:rgb(95,135,135)">#| output: true</span>
+<span class="ansi-green-fg">      2</span> <span style="font-style:italic;color:rgb(95,135,135)">#| echo: false</span>
+<span class="ansi-green-fg">      3</span> <span style="font-style:italic;color:rgb(95,135,135)">#| fig-cap: "Scatter plots (all structural anomalies removed) showing the relationship between attacking football and the percentage change in attendance."</span>
+<span class="ansi-green-fg">      4</span> 
+<span class="ansi-green-fg">      5</span> <span style="font-style:italic;color:rgb(95,135,135)"># We use the 'df_plot_filtered' we already made</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 6</span> df_scatter <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">df_plot_filtered</span>[df_plot_filtered[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Year_vs_Relegation</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>isin([<span style="color:rgb(98,98,98)">1</span>, <span style="color:rgb(98,98,98)">2</span>])]<span style="color:rgb(98,98,98)">.</span>copy()
+<span class="ansi-green-fg">      8</span> <span style="font-style:italic;color:rgb(95,135,135)"># --- Type Conversion Fix ---</span>
+<span class="ansi-green-fg">      9</span> df_scatter[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Pct_Change_vs_Y0_Display</span><span style="color:rgb(175,0,0)">'</span>] <span style="color:rgb(98,98,98)">=</span> df_scatter[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">Pct_Change_vs_Y0_Display</span><span style="color:rgb(175,0,0)">'</span>]<span style="color:rgb(98,98,98)">.</span>astype(<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">float64</span><span style="color:rgb(175,0,0)">'</span>)
+
+<span class="ansi-red-fg ansi-bold">NameError</span>: name 'df_plot_filtered' is not defined</pre>
 </div>
 </div>
 </div>
