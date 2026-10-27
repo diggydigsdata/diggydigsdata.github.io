@@ -89,8 +89,8 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <meta property="og:description" content="A penalty-won-adjusted goals metric, a demo Power BI dashboard, and a roadmap toward a refreshable data pipeline.">
 <meta property="og:image" content="https://diggydigsdata.github.io/posts/winner-takes-them-all/featured.png">
 <meta property="og:site_name" content="Diggy Digs Data">
-<meta property="og:image:height" content="1064">
-<meta property="og:image:width" content="1889">
+<meta property="og:image:height" content="789">
+<meta property="og:image:width" content="1410">
 <meta property="og:image:alt" content="Screenshot of a Power BI dashboard showing player rankings based on penalty-won-adjusted goals metrics.">
 </head>
 
@@ -348,10 +348,7 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dashboard-prototype" id="toc-dashboard-prototype" class="nav-link active" data-scroll-target="#dashboard-prototype">Dashboard (prototype)</a>
-  <ul class="collapse">
-  <li><a href="#known-limitations-current-dashboard" id="toc-known-limitations-current-dashboard" class="nav-link" data-scroll-target="#known-limitations-current-dashboard">Known limitations (current dashboard)</a></li>
-  </ul></li>
+  <li><a href="#dashboard-prototype" id="toc-dashboard-prototype" class="nav-link active" data-scroll-target="#dashboard-prototype">Dashboard (prototype)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/diggydigsdata/blob/main/posts/winner-takes-them-all/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -381,35 +378,30 @@ gtag('config', 'G-HNQKPVKC29', { 'anonymize_ip': true});
 <section id="dashboard-prototype" class="level2">
 <h2 class="anchored" data-anchor-id="dashboard-prototype">Dashboard (prototype)</h2>
 <p>Here is a small prototype I made in Power Bi.</p>
-<section id="known-limitations-current-dashboard" class="level3">
-<h3 class="anchored" data-anchor-id="known-limitations-current-dashboard">Known limitations (current dashboard)</h3>
-<ul>
-<li>This can only be filtered to a <strong>single-season / single-competition</strong> grain as I have encountered issues with my DAX measures.</li>
-<li>Reset button doesn’t work.</li>
-</ul>
 <div class="pbi-container">
-<p><iframe title="pkwon_single_season_single_comp" src="https://app.powerbi.com/view?r=eyJrIjoiMTQzODhiMjUtNWEzNC00N2UzLTk3YmEtZjdhYjhhYzMwNmQ3IiwidCI6ImE1MmIxMmI5LTdkYzktNGE3MS05YzQ5LTliZTkyOTIwNzAyZiJ9" allowfullscreen="true"> </iframe></p>
+<p><iframe title="pkwon_oct_2026" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNmUwM2YzN2EtNjMzMS00ZWU3LTk2N2UtNTZkYWY5Yzc3MzkzIiwidCI6ImE1MmIxMmI5LTdkYzktNGE3MS05YzQ5LTliZTkyOTIwNzAyZiJ9" frameborder="0" allowfullscreen="true"></iframe></p>
 </div>
 <style>
-.pbi-container { 
-  position: relative; 
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0; 
-  overflow: hidden; 
-  max-width: 100%; 
-}
-.pbi-container iframe { 
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  border: 0; 
-}
+  .pbi-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .pbi-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
 </style>
 
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->

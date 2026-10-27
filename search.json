@@ -11,7 +11,7 @@
     "href": "posts/winner-takes-them-all/index.html#dashboard-prototype",
     "title": "The Winner Takes Them All (Project Map with Power BI Dashboard)",
     "section": "Dashboard (prototype)",
-    "text": "Dashboard (prototype)\nHere is a small prototype I made in Power Bi.\n\nKnown limitations (current dashboard)\n\nThis can only be filtered to a single-season / single-competition grain as I have encountered issues with my DAX measures.\nReset button doesn’t work."
+    "text": "Dashboard (prototype)\nHere is a small prototype I made in Power Bi."
   },
   {
     "objectID": "posts/scraper-fc-api-doc/index.html",
