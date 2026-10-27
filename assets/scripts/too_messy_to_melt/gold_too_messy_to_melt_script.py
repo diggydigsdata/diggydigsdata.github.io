@@ -10,6 +10,7 @@
 
 import pandas as pd
 import numpy as np
+import json
 from pathlib import Path
 
 # --- paths (same pattern as yours) ---
@@ -39,10 +40,84 @@ def norm_season(s):
          .str.replace("\u2013", "-", regex=False)
          .str.replace("–", "-", regex=False)
          .str.strip()
+         .str.replace(r"^(\d{4})-(\d{2})(\d{2})$", r"\1-\3", regex=True)
     )
 
 def norm_tier(s):
     return pd.to_numeric(s, errors="coerce").astype("Int64")
+
+
+def apply_stadium_capacity_lookup(df, path):
+    """Fill gaps from user-supplied club-season values before baseline calculations."""
+    out = df.copy()
+    for field in ("Stadium", "Capacity"):
+        if field not in out:
+            out[field] = pd.NA
+    out["Capacity"] = pd.to_numeric(out["Capacity"], errors="coerce").astype("Int64")
+    out["Stadium_Lookup_Applied"] = False
+    out["Capacity_Lookup_Applied"] = False
+    out["Stadium_Capacity_Lookup_Notes"] = pd.Series(pd.NA, index=out.index, dtype="string")
+    if not path.exists():
+        return out
+
+    lookup = pd.read_csv(path)
+    keys = ["Team", "Season", "Tier"]
+    required = set(keys + ["Stadium", "Capacity"])
+    missing = required - set(lookup.columns)
+    if missing:
+        raise ValueError(f"Stadium capacity lookup is missing columns: {sorted(missing)}")
+    if lookup.empty:
+        return out
+    if lookup[list(required)].isna().any().any():
+        raise ValueError("Stadium capacity lookup contains blank required values.")
+    lookup["Team"] = norm_team(lookup["Team"])
+    lookup["Season"] = norm_season(lookup["Season"])
+    lookup["Stadium"] = lookup["Stadium"].astype("string").str.strip()
+    tiers = pd.to_numeric(lookup["Tier"], errors="coerce")
+    capacities = pd.to_numeric(lookup["Capacity"], errors="coerce")
+    if not tiers.isin([1, 2, 3, 4]).all():
+        raise ValueError("Stadium capacity lookup tiers must be integers from 1 to 4.")
+    if not (capacities.between(500, 150000) & capacities.mod(1).eq(0)).all():
+        raise ValueError("Stadium capacity lookup capacities must be whole numbers from 500 to 150000.")
+    if lookup[["Team", "Stadium"]].eq("").any().any():
+        raise ValueError("Stadium capacity lookup contains blank required values.")
+    valid_seasons = lookup["Season"].str.fullmatch(r"\d{4}-\d{2}").fillna(False)
+    if not valid_seasons.all():
+        raise ValueError("Stadium capacity lookup seasons must use YYYY-YY.")
+    start = lookup["Season"].str[:4].astype(int)
+    end = lookup["Season"].str[-2:].astype(int)
+    if not end.eq((start + 1) % 100).all():
+        raise ValueError("Stadium capacity lookup season end years must follow their start years.")
+    lookup["Tier"] = tiers.astype("Int64")
+    lookup["Capacity"] = capacities.astype("Int64")
+    if lookup.duplicated(keys).any():
+        raise ValueError("Stadium capacity lookup contains duplicate team-season-tier keys.")
+    for col in ("SourceURL", "Notes"):
+        if col not in lookup:
+            lookup[col] = pd.NA
+    fields = ["Stadium", "Capacity", "SourceURL", "Notes"]
+    lookup = lookup[keys + fields].rename(columns={c: f"_lookup_{c}" for c in fields})
+    out = out.merge(lookup, on=keys, how="left", validate="m:1")
+    for field in ("Stadium", "Capacity"):
+        blank = out[field].isna()
+        if field == "Stadium":
+            blank = blank | out[field].astype("string").str.strip().eq("").fillna(False)
+            out[field] = out[field].astype("string")
+        applied = blank & out[f"_lookup_{field}"].notna()
+        out[field] = out[field].mask(applied, out[f"_lookup_{field}"])
+        out[f"{field}_Lookup_Applied"] = applied
+        source_col = f"{field}_SourceURL"
+        source = out.get(source_col, pd.Series(pd.NA, index=out.index, dtype="string"))
+        out[source_col] = source.astype("string").mask(applied, out["_lookup_SourceURL"])
+    applied = out["Stadium_Lookup_Applied"] | out["Capacity_Lookup_Applied"]
+    out["Stadium_Capacity_Lookup_Notes"] = out["_lookup_Notes"].astype("string").where(applied)
+    source = out.get("SourceURL", pd.Series(pd.NA, index=out.index, dtype="string")).astype("string")
+    out["SourceURL"] = source.mask(
+        applied & (source.isna() | source.str.strip().eq("").fillna(False)), out["_lookup_SourceURL"]
+    )
+    print(f"[LOOKUP] Filled {int(out['Stadium_Lookup_Applied'].sum())} stadium and "
+          f"{int(out['Capacity_Lookup_Applied'].sum())} capacity observation values from {path.name}.")
+    return out.drop(columns=[f"_lookup_{c}" for c in fields])
 
 df_gold["Team"] = norm_team(df_gold["Team"])
 df_gold["Season"] = norm_season(df_gold["Season"])
@@ -52,6 +127,27 @@ dup = df_gold.duplicated(["Observation_ID"]).sum()
 if dup:
     raise AssertionError(f"Fact grain broken in silver: {dup} duplicate Observation_ID rows.")
 
+# Club home location is independent of the season's stadium record.
+club_city_lookup_path = DATASETS_DIR / "club_city_lookup.csv"
+club_cities = pd.read_csv(club_city_lookup_path, dtype="string")
+missing_columns = {"Team", "Club_City"} - set(club_cities.columns)
+if missing_columns:
+    raise ValueError(f"Club city lookup is missing columns: {sorted(missing_columns)}")
+club_cities = club_cities[["Team", "Club_City"]].copy()
+club_cities["Team"] = norm_team(club_cities["Team"])
+club_cities["Club_City"] = club_cities["Club_City"].str.strip()
+if club_cities.isna().any().any() or club_cities.eq("").any().any():
+    raise ValueError("Club city lookup contains blank team or city values.")
+if club_cities["Team"].duplicated().any():
+    raise ValueError("Club city lookup contains duplicate team keys.")
+df_gold = df_gold.drop(columns="Club_City", errors="ignore").merge(
+    club_cities, on="Team", how="left", validate="m:1"
+)
+unmapped_clubs = sorted(df_gold.loc[df_gold["Club_City"].isna(), "Team"].unique())
+if unmapped_clubs:
+    raise ValueError(f"Add these teams to {club_city_lookup_path.name}: {unmapped_clubs}")
+print(f"[JOIN] Club city coverage={df_gold['Club_City'].notna().mean():.1%}")
+
 if stadium_dim_path.exists():
     df_stad = pd.read_csv(stadium_dim_path)
 
@@ -59,7 +155,9 @@ if stadium_dim_path.exists():
     df_stad["Season"] = norm_season(df_stad["Season"])
     df_stad["Tier"] = norm_tier(df_stad["Tier"])
 
-    keep_cols = [c for c in ["Team","Season","Tier","Stadium","Capacity","City","GeoPlace","SourceURL"] if c in df_stad.columns]
+    keep_cols = [c for c in ["Team","Season","Tier","Stadium","Capacity","City","GeoPlace","SourceURL",
+                            "Stadium_SourceURL", "Capacity_SourceURL", "Location_SourceURL",
+                            "City_Imputed", "City_SourceURL", "City_Donor_Season"] if c in df_stad.columns]
     df_stad = df_stad[keep_cols].copy()
 
     if "Capacity" in df_stad.columns:
@@ -84,6 +182,14 @@ if stadium_dim_path.exists():
 
 else:
     print(f"[JOIN] Stadium dim not found at {stadium_dim_path}. Skipping stadium enrichment.")
+
+df_gold = apply_stadium_capacity_lookup(
+    df_gold, DATASETS_DIR / "stadium_capacity_lookup_template.csv"
+)
+
+# Map each club's home locality even when the season has no stadium record.
+# UK disambiguates place names and covers both English and Welsh clubs.
+df_gold["GeoPlace"] = df_gold["Club_City"] + ", United Kingdom"
 
 # -----------------------------
 # 1) Flag COVID season rows (row-level)
@@ -131,12 +237,15 @@ event_base["Covid_Baseline_Review_Flag"] = False
 # Comparable = same tier AND stadium/capacity match (treat NA==NA as match)
 # If Stadium+Capacity are NA in both donor+target, still allow but flag for review.
 # -----------------------------
-is_covid_event = event_base["Event_Season"].eq("2020-21")
+is_covid_event = event_base["Event_Season"].eq("2020-21").astype("boolean").fillna(False)
 
-tier_match = event_base["Tier_Y0"].eq(event_base["Tier_Ym1"])
+tier_match = event_base["Tier_Y0"].eq(event_base["Tier_Ym1"]).astype("boolean").fillna(False)
 
 def na_equal(a, b):
-    return (a.eq(b)) | (a.isna() & b.isna())
+    # Use one boolean dtype across Arrow strings and nullable numeric columns.
+    # Missing on one side is a mismatch; missing on both follows the review rule.
+    matches = a.eq(b).astype("boolean").fillna(False)
+    return matches | (a.isna() & b.isna())
 
 stad_match = na_equal(event_base["Stadium_Y0"].astype("string"), event_base["Stadium_Ym1"].astype("string"))
 cap_match  = na_equal(event_base["Capacity_Y0"], event_base["Capacity_Ym1"])
@@ -256,3 +365,79 @@ if not bad_sub.empty:
 gold_path = DATASETS_DIR / "gold_relegation_attendance.parquet"
 df_plot.to_parquet(gold_path, index=False)
 print(f"\nSaved GOLD parquet: {gold_path}")
+
+gold_csv_path = DATASETS_DIR / "gold_relegation_attendance.csv"
+df_plot.to_csv(gold_csv_path, index=False)
+print(f"Saved GOLD CSV: {gold_csv_path}")
+
+# -----------------------------
+# 11) Show all observations in events with missing stadium fields and donors
+# -----------------------------
+stadium_fields = [
+    field for field in ("Stadium", "Capacity", "City", "GeoPlace")
+    if field in df_plot.columns
+]
+event_has_value = (
+    df_plot.groupby("Relegation_Event_ID")[stadium_fields]
+    .transform("count")
+    .gt(0)
+)
+missing_with_donor = df_plot[stadium_fields].isna() & event_has_value
+affected_events = df_plot.loc[
+    missing_with_donor.any(axis=1), "Relegation_Event_ID"
+].unique()
+report_columns = [
+    "Observation_ID", "Relegation_Event_ID", "Team", "Club_City", "Season", "Tier",
+    "Year_vs_Relegation", "Is_Structural_Anomaly", *stadium_fields,
+]
+if "SourceURL" in df_plot.columns:
+    report_columns.append("SourceURL")
+report_columns.extend(c for c in ("Stadium_SourceURL", "Capacity_SourceURL", "Location_SourceURL",
+                                  "City_Imputed", "City_SourceURL", "City_Donor_Season",
+                                  "Stadium_Lookup_Applied", "Capacity_Lookup_Applied",
+                                  "Stadium_Capacity_Lookup_Notes")
+                      if c in df_plot.columns)
+df_stadium_missing_within_event = df_plot.loc[
+    df_plot["Relegation_Event_ID"].isin(affected_events), report_columns
+].sort_values(["Relegation_Event_ID", "Year_vs_Relegation"]).copy()
+report_missing = df_stadium_missing_within_event[stadium_fields].isna()
+df_stadium_missing_within_event["Missing_Fields"] = [
+    ", ".join(field for field in stadium_fields if row[field])
+    for _, row in report_missing.iterrows()
+]
+df_stadium_missing_within_event["Row_Status"] = np.where(
+    report_missing.any(axis=1), "Missing information", "Populated"
+)
+
+missing_stadium_report_path = DATASETS_DIR / "stadium_event_comparison.csv"
+df_stadium_missing_within_event.to_csv(missing_stadium_report_path, index=False)
+print(
+    f"Saved stadium donor report: {missing_stadium_report_path} "
+    f"({len(df_stadium_missing_within_event):,} observations in {len(affected_events):,} events)"
+)
+
+# Keep the team-season audit current after applying lookup records.
+audit_fields = [field for field in (
+    "Attendance", "Stadium", "Capacity", "City", "Club_City", "GeoPlace", "Tier",
+    "Position", "Year_End_Outcome", "Games_Played_History", "Wins_History",
+    "Goals_For_History", "Goals_Against_History", "Points_History",
+) if field in df_plot]
+audit_rows = []
+for (team, season), group in df_plot.groupby(["Team", "Season"], sort=True):
+    missing = [field for field in audit_fields if group[field].isna().any()]
+    if not missing:
+        continue
+    audit_rows.append({
+        "Team": team, "Season": season,
+        "Tier": group["Tier"].dropna().iloc[0] if group["Tier"].notna().any() else pd.NA,
+        "Observation_Count": len(group), "Missing_Fields": ", ".join(missing),
+        "Missing_Field_Counts": json.dumps({field: int(group[field].isna().sum()) for field in missing}),
+        "Observation_IDs": json.dumps(group["Observation_ID"].tolist()),
+        "Relegation_Event_IDs": json.dumps(group["Relegation_Event_ID"].unique().tolist()),
+    })
+audit_path = DATASETS_DIR / "missing_fields_by_team_season.csv"
+pd.DataFrame(audit_rows, columns=[
+    "Team", "Season", "Tier", "Observation_Count", "Missing_Fields", "Missing_Field_Counts",
+    "Observation_IDs", "Relegation_Event_IDs",
+]).to_csv(audit_path, index=False)
+print(f"Saved missing-field audit: {audit_path} ({len(audit_rows):,} team-seasons)")

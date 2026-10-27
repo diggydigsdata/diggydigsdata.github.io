@@ -157,5 +157,11 @@
   },
   "datasets/too-messy-to-melt/index.ipynb": {
     "index.html": "55b9ea0c"
+  },
+  "assets/files/datasets/too_messy_to_melt/club_city_lookup.md": {
+    "club_city_lookup.html": "58c7e247"
+  },
+  "assets/files/datasets/too_messy_to_melt/stadium_capacity_lookup.md": {
+    "stadium_capacity_lookup.html": "703489e4"
   }
 }

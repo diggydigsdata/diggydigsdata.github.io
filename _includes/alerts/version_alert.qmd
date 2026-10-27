@@ -2,8 +2,8 @@
 **Dataset Versioning: v0.1 (Deprecated) → v0.2 (Beta)**
 This dataset is currently being upgraded to include bug fixes and new features. While the data linked below is the source for the original [Relegation Attendance Churn article](/posts/post-relegation-attendance/index.ipynb), the post will be updated once the stable v0.2 release is finalized.
 
-**What's New**: 
-* A Power BI preview dashboard is available below using the v0.2 Beta.
+**Preview**: 
+A Power BI dashboard is available using the v0.2 Beta.
 
 {{< include /_includes/dashboards/attendance_dashboard.html >}}
 

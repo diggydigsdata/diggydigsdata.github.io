@@ -3,6 +3,11 @@ pandas>=2.0.0
 numpy
 openpyxl
 
+# --- Stadium Scraper ---
+requests
+html5lib
+beautifulsoup4
+
 # --- Tidy Pipeline (Silver Script) ---
 thefuzz
 python-Levenshtein

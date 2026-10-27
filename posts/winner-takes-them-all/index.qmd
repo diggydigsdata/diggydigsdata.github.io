@@ -4,7 +4,7 @@ date: 2026-01-15 02:02 +0000
 description: "A penalty-won-adjusted goals metric, a demo Power BI dashboard, and a roadmap toward a refreshable data pipeline."
 image: "featured.png"
 image-alt: "Screenshot of a Power BI dashboard showing player rankings based on penalty-won-adjusted goals metrics."
-categories: [Football, Analytics, Python, R, Penalties]
+categories: [Football, Analytics, Python, Power BI, Penalties]
 tags: [data, analytics, hypotheticals, rule changes, basketball, penalties, soccer, football, Power BI]
 license: "CC BY"
 execute:
@@ -13,7 +13,7 @@ execute:
 jupyter: python3
 ---
 
-Football credits the *taker* of a penalty, not the player who *won* it. That's why we end up with nicknames like "Penaldo". A BBC caption - "Misstiano Penaldo" - even went viral after CR7 missed against Slovenia in 2024.
+Football credits the *taker* of a penalty, not the player who *won* it. That's why we end up with nicknames like "Penaldo".
 
 This project asks a simple counterfactual:
 
@@ -38,8 +38,6 @@ This isn't intended as a one-off analysis — it's a pipeline project. Long-term
 ## Dashboard (prototype)
 Here is a small prototype I made in Power Bi.
 
-### Known limitations (current dashboard)
-- This can only be filtered to a **single-season / single-competition** grain as I have encountered issues with my DAX measures.
-- Reset button doesn't work.
-
 {{< include /_includes/dashboards/pkwon_dashboard.html >}}
+
+
